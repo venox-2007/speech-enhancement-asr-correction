@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+torch
+torchaudio
+librosa
+soundfile
+openai-whisper
+jiwer
+streamlit
+matplotlib
+plotly
