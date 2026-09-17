@@ -11,3 +11,6 @@ jiwer>=3.0
 # Milestone 2: phonetic candidate generation
 cmudict>=1.0
 rapidfuzz>=3.0
+
+# Milestone 3: context-aware candidate scoring (local GPT-2)
+transformers>=4.40

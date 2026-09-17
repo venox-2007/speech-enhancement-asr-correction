@@ -11,11 +11,13 @@ Implemented:
 - `correction/pronunciation.py` — CMUdict pronunciation lookup
 - `correction/phonetic_distance.py` — weighted phoneme edit distance
 - `correction/candidates.py` — phonetic candidate generation (`PhoneticCandidateGenerator`)
+- `correction/lm_scorer.py` — sentence log-probability with a local causal LM (GPT-2)
+- `correction/context_scorer.py` — context-aware candidate scoring and correct/keep decision
 - `utils/` — device selection, logging setup
 
 Planned:
 
 - `preprocessing/` — noise mixing, STFT/iSTFT
 - `enhancement/` — CNN and U-Net speech enhancement models
-- `correction/` — context-aware scoring and correct/keep decision
+- `correction/` — sentence-level correction pipeline and overcorrection evaluation
 - `evaluation/` — speech-quality metrics (PESQ, STOI, SI-SDR)
