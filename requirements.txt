@@ -1,12 +1,9 @@
-numpy
-scipy
-pandas
-torch
-torchaudio
-librosa
-soundfile
-openai-whisper
-jiwer
-streamlit
-matplotlib
-plotly
+# Milestone 1: Whisper ASR baseline + WER.
+# Install PyTorch FIRST from the index matching your hardware (see docs/asr_baseline.md),
+# otherwise pip may install a CPU-only build as a dependency of openai-whisper.
+torch>=2.1
+numpy>=1.24
+scipy>=1.10
+soundfile>=0.12
+openai-whisper>=20240930
+jiwer>=3.0

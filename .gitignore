@@ -21,3 +21,4 @@ results/generated/
 results/tmp/
 logs/
 .streamlit/secrets.toml
+.pytest_cache/

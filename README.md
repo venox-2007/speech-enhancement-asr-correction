@@ -57,6 +57,26 @@ Corrected Transcription
 - JiWER for WER
 - Git + GitHub
 
+## Quick start
+
+```bash
+py -3.11 -m venv .venv
+.venv\Scriptsctivate
+pip install torch --index-url https://download.pytorch.org/whl/cu128   # or /whl/cpu
+pip install -r requirements-dev.txt
+python -m pytest
+python -m src.asr.baseline --audio path/to/utterance.wav --reference "reference transcript"
+```
+
+See [docs/asr_baseline.md](docs/asr_baseline.md) for details.
+
 ## Status
 
-Early project setup. Experiments and implementations will be added incrementally.
+- [x] Milestone 1: Whisper ASR baseline + WER (`src/asr`, `src/evaluation/wer.py`)
+- [ ] Phonetic candidate generation
+- [ ] Context-aware correction
+- [ ] CNN / U-Net speech enhancement
+- [ ] End-to-end experiments
+- [ ] Streamlit UI
+
+No experimental results have been produced yet.
