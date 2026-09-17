@@ -7,3 +7,7 @@ scipy>=1.10
 soundfile>=0.12
 openai-whisper>=20240930
 jiwer>=3.0
+
+# Milestone 2: phonetic candidate generation
+cmudict>=1.0
+rapidfuzz>=3.0

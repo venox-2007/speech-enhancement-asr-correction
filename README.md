@@ -73,7 +73,7 @@ See [docs/asr_baseline.md](docs/asr_baseline.md) for details.
 ## Status
 
 - [x] Milestone 1: Whisper ASR baseline + WER (`src/asr`, `src/evaluation/wer.py`)
-- [ ] Phonetic candidate generation
+- [x] Phonetic candidate generation (`src/correction`, see [docs/phonetic_candidates.md](docs/phonetic_candidates.md))
 - [ ] Context-aware correction
 - [ ] CNN / U-Net speech enhancement
 - [ ] End-to-end experiments
