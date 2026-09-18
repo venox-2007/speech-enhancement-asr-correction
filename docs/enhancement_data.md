@@ -21,18 +21,18 @@ The dataset is available from Edinburgh DataShare:
 - **Size**: ~5 GB (uncompressed)
 - **License**: Creative Commons Attribution 4.0
 
-Download the following archives and extract them into a single directory:
+Download the following archives and extract them into `data/raw/voicebank_demand/`:
 
 ```
-data/voicebank_demand/
-  clean_trainset_28spk_wav/    # 11,572 clean training utterances (28 speakers)
-  noisy_trainset_28spk_wav/    # matching noisy training utterances
-  clean_testset_wav/            # 824 clean test utterances (2 speakers)
-  noisy_testset_wav/            # matching noisy test utterances
+data/raw/voicebank_demand/
+  clean_trainset_28spk_wav/    # 11,572 clean training utterances (28 speakers, 48 kHz)
+  noisy_trainset_28spk_wav/    # 11,572 matching noisy training utterances (48 kHz)
+  clean_testset_wav/            # 824 clean test utterances (2 speakers, 48 kHz)
+  noisy_testset_wav/            # 824 matching noisy test utterances (48 kHz)
 ```
 
 > [!IMPORTANT]
-> Do NOT commit the dataset to Git.  The `.gitignore` already
+> Do NOT commit the dataset to Git. The `.gitignore` already
 > excludes `data/raw/`, `data/processed/`, and `*.wav`.
 
 ### Filename Convention
@@ -46,19 +46,19 @@ speaker-disjoint (no data leakage).
 ## Train / Validation / Test Splits
 
 The dataset ships pre-split into training (28 speakers) and test
-(2 speakers).  This milestone adds a **validation split** carved from
+(2 speakers). This milestone adds a **validation split** carved from
 the training speakers:
 
-| Split | Source | Speakers | Demographics |
-|-------|--------|----------|--------------|
-| Train | `clean_trainset_28spk_wav` minus val speakers | 26 speakers | 13 female, 13 male |
-| Val   | `clean_trainset_28spk_wav`, held-out speakers | `["p286", "p287"]` (default) | 1 female (p286), 1 male (p287) |
-| Test  | `clean_testset_wav` | `["p232", "p257"]` | 1 female (p257), 1 male (p232) |
+| Split | Source | Speakers | Demographics | Utterances |
+|-------|--------|----------|--------------|------------|
+| Train | `clean_trainset_28spk_wav` minus val speakers | 26 speakers | 13 female, 13 male | 10,700 |
+| Val   | `clean_trainset_28spk_wav`, held-out speakers | `["p286", "p287"]` (default) | 1 female (p286: 455), 1 male (p287: 417) | 872 |
+| Test  | `clean_testset_wav` | `["p232", "p257"]` | 1 female (p257: 431), 1 male (p232: 393) | 824 |
 
 ### No Data Leakage
 
 The split is **speaker-based**: a speaker's utterances appear in exactly
-one partition.  This prevents the model from memorising speaker-specific
+one partition. This prevents the model from memorising speaker-specific
 characteristics that do not generalise.
 
 ### Configuration
@@ -67,16 +67,16 @@ characteristics that do not generalise.
 from src.enhancement.dataset import DatasetConfig
 
 # Default: hold out ["p286", "p287"] (1 female, 1 male)
-cfg = DatasetConfig(root="data/voicebank_demand")
+cfg = DatasetConfig(root="data/processed/voicebank_demand_16k")
 
 # Explicit speaker list
-cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=["p286", "p287"])
+cfg = DatasetConfig(root="data/processed/voicebank_demand_16k", val_speakers=["p286", "p287"])
 
 # Integer count: holds out the last N naturally sorted speakers
-cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=2)
+cfg = DatasetConfig(root="data/processed/voicebank_demand_16k", val_speakers=2)
 
 # No validation split (all 28 speakers for training)
-cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=0)
+cfg = DatasetConfig(root="data/processed/voicebank_demand_16k", val_speakers=0)
 ```
 
 ## Audio Preprocessing & Offline Resampling
@@ -104,6 +104,51 @@ python -m src.preprocessing.validate_dataset \
 ```
 
 This preserves the exact clean/noisy file pairing and subdirectory layout.
+
+## Empirically Verified Dataset Statistics
+
+The VoiceBank+DEMAND dataset was acquired from the official University of Edinburgh DataShare release (CC BY 4.0) and verified using `src/preprocessing/validate_dataset.py`.
+
+### Source Archives & Storage Footprint
+
+| Archive | File Size | Content | Extracted Path |
+|---------|-----------|---------|----------------|
+| `clean_trainset_28spk_wav.zip` | 2.31 GB (2,486,057,279 B) | 11,572 clean utterances, 28 speakers | `data/raw/voicebank_demand/clean_trainset_28spk_wav/` |
+| `noisy_trainset_28spk_wav.zip` | 2.64 GB (2,830,205,201 B) | 11,572 noisy utterances, 28 speakers | `data/raw/voicebank_demand/noisy_trainset_28spk_wav/` |
+| `clean_testset_wav.zip` | 147.18 MB (154,332,064 B) | 824 clean utterances, 2 speakers | `data/raw/voicebank_demand/clean_testset_wav/` |
+| `noisy_testset_wav.zip` | 162.68 MB (170,578,854 B) | 824 noisy utterances, 2 speakers | `data/raw/voicebank_demand/noisy_testset_wav/` |
+
+**Disk Usage Breakdown**:
+- Raw 48 kHz WAV files: **6.42 GB** (6,890,139,300 bytes across 24,792 files)
+- Raw ZIP archives: **5.25 GB** (5,641,173,398 bytes across 4 archives)
+- Total `data/raw/voicebank_demand/`: **11.67 GB** (12,531,314,345 bytes)
+- Processed 16 kHz WAV files (`data/processed/voicebank_demand_16k/`): **2.14 GB** (2,297,454,160 bytes across 24,792 files)
+
+### Verified Speaker Counts & Utterance Distribution
+
+- **Training Pool (28 speakers, 11,572 utterances)**:
+  - All 28 speakers present: `p226`, `p227`, `p228`, `p230`, `p231`, `p233`, `p236`, `p239`, `p243`, `p244`, `p250`, `p254`, `p256`, `p258`, `p259`, `p267`, `p268`, `p269`, `p270`, `p273`, `p274`, `p276`, `p277`, `p278`, `p279`, `p282`, `p286`, `p287`
+  - Utterances per speaker: min 313 (`p282`), max 499 (`p239`), mean 413.3
+  - **Train partition (26 speakers)**: 10,700 utterances (13 female, 13 male)
+  - **Validation partition (2 speakers)**: 872 utterances (`p286`: 455 female utterances, `p287`: 417 male utterances)
+- **Test Set (2 speakers, 824 utterances)**:
+  - Empirically verified test speaker IDs: `p232` (male, 393 utterances), `p257` (female, 431 utterances)
+  - Zero speaker overlap between train and test sets
+
+### Audio Duration & Signal Verification
+
+| Metric | Clean Trainset (28 spk) | Clean Testset (2 spk) |
+|--------|--------------------------|-----------------------|
+| Utterances | 11,572 | 824 |
+| Total Audio Duration | 9.39 hours (33,799 s) | 0.58 hours (2,071 s) |
+| Min Duration | 1.09 s | 1.24 s |
+| Mean Duration | 2.92 s | 2.51 s |
+| Max Duration | 15.11 s | 9.77 s |
+| Native Sample Rate | 48,000 Hz | 48,000 Hz |
+| Resampled Sample Rate | 16,000 Hz | 16,000 Hz |
+| Pairing Accuracy | 11,572 / 11,572 (100%) | 824 / 824 (100%) |
+| Resampling Max Duration Diff | < 0.00005 s (< 1 sample @ 16 kHz) | < 0.00005 s (< 1 sample @ 16 kHz) |
+| Clipping Check (1,000 sampled files) | Max peak: 0.9822 (0 clipped files >= 1.0) | Max peak: 0.8455 (0 clipped files >= 1.0) |
 
 ## STFT Parameters
 
