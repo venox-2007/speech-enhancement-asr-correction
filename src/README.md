@@ -23,9 +23,11 @@ Implemented:
 - `preprocessing/validate_dataset.py` — dataset validation script (raw + processed; checks file counts, pairing, sample rates, speaker IDs, clipping)
 - `enhancement/dataset.py` — VoiceBank+DEMAND PyTorch dataset with speaker-based splits
 - `enhancement/viz.py` — spectrogram plotting and dataset statistics
+- `enhancement/unet.py` — 2D U-Net for magnitude spectrogram enhancement with dynamic STFT padding
+- `enhancement/model.py` — end-to-end waveform speech enhancement wrapper (`WaveformUNetEnhancer`)
 - `utils/` — device selection, logging setup
 
 Planned:
 
-- `enhancement/` — CNN and U-Net speech enhancement models
 - `evaluation/` — speech-quality metrics (PESQ, STOI, SI-SDR)
+- `training/` — speech enhancement model training loop
