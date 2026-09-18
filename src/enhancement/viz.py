@@ -63,6 +63,13 @@ def plot_spectrogram(
     config = config or STFTConfig()
 
     data = magnitude.detach().cpu()
+    if data.dim() == 3 and data.shape[0] == 1:
+        data = data.squeeze(0)
+    elif data.dim() != 2:
+        raise ValueError(
+            f"Expected 2D magnitude spectrogram (F, N) or (1, F, N), got shape {magnitude.shape}"
+        )
+
     if db:
         data = mag_to_db(data)
     data = data.numpy()
@@ -102,11 +109,11 @@ def plot_comparison(
     Parameters
     ----------
     clean : Tensor
-        1-D ``(T,)`` clean waveform.
+        1-D ``(T,)`` or ``(1, T)`` clean waveform.
     noisy : Tensor
-        1-D ``(T,)`` noisy waveform.
+        1-D ``(T,)`` or ``(1, T)`` noisy waveform.
     enhanced : Tensor or None
-        1-D ``(T,)`` enhanced waveform (optional).
+        1-D ``(T,)`` or ``(1, T)`` enhanced waveform (optional).
     config : STFTConfig or None
         STFT parameters.
     sample_rate : int
@@ -122,6 +129,15 @@ def plot_comparison(
     import matplotlib.pyplot as plt
 
     config = config or STFTConfig()
+
+    # Squeeze if (1, T)
+    if clean.dim() == 2 and clean.shape[0] == 1:
+        clean = clean.squeeze(0)
+    if noisy.dim() == 2 and noisy.shape[0] == 1:
+        noisy = noisy.squeeze(0)
+    if enhanced is not None and enhanced.dim() == 2 and enhanced.shape[0] == 1:
+        enhanced = enhanced.squeeze(0)
+
     n_cols = 3 if enhanced is not None else 2
     fig, axes = plt.subplots(1, n_cols, figsize=(5 * n_cols, 4))
 

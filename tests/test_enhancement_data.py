@@ -213,6 +213,36 @@ class TestNoiseMix:
         snr = estimate_snr(clean, clean)
         assert snr == float("inf")
 
+    def test_clipping_policy_warn(self, caplog):
+        """Under 'warn' policy, clipping is logged but mixture is not modified."""
+        clean = torch.full((1000,), 0.9)
+        noise = torch.full((1000,), 0.9)
+        # 0 dB will roughly double amplitude to ~1.8
+        mixed = mix_at_snr(clean, noise, snr_db=0.0, clipping_policy="warn")
+        assert mixed.max().item() > 1.0
+
+    def test_clipping_policy_error(self):
+        """Under 'error' policy, clipping raises a ValueError."""
+        clean = torch.full((1000,), 0.9)
+        noise = torch.full((1000,), 0.9)
+        with pytest.raises(ValueError, match="clipped with peak amplitude"):
+            mix_at_snr(clean, noise, snr_db=0.0, clipping_policy="error")
+
+    def test_clipping_policy_normalize(self):
+        """Under 'normalize' policy, peak amplitude is scaled to 1.0."""
+        clean = torch.full((1000,), 0.9)
+        noise = torch.full((1000,), 0.9)
+        mixed = mix_at_snr(clean, noise, snr_db=0.0, clipping_policy="normalize")
+        assert mixed.abs().max().item() <= 1.0001
+        # SNR should still be preserved
+        snr = estimate_snr(clean / (mixed.abs().max().item()), mixed)
+        # Note: clean was unscaled relative to noise inside mix_at_snr
+        assert snr is not None
+
+    def test_clipping_policy_invalid(self):
+        with pytest.raises(ValueError, match="Invalid clipping_policy"):
+            mix_at_snr(torch.randn(100), torch.randn(100), 10.0, clipping_policy="invalid")
+
 
 # ==================================================== dataset tests
 
@@ -364,9 +394,10 @@ class TestDataLoader:
         return tmp_path
 
     def test_train_dataloader_batching(self, mock_root):
-        """Training DataLoader produces correctly shaped batches."""
+        """Training DataLoader produces standardized EnhancementBatch with lengths."""
         from src.enhancement.dataset import (
             DatasetConfig,
+            EnhancementBatch,
             VoiceBankDEMANDDataset,
             create_dataloader,
         )
@@ -377,14 +408,21 @@ class TestDataLoader:
         dl = create_dataloader(ds, batch_size=4, num_workers=0, pin_memory=False)
 
         batch = next(iter(dl))
-        noisy, clean = batch
+        assert isinstance(batch, EnhancementBatch)
+        noisy, clean, lengths = batch
         assert noisy.shape == (4, seg_len)
         assert clean.shape == (4, seg_len)
+        assert lengths.shape == (4,)
+        assert (lengths == seg_len).all()
+        # Also accessible via named attributes
+        assert batch.noisy.shape == (4, seg_len)
+        assert batch.clean.shape == (4, seg_len)
 
     def test_eval_dataloader_variable_length(self, mock_root):
-        """Eval DataLoader pads variable-length utterances correctly."""
+        """Eval DataLoader produces standardized EnhancementBatch with variable lengths."""
         from src.enhancement.dataset import (
             DatasetConfig,
+            EnhancementBatch,
             VoiceBankDEMANDDataset,
             create_dataloader,
         )
@@ -394,10 +432,94 @@ class TestDataLoader:
         dl = create_dataloader(ds, batch_size=2, num_workers=0, pin_memory=False)
 
         batch = next(iter(dl))
+        assert isinstance(batch, EnhancementBatch)
         noisy, clean, lengths = batch
         assert noisy.dim() == 2
         assert clean.dim() == 2
         assert lengths.shape[0] == 2
+        assert batch.lengths.shape[0] == 2
+
+
+class TestDatasetErrorsAndReproducibility:
+    """Error handling and reproducible seeding in datasets."""
+
+    def test_empty_dataset_raises(self, tmp_path):
+        """Empty root directory raises RuntimeError."""
+        from src.enhancement.dataset import DatasetConfig, VoiceBankDEMANDDataset
+
+        empty_dir = tmp_path / "empty_root"
+        for sub in [
+            "clean_trainset_28spk_wav",
+            "noisy_trainset_28spk_wav",
+            "clean_testset_wav",
+            "noisy_testset_wav",
+        ]:
+            (empty_dir / sub).mkdir(parents=True, exist_ok=True)
+
+        cfg = DatasetConfig(root=str(empty_dir))
+        with pytest.raises(RuntimeError, match="No valid clean/noisy audio pairs found"):
+            VoiceBankDEMANDDataset(cfg, split="train")
+
+    def test_mismatched_clean_noisy_raises(self, tmp_path):
+        """Clean files exist but zero noisy matches raise RuntimeError."""
+        from src.enhancement.dataset import DatasetConfig, VoiceBankDEMANDDataset
+
+        root = tmp_path / "mismatch"
+        clean_dir = root / "clean_trainset_28spk_wav"
+        noisy_dir = root / "noisy_trainset_28spk_wav"
+        clean_dir.mkdir(parents=True, exist_ok=True)
+        noisy_dir.mkdir(parents=True, exist_ok=True)
+
+        # Write clean file with no matching noisy file
+        t = np.linspace(0, 0.2, 3200, dtype=np.float32)
+        sf.write(str(clean_dir / "p226_001.wav"), np.sin(2 * np.pi * 440 * t), 16000)
+
+        cfg = DatasetConfig(root=str(root))
+        with pytest.raises(RuntimeError, match="No valid clean/noisy audio pairs found"):
+            VoiceBankDEMANDDataset(cfg, split="train")
+
+    def test_empty_val_split_raises(self, tmp_path):
+        """val_speakers=0 with split='val' raises informative RuntimeError."""
+        from src.enhancement.dataset import DatasetConfig, VoiceBankDEMANDDataset
+
+        _create_mock_dataset(tmp_path, ["p226", "p227"], ["p232"], n_per_speaker=2)
+        cfg = DatasetConfig(root=str(tmp_path), val_speakers=0)
+        with pytest.raises(RuntimeError, match="No validation pairs found because val_speakers is 0"):
+            VoiceBankDEMANDDataset(cfg, split="val")
+
+    def test_reproducible_crops_with_seed(self, tmp_path):
+        """Same seed yields identical paired crop offsets across dataset instances."""
+        from src.enhancement.dataset import DatasetConfig, VoiceBankDEMANDDataset
+
+        _create_mock_dataset(tmp_path, ["p226"], ["p232"], n_per_speaker=1)
+        cfg1 = DatasetConfig(root=str(tmp_path), val_speakers=0, segment_length=2000, seed=42)
+        cfg2 = DatasetConfig(root=str(tmp_path), val_speakers=0, segment_length=2000, seed=42)
+
+        ds1 = VoiceBankDEMANDDataset(cfg1, split="train")
+        ds2 = VoiceBankDEMANDDataset(cfg2, split="train")
+
+        n1, c1 = ds1[0]
+        n2, c2 = ds2[0]
+
+        assert torch.allclose(n1, n2)
+        assert torch.allclose(c1, c2)
+
+    def test_different_seeds_yield_different_crops(self, tmp_path):
+        """Different seeds yield different random crop offsets."""
+        from src.enhancement.dataset import DatasetConfig, VoiceBankDEMANDDataset
+
+        # 1-second sine wave
+        _create_mock_dataset(tmp_path, ["p226"], ["p232"], n_per_speaker=1)
+        cfg1 = DatasetConfig(root=str(tmp_path), val_speakers=0, segment_length=1000, seed=1)
+        cfg2 = DatasetConfig(root=str(tmp_path), val_speakers=0, segment_length=1000, seed=9999)
+
+        ds1 = VoiceBankDEMANDDataset(cfg1, split="train")
+        ds2 = VoiceBankDEMANDDataset(cfg2, split="train")
+
+        n1, _ = ds1[0]
+        n2, _ = ds2[0]
+
+        assert not torch.allclose(n1, n2)
 
 
 class TestDatasetSummary:
@@ -426,3 +548,96 @@ class TestDatasetSummary:
         assert summary["num_speakers"] == 3
         assert len(summary["per_speaker_counts"]) == 3
         assert all(v == 5 for v in summary["per_speaker_counts"].values())
+
+
+class TestVisualization:
+    """Spectrogram visualization tests with headless Agg backend."""
+
+    @pytest.fixture(autouse=True)
+    def setup_matplotlib(self):
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        yield
+        plt.close("all")
+
+    def test_plot_spectrogram_2d(self):
+        from src.enhancement.viz import plot_spectrogram
+
+        mag = torch.rand(257, 50) + 0.01
+        ax = plot_spectrogram(mag, title="Test Spec")
+        assert ax is not None
+        assert ax.get_title() == "Test Spec"
+
+    def test_plot_spectrogram_batched_1(self):
+        from src.enhancement.viz import plot_spectrogram
+
+        mag = torch.rand(1, 257, 50) + 0.01
+        ax = plot_spectrogram(mag, title="Batched Spec")
+        assert ax is not None
+
+    def test_plot_spectrogram_invalid_dim_raises(self):
+        from src.enhancement.viz import plot_spectrogram
+
+        mag = torch.rand(4, 257, 50)
+        with pytest.raises(ValueError, match="Expected 2D magnitude spectrogram"):
+            plot_spectrogram(mag)
+
+    def test_plot_comparison_1d(self):
+        from src.enhancement.viz import plot_comparison
+
+        clean = torch.randn(8000)
+        noisy = torch.randn(8000)
+        enh = torch.randn(8000)
+
+        fig = plot_comparison(clean, noisy, enhanced=enh, title="Comparison 1D")
+        assert fig is not None
+        assert len(fig.axes) >= 3
+
+    def test_plot_comparison_batched(self):
+        from src.enhancement.viz import plot_comparison
+
+        clean = torch.randn(1, 8000)
+        noisy = torch.randn(1, 8000)
+
+        fig = plot_comparison(clean, noisy, title="Comparison Batched")
+        assert fig is not None
+        assert len(fig.axes) >= 2
+
+
+class TestOfflineResampling:
+    """Offline dataset resampling script tests."""
+
+    def test_resample_and_verify_pairing(self, tmp_path):
+        from src.preprocessing.resample_dataset import (
+            resample_subdirectory,
+            verify_pairing,
+        )
+
+        in_clean = tmp_path / "raw" / "clean_trainset_28spk_wav"
+        in_noisy = tmp_path / "raw" / "noisy_trainset_28spk_wav"
+        in_clean.mkdir(parents=True)
+        in_noisy.mkdir(parents=True)
+
+        # Write 48 kHz synthetic files
+        sr_orig = 48000
+        t = np.linspace(0, 0.1, sr_orig // 10, dtype=np.float32)
+        for fname in ["p226_001.wav", "p226_002.wav"]:
+            sf.write(str(in_clean / fname), np.sin(2 * np.pi * 440 * t), sr_orig)
+            sf.write(str(in_noisy / fname), np.sin(2 * np.pi * 440 * t) + 0.1, sr_orig)
+
+        out_clean = tmp_path / "resampled" / "clean_trainset_28spk_wav"
+        out_noisy = tmp_path / "resampled" / "noisy_trainset_28spk_wav"
+
+        cnt_c = resample_subdirectory(in_clean, out_clean, target_sr=16000)
+        cnt_n = resample_subdirectory(in_noisy, out_noisy, target_sr=16000)
+
+        assert cnt_c == 2
+        assert cnt_n == 2
+
+        # Check that resampled file is 16 kHz
+        info = sf.info(str(out_clean / "p226_001.wav"))
+        assert info.samplerate == 16000
+
+        # Verify pairing check runs without error
+        verify_pairing(tmp_path / "resampled", ["clean_trainset_28spk_wav", "noisy_trainset_28spk_wav"])

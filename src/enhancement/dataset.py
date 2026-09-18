@@ -21,7 +21,7 @@ import logging
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any, Iterable, NamedTuple, Sequence
 
 import numpy as np
 import torch
@@ -37,6 +37,28 @@ _SPEAKER_RE = re.compile(r"^(p\d+)_")
 
 SAMPLE_RATE = 16_000
 DEFAULT_SEGMENT_LENGTH = 16384  # ~1.02 s at 16 kHz
+
+# Default held-out validation speakers (1 female: p286, 1 male: p287)
+DEFAULT_VAL_SPEAKERS = ["p286", "p287"]
+
+
+class EnhancementBatch(NamedTuple):
+    """Standardized batch output for speech enhancement DataLoaders.
+
+    Attributes
+    ----------
+    noisy : Tensor
+        Batch of noisy speech waveforms ``(B, T)``.
+    clean : Tensor
+        Batch of clean speech waveforms ``(B, T)``.
+    lengths : Tensor
+        1-D int64 tensor ``(B,)`` with valid audio lengths for each utterance
+        (equal to ``T`` if fixed segment length or after zero-padding).
+    """
+
+    noisy: torch.Tensor
+    clean: torch.Tensor
+    lengths: torch.Tensor
 
 
 @dataclass(frozen=True)
@@ -62,11 +84,10 @@ class DatasetConfig:
         returned (suitable for evaluation).
     val_speakers : int or list[str]
         Number of training speakers to hold out for validation (int), or
-        an explicit list of speaker IDs.  Default: 2 (last two in sorted
-        order).
+        an explicit list of speaker IDs (e.g. ``["p286", "p287"]``).
+        Default: ``["p286", "p287"]`` (1 female, 1 male).
     seed : int
-        Seed is currently unused but reserved for future stochastic
-        augmentation.
+        Seed for reproducible random crop offsets and data shuffling.
     """
 
     root: str = ""
@@ -76,7 +97,9 @@ class DatasetConfig:
     noisy_test_dir: str = "noisy_testset_wav"
     sample_rate: int = SAMPLE_RATE
     segment_length: int | None = DEFAULT_SEGMENT_LENGTH
-    val_speakers: int | list[str] = 2
+    val_speakers: int | list[str] = field(
+        default_factory=lambda: list(DEFAULT_VAL_SPEAKERS)
+    )
     seed: int = 42
 
 
@@ -84,6 +107,14 @@ def _extract_speaker(filename: str) -> str | None:
     """Extract the speaker ID from a VoiceBank filename."""
     m = _SPEAKER_RE.match(filename)
     return m.group(1) if m else None
+
+
+def _speaker_sort_key(spk: str) -> tuple[int, int | str]:
+    """Sort speakers by numeric ID if formatted as p<digits>, else fallback."""
+    m = re.match(r"^p(\d+)$", spk)
+    if m:
+        return (0, int(m.group(1)))
+    return (1, spk)
 
 
 def _discover_pairs(
@@ -118,19 +149,20 @@ def _split_speakers(
     train_speakers, val_speakers_list
     """
     all_speakers = sorted(
-        {_extract_speaker(p[0].name) for p in pairs} - {None}
+        {_extract_speaker(p[0].name) for p in pairs} - {None},
+        key=_speaker_sort_key,
     )
 
-    if isinstance(val_speakers, list):
+    if isinstance(val_speakers, (list, tuple, set)):
         val_set = set(val_speakers)
         unknown = val_set - set(all_speakers)
         if unknown:
-            raise ValueError(f"Unknown validation speaker(s): {unknown}")
+            raise ValueError(f"Unknown validation speaker(s): {sorted(unknown)}")
         train_spk = [s for s in all_speakers if s not in val_set]
         val_spk = [s for s in all_speakers if s in val_set]
     else:
-        n = val_speakers
-        if n < 0 or n >= len(all_speakers):
+        n = int(val_speakers)
+        if n < 0 or n > len(all_speakers):
             raise ValueError(
                 f"val_speakers={n} is out of range for {len(all_speakers)} speakers"
             )
@@ -186,14 +218,24 @@ class VoiceBankDEMANDDataset(Dataset):
                 self.root / config.clean_test_dir,
                 self.root / config.noisy_test_dir,
             )
+            if not self._pairs:
+                raise RuntimeError(
+                    f"No valid clean/noisy audio pairs found in '{self.root}' for split '{split}'."
+                )
             self._speakers = sorted(
-                {_extract_speaker(p[0].name) for p in self._pairs} - {None}
+                {_extract_speaker(p[0].name) for p in self._pairs} - {None},
+                key=_speaker_sort_key,
             )
         else:
             all_train_pairs = _discover_pairs(
                 self.root / config.clean_train_dir,
                 self.root / config.noisy_train_dir,
             )
+            if not all_train_pairs:
+                raise RuntimeError(
+                    f"No valid clean/noisy audio pairs found in '{self.root}' for split '{split}'."
+                )
+
             train_spk, val_spk = _split_speakers(
                 all_train_pairs, config.val_speakers
             )
@@ -207,6 +249,19 @@ class VoiceBankDEMANDDataset(Dataset):
                 self._pairs = _filter_by_speakers(
                     all_train_pairs, set(val_spk)
                 )
+
+        if not self._pairs:
+            if split == "val" and (
+                (isinstance(config.val_speakers, int) and config.val_speakers == 0)
+                or (isinstance(config.val_speakers, (list, tuple, set)) and len(config.val_speakers) == 0)
+            ):
+                raise RuntimeError(
+                    "No validation pairs found because val_speakers is 0 or empty. "
+                    "Set val_speakers > 0 or pass explicit speaker IDs."
+                )
+            raise RuntimeError(
+                f"No valid clean/noisy audio pairs found in '{self.root}' for split '{split}'."
+            )
 
         logger.info(
             "%s split: %d utterances from %d speakers",
@@ -228,11 +283,29 @@ class VoiceBankDEMANDDataset(Dataset):
     def __len__(self) -> int:
         return len(self._pairs)
 
+    def _get_generator(self) -> torch.Generator:
+        """Worker-safe seeded generator for reproducible crops."""
+        worker_info = torch.utils.data.get_worker_info()
+        if worker_info is not None:
+            wid = worker_info.id
+            if not hasattr(self, "_worker_generators"):
+                self._worker_generators = {}
+            if wid not in self._worker_generators:
+                g = torch.Generator()
+                g.manual_seed(self.config.seed + (wid + 1) * 1000)
+                self._worker_generators[wid] = g
+            return self._worker_generators[wid]
+
+        if not hasattr(self, "_generator") or self._generator is None:
+            self._generator = torch.Generator()
+            self._generator.manual_seed(self.config.seed)
+        return self._generator
+
     def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
         """Return ``(noisy, clean)`` float32 tensors.
 
-        During training (with ``segment_length`` set), a random crop is
-        applied.  During evaluation the full utterance is returned.
+        During training (with ``segment_length`` set), a reproducible random
+        crop is applied.  During evaluation the full utterance is returned.
         """
         clean_path, noisy_path = self._pairs[idx]
 
@@ -251,30 +324,48 @@ class VoiceBankDEMANDDataset(Dataset):
         # Apply segment cropping for training
         seg_len = self.config.segment_length
         if seg_len is not None and self.split == "train":
-            clean, noisy = paired_random_crop(clean, noisy, seg_len)
+            clean, noisy = paired_random_crop(
+                clean, noisy, seg_len, generator=self._get_generator()
+            )
 
         return noisy, clean
 
 
-def _collate_variable_length(
+def collate_enhancement_batch(
     batch: list[tuple[torch.Tensor, torch.Tensor]],
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-    """Collate variable-length utterances by zero-padding to the longest.
+) -> EnhancementBatch:
+    """Collate utterances into a standardized EnhancementBatch.
 
-    Returns ``(noisy_batch, clean_batch, lengths)`` where *lengths* stores
-    the original sample count of each utterance.
+    Pads variable-length utterances to the maximum length in the batch.
+    For fixed-length batches, stacks directly.
+
+    Returns
+    -------
+    EnhancementBatch
+        NamedTuple with ``(noisy, clean, lengths)``.
     """
     noisy_list, clean_list = zip(*batch)
-    lengths = torch.tensor([n.shape[0] for n in noisy_list])
+    lengths = torch.tensor([n.shape[0] for n in noisy_list], dtype=torch.long)
     max_len = lengths.max().item()
 
-    noisy_batch = torch.zeros(len(batch), max_len)
-    clean_batch = torch.zeros(len(batch), max_len)
-    for i, (n, c) in enumerate(zip(noisy_list, clean_list)):
-        noisy_batch[i, : n.shape[0]] = n
-        clean_batch[i, : c.shape[0]] = c
+    # If all items already have identical length (fixed segment training), stack directly
+    if all(n.shape[0] == max_len for n in noisy_list):
+        noisy_batch = torch.stack(noisy_list)
+        clean_batch = torch.stack(clean_list)
+    else:
+        noisy_batch = torch.zeros(len(batch), max_len, dtype=noisy_list[0].dtype)
+        clean_batch = torch.zeros(len(batch), max_len, dtype=clean_list[0].dtype)
+        for i, (n, c) in enumerate(zip(noisy_list, clean_list)):
+            noisy_batch[i, : n.shape[0]] = n
+            clean_batch[i, : c.shape[0]] = c
 
-    return noisy_batch, clean_batch, lengths
+    return EnhancementBatch(noisy=noisy_batch, clean=clean_batch, lengths=lengths)
+
+
+def seed_worker(worker_id: int) -> None:
+    """Seed worker process for DataLoader multiprocessing reproducibility."""
+    worker_seed = torch.initial_seed() % (2**32)
+    np.random.seed(worker_seed)
 
 
 def create_dataloader(
@@ -283,12 +374,9 @@ def create_dataloader(
     num_workers: int = 0,
     shuffle: bool | None = None,
     pin_memory: bool = True,
+    worker_init_fn: Any = seed_worker,
 ) -> DataLoader:
-    """Create a DataLoader with appropriate collation.
-
-    For training (fixed segment length), standard batching is used.
-    For evaluation (variable length), ``_collate_variable_length`` is
-    used so that utterances are padded to the longest in the batch.
+    """Create a DataLoader with standardized EnhancementBatch collation.
 
     Parameters
     ----------
@@ -303,14 +391,19 @@ def create_dataloader(
         otherwise.
     pin_memory : bool
         Pin memory for GPU transfer.
+    worker_init_fn : callable
+        Worker initialization function for reproducibility.
+
+    Returns
+    -------
+    DataLoader
+        Yields ``EnhancementBatch(noisy, clean, lengths)`` across all splits.
     """
     if shuffle is None:
         shuffle = dataset.split == "train"
 
-    is_variable = (
-        dataset.config.segment_length is None or dataset.split != "train"
-    )
-    collate_fn = _collate_variable_length if is_variable else None
+    generator = torch.Generator()
+    generator.manual_seed(dataset.config.seed)
 
     return DataLoader(
         dataset,
@@ -318,5 +411,7 @@ def create_dataloader(
         shuffle=shuffle,
         num_workers=num_workers,
         pin_memory=pin_memory,
-        collate_fn=collate_fn,
+        collate_fn=collate_enhancement_batch,
+        worker_init_fn=worker_init_fn,
+        generator=generator if shuffle else None,
     )

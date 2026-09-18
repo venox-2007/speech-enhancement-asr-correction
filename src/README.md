@@ -19,6 +19,7 @@ Implemented:
 - `preprocessing/stft.py` — STFT/iSTFT with configurable parameters
 - `preprocessing/segments.py` — fixed-length segment extraction for training
 - `preprocessing/noise_mix.py` — noise mixing at target SNR
+- `preprocessing/resample_dataset.py` — offline 16 kHz dataset resampling utility
 - `enhancement/dataset.py` — VoiceBank+DEMAND PyTorch dataset with speaker-based splits
 - `enhancement/viz.py` — spectrogram plotting and dataset statistics
 - `utils/` — device selection, logging setup

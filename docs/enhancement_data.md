@@ -49,11 +49,11 @@ The dataset ships pre-split into training (28 speakers) and test
 (2 speakers).  This milestone adds a **validation split** carved from
 the training speakers:
 
-| Split | Source | Default Speakers |
-|-------|--------|-----------------|
-| Train | `clean_trainset_28spk_wav` minus val speakers | First 26 of 28 |
-| Val   | `clean_trainset_28spk_wav`, held-out speakers | Last 2 of 28 |
-| Test  | `clean_testset_wav` | All (as provided) |
+| Split | Source | Speakers | Demographics |
+|-------|--------|----------|--------------|
+| Train | `clean_trainset_28spk_wav` minus val speakers | 26 speakers | 13 female, 13 male |
+| Val   | `clean_trainset_28spk_wav`, held-out speakers | `["p286", "p287"]` (default) | 1 female (p286), 1 male (p287) |
+| Test  | `clean_testset_wav` | `["p232", "p257"]` | 1 female (p257), 1 male (p232) |
 
 ### No Data Leakage
 
@@ -66,22 +66,36 @@ characteristics that do not generalise.
 ```python
 from src.enhancement.dataset import DatasetConfig
 
-# Default: hold out last 2 training speakers for validation
-cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=2)
+# Default: hold out ["p286", "p287"] (1 female, 1 male)
+cfg = DatasetConfig(root="data/voicebank_demand")
 
 # Explicit speaker list
-cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=["p256", "p257"])
+cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=["p286", "p287"])
+
+# Integer count: holds out the last N naturally sorted speakers
+cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=2)
 
 # No validation split (all 28 speakers for training)
 cfg = DatasetConfig(root="data/voicebank_demand", val_speakers=0)
 ```
 
-## Audio Preprocessing
+## Audio Preprocessing & Offline Resampling
 
-All audio is loaded at **16 kHz mono** using `soundfile` (same loader as
-the ASR pipeline).  The existing `load_audio()` from
-`src/preprocessing/audio_io.py` handles format detection, channel
-downmix, and polyphase resampling.
+All audio is processed at **16 kHz mono** using `soundfile`.
+The original Edinburgh DataShare release of VoiceBank+DEMAND is sampled
+at 48 kHz (~11,572 files in train).  Performing polyphase resampling on
+the fly in the DataLoader introduces severe CPU bottlenecks during training.
+
+An offline script is provided to resample the dataset once on disk:
+
+```bash
+python -m src.preprocessing.resample_dataset \
+    --input-dir data/voicebank_demand_raw \
+    --output-dir data/voicebank_demand_16k \
+    --target-sr 16000
+```
+
+This preserves the exact clean/noisy file pairing and subdirectory layout.
 
 ## STFT Parameters
 
@@ -138,19 +152,29 @@ segment = pad_or_crop(audio, 16384)
 The paired crop uses the **same random offset** for clean and noisy
 so that alignment is preserved.
 
-## Noise Mixing
+## Noise Mixing & Clipping Policy
 
-The `noise_mix` module can create noisy mixtures at a target SNR:
+The `noise_mix` module creates noisy mixtures at a target SNR:
 
 ```python
 from src.preprocessing.noise_mix import mix_at_snr, estimate_snr
 
-noisy = mix_at_snr(clean, noise, snr_db=10.0)
+# Default policy: "warn" logs a warning if peak > 1.0 without distorting the SNR
+noisy = mix_at_snr(clean, noise, snr_db=10.0, clipping_policy="warn")
 measured_snr = estimate_snr(clean, noisy)  # ≈ 10.0
 ```
 
-This is useful for data augmentation and controlled experiments (the
-VoiceBank+DEMAND dataset already provides pre-mixed noisy audio).
+### Clipping Policies
+
+At low SNR (e.g. 0 dB or negative SNR), additive noise can push amplitudes
+past `[-1.0, 1.0]`.  The `clipping_policy` parameter provides explicit control:
+
+| Policy | Behavior |
+|--------|----------|
+| `"warn"` (default) | Logs a warning with the peak amplitude; leaves mixture unscaled so the intended SNR is preserved. |
+| `"error"` | Raises a `ValueError` if peak amplitude exceeds 1.0. |
+| `"ignore"` | Leaves mixture unscaled silently. |
+| `"normalize"` | Scales the mixture by `1.0 / peak`; prevents clipping while preserving relative SNR, but reduces overall gain. |
 
 ## PyTorch Dataset and DataLoader
 
@@ -162,9 +186,10 @@ from src.enhancement.dataset import (
 )
 
 cfg = DatasetConfig(
-    root="data/voicebank_demand",
+    root="data/voicebank_demand_16k",
     segment_length=16384,
-    val_speakers=2,
+    val_speakers=["p286", "p287"],
+    seed=42,
 )
 
 train_ds = VoiceBankDEMANDDataset(cfg, split="train")
@@ -175,17 +200,32 @@ train_dl = create_dataloader(train_ds, batch_size=8)
 val_dl   = create_dataloader(val_ds, batch_size=1)
 ```
 
-### Training Mode
+### Standardized Batch Output: `EnhancementBatch`
 
-When `segment_length` is set and `split="train"`, each `__getitem__`
-call returns a random crop of that length (different each epoch).
+`create_dataloader` yields an `EnhancementBatch` NamedTuple consistently
+across **train**, **val**, and **test**:
 
-### Evaluation Mode
+```python
+for batch in train_dl:
+    noisy, clean, lengths = batch
+    # Or access via attributes:
+    # batch.noisy   -> (B, T)
+    # batch.clean   -> (B, T)
+    # batch.lengths -> (B,) int64 valid audio lengths
+```
 
-For `split="val"` or `split="test"`, the full utterance is returned.
-The `create_dataloader` function automatically uses a variable-length
-collation function that pads to the longest utterance in the batch and
-returns `(noisy_batch, clean_batch, lengths)`.
+- **Training**: segments are cropped reproducibly using `DatasetConfig.seed` (or worker-adjusted seeds).
+- **Validation/Test**: full utterances are zero-padded to the longest in the batch; `batch.lengths` records original utterance sample counts.
+
+## STFT Shape Constraint for Future CNN / U-Net
+
+At $16\text{ kHz}$ with standard STFT parameters (`n_fft=512, hop_length=256`):
+- A $16,384$-sample segment (~1.02 s) produces an STFT of shape $(257, 65)$ with PyTorch's default `center=True` reflection padding.
+- **Divisibility Challenge**: A standard 4- or 5-layer 2D U-Net downsamples by powers of 2 ($2^4=16$ or $2^5=32$). Neither $257$ frequency bins nor $65$ time frames is evenly divisible by 16 or 32, leading to dimension mismatches across skip connections upon upsampling.
+- **Decision Deferred**: We will deliberately decide the model/input convention before implementation rather than arbitrarily dropping frequency bins or frames now. Potential options include:
+  1. *2D Reflection Padding / Cropping*: Handle boundary padding inside the network architecture to ensure symmetric skip connections.
+  2. *Spectral Trimming*: Drop the 8 kHz Nyquist bin ($257 \to 256$) and adjust segment length or hop to yield 64 frames ($256 \times 64$).
+  3. *Time-Domain Modeling*: Implement a 1D time-domain Wave-U-Net directly on the $(B, 1, 16384)$ waveforms, bypassing 2D STFT dimensions entirely.
 
 ## Visualization
 
@@ -195,7 +235,7 @@ from src.enhancement.viz import plot_spectrogram, plot_comparison, dataset_summa
 # Single spectrogram
 ax = plot_spectrogram(magnitude, cfg)
 
-# Side-by-side clean / noisy / enhanced
+# Side-by-side clean / noisy / enhanced (supports 1-D (T,) or batched (1, T))
 fig = plot_comparison(clean_wav, noisy_wav, enhanced_wav, cfg)
 fig.savefig("comparison.png")
 
@@ -210,14 +250,15 @@ print(summary)
 |--------|-------------|
 | `src/preprocessing/stft.py` | `STFTConfig`, `stft`, `istft`, `mag_to_db`, `db_to_mag` |
 | `src/preprocessing/segments.py` | `pad_or_crop`, `random_crop`, `paired_random_crop` |
-| `src/preprocessing/noise_mix.py` | `mix_at_snr`, `estimate_snr` |
-| `src/enhancement/dataset.py` | `VoiceBankDEMANDDataset`, `DatasetConfig`, `create_dataloader` |
+| `src/preprocessing/noise_mix.py` | `mix_at_snr`, `estimate_snr`, clipping policies |
+| `src/preprocessing/resample_dataset.py` | Offline 16 kHz dataset resampling utility |
+| `src/enhancement/dataset.py` | `VoiceBankDEMANDDataset`, `DatasetConfig`, `create_dataloader`, `EnhancementBatch` |
 | `src/enhancement/viz.py` | `plot_spectrogram`, `plot_comparison`, `dataset_summary` |
-| `tests/test_enhancement_data.py` | All tests (synthetic audio, no real dataset required) |
+| `tests/test_enhancement_data.py` | Comprehensive tests (synthetic audio, no real dataset required) |
 
 ## What This Does NOT Include
 
 - No model training (CNN or U-Net)
-- No speech quality metrics (PESQ, STOI, SI-SDR) — added later
+- No speech quality metrics (PESQ, STOI, SI-SDR) — added in future milestone
 - No experimental results
 - No modifications to the ASR or correction pipeline
