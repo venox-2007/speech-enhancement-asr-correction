@@ -90,9 +90,17 @@ An offline script is provided to resample the dataset once on disk:
 
 ```bash
 python -m src.preprocessing.resample_dataset \
-    --input-dir data/voicebank_demand_raw \
-    --output-dir data/voicebank_demand_16k \
+    --input-dir data/raw/voicebank_demand \
+    --output-dir data/processed/voicebank_demand_16k \
     --target-sr 16000
+```
+
+After resampling, run the validation script to check file counts, pairing, sample rates, speaker IDs, and clipping:
+
+```bash
+python -m src.preprocessing.validate_dataset \
+    --raw-dir data/raw/voicebank_demand \
+    --processed-dir data/processed/voicebank_demand_16k
 ```
 
 This preserves the exact clean/noisy file pairing and subdirectory layout.

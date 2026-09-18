@@ -15,8 +15,8 @@ Expected directory structure is preserved::
 Usage::
 
     python -m src.preprocessing.resample_dataset \
-        --input-dir path/to/raw/voicebank_demand \
-        --output-dir data/voicebank_demand_16k \
+        --input-dir data/raw/voicebank_demand \
+        --output-dir data/processed/voicebank_demand_16k \
         --target-sr 16000
 """
 

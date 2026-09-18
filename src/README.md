@@ -20,6 +20,7 @@ Implemented:
 - `preprocessing/segments.py` — fixed-length segment extraction for training
 - `preprocessing/noise_mix.py` — noise mixing at target SNR
 - `preprocessing/resample_dataset.py` — offline 16 kHz dataset resampling utility
+- `preprocessing/validate_dataset.py` — dataset validation script (raw + processed; checks file counts, pairing, sample rates, speaker IDs, clipping)
 - `enhancement/dataset.py` — VoiceBank+DEMAND PyTorch dataset with speaker-based splits
 - `enhancement/viz.py` — spectrogram plotting and dataset statistics
 - `utils/` — device selection, logging setup
