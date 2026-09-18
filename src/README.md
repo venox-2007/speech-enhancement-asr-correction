@@ -16,10 +16,14 @@ Implemented:
 - `correction/pipeline.py` — sentence-level correction pipeline (`CorrectionPipeline`)
 - `correction/evaluate_corrections.py` — CLI demo with hand-crafted transcript pairs
 - `evaluation/correction_eval.py` — correction evaluation with overcorrection tracking
+- `preprocessing/stft.py` — STFT/iSTFT with configurable parameters
+- `preprocessing/segments.py` — fixed-length segment extraction for training
+- `preprocessing/noise_mix.py` — noise mixing at target SNR
+- `enhancement/dataset.py` — VoiceBank+DEMAND PyTorch dataset with speaker-based splits
+- `enhancement/viz.py` — spectrogram plotting and dataset statistics
 - `utils/` — device selection, logging setup
 
 Planned:
 
-- `preprocessing/` — noise mixing, STFT/iSTFT
 - `enhancement/` — CNN and U-Net speech enhancement models
 - `evaluation/` — speech-quality metrics (PESQ, STOI, SI-SDR)

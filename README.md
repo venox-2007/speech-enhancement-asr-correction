@@ -76,7 +76,8 @@ See [docs/asr_baseline.md](docs/asr_baseline.md) for details.
 - [x] Phonetic candidate generation (`src/correction`, see [docs/phonetic_candidates.md](docs/phonetic_candidates.md))
 - [x] Context-aware candidate scoring (`src/correction/context_scorer.py`, see [docs/context_scoring.md](docs/context_scoring.md))
 - [x] Correction pipeline and evaluation (WER before/after, overcorrection) (see [docs/correction_pipeline.md](docs/correction_pipeline.md))
-- [ ] CNN / U-Net speech enhancement
+- [x] Speech enhancement data pipeline (see [docs/enhancement_data.md](docs/enhancement_data.md))
+- [ ] CNN / U-Net speech enhancement models
 - [ ] End-to-end experiments
 - [ ] Streamlit UI
 

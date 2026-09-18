@@ -14,3 +14,6 @@ rapidfuzz>=3.0
 
 # Milestone 3: context-aware candidate scoring (local GPT-2)
 transformers>=4.40
+
+# Speech enhancement data pipeline
+matplotlib>=3.7
