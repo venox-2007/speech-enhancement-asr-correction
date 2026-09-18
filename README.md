@@ -75,7 +75,7 @@ See [docs/asr_baseline.md](docs/asr_baseline.md) for details.
 - [x] Milestone 1: Whisper ASR baseline + WER (`src/asr`, `src/evaluation/wer.py`)
 - [x] Phonetic candidate generation (`src/correction`, see [docs/phonetic_candidates.md](docs/phonetic_candidates.md))
 - [x] Context-aware candidate scoring (`src/correction/context_scorer.py`, see [docs/context_scoring.md](docs/context_scoring.md))
-- [ ] Correction pipeline and evaluation (WER before/after, overcorrection)
+- [x] Correction pipeline and evaluation (WER before/after, overcorrection) (see [docs/correction_pipeline.md](docs/correction_pipeline.md))
 - [ ] CNN / U-Net speech enhancement
 - [ ] End-to-end experiments
 - [ ] Streamlit UI
