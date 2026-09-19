@@ -268,16 +268,20 @@ class PipelineRunner:
         # 3. Whisper ASR Transcription
         asr = self.get_asr()
 
-        # Raw audio transcription
+        # Raw audio transcription (convert tensor to 1D float32 numpy array for WhisperASR)
+        raw_audio_np = audio_tensor.detach().cpu().squeeze().numpy().astype(np.float32)
         t0 = time.perf_counter()
-        raw_transcript = asr.transcribe(audio_tensor)
+        raw_res = asr.transcribe(raw_audio_np)
+        raw_transcript = raw_res.text.strip() if hasattr(raw_res, "text") else str(raw_res).strip()
         timing.asr_raw_s = time.perf_counter() - t0
 
         # Enhanced audio transcription
         enhanced_transcript: str | None = None
         if enhanced_audio is not None:
+            enh_audio_np = enhanced_audio.detach().cpu().squeeze().numpy().astype(np.float32)
             t0 = time.perf_counter()
-            enhanced_transcript = asr.transcribe(enhanced_audio)
+            enh_res = asr.transcribe(enh_audio_np)
+            enhanced_transcript = enh_res.text.strip() if hasattr(enh_res, "text") else str(enh_res).strip()
             timing.asr_enhanced_s = time.perf_counter() - t0
 
         # 4. Context-Aware Post-ASR Correction

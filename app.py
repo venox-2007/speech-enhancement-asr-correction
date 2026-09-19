@@ -9,6 +9,7 @@ Provides:
 from __future__ import annotations
 
 import io
+import logging
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +18,12 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import torch
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 from src.demo.pipeline_runner import (
     PipelineResult,

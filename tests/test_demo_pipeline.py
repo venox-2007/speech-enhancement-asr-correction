@@ -133,3 +133,48 @@ def test_pipeline_runner_mocked_execution() -> None:
     assert res.timing.total_s > 0
     assert res.timing.asr_raw_s > 0
     assert res.timing.correction_raw_s > 0
+
+
+def test_pipeline_runner_passes_numpy_to_whisper_and_extracts_transcription_result() -> None:
+    """Regression test: WhisperASR must receive a numpy array, not torch.Tensor, and return .text."""
+    from src.asr.whisper_asr import TranscriptionResult
+
+    runner = PipelineRunner(checkpoint_path=None, device="cpu")
+
+    captured_inputs = []
+
+    def fake_transcribe(audio: np.ndarray) -> TranscriptionResult:
+        # Enforce that audio is np.ndarray and not torch.Tensor
+        assert isinstance(audio, np.ndarray), f"Expected np.ndarray, got {type(audio)}"
+        assert audio.ndim == 1
+        assert audio.dtype == np.float32
+        captured_inputs.append(audio)
+        return TranscriptionResult(
+            text="hello from whisper transcription result",
+            language="en",
+            model_name="base.en",
+            device="cpu",
+            audio_duration_s=1.0,
+            processing_time_s=0.1,
+            segments=[],
+        )
+
+    mock_asr = MagicMock()
+    mock_asr.transcribe.side_effect = fake_transcribe
+    runner._asr = mock_asr
+
+    wav_bytes = _create_synthetic_wav_bytes(duration_s=1.0, sr=16_000)
+    res = runner.process(wav_bytes, run_enhancement=False, run_correction=False)
+
+    assert len(captured_inputs) == 1
+    assert isinstance(captured_inputs[0], np.ndarray)
+    assert res.raw_transcript == "hello from whisper transcription result"
+
+
+def test_app_module_defines_logger() -> None:
+    """Regression test: app.py must define module logger and not raise NameError on logging."""
+    import logging
+    import app
+
+    assert hasattr(app, "logger")
+    assert isinstance(app.logger, logging.Logger)
