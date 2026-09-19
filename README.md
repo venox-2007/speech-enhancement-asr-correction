@@ -116,7 +116,10 @@ streamlit run app.py
 ```
 
 ### Key UI Features:
-- **Audio Ingestion**: Upload custom audio files (`.wav`, `.mp3`, `.flac`, `.ogg`) or select from curated VoiceBank+DEMAND benchmark test utterances.
+- **Audio Ingestion & Live Recording**:
+  - Upload custom audio files (`.wav`, `.mp3`, `.flac`, `.ogg`).
+  - Select from curated VoiceBank+DEMAND benchmark test utterances.
+  - **Live Microphone Recording Mode**: Record directly in the browser via native `st.audio_input` with instant playback, enhancement, transcription, and correction.
 - **Audio Comparison**: Interactive audio players for original noisy speech and U-Net enhanced speech.
 - **Visual Signal Analytics**: Dynamic side-by-side waveform and spectrogram visualizers.
 - **Stage-by-Stage Latency Breakdown**: Tracks execution time across preprocessing, U-Net enhancement, Whisper ASR, and context-aware correction.
@@ -154,11 +157,12 @@ pip install -r requirements-dev.txt
 
 ## Running Tests
 
-The test suite contains **243 automated unit and integration tests** verifying audio preprocessing, dataset integrity, STFT/iSTFT math, U-Net architecture, Whisper ASR, phonetic candidate search, context scoring, statistical bootstrap tests, and demo services:
+The test suite contains **248 automated unit and integration tests** verifying audio preprocessing, dataset integrity, STFT/iSTFT math, U-Net architecture, Whisper ASR, phonetic candidate search, context scoring, statistical bootstrap tests, and demo services:
 
 ```bash
 pytest
 ```
+
 
 ---
 

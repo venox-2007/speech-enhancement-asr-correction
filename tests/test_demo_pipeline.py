@@ -178,3 +178,48 @@ def test_app_module_defines_logger() -> None:
 
     assert hasattr(app, "logger")
     assert isinstance(app.logger, logging.Logger)
+
+
+def test_load_audio_from_source_with_getvalue() -> None:
+    """Test loading audio from an object implementing getvalue() (e.g. st.audio_input UploadedFile)."""
+    wav_bytes = _create_synthetic_wav_bytes(duration_s=1.0, sr=16_000)
+
+    class MockStreamlitAudioFile:
+        def __init__(self, data: bytes) -> None:
+            self._data = data
+
+        def getvalue(self) -> bytes:
+            return self._data
+
+    mock_file = MockStreamlitAudioFile(wav_bytes)
+    tensor, sr = load_audio_from_source(mock_file, target_sample_rate=16_000)
+
+    assert isinstance(tensor, torch.Tensor)
+    assert sr == 16_000
+    assert len(tensor) == 16_000
+
+
+def test_load_audio_from_source_file_like_read() -> None:
+    """Test loading audio from a generic file-like object implementing read() and seek()."""
+    wav_bytes = _create_synthetic_wav_bytes(duration_s=0.5, sr=16_000)
+    buf = io.BytesIO(wav_bytes)
+
+    tensor, sr = load_audio_from_source(buf, target_sample_rate=16_000)
+    assert isinstance(tensor, torch.Tensor)
+    assert sr == 16_000
+    assert len(tensor) == 8_000
+
+
+def test_load_audio_from_source_multichannel() -> None:
+    """Test loading stereo 2-channel audio and verifying mono averaging."""
+    t = np.linspace(0, 1.0, 16_000, endpoint=False, dtype=np.float32)
+    stereo_data = np.stack([0.4 * np.sin(2 * np.pi * 440 * t), 0.6 * np.sin(2 * np.pi * 440 * t)], axis=1)
+
+    buf = io.BytesIO()
+    sf.write(buf, stereo_data, 16_000, format="WAV", subtype="PCM_16")
+    buf.seek(0)
+
+    tensor, sr = load_audio_from_source(buf, target_sample_rate=16_000)
+    assert tensor.ndim == 1
+    assert len(tensor) == 16_000
+    assert sr == 16_000

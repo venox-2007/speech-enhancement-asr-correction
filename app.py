@@ -1,9 +1,10 @@
 """Streamlit web application for speech enhancement and context-aware ASR correction.
 
 Provides:
-1. Interactive Demo: Live audio upload or sample selection, U-Net enhancement, Whisper ASR, and context correction.
-2. Benchmark & Results: The verified offline experimental benchmark across all 824 VoiceBank+DEMAND test utterances.
-3. Architecture & Methodology: System design, model configurations, and documented scientific limitations.
+1. Interactive Demo: Audio upload or benchmark sample selection, U-Net enhancement, Whisper ASR, and context correction.
+2. Live Record Mode: Record microphone audio directly in browser and run through the end-to-end pipeline.
+3. Benchmark & Results: The verified offline experimental benchmark across all 824 VoiceBank+DEMAND test utterances.
+4. Architecture & Methodology: System design, model configurations, and documented scientific limitations.
 """
 
 from __future__ import annotations
@@ -124,6 +125,139 @@ def plot_audio_comparison(
 
 
 # ---------------------------------------------------------------------------
+# Reusable Pipeline Result Display
+# ---------------------------------------------------------------------------
+def render_pipeline_results(
+    result: PipelineResult,
+    input_wav_bytes: bytes,
+    reference_text: str | None = None,
+    run_enhancement: bool = True,
+    run_correction: bool = True,
+    is_live_recording: bool = False,
+) -> None:
+    """Render structured audio players, transcripts, and timing diagnostics."""
+    st.success(f"Pipeline executed successfully in {result.timing.total_s:.2f}s!")
+
+    # Stage 1 & 2: Audio & Enhancement Visuals
+    st.markdown("---")
+    st.subheader("1. Audio Signals & Speech Enhancement")
+
+    col_raw, col_enh = st.columns(2)
+    with col_raw:
+        st.markdown("**Recorded/Input Audio**" if is_live_recording else "**Input (Noisy) Audio**")
+        st.audio(input_wav_bytes, format="audio/wav")
+
+    with col_enh:
+        if result.enhanced_audio is not None:
+            st.markdown("**U-Net Enhanced Audio**")
+            enh_wav_bytes = tensor_to_wav_bytes(result.enhanced_audio, result.sample_rate)
+            st.audio(enh_wav_bytes, format="audio/wav")
+            st.caption(f"Enhancement latency: {result.timing.enhancement_s:.3f}s")
+        else:
+            st.info("Enhancement stage was skipped or unavailable.")
+
+    fig = plot_audio_comparison(result.input_audio, result.enhanced_audio, result.sample_rate)
+    st.pyplot(fig)
+    plt.close(fig)
+
+    # Stage 3 & 4: Transcriptions & Corrections
+    st.markdown("---")
+    st.subheader("2. ASR Transcriptions & Post-ASR Corrections")
+
+    col_trans_raw, col_trans_enh = st.columns(2)
+
+    with col_trans_raw:
+        st.markdown("#### Input Audio Pipeline")
+        st.markdown(f"**Whisper Raw ASR** ({result.timing.asr_raw_s:.2f}s):")
+        st.code(result.raw_transcript or "(empty)", language="text")
+
+        if run_correction and result.corrected_raw_transcript:
+            st.markdown(f"**Context-Corrected Transcript** ({result.timing.correction_raw_s:.2f}s):")
+            st.code(result.corrected_raw_transcript, language="text")
+
+            if result.raw_corrections:
+                st.markdown("**Corrected Words:**")
+                for c in result.raw_corrections:
+                    dec = c.get("decision", {})
+                    st.write(
+                        f"- Position {c['position']}: `'{c['original_token']}'` $\\to$ `'{c['corrected_token']}'` "
+                        f"(confidence: {dec.get('confidence', 0):.2f}, reason: `{dec.get('reason')}`)"
+                    )
+            else:
+                st.caption("No words modified (retention criteria met for all tokens).")
+
+    with col_trans_enh:
+        if result.enhanced_transcript is not None:
+            st.markdown("#### U-Net Enhanced Pipeline")
+            st.markdown(f"**Whisper Enhanced ASR** ({result.timing.asr_enhanced_s:.2f}s):")
+            st.code(result.enhanced_transcript or "(empty)", language="text")
+
+            if run_correction and result.corrected_enhanced_transcript:
+                st.markdown(f"**Context-Corrected Transcript** ({result.timing.correction_enhanced_s:.2f}s):")
+                st.code(result.corrected_enhanced_transcript, language="text")
+
+                if result.enhanced_corrections:
+                    st.markdown("**Corrected Words:**")
+                    for c in result.enhanced_corrections:
+                        dec = c.get("decision", {})
+                        st.write(
+                            f"- Position {c['position']}: `'{c['original_token']}'` $\\to$ `'{c['corrected_token']}'` "
+                            f"(confidence: {dec.get('confidence', 0):.2f}, reason: `{dec.get('reason')}`)"
+                        )
+                else:
+                    st.caption("No words modified (retention criteria met for all tokens).")
+
+    # Summary Comparison & Latency Breakdown
+    st.markdown("---")
+    st.subheader("3. Pipeline Summary & Latency Breakdown")
+
+    summary_rows = [
+        {
+            "Pipeline Path": "Raw Input Audio",
+            "ASR Transcript": result.raw_transcript,
+            "Corrected Transcript": result.corrected_raw_transcript or "N/A",
+            "ASR Time": f"{result.timing.asr_raw_s:.2f}s",
+            "Correction Time": f"{result.timing.correction_raw_s:.2f}s",
+        }
+    ]
+    if result.enhanced_transcript is not None:
+        summary_rows.append(
+            {
+                "Pipeline Path": "U-Net Enhanced Audio",
+                "ASR Transcript": result.enhanced_transcript,
+                "Corrected Transcript": result.corrected_enhanced_transcript or "N/A",
+                "ASR Time": f"{result.timing.asr_enhanced_s:.2f}s",
+                "Correction Time": f"{result.timing.correction_enhanced_s:.2f}s",
+            }
+        )
+    st.dataframe(pd.DataFrame(summary_rows), use_container_width=True)
+
+    if reference_text:
+        st.markdown("#### Utterance Word Error Rate (WER)")
+        wer_rows = []
+        wer_raw = compute_wer(reference_text, result.raw_transcript)
+        wer_rows.append({"Condition": "Raw Input Speech", "WER": f"{wer_raw['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw['substitutions']}/{wer_raw['deletions']}/{wer_raw['insertions']}"})
+
+        if result.corrected_raw_transcript:
+            wer_raw_corr = compute_wer(reference_text, result.corrected_raw_transcript)
+            wer_rows.append({"Condition": "Raw Input + Correction", "WER": f"{wer_raw_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw_corr['substitutions']}/{wer_raw_corr['deletions']}/{wer_raw_corr['insertions']}"})
+
+        if result.enhanced_transcript:
+            wer_enh = compute_wer(reference_text, result.enhanced_transcript)
+            wer_rows.append({"Condition": "U-Net Enhanced Speech", "WER": f"{wer_enh['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh['substitutions']}/{wer_enh['deletions']}/{wer_enh['insertions']}"})
+
+        if result.corrected_enhanced_transcript:
+            wer_enh_corr = compute_wer(reference_text, result.corrected_enhanced_transcript)
+            wer_rows.append({"Condition": "Enhanced + Correction", "WER": f"{wer_enh_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh_corr['substitutions']}/{wer_enh_corr['deletions']}/{wer_enh_corr['insertions']}"})
+
+        st.dataframe(pd.DataFrame(wer_rows), use_container_width=True)
+    elif is_live_recording:
+        st.caption(
+            "ℹ️ No reference transcript provided. Enter a reference transcript above to evaluate utterance WER."
+        )
+
+
+# ---------------------------------------------------------------------------
 # Sidebar Navigation & Settings
 # ---------------------------------------------------------------------------
 st.sidebar.title("🎙️ Speech & ASR Pipeline")
@@ -135,6 +269,7 @@ page = st.sidebar.radio(
     "Navigate",
     [
         "🎙️ Interactive Pipeline Demo",
+        "🔴 Live Record Mode",
         "📊 Benchmark & Research Results",
         "🔬 Architecture & Methodology",
     ],
@@ -179,8 +314,8 @@ st.sidebar.markdown(
 if page == "🎙️ Interactive Pipeline Demo":
     st.title("🎙️ Live Speech Enhancement & ASR Correction Pipeline")
     st.markdown(
-        "Upload an audio recording or pick a benchmark sample to trace speech through "
-        "the **4-stage pipeline**: Audio Input $\\to$ U-Net Enhancement $\\to$ Whisper ASR $\\to$ Context-Aware Correction."
+        "Upload an audio recording, pick a benchmark sample, or record live from your microphone "
+        "to trace speech through the **4-stage pipeline**: Audio Input $\\to$ U-Net Enhancement $\\to$ Whisper ASR $\\to$ Context-Aware Correction."
     )
 
     col_input, col_config = st.columns([2, 1])
@@ -202,12 +337,13 @@ if page == "🎙️ Interactive Pipeline Demo":
     with col_input:
         input_mode = st.radio(
             "Select Audio Source",
-            ["Sample Benchmark Audio", "Upload Audio File"],
+            ["Sample Benchmark Audio", "Upload Audio File", "🔴 Live Microphone"],
             horizontal=True,
         )
 
         audio_source = None
         reference_text: str | None = None
+        is_live = input_mode == "🔴 Live Microphone"
 
         if input_mode == "Upload Audio File":
             uploaded_file = st.file_uploader(
@@ -215,7 +351,15 @@ if page == "🎙️ Interactive Pipeline Demo":
                 type=["wav", "mp3", "flac", "ogg"],
             )
             if uploaded_file is not None:
-                audio_source = uploaded_file.getvalue()
+                audio_source = uploaded_file
+        elif input_mode == "🔴 Live Microphone":
+            st.markdown("**Record Audio via Microphone:**")
+            mic_audio = st.audio_input("Record Speech", sample_rate=16000)
+            if mic_audio is not None:
+                audio_source = mic_audio
+            ref_input = st.text_input("Optional Reference Transcript (for WER calculation):")
+            if ref_input.strip():
+                reference_text = ref_input.strip()
         else:
             sample_dir = Path("data/processed/voicebank_demand_16k/noisy_testset_wav")
             transcripts_dir = Path("data/processed/voicebank_demand_16k/testset_txt")
@@ -225,7 +369,6 @@ if page == "🎙️ Interactive Pipeline Demo":
                 available_samples = sorted([p.name for p in sample_dir.glob("*.wav")])
 
             if available_samples:
-                # Curated selection of diverse samples
                 curated_samples = [
                     s for s in ["p232_001.wav", "p232_015.wav", "p232_020.wav", "p257_001.wav", "p257_010.wav", "p257_024.wav"]
                     if s in available_samples
@@ -238,7 +381,6 @@ if page == "🎙️ Interactive Pipeline Demo":
                 sample_path = sample_dir / selected_sample_name
                 audio_source = sample_path
 
-                # Load reference text if available
                 ref_path = transcripts_dir / f"{Path(selected_sample_name).stem}.txt"
                 if ref_path.is_file():
                     with open(ref_path, "r", encoding="utf-8") as f:
@@ -248,7 +390,6 @@ if page == "🎙️ Interactive Pipeline Demo":
 
     if audio_source is not None:
         try:
-            # Preview Input Audio
             audio_tensor_preview, preview_sr = load_audio_from_source(audio_source)
             wav_bytes_preview = tensor_to_wav_bytes(audio_tensor_preview, preview_sr)
 
@@ -260,9 +401,10 @@ if page == "🎙️ Interactive Pipeline Demo":
             with col_b:
                 if reference_text:
                     st.info(f"**Ground-Truth Reference Transcript:**\n`{reference_text}`")
+                elif is_live:
+                    st.caption("Live microphone audio. No reference provided.")
 
-            # Execution Button
-            if st.button("🚀 Run End-to-End Pipeline", type="primary"):
+            if st.button("🚀 Run End-to-End Pipeline", type="primary", key="btn_run_interactive"):
                 runner = get_cached_pipeline_runner(
                     checkpoint_path=default_ckpt,
                     whisper_model_name="base.en",
@@ -276,121 +418,14 @@ if page == "🎙️ Interactive Pipeline Demo":
                         run_correction=run_correction,
                     )
 
-                st.success(f"Pipeline executed successfully in {result.timing.total_s:.2f}s!")
-
-                # Stage 1 & 2: Audio & Enhancement Visuals
-                st.markdown("---")
-                st.subheader("1. Audio Signals & Speech Enhancement")
-
-                col_raw, col_enh = st.columns(2)
-                with col_raw:
-                    st.markdown("**Input (Noisy) Audio**")
-                    st.audio(wav_bytes_preview, format="audio/wav")
-
-                with col_enh:
-                    if result.enhanced_audio is not None:
-                        st.markdown("**U-Net Enhanced Audio**")
-                        enh_wav_bytes = tensor_to_wav_bytes(result.enhanced_audio, result.sample_rate)
-                        st.audio(enh_wav_bytes, format="audio/wav")
-                        st.caption(f"Enhancement latency: {result.timing.enhancement_s:.3f}s")
-                    else:
-                        st.info("Enhancement stage was skipped or unavailable.")
-
-                fig = plot_audio_comparison(result.input_audio, result.enhanced_audio, result.sample_rate)
-                st.pyplot(fig)
-                plt.close(fig)
-
-                # Stage 3 & 4: Transcriptions & Corrections
-                st.markdown("---")
-                st.subheader("2. ASR Transcriptions & Post-ASR Corrections")
-
-                col_trans_raw, col_trans_enh = st.columns(2)
-
-                with col_trans_raw:
-                    st.markdown("#### Input Audio Pipeline")
-                    st.markdown(f"**Whisper Raw ASR** ({result.timing.asr_raw_s:.2f}s):")
-                    st.code(result.raw_transcript or "(empty)", language="text")
-
-                    if run_correction and result.corrected_raw_transcript:
-                        st.markdown(f"**Context-Corrected Transcript** ({result.timing.correction_raw_s:.2f}s):")
-                        st.code(result.corrected_raw_transcript, language="text")
-
-                        if result.raw_corrections:
-                            st.markdown("**Corrected Words:**")
-                            for c in result.raw_corrections:
-                                dec = c.get("decision", {})
-                                st.write(
-                                    f"- Position {c['position']}: `'{c['original_token']}'` $\\to$ `'{c['corrected_token']}'` "
-                                    f"(confidence: {dec.get('confidence', 0):.2f}, reason: `{dec.get('reason')}`)"
-                                )
-                        else:
-                            st.caption("No words modified (retention criteria met for all tokens).")
-
-                with col_trans_enh:
-                    if result.enhanced_transcript is not None:
-                        st.markdown("#### U-Net Enhanced Pipeline")
-                        st.markdown(f"**Whisper Enhanced ASR** ({result.timing.asr_enhanced_s:.2f}s):")
-                        st.code(result.enhanced_transcript or "(empty)", language="text")
-
-                        if run_correction and result.corrected_enhanced_transcript:
-                            st.markdown(f"**Context-Corrected Transcript** ({result.timing.correction_enhanced_s:.2f}s):")
-                            st.code(result.corrected_enhanced_transcript, language="text")
-
-                            if result.enhanced_corrections:
-                                st.markdown("**Corrected Words:**")
-                                for c in result.enhanced_corrections:
-                                    dec = c.get("decision", {})
-                                    st.write(
-                                        f"- Position {c['position']}: `'{c['original_token']}'` $\\to$ `'{c['corrected_token']}'` "
-                                        f"(confidence: {dec.get('confidence', 0):.2f}, reason: `{dec.get('reason')}`)"
-                                    )
-                            else:
-                                st.caption("No words modified (retention criteria met for all tokens).")
-
-                # Summary Comparison & Accuracy Metrics
-                st.markdown("---")
-                st.subheader("3. Pipeline Summary & Latency Breakdown")
-
-                summary_rows = [
-                    {
-                        "Pipeline Path": "Raw Input Audio",
-                        "ASR Transcript": result.raw_transcript,
-                        "Corrected Transcript": result.corrected_raw_transcript or "N/A",
-                        "ASR Time": f"{result.timing.asr_raw_s:.2f}s",
-                        "Correction Time": f"{result.timing.correction_raw_s:.2f}s",
-                    }
-                ]
-                if result.enhanced_transcript is not None:
-                    summary_rows.append(
-                        {
-                            "Pipeline Path": "U-Net Enhanced Audio",
-                            "ASR Transcript": result.enhanced_transcript,
-                            "Corrected Transcript": result.corrected_enhanced_transcript or "N/A",
-                            "ASR Time": f"{result.timing.asr_enhanced_s:.2f}s",
-                            "Correction Time": f"{result.timing.correction_enhanced_s:.2f}s",
-                        }
-                    )
-                st.dataframe(pd.DataFrame(summary_rows), use_container_width=True)
-
-                if reference_text:
-                    st.markdown("#### Utterance Word Error Rate (WER)")
-                    wer_rows = []
-                    wer_raw = compute_wer(reference_text, result.raw_transcript)
-                    wer_rows.append({"Condition": "Raw Input Speech", "WER": f"{wer_raw['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw['substitutions']}/{wer_raw['deletions']}/{wer_raw['insertions']}"})
-
-                    if result.corrected_raw_transcript:
-                        wer_raw_corr = compute_wer(reference_text, result.corrected_raw_transcript)
-                        wer_rows.append({"Condition": "Raw Input + Correction", "WER": f"{wer_raw_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw_corr['substitutions']}/{wer_raw_corr['deletions']}/{wer_raw_corr['insertions']}"})
-
-                    if result.enhanced_transcript:
-                        wer_enh = compute_wer(reference_text, result.enhanced_transcript)
-                        wer_rows.append({"Condition": "U-Net Enhanced Speech", "WER": f"{wer_enh['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh['substitutions']}/{wer_enh['deletions']}/{wer_enh['insertions']}"})
-
-                    if result.corrected_enhanced_transcript:
-                        wer_enh_corr = compute_wer(reference_text, result.corrected_enhanced_transcript)
-                        wer_rows.append({"Condition": "Enhanced + Correction", "WER": f"{wer_enh_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh_corr['substitutions']}/{wer_enh_corr['deletions']}/{wer_enh_corr['insertions']}"})
-
-                    st.dataframe(pd.DataFrame(wer_rows), use_container_width=True)
+                render_pipeline_results(
+                    result=result,
+                    input_wav_bytes=wav_bytes_preview,
+                    reference_text=reference_text,
+                    run_enhancement=run_enhancement,
+                    run_correction=run_correction,
+                    is_live_recording=is_live,
+                )
 
         except Exception as e:
             st.error(f"Error processing audio: {e}")
@@ -398,7 +433,104 @@ if page == "🎙️ Interactive Pipeline Demo":
 
 
 # ===========================================================================
-# PAGE 2: BENCHMARK & EXPERIMENTAL RESULTS
+# PAGE 2: LIVE RECORD MODE
+# ===========================================================================
+elif page == "🔴 Live Record Mode":
+    st.title("🔴 Live Microphone Recording & Pipeline")
+    st.markdown(
+        "Record audio directly in your browser to evaluate real-time speech enhancement, "
+        "Whisper ASR, and context-aware post-processing on your voice."
+    )
+
+    st.info(
+        "ℹ️ **Qualitative Demonstration Notice**: Live microphone audio reflects your local room acoustics "
+        "and microphone hardware. Because live speech has no pre-defined ground truth, Word Error Rate (WER) "
+        "is not evaluated unless you optionally supply a reference transcript below. The verified experimental "
+        "benchmark on VoiceBank+DEMAND remains separate under the **📊 Benchmark & Research Results** page."
+    )
+
+    col_rec_ctrl, col_rec_opts = st.columns([2, 1])
+
+    with col_rec_opts:
+        st.subheader("Pipeline Settings")
+        live_run_enhancement = st.checkbox(
+            "Enable U-Net Speech Enhancement",
+            value=checkpoint_exists,
+            disabled=not checkpoint_exists,
+            key="live_enh_chk",
+            help="Removes background noise using trained spectral magnitude U-Net.",
+        )
+        live_run_correction = st.checkbox(
+            "Enable Context-Aware Correction",
+            value=True,
+            key="live_corr_chk",
+            help="Applies phonetic candidate generation and GPT-2 context scoring.",
+        )
+
+    with col_rec_ctrl:
+        st.subheader("Step 1: Record Speech")
+        recorded_audio = st.audio_input(
+            "Click microphone to record, speak, and click stop:",
+            sample_rate=16000,
+            key="live_audio_input",
+        )
+
+        user_ref_text = st.text_input(
+            "Optional: Type what you said (to compute exact WER):",
+            key="live_ref_text",
+        )
+        ref_text = user_ref_text.strip() if user_ref_text.strip() else None
+
+    if recorded_audio is not None:
+        try:
+            rec_tensor, rec_sr = load_audio_from_source(recorded_audio)
+            rec_wav_bytes = tensor_to_wav_bytes(rec_tensor, rec_sr)
+
+            st.markdown("---")
+            st.subheader("Step 2: Preview & Process")
+
+            p_col1, p_col2 = st.columns([1, 2])
+            with p_col1:
+                st.markdown("**Recorded Audio Preview:**")
+                st.audio(rec_wav_bytes, format="audio/wav")
+                st.caption(f"Recorded Duration: {len(rec_tensor)/rec_sr:.2f}s @ {rec_sr} Hz")
+
+            with p_col2:
+                if ref_text:
+                    st.success(f"**Reference Transcript Specified:**\n`{ref_text}`")
+                else:
+                    st.caption("No reference provided. Transcription will run in qualitative mode.")
+
+            if st.button("🚀 Process Recording", type="primary", key="btn_process_recording"):
+                runner = get_cached_pipeline_runner(
+                    checkpoint_path=default_ckpt,
+                    whisper_model_name="base.en",
+                    device=selected_device,
+                )
+
+                with st.spinner("Executing U-Net enhancement, Whisper ASR, and context correction..."):
+                    live_result: PipelineResult = runner.process(
+                        audio_source=rec_wav_bytes,
+                        run_enhancement=live_run_enhancement,
+                        run_correction=live_run_correction,
+                    )
+
+                render_pipeline_results(
+                    result=live_result,
+                    input_wav_bytes=rec_wav_bytes,
+                    reference_text=ref_text,
+                    run_enhancement=live_run_enhancement,
+                    run_correction=live_run_correction,
+                    is_live_recording=True,
+                )
+
+        except Exception as e:
+            st.error(f"Error processing recorded audio: {e}")
+            logger.exception("Live record processing error")
+
+
+# ===========================================================================
+# PAGE 3: BENCHMARK & EXPERIMENTAL RESULTS
 # ===========================================================================
 elif page == "📊 Benchmark & Research Results":
     st.title("📊 Verified Experimental Benchmark & Statistical Findings")
@@ -571,7 +703,7 @@ elif page == "📊 Benchmark & Research Results":
 
 
 # ===========================================================================
-# PAGE 3: ARCHITECTURE & METHODOLOGY
+# PAGE 4: ARCHITECTURE & METHODOLOGY
 # ===========================================================================
 elif page == "🔬 Architecture & Methodology":
     st.title("🔬 Architecture, Methodology & Documented Limitations")

@@ -105,19 +105,42 @@ def load_audio_from_source(
     tuple[torch.Tensor, int]
         1D float32 audio tensor of shape (T,) and sample rate.
     """
+    # Handle Streamlit UploadedFile or objects with getvalue()
+    if hasattr(audio_source, "getvalue") and not isinstance(audio_source, (str, Path)):
+        audio_source = audio_source.getvalue()
+
+    wav_data: np.ndarray | None = None
+    sr: int = target_sample_rate
+
     if isinstance(audio_source, (str, Path)):
         path = Path(audio_source)
         if not path.is_file():
             raise FileNotFoundError(f"Audio file not found: {path}")
-        wav_data, sr = sf.read(str(path), dtype="float32")
+        try:
+            wav_data, sr = sf.read(str(path), dtype="float32")
+        except Exception:
+            tensor_loaded, sr = torchaudio.load(str(path))
+            wav_data = tensor_loaded.numpy()
     elif isinstance(audio_source, (bytes, bytearray)):
         if len(audio_source) == 0:
             raise ValueError("Provided audio byte buffer is empty.")
         buffer = io.BytesIO(audio_source)
-        wav_data, sr = sf.read(buffer, dtype="float32")
-    elif isinstance(audio_source, io.BytesIO):
-        audio_source.seek(0)
-        wav_data, sr = sf.read(audio_source, dtype="float32")
+        try:
+            wav_data, sr = sf.read(buffer, dtype="float32")
+        except Exception:
+            buffer.seek(0)
+            tensor_loaded, sr = torchaudio.load(buffer)
+            wav_data = tensor_loaded.numpy()
+    elif hasattr(audio_source, "read"):
+        if hasattr(audio_source, "seek"):
+            audio_source.seek(0)
+        try:
+            wav_data, sr = sf.read(audio_source, dtype="float32")
+        except Exception:
+            if hasattr(audio_source, "seek"):
+                audio_source.seek(0)
+            tensor_loaded, sr = torchaudio.load(audio_source)
+            wav_data = tensor_loaded.numpy()
     else:
         raise TypeError(f"Unsupported audio source type: {type(audio_source)}")
 
