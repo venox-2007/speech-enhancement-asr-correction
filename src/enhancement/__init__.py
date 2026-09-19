@@ -8,12 +8,14 @@ from src.enhancement.dataset import (
     collate_enhancement_batch,
     create_dataloader,
 )
+from src.enhancement.loss import LossType, SpectralLoss
 from src.enhancement.model import (
     EnhancementModelConfig,
     WaveformUNetEnhancer,
     count_parameters,
     model_summary,
 )
+from src.enhancement.trainer import Trainer, TrainingConfig
 from src.enhancement.unet import UNet2D, UNetConfig
 
 __all__ = [
@@ -21,6 +23,10 @@ __all__ = [
     "DatasetConfig",
     "EnhancementBatch",
     "EnhancementModelConfig",
+    "LossType",
+    "SpectralLoss",
+    "Trainer",
+    "TrainingConfig",
     "UNet2D",
     "UNetConfig",
     "VoiceBankDEMANDDataset",

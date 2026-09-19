@@ -17,8 +17,7 @@ data/processed/
 *.ckpt
 *.bin
 *.safetensors
-results/generated/
-results/tmp/
+results/
 logs/
 .streamlit/secrets.toml
 .pytest_cache/

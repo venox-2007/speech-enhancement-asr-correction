@@ -25,9 +25,11 @@ Implemented:
 - `enhancement/viz.py` — spectrogram plotting and dataset statistics
 - `enhancement/unet.py` — 2D U-Net for magnitude spectrogram enhancement with dynamic STFT padding
 - `enhancement/model.py` — end-to-end waveform speech enhancement wrapper (`WaveformUNetEnhancer`)
+- `enhancement/loss.py` — spectral loss functions (magnitude L1, MSE, power compression)
+- `enhancement/trainer.py` — training loop with AMP, scheduler, checkpointing, and logging
+- `enhancement/train.py` — CLI training runner and smoke test
 - `utils/` — device selection, logging setup
 
 Planned:
 
 - `evaluation/` — speech-quality metrics (PESQ, STOI, SI-SDR)
-- `training/` — speech enhancement model training loop
