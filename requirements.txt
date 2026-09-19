@@ -17,3 +17,7 @@ transformers>=4.40
 
 # Speech enhancement data pipeline
 matplotlib>=3.7
+
+# Demo and presentation layer
+streamlit>=1.30
+pandas>=2.0
