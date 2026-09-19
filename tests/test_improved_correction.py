@@ -177,3 +177,70 @@ def test_aggregate_pipeline_stats_arithmetic() -> None:
     assert stats["overcorrections"] == 1
     assert stats["total_changes"] == 2
     assert stats["correction_precision"] == 0.50
+
+
+def test_improved_corrector_preserves_unrelated_sentences() -> None:
+    """Regression test: Validated corrector safeguards must NEVER arbitrarily rewrite standard sentences."""
+    pron_dict = PronunciationDict({
+        "the": [["DH", "AH0"]],
+        "quick": [["K", "W", "IH1", "K"]],
+        "brown": [["B", "R", "AW1", "N"]],
+        "fox": [["F", "AA1", "K", "S"]],
+        "jumps": [["JH", "AH1", "M", "P", "S"]],
+        "box": [["B", "AA1", "K", "S"]],  # phonetic neighbor to fox
+    })
+    generator = PhoneticCandidateGenerator(pron_dict=pron_dict, max_candidates=5)
+
+    # Even if LM slightly prefers "the quick brown box", margin and retention bias protect "fox"
+    lm = DummyLM({
+        "the quick brown fox jumps": -12.0,
+        "the quick brown box jumps": -10.5,  # +1.5 advantage (less than margin 3.5)
+    })
+
+    cfg = ContextScorerConfig(
+        threshold=0.70,
+        phonetic_weight=1.0,
+        max_candidates=20,
+        min_score_margin=3.5,
+        min_phonetic_similarity=0.80,
+        retention_bias=1.0,
+    )
+    scorer = ContextAwareScorer(generator=generator, lm=lm, config=cfg)
+    pipeline = CorrectionPipeline(scorer=scorer)
+
+    sentence = "the quick brown fox jumps"
+    res = pipeline.correct(sentence)
+    assert res.corrected == sentence
+    assert len([w for w in res.word_corrections if w.was_changed]) == 0
+
+
+def test_improved_corrector_blocks_arbitrary_semantic_rewriting() -> None:
+    """Regression test: Ensure words with high LM probability but low phonetic similarity or margin are rejected."""
+    pron_dict = PronunciationDict({
+        "weather": [["W", "EH1", "DH", "ER0"]],
+        "whether": [["W", "EH1", "DH", "ER0"]],  # homophone
+        "water": [["W", "AO1", "T", "ER0"]],     # low similarity
+    })
+    generator = PhoneticCandidateGenerator(pron_dict=pron_dict, max_candidates=5)
+
+    # Context: "the cold weather"
+    lm = DummyLM({
+        "the cold weather": -10.0,
+        "the cold water": -4.0,  # highly preferred semantically, but phonetic sim < 0.80
+    })
+
+    cfg = ContextScorerConfig(
+        threshold=0.70,
+        phonetic_weight=1.0,
+        max_candidates=20,
+        min_score_margin=3.5,
+        min_phonetic_similarity=0.80,
+        retention_bias=1.0,
+    )
+    scorer = ContextAwareScorer(generator=generator, lm=lm, config=cfg)
+    pipeline = CorrectionPipeline(scorer=scorer)
+
+    res = pipeline.correct("the cold weather")
+    assert res.corrected == "the cold weather"
+    assert len([w for w in res.word_corrections if w.was_changed]) == 0
+

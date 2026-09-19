@@ -30,42 +30,36 @@ This project empirically investigates three foundational questions at the inters
 ## System Architecture & Pipeline
 
 ```text
-                     +---------------------------------------+
-                     |        Noisy Audio Waveform y(t)      |
-                     +---------------------------------------+
-                                         |
-                               STFT (n_fft=512, hop=256)
-                                         |
-               +-------------------------+-------------------------+
-               |                                                   |
-      Magnitude Spectrogram |Y(f, t)|                   Corrupted Phase phi_Y(f, t)
-               |                                                   |
-     2D Convolutional U-Net                                        |
-     (4 down / 4 up blocks, L1 loss)                               |
-               |                                                   |
-      Enhanced Magnitude |S_hat(f, t)|                             |
-               |                                                   |
-               +------------------------> iSTFT <------------------+
-                                           |
-                                  Enhanced Audio s_hat(t)
-                                           |
-                              OpenAI Whisper (base.en)
-                                           |
-                                   Raw ASR Transcript
-                                           |
-                         Phonetic Candidate Generation
-                         (CMUdict, Levenshtein edit distance <= 2)
-                                           |
-                         Context-Aware Rescoring & Decision Rule
-                         - Causal LM (GPT-2) log-likelihood
-                         - Score Margin Floor: Delta_score >= 3.5
-                         - Phonetic Similarity Floor: sim >= 0.80
-                         - Bayesian Retention Prior: beta = 1.0
-                                           |
-                               +-----------------------+
-                               | Corrected Transcript  |
-                               +-----------------------+
+                               +---------------------------------------+
+                               |        Input Audio Waveform y(t)      |
+                               +---------------------------------------+
+                                                   |
+                        +--------------------------+--------------------------+
+                        |                                                     |
+             [ Branch A: Raw Baseline ]                            [ Branch B: U-Net Enhanced ]
+                        |                                                     |
+                        |                                           STFT (n_fft=512, hop=256)
+                        |                                                     |
+                        |                                           2D Convolutional U-Net
+                        |                                           (Magnitude Masking, L1 loss)
+                        |                                                     |
+                        |                                           iSTFT Synthesis (input phase)
+                        |                                                     |
+                        |                                           [ Enhanced Audio s_hat(t) ]
+                        |                                                     |
+               OpenAI Whisper base.en                                OpenAI Whisper base.en
+                        |                                                     |
+               [ Raw Transcript ]                                    [ Enhanced Transcript ]
+                        |                                                     |
+          Context-Aware Post-ASR Correction                     Context-Aware Post-ASR Correction
+          (CMUdict + GPT-2 + Safeguards)                        (CMUdict + GPT-2 + Safeguards)
+                        |                                                     |
+          +----------------------------+                        +-------------------------------+
+          | Final Corrected Transcript |                        | Final Corrected Transcript    |
+          +----------------------------+                        +-------------------------------+
 ```
+
+> **Architectural Domain Separation**: The 2D U-Net operates strictly in the **audio domain** on STFT magnitude spectrograms to produce cleaned audio waveforms *before* Whisper ASR ingestion. It does not process or modify text. The phonetic/GPT-2 correction module operates strictly in the **text domain** as a *post-ASR* hypothesis refinement stage.
 
 ---
 

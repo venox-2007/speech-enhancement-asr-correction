@@ -366,12 +366,23 @@ def render_pipeline_outputs(
     st.markdown("---")
 
     # 1. Transcript Flow Cascade
-    st.markdown("### Transcription & Correction Pipeline")
+    st.markdown("### Comparative Transcription & Correction Outputs")
+    st.markdown(
+        '<div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">'
+        '<strong style="color: #f8fafc;">Pipeline Architecture:</strong> Evaluates two independent parallel branches on the same audio. '
+        '<strong style="color: #38bdf8;">Branch A</strong> feeds raw audio directly to Whisper. '
+        '<strong style="color: #34d399;">Branch B</strong> enhances audio waveforms via 2D U-Net (STFT magnitude domain) <em>before</em> Whisper decoding. '
+        'Context-aware correction operates strictly as a <strong>post-ASR text-domain stage</strong> on the generated transcripts.'
+        '</div>',
+        unsafe_allow_html=True,
+    )
     t_col1, t_col2 = st.columns(2)
 
     with t_col1:
+        st.markdown("#### Branch A: Raw Audio Pipeline (Baseline)")
+        st.caption("Flow: Input Audio &rarr; Whisper base.en &rarr; Post-ASR Correction")
         st.markdown(
-            '<div class="transcript-badge badge-raw">Raw Input Speech &bull; Whisper base.en</div>',
+            '<div class="transcript-badge badge-raw">1. Raw ASR Transcript &bull; Whisper base.en</div>',
             unsafe_allow_html=True,
         )
         st.markdown(
@@ -381,7 +392,7 @@ def render_pipeline_outputs(
 
         if run_correction and result.corrected_raw_transcript:
             st.markdown(
-                '<div class="transcript-badge badge-corr">Corrected Raw &bull; Context-Aware Post-ASR</div>',
+                '<div class="transcript-badge badge-corr">2. Post-ASR Context Correction &bull; GPT-2 + CMUdict</div>',
                 unsafe_allow_html=True,
             )
             st.markdown(
@@ -403,11 +414,20 @@ def render_pipeline_outputs(
                         f'</div>',
                         unsafe_allow_html=True,
                     )
+            else:
+                st.markdown(
+                    '<div style="font-size: 0.82rem; color: #94a3b8; font-style: italic; margin-top: 0.35rem;">'
+                    'No correction applied (all words retained under confidence and phonetic similarity safeguards).'
+                    '</div>',
+                    unsafe_allow_html=True,
+                )
 
     with t_col2:
+        st.markdown("#### Branch B: Enhanced Audio Pipeline")
+        st.caption("Flow: Input Audio &rarr; U-Net (STFT) &rarr; Enhanced Audio &rarr; Whisper &rarr; Post-ASR Correction")
         if result.enhanced_transcript is not None:
             st.markdown(
-                '<div class="transcript-badge badge-enh">U-Net Enhanced &bull; Whisper base.en</div>',
+                '<div class="transcript-badge badge-enh">1. Enhanced Audio ASR &bull; Whisper base.en</div>',
                 unsafe_allow_html=True,
             )
             st.markdown(
@@ -417,7 +437,7 @@ def render_pipeline_outputs(
 
             if run_correction and result.corrected_enhanced_transcript:
                 st.markdown(
-                    '<div class="transcript-badge badge-corr">Corrected Enhanced &bull; Context-Aware Post-ASR</div>',
+                    '<div class="transcript-badge badge-corr">2. Post-ASR Context Correction &bull; GPT-2 + CMUdict</div>',
                     unsafe_allow_html=True,
                 )
                 st.markdown(
@@ -439,9 +459,19 @@ def render_pipeline_outputs(
                             f'</div>',
                             unsafe_allow_html=True,
                         )
+                else:
+                    st.markdown(
+                        '<div style="font-size: 0.82rem; color: #94a3b8; font-style: italic; margin-top: 0.35rem;">'
+                        'No correction applied (all words retained under confidence and phonetic similarity safeguards).'
+                        '</div>',
+                        unsafe_allow_html=True,
+                    )
+        else:
+            st.info("Branch B (U-Net speech enhancement) was disabled or model checkpoint unavailable.")
 
     # 2. Audio & Signal Comparison
-    st.markdown("### Audio Signals & Waveforms")
+    st.markdown("### Audio Signals & Spectral Analysis")
+    st.caption("Waveforms and STFT spectrograms synthesized in the audio domain. The 2D U-Net enhances audio waveforms prior to Whisper ASR decoding.")
     a_col1, a_col2 = st.columns(2)
 
     with a_col1:
@@ -579,14 +609,25 @@ st.markdown(
                 <span>{cuda_label}</span>
             </div>
         </div>
-        <div class="pipeline-flow">
-            <span class="flow-step">1. Audio Ingestion</span>
-            <span class="flow-arrow">&rarr;</span>
-            <span class="flow-step">2. 2D U-Net Enhancement</span>
-            <span class="flow-arrow">&rarr;</span>
-            <span class="flow-step">3. Whisper ASR</span>
-            <span class="flow-arrow">&rarr;</span>
-            <span class="flow-step">4. Context-Aware Correction</span>
+        <div class="pipeline-flow" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; padding: 0.65rem 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <span style="color: #38bdf8; font-weight: 600; font-size: 0.78rem;">Branch A (Raw):</span>
+                <span class="flow-step">Raw Audio</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Whisper base.en</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Post-ASR Correction</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <span style="color: #34d399; font-weight: 600; font-size: 0.78rem;">Branch B (Enhanced):</span>
+                <span class="flow-step">Raw Audio</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step" style="border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 4px; padding: 0.1rem 0.4rem; color: #34d399;">2D U-Net Audio Enhancement</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Whisper base.en</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Post-ASR Correction</span>
+            </div>
         </div>
     </div>
     """,
@@ -609,8 +650,28 @@ if active_tab is None:
 if active_tab == "Demo":
     st.markdown("### Interactive Workspace")
     st.markdown(
-        "Evaluate speech samples through the enhancement and transcription pipeline. "
+        "Evaluate speech samples through the two comparative pipeline branches. "
         "Select a verified benchmark utterance from VoiceBank+DEMAND or upload a custom audio file."
+    )
+
+    st.markdown(
+        """
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 0.85rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.55; color: #cbd5e1;">
+            <div style="font-weight: 600; color: #f8fafc; margin-bottom: 0.35rem;">
+                Pipeline Architecture & Comparative Evaluation
+            </div>
+            <div>
+                This system evaluates two independent pathways on the same input audio:
+                <br>&bull; <strong style="color: #38bdf8;">Branch A (Raw Baseline):</strong> Raw Audio &rarr; Whisper <code>base.en</code> &rarr; Raw Transcript &rarr; Post-ASR Context Correction.
+                <br>&bull; <strong style="color: #34d399;">Branch B (Enhanced):</strong> Raw Audio &rarr; <strong>2D U-Net Audio Enhancement</strong> &rarr; Enhanced Audio &rarr; Whisper <code>base.en</code> &rarr; Enhanced Transcript &rarr; Post-ASR Context Correction.
+            </div>
+            <div style="margin-top: 0.55rem; padding-top: 0.55rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.82rem; color: #94a3b8;">
+                <strong style="color: #38bdf8;">Audio vs. Text Domain:</strong> The U-Net operates strictly on <em>acoustic waveforms</em> in the STFT magnitude domain to enhance audio <em>before</em> Whisper ASR transcription. It does not operate on text. Context-aware phonetic correction operates strictly on <em>transcribed text</em> after ASR decoding.
+                <br><strong style="color: #f59e0b;">Verified Benchmark Finding:</strong> On 824 held-out test sentences, U-Net enhancement delivered marked acoustic gains (+9.60 dB SNR, +9.51 dB SI-SDR, +0.0127 STOI) but did <em>not</em> improve Whisper WER (7.23% &rarr; 8.23%). The post-ASR corrector provided a small, conservative error reduction (-0.11 pp WER), and the full pipeline (8.11% WER) did not outperform unprocessed noisy speech.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
     col_src, col_opts = st.columns([2, 1])
@@ -1013,43 +1074,45 @@ elif active_tab == "Methodology":
     st.markdown(
         """
 ```text
-                     +---------------------------------------+
-                     |        Noisy Audio Waveform y(t)      |
-                     +---------------------------------------+
-                                         |
-                               STFT (n_fft=512, hop=256)
-                                         |
-               +-------------------------+-------------------------+
-               |                                                   |
-      Magnitude Spectrogram |Y(f, t)|                   Corrupted Phase phi_Y(f, t)
-               |                                                   |
-     2D Convolutional U-Net                                        |
-     (4 down / 4 up blocks, L1 loss)                               |
-               |                                                   |
-      Enhanced Magnitude |S_hat(f, t)|                             |
-               |                                                   |
-               +------------------------> iSTFT <------------------+
-                                           |
-                                  Enhanced Audio s_hat(t)
-                                           |
-                              OpenAI Whisper (base.en)
-                                           |
-                                   Raw ASR Transcript
-                                           |
-                         Phonetic Candidate Generation
-                         (CMUdict, Levenshtein edit distance <= 2)
-                                           |
-                         Context-Aware Rescoring & Decision Rule
-                         - Causal LM (GPT-2) log-likelihood
-                         - Score Margin Floor: Delta_score >= 3.5
-                         - Phonetic Similarity Floor: sim >= 0.80
-                         - Bayesian Retention Prior: beta = 1.0
-                                           |
-                               +-----------------------+
-                               | Corrected Transcript  |
-                               +-----------------------+
+                               +---------------------------------------+
+                               |        Input Audio Waveform y(t)      |
+                               +---------------------------------------+
+                                                   |
+                        +--------------------------+--------------------------+
+                        |                                                     |
+             [ Branch A: Raw Baseline ]                            [ Branch B: U-Net Enhanced ]
+                        |                                                     |
+                        |                                           STFT (n_fft=512, hop=256)
+                        |                                                     |
+                        |                                           2D Convolutional U-Net
+                        |                                           (Magnitude Masking, L1 loss)
+                        |                                                     |
+                        |                                           iSTFT Synthesis (input phase)
+                        |                                                     |
+                        |                                           [ Enhanced Audio s_hat(t) ]
+                        |                                                     |
+               OpenAI Whisper base.en                                OpenAI Whisper base.en
+                        |                                                     |
+               [ Raw Transcript ]                                    [ Enhanced Transcript ]
+                        |                                                     |
+          Context-Aware Post-ASR Correction                     Context-Aware Post-ASR Correction
+          (CMUdict + GPT-2 + Safeguards)                        (CMUdict + GPT-2 + Safeguards)
+                        |                                                     |
+          +----------------------------+                        +-------------------------------+
+          | Final Corrected Transcript |                        | Final Corrected Transcript    |
+          +----------------------------+                        +-------------------------------+
 ```
         """
+    )
+
+    st.markdown(
+        '<div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.85rem; color: #94a3b8;">'
+        '<strong style="color: #38bdf8;">Architectural Domain Separation:</strong> The 2D U-Net operates strictly in the '
+        '<strong>audio domain</strong> on STFT magnitude spectrograms to produce cleaned audio prior to Whisper ASR ingestion. '
+        'It does <em>not</em> process or correct text. The phonetic/GPT-2 correction module operates strictly in the '
+        '<strong>text domain</strong> on the ASR-decoded hypothesis string.'
+        '</div>',
+        unsafe_allow_html=True,
     )
 
     m_col1, m_col2 = st.columns(2)

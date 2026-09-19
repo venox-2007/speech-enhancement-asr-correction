@@ -286,3 +286,50 @@ def test_streamlit_config_watcher_settings() -> None:
     assert '"none"' in content
     assert "folderWatchBlacklist" in content
 
+
+def test_pipeline_runner_branch_separation_and_correction_filtering() -> None:
+    """Verify that PipelineRunner produces distinct Branch A & B outputs and filters genuine corrections only."""
+    runner = PipelineRunner(checkpoint_path=None)
+
+    # Mock components to run fast without heavy models
+    mock_asr = MagicMock()
+    mock_asr.transcribe.side_effect = [
+        MagicMock(text="the quick brown fox jumps"),   # raw audio transcription
+        MagicMock(text="the quick brown box jumps"),   # enhanced audio transcription
+    ]
+    runner._asr = mock_asr
+
+    mock_enhancer = MagicMock(return_value=torch.zeros(16_000))
+    runner._enhancer = mock_enhancer
+
+    mock_corrector = MagicMock()
+    # Mock WordCorrection: one unchanged, one changed
+    mock_word_keep = MagicMock(was_changed=False, original_token="quick", corrected_token="quick")
+    mock_word_change = MagicMock(
+        was_changed=True,
+        original_token="box",
+        corrected_token="fox",
+        to_dict=lambda: {"original_token": "box", "corrected_token": "fox", "decision": {"reason": "corrected"}},
+    )
+
+    mock_res_raw = MagicMock(corrected="the quick brown fox jumps", word_corrections=[mock_word_keep])
+    mock_res_enh = MagicMock(corrected="the quick brown fox jumps", word_corrections=[mock_word_change])
+    mock_corrector.correct.side_effect = [mock_res_raw, mock_res_enh]
+    runner._corrector = mock_corrector
+
+    dummy_audio = _create_synthetic_wav_bytes(duration_s=1.0)
+    result = runner.process(dummy_audio, run_enhancement=True, run_correction=True)
+
+    # Branch A (Raw) checks
+    assert result.raw_transcript == "the quick brown fox jumps"
+    assert result.corrected_raw_transcript == "the quick brown fox jumps"
+    assert len(result.raw_corrections) == 0  # No changes -> empty list -> UI displays "No correction applied"
+
+    # Branch B (Enhanced) checks
+    assert result.enhanced_transcript == "the quick brown box jumps"
+    assert result.corrected_enhanced_transcript == "the quick brown fox jumps"
+    assert len(result.enhanced_corrections) == 1  # Genuine correction only
+    assert result.enhanced_corrections[0]["original_token"] == "box"
+    assert result.enhanced_corrections[0]["corrected_token"] == "fox"
+
+
