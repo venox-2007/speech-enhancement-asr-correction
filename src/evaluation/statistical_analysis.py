@@ -46,7 +46,16 @@ def paired_bootstrap_wer(
     seed: int = 42,
     alpha: float = 0.05,
 ) -> dict[str, Any]:
-    """Utterance-level paired bootstrap confidence interval for corpus WER differences (B - A).
+    """Utterance-level paired bootstrap confidence interval for aggregate corpus WER difference (B - A).
+
+    Resamples paired utterances with replacement to construct the empirical sampling
+    distribution of the corpus-level WER delta:
+        Delta_boot = (sum_i e_b,i) / (sum_i N_w,i) - (sum_i e_a,i) / (sum_i N_w,i)
+
+    This measures the sampling variability of the aggregate corpus WER difference,
+    weighting utterances proportionally to their word count. It evaluates whether the
+    corpus-level difference is statistically distinguishable from zero across utterance
+    subsamples, but does not test the median of unweighted utterance-level WER differences.
 
     Parameters
     ----------
@@ -178,7 +187,15 @@ def paired_wilcoxon_test(
     wers_a: list[float] | np.ndarray,
     wers_b: list[float] | np.ndarray,
 ) -> dict[str, Any]:
-    """Perform Wilcoxon signed-rank test on paired utterance-level WERs."""
+    """Perform Wilcoxon signed-rank test on paired utterance-level WERs (WER_b,i - WER_a,i).
+
+    Evaluates the non-parametric null hypothesis that the median paired difference
+    in utterance-level WER is zero.
+
+    Note: When the majority of utterances are tied (identical across systems),
+    the test operates strictly on the non-zero pairs (N_non_zero), which substantially
+    reduces statistical power compared to aggregate corpus-level bootstrap testing.
+    """
     wa = np.asarray(wers_a, dtype=np.float64)
     wb = np.asarray(wers_b, dtype=np.float64)
     diff = wb - wa
@@ -554,13 +571,13 @@ def run_final_analysis(
         b = res["bootstrap"]
         o = res["outcomes"]
         w = res["wilcoxon"]
-        sig_str = "YES (p < 0.05)" if b["is_significant"] else "NO (p >= 0.05)"
+        boot_sig_str = "YES (p < 0.05)" if b["is_significant"] else "NO (p >= 0.05)"
+        wilc_sig_str = "YES (p < 0.05)" if w["is_significant"] else "NO (p >= 0.05)"
         print(f"\n[{res['description']}]")
-        print(f"  WER Delta:        {b['delta_sample']*100:+.2f}% ({b['wer_a']*100:.2f}% -> {b['wer_b']*100:.2f}%)")
-        print(f"  95% Bootstrap CI: [{b['ci_lower']*100:+.2f}%, {b['ci_upper']*100:+.2f}%] | Bootstrap p-value = {b['p_value']:.4f}")
-        print(f"  Stat. Significant: {sig_str}")
-        print(f"  Per-Utt Outcomes: Improved: {o['improved']} ({o['improved_pct']:.1f}%), Worsened: {o['worsened']} ({o['worsened_pct']:.1f}%), Unchanged: {o['unchanged']} ({o['unchanged_pct']:.1f}%)")
-        print(f"  Wilcoxon Test:    Statistic = {w['statistic']:.1f}, p-value = {w['p_value']:.4e} (N non-zero = {w['n_non_zero']})")
+        print(f"  Corpus WER Delta:   {b['delta_sample']*100:+.2f}% ({b['wer_a']*100:.2f}% -> {b['wer_b']*100:.2f}%)")
+        print(f"  95% Bootstrap CI:   [{b['ci_lower']*100:+.2f}%, {b['ci_upper']*100:+.2f}%] | Bootstrap p = {b['p_value']:.4f} (Sig: {boot_sig_str})")
+        print(f"  Wilcoxon Test:      Statistic = {w['statistic']:.1f}, p = {w['p_value']:.4f}, N non-zero = {w['n_non_zero']} (Sig: {wilc_sig_str})")
+        print(f"  Per-Utt Outcomes:   Improved: {o['improved']} ({o['improved_pct']:.1f}%), Worsened: {o['worsened']} ({o['worsened_pct']:.1f}%), Unchanged: {o['unchanged']} ({o['unchanged_pct']:.1f}%)")
 
     return output_summary
 
