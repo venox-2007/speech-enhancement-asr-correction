@@ -16,7 +16,11 @@ from torch.utils.data import DataLoader, Dataset
 
 from src.enhancement.dataset import EnhancementBatch
 from src.enhancement.loss import SpectralLoss
-from src.enhancement.model import EnhancementModelConfig, WaveformUNetEnhancer
+from src.enhancement.model import (
+    EnhancementModelConfig,
+    WaveformUNetEnhancer,
+    load_enhancer_checkpoint,
+)
 from src.enhancement.train import build_parser
 from src.enhancement.trainer import Trainer, TrainingConfig
 from src.enhancement.unet import UNetConfig
@@ -241,6 +245,7 @@ class TestCLIParser:
         assert args.lr == 1e-3
         assert args.loss == "l1"
         assert args.scheduler == "reduce_on_plateau"
+        assert args.lr_patience == 2
         assert not args.no_amp
         assert not args.smoke_test
 
@@ -250,6 +255,7 @@ class TestCLIParser:
             "--epochs", "25",
             "--batch-size", "8",
             "--lr", "5e-4",
+            "--lr-patience", "3",
             "--loss", "mse",
             "--no-amp",
             "--smoke-test",
@@ -258,7 +264,63 @@ class TestCLIParser:
         assert args.epochs == 25
         assert args.batch_size == 8
         assert args.lr == 5e-4
+        assert args.lr_patience == 3
         assert args.loss == "mse"
         assert args.no_amp
         assert args.smoke_test
         assert args.device == "cpu"
+
+
+class TestStandaloneCheckpointLoader:
+    def test_load_enhancer_checkpoint_standalone(self, tmp_path):
+        """Verify load_enhancer_checkpoint can instantiate and load weights independently."""
+        train_loader, val_loader = make_synthetic_loaders(batch_size=4, length=4096)
+        stft_cfg = STFTConfig(n_fft=256, hop_length=128, win_length=256)
+        unet_cfg = UNetConfig(channels=(8, 16, 32))
+        config = TrainingConfig(
+            output_dir=str(tmp_path),
+            max_epochs=1,
+            batch_size=4,
+            val_batch_size=1,
+            segment_length=4096,
+            device="cpu",
+            use_amp=False,
+            stft=stft_cfg,
+            unet=unet_cfg,
+        )
+        trainer = Trainer(config, model=None, train_loader=train_loader, val_loader=val_loader)
+        ckpt_path = tmp_path / "model.pt"
+        trainer.save_checkpoint(ckpt_path)
+
+        # Load independently without Trainer
+        loaded_model = load_enhancer_checkpoint(ckpt_path, device="cpu")
+        assert isinstance(loaded_model, WaveformUNetEnhancer)
+        assert not loaded_model.training  # must be in eval mode
+        assert loaded_model.stft_config.n_fft == 256
+        assert loaded_model.unet.config.channels == (8, 16, 32)
+
+        # Run forward pass on loaded model
+        x = torch.randn(1, 4096)
+        out = loaded_model(x)
+        assert out.shape == (1, 4096)
+
+    def test_load_enhancer_checkpoint_missing_file(self, tmp_path):
+        with pytest.raises(FileNotFoundError, match="Checkpoint file not found"):
+            load_enhancer_checkpoint(tmp_path / "missing.pt")
+
+    def test_history_records_gpu_memory(self, tmp_path):
+        train_loader, val_loader = make_synthetic_loaders(batch_size=4, length=4096)
+        config = TrainingConfig(
+            output_dir=str(tmp_path),
+            max_epochs=1,
+            batch_size=4,
+            val_batch_size=1,
+            segment_length=4096,
+            device="cpu",
+            use_amp=False,
+        )
+        trainer = Trainer(config, model=None, train_loader=train_loader, val_loader=val_loader)
+        result = trainer.fit()
+        assert len(result["history"]) == 1
+        assert "gpu_memory_mb" in result["history"][0]
+

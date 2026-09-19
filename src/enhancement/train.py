@@ -86,6 +86,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Learning rate scheduler.",
     )
     p.add_argument(
+        "--lr-patience",
+        type=int,
+        default=2,
+        help="Patience in epochs for ReduceLROnPlateau scheduler.",
+    )
+    p.add_argument(
         "--patience",
         type=int,
         default=10,
@@ -147,6 +153,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             grad_clip=args.grad_clip,
             use_amp=not args.no_amp,
             lr_scheduler=args.scheduler,
+            lr_patience=args.lr_patience,
             early_stopping_patience=args.patience,
         )
 

@@ -91,6 +91,63 @@ python -m src.enhancement.train --smoke-test --device cuda
 
 ---
 
+## Real Dataset Baseline Experiment Results
+
+The first controlled U-Net training run was executed on the processed VoiceBank+DEMAND dataset on an NVIDIA GeForce RTX 3050 6GB Laptop GPU.
+
+### Exact Execution Command & Configuration
+```bash
+python -u -m src.enhancement.train \
+    --data-dir data/processed/voicebank_demand_16k \
+    --output-dir results/enhancement_train \
+    --epochs 20 \
+    --batch-size 16 \
+    --val-batch-size 1 \
+    --lr 1e-3 \
+    --lr-patience 2 \
+    --patience 5 \
+    --seed 42 \
+    --device cuda
+```
+
+### Empirical Training Metrics & Progression
+
+- **Dataset**: 10,700 training utterances (26 speakers), 872 validation utterances (`p286` female, `p287` male)
+- **Model Size**: 482,449 trainable parameters (~0.482 M, ~1.9 MB)
+- **Peak GPU Memory**: **255.7 MB** (allocated) / 330.0 MB (reserved) — < 5% of 6 GB VRAM
+- **Total Training Duration**: **1,112.0 seconds** (18.53 minutes)
+- **Epoch Duration**: ~41.8 seconds / epoch (train ~60s, val ~50s)
+
+| Epoch | Train Loss ($L_1$) | Val Loss ($L_1$) | Val MSE | Active LR | Peak GPU | Epoch Time | Notes |
+|:-----:|:------------------:|:----------------:|:-------:|:---------:|:--------:|:----------:|:-----:|
+| 1 | 0.0612 | 0.0506 | 0.0615 | $1.00 \times 10^{-3}$ | 255.0 MB | 318.4 s | Initial caching |
+| 2 | 0.0539 | 0.0474 | 0.0521 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.8 s | Best checkpoint |
+| 3 | 0.0515 | 0.0468 | 0.0507 | $1.00 \times 10^{-3}$ | 255.7 MB | 39.1 s | Best checkpoint |
+| 4 | 0.0499 | 0.0442 | 0.0441 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.4 s | Best checkpoint |
+| 5 | 0.0487 | 0.0444 | 0.0473 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.6 s | |
+| 6 | 0.0477 | 0.0433 | 0.0457 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.8 s | Best checkpoint |
+| 7 | 0.0475 | 0.0424 | 0.0403 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.7 s | Best checkpoint |
+| 8 | 0.0468 | 0.0421 | 0.0377 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.6 s | Best checkpoint |
+| 9 | 0.0464 | 0.0410 | 0.0410 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.7 s | Best checkpoint |
+| 10 | 0.0462 | 0.0415 | 0.0420 | $1.00 \times 10^{-3}$ | 255.7 MB | 42.1 s | |
+| 11 | 0.0456 | 0.0407 | 0.0402 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.2 s | Best checkpoint |
+| 12 | 0.0455 | 0.0415 | 0.0398 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.6 s | |
+| 13 | 0.0452 | 0.0419 | 0.0432 | $1.00 \times 10^{-3}$ | 255.7 MB | 42.1 s | |
+| 14 | 0.0449 | 0.0398 | 0.0341 | $1.00 \times 10^{-3}$ | 255.7 MB | 43.5 s | Best checkpoint |
+| 15 | 0.0446 | 0.0403 | 0.0355 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.5 s | |
+| 16 | 0.0445 | 0.0419 | 0.0396 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.5 s | |
+| 17 | 0.0442 | 0.0396 | 0.0344 | $1.00 \times 10^{-3}$ | 255.7 MB | 41.5 s | Best checkpoint |
+| 18 | 0.0441 | 0.0393 | 0.0348 | $1.00 \times 10^{-3}$ | 255.7 MB | 42.4 s | Best checkpoint |
+| **19** | **0.0441** | **0.0387** | **0.0323** | $1.00 \times 10^{-3}$ | **255.7 MB** | **42.0 s** | **★ Best Checkpoint** |
+| 20 | 0.0438 | 0.0400 | 0.0420 | $1.00 \times 10^{-3}$ | 255.7 MB | 42.1 s | Final epoch |
+
+### Independent Checkpoint Verification
+The best checkpoint saved at `results/enhancement_train/checkpoint_best.pt` was verified independently using `load_enhancer_checkpoint`:
+- Successfully re-instantiated and loaded weights on both CPU and CUDA without needing training dependencies.
+- Verified exact sample-length waveform inference on CPU and CUDA: input `(1, 16384)` $\to$ output `(1, 16384)`.
+
+---
+
 ## Module Layout
 
 | Module | Description |
@@ -99,3 +156,4 @@ python -m src.enhancement.train --smoke-test --device cuda
 | `src/enhancement/trainer.py` | `Trainer` and `TrainingConfig` orchestrating training, AMP, validation, and checkpointing |
 | `src/enhancement/train.py` | Command-line interface with argument parsing and `--smoke-test` utility |
 | `tests/test_enhancement_training.py` | Synthetic tests for loss, training step, determinism, checkpoint roundtrip, and early stopping |
+

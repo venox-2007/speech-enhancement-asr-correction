@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -156,3 +157,44 @@ class WaveformUNetEnhancer(nn.Module):
             enhanced_wav = enhanced_wav.squeeze(0)
 
         return enhanced_wav
+
+
+def load_enhancer_checkpoint(
+    checkpoint_path: str | Path,
+    device: str = "cpu",
+) -> WaveformUNetEnhancer:
+    """Load a trained WaveformUNetEnhancer directly from a saved checkpoint.
+
+    Parameters
+    ----------
+    checkpoint_path : str or Path
+        Path to checkpoint file (e.g. ``checkpoint_best.pt``).
+    device : str
+        Target device for model execution ('cpu', 'cuda', etc.).
+
+    Returns
+    -------
+    WaveformUNetEnhancer
+        Instantiated enhancer with loaded weights set in eval mode.
+    """
+    path = Path(checkpoint_path)
+    if not path.is_file():
+        raise FileNotFoundError(f"Checkpoint file not found: {path}")
+
+    target_device = torch.device(device)
+    ckpt = torch.load(str(path), map_location=target_device)
+
+    cfg_dict = ckpt.get("config", {})
+    stft_dict = cfg_dict.get("stft", {})
+    unet_dict = cfg_dict.get("unet", {})
+    sr = cfg_dict.get("sample_rate", 16000)
+
+    # Reconstruct configs safely filtering valid fields
+    stft_cfg = STFTConfig(**{k: v for k, v in stft_dict.items() if hasattr(STFTConfig, k)})
+    unet_cfg = UNetConfig(**{k: v for k, v in unet_dict.items() if hasattr(UNetConfig, k)})
+    model_cfg = EnhancementModelConfig(stft=stft_cfg, unet=unet_cfg, sample_rate=sr)
+
+    model = WaveformUNetEnhancer(model_cfg).to(target_device)
+    model.load_state_dict(ckpt["model_state_dict"])
+    model.eval()
+    return model

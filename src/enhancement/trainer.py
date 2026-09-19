@@ -67,7 +67,7 @@ class TrainingConfig:
     use_amp: bool = True
     early_stopping_patience: int = 10
     lr_scheduler: str = "reduce_on_plateau"  # 'reduce_on_plateau', 'cosine', 'none'
-    lr_patience: int = 5
+    lr_patience: int = 2
     lr_factor: float = 0.5
     loss_type: LossType = "l1"
     mag_power: float = 1.0
@@ -313,10 +313,15 @@ class Trainer:
 
             current_lr = self.optimizer.param_groups[0]["lr"]
             epoch_time = time.time() - t0
+            gpu_mem_mb = (
+                round(torch.cuda.max_memory_allocated(self.device) / (1024 ** 2), 1)
+                if self.device.type == "cuda"
+                else 0.0
+            )
 
             # Log progress
             logger.info(
-                "Epoch %3d/%3d | Train Loss: %.4f | Val Loss: %.4f (L1: %.4f, MSE: %.4f) | LR: %.2e | Time: %.1fs",
+                "Epoch %3d/%3d | Train Loss: %.4f | Val Loss: %.4f (L1: %.4f, MSE: %.4f) | LR: %.2e | GPU: %.1f MB | Time: %.1fs",
                 epoch,
                 self.config.max_epochs,
                 train_loss,
@@ -324,6 +329,7 @@ class Trainer:
                 val_metrics["val_l1"],
                 val_metrics["val_mse"],
                 current_lr,
+                gpu_mem_mb,
                 epoch_time,
             )
 
@@ -335,6 +341,7 @@ class Trainer:
                 "val_l1": val_metrics["val_l1"],
                 "val_mse": val_metrics["val_mse"],
                 "lr": current_lr,
+                "gpu_memory_mb": gpu_mem_mb,
                 "epoch_time_sec": round(epoch_time, 2),
             }
             self.history.append(entry)

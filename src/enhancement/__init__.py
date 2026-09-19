@@ -13,6 +13,7 @@ from src.enhancement.model import (
     EnhancementModelConfig,
     WaveformUNetEnhancer,
     count_parameters,
+    load_enhancer_checkpoint,
     model_summary,
 )
 from src.enhancement.trainer import Trainer, TrainingConfig
@@ -34,5 +35,6 @@ __all__ = [
     "collate_enhancement_batch",
     "count_parameters",
     "create_dataloader",
+    "load_enhancer_checkpoint",
     "model_summary",
 ]
