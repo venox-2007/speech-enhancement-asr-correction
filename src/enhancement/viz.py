@@ -156,6 +156,107 @@ def plot_comparison(
     return fig
 
 
+def plot_waveform_spectrogram_grid(
+    clean: torch.Tensor,
+    noisy: torch.Tensor,
+    enhanced: torch.Tensor,
+    config: STFTConfig | None = None,
+    sample_rate: int = 16_000,
+    title: str = "Clean vs. Noisy vs. Enhanced Comparison",
+    metrics: dict[str, Any] | None = None,
+) -> Any:
+    """Publication-quality 2x3 comparison grid: waveforms (top) and spectrograms (bottom).
+
+    Parameters
+    ----------
+    clean : Tensor
+        Clean speech waveform.
+    noisy : Tensor
+        Noisy speech waveform.
+    enhanced : Tensor
+        Enhanced speech waveform.
+    config : STFTConfig or None
+        STFT configuration parameters.
+    sample_rate : int
+        Audio sample rate in Hz.
+    title : str
+        Main title for the figure.
+    metrics : dict or None
+        Optional dictionary containing metrics (e.g. STOI, SI-SDR, SNR) to display.
+
+    Returns
+    -------
+    fig : matplotlib Figure
+    """
+    _ensure_matplotlib()
+    import matplotlib.pyplot as plt
+
+    config = config or STFTConfig()
+
+    def _prep_1d(t: torch.Tensor) -> np.ndarray:
+        d = t.detach().cpu()
+        if d.dim() == 2 and d.shape[0] == 1:
+            d = d.squeeze(0)
+        return d.numpy()
+
+    c_np = _prep_1d(clean)
+    n_np = _prep_1d(noisy)
+    e_np = _prep_1d(enhanced)
+
+    fig, axes = plt.subplots(2, 3, figsize=(15, 7), sharex=False)
+
+    signals = [
+        ("Clean Speech", c_np, "green"),
+        ("Noisy Speech", n_np, "crimson"),
+        ("U-Net Enhanced", e_np, "royalblue"),
+    ]
+
+    # Row 0: Waveforms
+    for col_idx, (col_name, sig, color) in enumerate(signals):
+        ax = axes[0, col_idx]
+        t = np.arange(len(sig)) / sample_rate
+        ax.plot(t, sig, color=color, linewidth=0.6, alpha=0.85)
+        ax.set_title(col_name, fontsize=12, fontweight="bold")
+        ax.set_xlabel("Time (s)")
+        ax.set_ylabel("Amplitude")
+        ax.grid(True, linestyle=":", alpha=0.6)
+        ax.set_ylim(-1.05, 1.05)
+
+    # Row 1: Spectrograms
+    mag_clean, _ = stft(torch.from_numpy(c_np), config)
+    mag_noisy, _ = stft(torch.from_numpy(n_np), config)
+    mag_enh, _ = stft(torch.from_numpy(e_np), config)
+
+    plot_spectrogram(mag_clean, config, sample_rate, "Clean Spectrogram", axes[1, 0])
+    plot_spectrogram(mag_noisy, config, sample_rate, "Noisy Spectrogram", axes[1, 1])
+    plot_spectrogram(mag_enh, config, sample_rate, "Enhanced Spectrogram", axes[1, 2])
+
+    if metrics:
+        metric_parts = []
+        if "noisy_stoi" in metrics and "enhanced_stoi" in metrics:
+            metric_parts.append(
+                f"STOI: {metrics['noisy_stoi']:.3f} \u2192 {metrics['enhanced_stoi']:.3f} "
+                f"(\u0394 {metrics.get('delta_stoi', 0.0):+.3f})"
+            )
+        if "noisy_sisdr" in metrics and "enhanced_sisdr" in metrics:
+            metric_parts.append(
+                f"SI-SDR: {metrics['noisy_sisdr']:.1f} \u2192 {metrics['enhanced_sisdr']:.1f} dB "
+                f"(\u0394 {metrics.get('delta_sisdr', 0.0):+.1f} dB)"
+            )
+        if "noisy_snr" in metrics and "enhanced_snr" in metrics:
+            metric_parts.append(
+                f"SNR: {metrics['noisy_snr']:.1f} \u2192 {metrics['enhanced_snr']:.1f} dB "
+                f"(\u0394 {metrics.get('delta_snr', 0.0):+.1f} dB)"
+            )
+        subtitle = " | ".join(metric_parts)
+        fig.suptitle(f"{title}\n{subtitle}", fontsize=13, y=0.99)
+    else:
+        fig.suptitle(title, fontsize=13, y=0.99)
+
+    fig.tight_layout()
+    return fig
+
+
 def dataset_summary(dataset: Any) -> dict[str, Any]:
     """Compute summary statistics for a VoiceBankDEMANDDataset.
 
