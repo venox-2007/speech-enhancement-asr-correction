@@ -253,3 +253,36 @@ def test_wer_result_attribute_access_for_dashboard_rendering() -> None:
     assert df["Condition"].iloc[0] == "Raw Input Speech"
     assert df["WER"].iloc[0] == "22.2%"
     assert df["Errors (S/D/I)"].iloc[0] == "2/0/0"
+
+
+def test_plot_audio_comparison_matplotlib_colors() -> None:
+    """Regression test: plot_audio_comparison must use valid matplotlib colors without CSS rgba errors."""
+    import matplotlib.pyplot as plt
+    from app import plot_audio_comparison
+
+    # Test with both raw and enhanced audio (2 columns)
+    raw = torch.randn(1, 16_000)
+    enh = torch.randn(1, 16_000)
+    fig = plot_audio_comparison(raw, enh, sr=16_000)
+    assert fig is not None
+    assert len(fig.axes) == 4  # 2x2 grid (raw waveform/spectrogram + enh waveform/spectrogram)
+    plt.close(fig)
+
+    # Test with only raw audio (1 column)
+    fig_single = plot_audio_comparison(raw, None, sr=16_000)
+    assert fig_single is not None
+    assert len(fig_single.axes) == 2  # 2x1 grid (raw waveform/spectrogram)
+    plt.close(fig_single)
+
+
+def test_streamlit_config_watcher_settings() -> None:
+    """Verify that .streamlit/config.toml exists and configures fileWatcherType to none."""
+    import toml
+    config_path = Path(".streamlit/config.toml")
+    assert config_path.is_file(), ".streamlit/config.toml must exist"
+
+    content = config_path.read_text(encoding="utf-8")
+    assert "fileWatcherType" in content
+    assert '"none"' in content
+    assert "folderWatchBlacklist" in content
+

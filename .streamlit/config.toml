@@ -1,0 +1,7 @@
+[server]
+fileWatcherType = "none"
+folderWatchBlacklist = ["**/.venv/**", "**/site-packages/**", "**/.git/**"]
+headless = true
+
+[browser]
+gatherUsageStats = false

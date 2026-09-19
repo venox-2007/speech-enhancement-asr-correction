@@ -20,6 +20,13 @@ import pandas as pd
 import streamlit as st
 import torch
 
+# Safeguard: neutralize path inspection on torch.classes to prevent watcher issues
+if hasattr(torch, "classes"):
+    try:
+        torch.classes.__path__ = []
+    except Exception:
+        pass
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -303,7 +310,7 @@ def plot_audio_comparison(
             ax.set_facecolor("#111827")
             ax.tick_params(colors="#94a3b8", labelsize=8)
             for spine in ax.spines.values():
-                spine.set_color("rgba(255, 255, 255, 0.1)")
+                spine.set_color((1.0, 1.0, 1.0, 0.15))
             ax.xaxis.label.set_color("#cbd5e1")
             ax.yaxis.label.set_color("#cbd5e1")
             ax.title.set_color("#f8fafc")
@@ -315,7 +322,7 @@ def plot_audio_comparison(
     axes[0, 0].set_title("Input Signal Waveform")
     axes[0, 0].set_ylabel("Amplitude", fontsize=9)
     axes[0, 0].set_ylim(-1.05, 1.05)
-    axes[0, 0].grid(True, color="rgba(255, 255, 255, 0.04)", linestyle="--", linewidth=0.5)
+    axes[0, 0].grid(True, color=(1.0, 1.0, 1.0), alpha=0.06, linestyle="--", linewidth=0.5)
 
     # Raw Spectrogram
     axes[1, 0].specgram(raw_np, Fs=sr, NFFT=512, noverlap=256, cmap="magma")
@@ -332,7 +339,7 @@ def plot_audio_comparison(
         axes[0, 1].set_title("U-Net Enhanced Waveform")
         axes[0, 1].set_ylabel("Amplitude", fontsize=9)
         axes[0, 1].set_ylim(-1.05, 1.05)
-        axes[0, 1].grid(True, color="rgba(255, 255, 255, 0.04)", linestyle="--", linewidth=0.5)
+        axes[0, 1].grid(True, color=(1.0, 1.0, 1.0), alpha=0.06, linestyle="--", linewidth=0.5)
 
         # Enhanced Spectrogram
         axes[1, 1].specgram(enh_np, Fs=sr, NFFT=512, noverlap=256, cmap="magma")
@@ -450,7 +457,7 @@ def render_pipeline_outputs(
             st.info("Speech enhancement was disabled or model checkpoint unavailable.")
 
     fig = plot_audio_comparison(result.input_audio, result.enhanced_audio, result.sample_rate)
-    st.pyplot(fig)
+    st.pyplot(fig, use_container_width=True)
     plt.close(fig)
 
     # 3. Telemetry & Performance
@@ -683,6 +690,11 @@ if active_tab == "Demo":
                         unsafe_allow_html=True,
                     )
 
+            with st.expander("Input Signal Waveform & Spectrogram (Preview)", expanded=False):
+                fig_prev = plot_audio_comparison(tensor_preview, None, prev_sr)
+                st.pyplot(fig_prev, use_container_width=True)
+                plt.close(fig_prev)
+
             if st.button("Process Audio", type="primary", use_container_width=True):
                 runner = get_cached_pipeline_runner(
                     checkpoint_path=default_ckpt,
@@ -749,6 +761,11 @@ elif active_tab == "Live Record":
                     st.success(f"Reference transcript provided: '{ref_text}'")
                 else:
                     st.caption("Qualitative demo mode active (no reference supplied).")
+
+            with st.expander("Recorded Signal Waveform & Spectrogram (Preview)", expanded=False):
+                fig_prev = plot_audio_comparison(live_tensor, None, live_sr)
+                st.pyplot(fig_prev, use_container_width=True)
+                plt.close(fig_prev)
 
             if st.button("Process Recording", type="primary", use_container_width=True):
                 runner = get_cached_pipeline_runner(
