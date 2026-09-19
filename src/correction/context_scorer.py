@@ -29,6 +29,7 @@ NO_PRONUNCIATION = "no_pronunciation"
 NO_CANDIDATES = "no_candidates"
 ORIGINAL_BEST = "original_best"
 BELOW_THRESHOLD = "below_threshold"
+BELOW_SCORE_MARGIN = "below_score_margin"
 CORRECTED = "corrected"
 
 
@@ -37,6 +38,9 @@ class ContextScorerConfig:
     threshold: float = 0.7  # min probability of the best candidate before a correction is applied
     phonetic_weight: float = 1.0  # weight of log(phonetic similarity); 0 = LM only
     max_candidates: int = 20  # candidates requested from the phonetic generator
+    min_score_margin: float = 0.0  # min score(best) - score(original) required before replacing
+    min_phonetic_similarity: float = 0.0  # min phonetic similarity required to consider candidate
+    retention_bias: float = 0.0  # prior penalty applied to non-original candidates
 
     def __post_init__(self) -> None:
         if not 0.0 <= self.threshold <= 1.0:
@@ -45,6 +49,12 @@ class ContextScorerConfig:
             raise ValueError("phonetic_weight must be >= 0")
         if self.max_candidates < 1:
             raise ValueError("max_candidates must be >= 1")
+        if self.min_score_margin < 0:
+            raise ValueError("min_score_margin must be >= 0")
+        if not 0.0 <= self.min_phonetic_similarity <= 1.0:
+            raise ValueError("min_phonetic_similarity must be in [0, 1]")
+        if self.retention_bias < 0:
+            raise ValueError("retention_bias must be >= 0")
 
 
 @dataclass(frozen=True)
@@ -154,6 +164,8 @@ class ContextAwareScorer:
         if not result.known:
             return ScoringDecision(**keep, reason=NO_PRONUNCIATION)
         candidates = result.candidates[: self.config.max_candidates]
+        if self.config.min_phonetic_similarity > 0.0:
+            candidates = [c for c in candidates if c.similarity >= self.config.min_phonetic_similarity]
         if not candidates:
             return ScoringDecision(**keep, reason=NO_CANDIDATES)
 
@@ -163,8 +175,13 @@ class ContextAwareScorer:
         lm_scores = self.lm.score_sentences(variants)
 
         w = self.config.phonetic_weight
-        scores = [lp + w * math.log(max(sim, 1e-9)) for lp, sim in zip(lm_scores, similarities)]
+        bias = self.config.retention_bias
+        scores = [
+            lp + w * math.log(max(sim, 1e-9)) - (bias if i > 0 else 0.0)
+            for i, (lp, sim) in enumerate(zip(lm_scores, similarities))
+        ]
         probs = softmax(scores)
+        orig_score = scores[0]
         alternatives = sorted(
             (ScoredAlternative(wd, i == 0, round(lp, 4), sim, round(sc, 4), prob)
              for i, (wd, lp, sim, sc, prob) in enumerate(zip(words, lm_scores, similarities, scores, probs))),
@@ -175,6 +192,8 @@ class ContextAwareScorer:
         best_idx = words.index(best.word)
         if best.is_original:
             apply, reason = False, ORIGINAL_BEST
+        elif (best.score - orig_score) < self.config.min_score_margin:
+            apply, reason = False, BELOW_SCORE_MARGIN
         elif best.probability < self.config.threshold:
             apply, reason = False, BELOW_THRESHOLD
         else:
