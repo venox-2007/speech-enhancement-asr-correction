@@ -236,19 +236,35 @@ def render_pipeline_results(
         st.markdown("#### Utterance Word Error Rate (WER)")
         wer_rows = []
         wer_raw = compute_wer(reference_text, result.raw_transcript)
-        wer_rows.append({"Condition": "Raw Input Speech", "WER": f"{wer_raw['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw['substitutions']}/{wer_raw['deletions']}/{wer_raw['insertions']}"})
+        wer_rows.append({
+            "Condition": "Raw Input Speech",
+            "WER": f"{wer_raw.wer * 100:.1f}%",
+            "Errors (S/D/I)": f"{wer_raw.substitutions}/{wer_raw.deletions}/{wer_raw.insertions}",
+        })
 
         if result.corrected_raw_transcript:
             wer_raw_corr = compute_wer(reference_text, result.corrected_raw_transcript)
-            wer_rows.append({"Condition": "Raw Input + Correction", "WER": f"{wer_raw_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_raw_corr['substitutions']}/{wer_raw_corr['deletions']}/{wer_raw_corr['insertions']}"})
+            wer_rows.append({
+                "Condition": "Raw Input + Correction",
+                "WER": f"{wer_raw_corr.wer * 100:.1f}%",
+                "Errors (S/D/I)": f"{wer_raw_corr.substitutions}/{wer_raw_corr.deletions}/{wer_raw_corr.insertions}",
+            })
 
         if result.enhanced_transcript:
             wer_enh = compute_wer(reference_text, result.enhanced_transcript)
-            wer_rows.append({"Condition": "U-Net Enhanced Speech", "WER": f"{wer_enh['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh['substitutions']}/{wer_enh['deletions']}/{wer_enh['insertions']}"})
+            wer_rows.append({
+                "Condition": "U-Net Enhanced Speech",
+                "WER": f"{wer_enh.wer * 100:.1f}%",
+                "Errors (S/D/I)": f"{wer_enh.substitutions}/{wer_enh.deletions}/{wer_enh.insertions}",
+            })
 
         if result.corrected_enhanced_transcript:
             wer_enh_corr = compute_wer(reference_text, result.corrected_enhanced_transcript)
-            wer_rows.append({"Condition": "Enhanced + Correction", "WER": f"{wer_enh_corr['wer']*100:.1f}%", "Errors (S/D/I)": f"{wer_enh_corr['substitutions']}/{wer_enh_corr['deletions']}/{wer_enh_corr['insertions']}"})
+            wer_rows.append({
+                "Condition": "Enhanced + Correction",
+                "WER": f"{wer_enh_corr.wer * 100:.1f}%",
+                "Errors (S/D/I)": f"{wer_enh_corr.substitutions}/{wer_enh_corr.deletions}/{wer_enh_corr.insertions}",
+            })
 
         st.dataframe(pd.DataFrame(wer_rows), use_container_width=True)
     elif is_live_recording:

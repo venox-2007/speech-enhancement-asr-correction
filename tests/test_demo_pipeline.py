@@ -223,3 +223,33 @@ def test_load_audio_from_source_multichannel() -> None:
     assert tensor.ndim == 1
     assert len(tensor) == 16_000
     assert sr == 16_000
+
+
+def test_wer_result_attribute_access_for_dashboard_rendering() -> None:
+    """Regression test: WERResult must be accessed via attributes, not dictionary indexing."""
+    from src.evaluation.wer import compute_wer, WERResult
+    import pandas as pd
+
+    ref = "the quick brown fox jumps over the lazy dog"
+    hyp = "the quick brown fox jumped over a lazy dog"
+
+    wer_res = compute_wer(ref, hyp)
+    assert isinstance(wer_res, WERResult)
+
+    # Dictionary indexing should raise TypeError
+    with pytest.raises(TypeError, match="'WERResult' object is not subscriptable"):
+        _ = wer_res["wer"]  # type: ignore
+
+    # Attribute access must succeed and construct a valid pandas DataFrame
+    wer_rows = [
+        {
+            "Condition": "Raw Input Speech",
+            "WER": f"{wer_res.wer * 100:.1f}%",
+            "Errors (S/D/I)": f"{wer_res.substitutions}/{wer_res.deletions}/{wer_res.insertions}",
+        }
+    ]
+    df = pd.DataFrame(wer_rows)
+    assert len(df) == 1
+    assert df["Condition"].iloc[0] == "Raw Input Speech"
+    assert df["WER"].iloc[0] == "22.2%"
+    assert df["Errors (S/D/I)"].iloc[0] == "2/0/0"
