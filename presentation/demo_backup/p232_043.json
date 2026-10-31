@@ -1,0 +1,408 @@
+{
+  "sample": "p232_043",
+  "reference": "But it took a lot of bottle.",
+  "source_sha256": "0a853214da119cf95c0308ebf82edd8e161a61839e896bc3171cd50328596f4d",
+  "duration_s": 1.9603125,
+  "sample_rate": 16000,
+  "raw_transcript": "but it took a lot of bottle.",
+  "enhanced_transcript": "But it took a lot of bottle.",
+  "corrected_raw_transcript": "but it took a lot of battle.",
+  "corrected_enhanced_transcript": "But it took a lot of battle.",
+  "raw_corrections": [
+    {
+      "position": 6,
+      "original_token": "bottle.",
+      "corrected_token": "battle.",
+      "was_changed": true,
+      "decision": {
+        "sentence": "but it took a lot of bottle.",
+        "word_index": 6,
+        "original_token": "bottle.",
+        "original_word": "bottle",
+        "best_word": "battle",
+        "confidence": 0.99660233084584,
+        "original_confidence": 0.0030001957063611707,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "but it took a lot of battle.",
+        "alternatives": [
+          {
+            "word": "battle",
+            "is_original": false,
+            "lm_log_prob": -32.4862,
+            "phonetic_similarity": 0.86,
+            "score": -33.637,
+            "probability": 0.99660233084584
+          },
+          {
+            "word": "bottle",
+            "is_original": true,
+            "lm_log_prob": -39.4427,
+            "phonetic_similarity": 1.0,
+            "score": -39.4427,
+            "probability": 0.0030001957063611707
+          },
+          {
+            "word": "beetle",
+            "is_original": false,
+            "lm_log_prob": -40.9038,
+            "phonetic_similarity": 0.86,
+            "score": -42.0546,
+            "probability": 0.00022019638854316536
+          },
+          {
+            "word": "boggle",
+            "is_original": false,
+            "lm_log_prob": -41.7276,
+            "phonetic_similarity": 0.86,
+            "score": -42.8784,
+            "probability": 9.661334467904952e-05
+          },
+          {
+            "word": "bottled",
+            "is_original": false,
+            "lm_log_prob": -42.6561,
+            "phonetic_similarity": 0.8333,
+            "score": -43.8385,
+            "probability": 3.698840921455387e-05
+          },
+          {
+            "word": "beatle",
+            "is_original": false,
+            "lm_log_prob": -43.0842,
+            "phonetic_similarity": 0.86,
+            "score": -44.235,
+            "probability": 2.4881740812003187e-05
+          },
+          {
+            "word": "bittle",
+            "is_original": false,
+            "lm_log_prob": -44.1563,
+            "phonetic_similarity": 0.86,
+            "score": -45.3071,
+            "probability": 8.516211698011964e-06
+          },
+          {
+            "word": "betel",
+            "is_original": false,
+            "lm_log_prob": -44.6463,
+            "phonetic_similarity": 0.86,
+            "score": -45.7972,
+            "probability": 5.217147797534299e-06
+          },
+          {
+            "word": "birtle",
+            "is_original": false,
+            "lm_log_prob": -45.357,
+            "phonetic_similarity": 0.86,
+            "score": -46.5078,
+            "probability": 2.5632417167952843e-06
+          },
+          {
+            "word": "bittel",
+            "is_original": false,
+            "lm_log_prob": -45.7653,
+            "phonetic_similarity": 0.86,
+            "score": -46.9161,
+            "probability": 1.7040384002100437e-06
+          },
+          {
+            "word": "bartol",
+            "is_original": false,
+            "lm_log_prob": -47.5873,
+            "phonetic_similarity": 0.8333,
+            "score": -48.7696,
+            "probability": 2.669992051153996e-07
+          },
+          {
+            "word": "bartle",
+            "is_original": false,
+            "lm_log_prob": -48.0674,
+            "phonetic_similarity": 0.8333,
+            "score": -49.2498,
+            "probability": 1.6518576068800456e-07
+          },
+          {
+            "word": "cottle",
+            "is_original": false,
+            "lm_log_prob": -48.3665,
+            "phonetic_similarity": 0.86,
+            "score": -49.5173,
+            "probability": 1.2641178266040193e-07
+          },
+          {
+            "word": "bottel",
+            "is_original": false,
+            "lm_log_prob": -48.6458,
+            "phonetic_similarity": 1.0,
+            "score": -49.6458,
+            "probability": 1.1117367270513297e-07
+          },
+          {
+            "word": "pottle",
+            "is_original": false,
+            "lm_log_prob": -49.3022,
+            "phonetic_similarity": 0.92,
+            "score": -50.3856,
+            "probability": 5.305354949542463e-08
+          },
+          {
+            "word": "boteler",
+            "is_original": false,
+            "lm_log_prob": -49.7966,
+            "phonetic_similarity": 0.8333,
+            "score": -50.9789,
+            "probability": 2.9310131532211395e-08
+          },
+          {
+            "word": "bartel",
+            "is_original": false,
+            "lm_log_prob": -50.34,
+            "phonetic_similarity": 0.8333,
+            "score": -51.5224,
+            "probability": 1.7021742030470378e-08
+          },
+          {
+            "word": "beitel",
+            "is_original": false,
+            "lm_log_prob": -51.0042,
+            "phonetic_similarity": 0.86,
+            "score": -52.155,
+            "probability": 9.041926592183476e-09
+          },
+          {
+            "word": "bartl",
+            "is_original": false,
+            "lm_log_prob": -50.9771,
+            "phonetic_similarity": 0.8333,
+            "score": -52.1594,
+            "probability": 9.00198092512942e-09
+          },
+          {
+            "word": "podoll",
+            "is_original": false,
+            "lm_log_prob": -51.4379,
+            "phonetic_similarity": 0.84,
+            "score": -52.6122,
+            "probability": 5.72391296017762e-09
+          },
+          {
+            "word": "beightol",
+            "is_original": false,
+            "lm_log_prob": -59.8727,
+            "phonetic_similarity": 0.86,
+            "score": -61.0235,
+            "probability": 1.2727127952713662e-12
+          }
+        ]
+      }
+    }
+  ],
+  "enhanced_corrections": [
+    {
+      "position": 6,
+      "original_token": "bottle.",
+      "corrected_token": "battle.",
+      "was_changed": true,
+      "decision": {
+        "sentence": "But it took a lot of bottle.",
+        "word_index": 6,
+        "original_token": "bottle.",
+        "original_word": "bottle",
+        "best_word": "battle",
+        "confidence": 0.9988719445851348,
+        "original_confidence": 0.0010040902039669614,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "But it took a lot of battle.",
+        "alternatives": [
+          {
+            "word": "battle",
+            "is_original": false,
+            "lm_log_prob": -29.4472,
+            "phonetic_similarity": 0.86,
+            "score": -30.598,
+            "probability": 0.9988719445851348
+          },
+          {
+            "word": "bottle",
+            "is_original": true,
+            "lm_log_prob": -37.5006,
+            "phonetic_similarity": 1.0,
+            "score": -37.5006,
+            "probability": 0.0010040902039669614
+          },
+          {
+            "word": "beetle",
+            "is_original": false,
+            "lm_log_prob": -38.9335,
+            "phonetic_similarity": 0.86,
+            "score": -40.0843,
+            "probability": 7.580182776609558e-05
+          },
+          {
+            "word": "boggle",
+            "is_original": false,
+            "lm_log_prob": -40.2467,
+            "phonetic_similarity": 0.86,
+            "score": -41.3976,
+            "probability": 2.0386381314766547e-05
+          },
+          {
+            "word": "bottled",
+            "is_original": false,
+            "lm_log_prob": -40.3578,
+            "phonetic_similarity": 0.8333,
+            "score": -41.5402,
+            "probability": 1.7676175928768046e-05
+          },
+          {
+            "word": "beatle",
+            "is_original": false,
+            "lm_log_prob": -41.3641,
+            "phonetic_similarity": 0.86,
+            "score": -42.5149,
+            "probability": 6.669406144227513e-06
+          },
+          {
+            "word": "betel",
+            "is_original": false,
+            "lm_log_prob": -42.496,
+            "phonetic_similarity": 0.86,
+            "score": -43.6468,
+            "probability": 2.1502339044717e-06
+          },
+          {
+            "word": "bittle",
+            "is_original": false,
+            "lm_log_prob": -43.3914,
+            "phonetic_similarity": 0.86,
+            "score": -44.5422,
+            "probability": 8.782697643980066e-07
+          },
+          {
+            "word": "bittel",
+            "is_original": false,
+            "lm_log_prob": -44.9846,
+            "phonetic_similarity": 0.86,
+            "score": -46.1355,
+            "probability": 1.7852187628434236e-07
+          },
+          {
+            "word": "birtle",
+            "is_original": false,
+            "lm_log_prob": -45.2579,
+            "phonetic_similarity": 0.86,
+            "score": -46.4087,
+            "probability": 1.3583818820877305e-07
+          },
+          {
+            "word": "bartol",
+            "is_original": false,
+            "lm_log_prob": -46.6455,
+            "phonetic_similarity": 0.8333,
+            "score": -47.8279,
+            "probability": 3.2861913005830395e-08
+          },
+          {
+            "word": "bartle",
+            "is_original": false,
+            "lm_log_prob": -47.3528,
+            "phonetic_similarity": 0.8333,
+            "score": -48.5351,
+            "probability": 1.6200819466768566e-08
+          },
+          {
+            "word": "bottel",
+            "is_original": false,
+            "lm_log_prob": -47.678,
+            "phonetic_similarity": 1.0,
+            "score": -48.678,
+            "probability": 1.4043335783277407e-08
+          },
+          {
+            "word": "pottle",
+            "is_original": false,
+            "lm_log_prob": -48.1848,
+            "phonetic_similarity": 0.92,
+            "score": -49.2682,
+            "probability": 7.783445293059151e-09
+          },
+          {
+            "word": "cottle",
+            "is_original": false,
+            "lm_log_prob": -48.1991,
+            "phonetic_similarity": 0.86,
+            "score": -49.3499,
+            "probability": 7.172379192351183e-09
+          },
+          {
+            "word": "boteler",
+            "is_original": false,
+            "lm_log_prob": -48.582,
+            "phonetic_similarity": 0.8333,
+            "score": -49.7644,
+            "probability": 4.738796786032395e-09
+          },
+          {
+            "word": "beitel",
+            "is_original": false,
+            "lm_log_prob": -49.1541,
+            "phonetic_similarity": 0.86,
+            "score": -50.3049,
+            "probability": 2.760182027815628e-09
+          },
+          {
+            "word": "bartel",
+            "is_original": false,
+            "lm_log_prob": -49.3239,
+            "phonetic_similarity": 0.8333,
+            "score": -50.5062,
+            "probability": 2.25682319191873e-09
+          },
+          {
+            "word": "bartl",
+            "is_original": false,
+            "lm_log_prob": -50.9826,
+            "phonetic_similarity": 0.8333,
+            "score": -52.1649,
+            "probability": 4.296572069287893e-10
+          },
+          {
+            "word": "podoll",
+            "is_original": false,
+            "lm_log_prob": -51.3216,
+            "phonetic_similarity": 0.84,
+            "score": -52.4959,
+            "probability": 3.085913946147869e-10
+          },
+          {
+            "word": "beightol",
+            "is_original": false,
+            "lm_log_prob": -59.7624,
+            "phonetic_similarity": 0.86,
+            "score": -60.9132,
+            "probability": 6.820119971934386e-14
+          }
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "preprocessing_s": 0.024540300015360117,
+    "enhancement_s": 0.17263620003359392,
+    "asr_raw_s": 0.24669210001593456,
+    "asr_enhanced_s": 0.24171769997337833,
+    "correction_raw_s": 0.43393850000575185,
+    "correction_enhanced_s": 0.5631749999593012,
+    "total_s": 1.6829090000246651
+  },
+  "device": "cuda",
+  "enhancer_loaded": true,
+  "wer": {
+    "raw_transcript": 0.0,
+    "corrected_raw_transcript": 0.14285714285714285,
+    "enhanced_transcript": 0.0,
+    "corrected_enhanced_transcript": 0.14285714285714285
+  }
+}

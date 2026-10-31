@@ -1,0 +1,50 @@
+{
+  "dataset": "VoiceBank+DEMAND (28-speaker training release)",
+  "doi": "10.7488/ds/2117",
+  "license": "CC BY 4.0",
+  "archives": [
+    {
+      "archive": "clean_trainset_28spk_wav.zip",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/245452b6-6235-44b6-a6f9-e7eb19797769/content",
+      "split": "train",
+      "directory": "clean_trainset_28spk_wav",
+      "expected_files": 11572,
+      "bytes": 2486057279,
+      "sha256": "dbb13b9ffe752c58764d75de272706a2b467744f33455cec6deb2b12ca01df66"
+    },
+    {
+      "archive": "noisy_trainset_28spk_wav.zip",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/ecb5a102-bb00-46d3-8af5-40c79823b837/content",
+      "split": "train",
+      "directory": "noisy_trainset_28spk_wav",
+      "expected_files": 11572,
+      "bytes": 2830205201,
+      "sha256": "a656af041f5a8931b02077331281c2b82ebc35b38dc83ff92935015bcd7920b4"
+    },
+    {
+      "archive": "clean_testset_wav.zip",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/dec213d3-bf57-4777-9663-c24bdce92d5e/content",
+      "split": "test",
+      "directory": "clean_testset_wav",
+      "expected_files": 824,
+      "bytes": 154332064,
+      "sha256": "b60bfc2b9df38466d8eb45057c087c6e5dee196c67a0ed7bca628ae2a8611c4e"
+    },
+    {
+      "archive": "noisy_testset_wav.zip",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/13c1bfbf-14a6-41db-9b41-8f7310f01ad5/content",
+      "split": "test",
+      "directory": "noisy_testset_wav",
+      "expected_files": 824,
+      "bytes": 170578854,
+      "sha256": "ba4a893f45b627f15209ba30ab584dd495b3680cd6f216dd08d143a257611993"
+    },
+    {
+      "archive": "testset_txt.zip",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/09e12592-879e-4749-bf6d-e34cf0d1ddf6/content",
+      "split": "test",
+      "directory": "testset_txt",
+      "expected_files": 824
+    }
+  ]
+}

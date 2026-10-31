@@ -18,7 +18,7 @@ $$\mathcal{L}_{\text{mag}} = \frac{1}{B \cdot F \cdot N} \sum_{b=1}^{B} \sum_{f=
 
 **Design Rationale**:
 - **Linear Error Penalty**: Unlike $L_2$ (MSE) loss which squares spectral errors and heavily biases optimization toward high-energy vowel formants at the expense of quiet fricatives and consonants, $L_1$ loss applies equal proportional penalty across all energy levels.
-- **Configurability**: The loss is implemented in `SpectralLoss` ([`src/enhancement/loss.py`](file:///c:/Users/yugag/OneDrive/Documents/Sem%205/DL%20Project/src/enhancement/loss.py)) and can be configured to use `l1`, `mse`, `smooth_l1`, or power-law compression ($|S|^\alpha$ with $\alpha=0.5$).
+- **Configurability**: The loss is implemented in `SpectralLoss` ([`src/enhancement/loss.py`](../src/enhancement/loss.py)) and can be configured to use `l1`, `mse`, `smooth_l1`, or power-law compression ($|S|^\alpha$ with $\alpha=0.5$).
 
 ### 2. Optimization Settings & Hyperparameter Defaults
 
@@ -116,7 +116,7 @@ python -u -m src.enhancement.train \
 - **Model Size**: 482,449 trainable parameters (~0.482 M, ~1.9 MB)
 - **Peak GPU Memory**: **255.7 MB** (allocated) / 330.0 MB (reserved) — < 5% of 6 GB VRAM
 - **Total Training Duration**: **1,112.0 seconds** (18.53 minutes)
-- **Epoch Duration**: ~41.8 seconds / epoch (train ~60s, val ~50s)
+- **Epoch Duration**: ~41.8 seconds per subsequent epoch (training and validation combined, excluding initial caching)
 
 | Epoch | Train Loss ($L_1$) | Val Loss ($L_1$) | Val MSE | Active LR | Peak GPU | Epoch Time | Notes |
 |:-----:|:------------------:|:----------------:|:-------:|:---------:|:--------:|:----------:|:-----:|

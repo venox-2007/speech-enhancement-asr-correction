@@ -1,0 +1,70 @@
+{
+  "description": "Assets needed for the six-sample demonstration. Full benchmark downloads are separate.",
+  "restore_files": [
+    {
+      "source": "artifacts/model/checkpoint_best.pt",
+      "destination": "results/enhancement_train/checkpoint_best.pt",
+      "sha256": "2ee6402341c643607d293fde623858ac2d4b660631afcfb67aca5eedfc10a985"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p232_032.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p232_032.wav",
+      "sha256": "173119a0b391605243dabc4e857ef6f84d3f7383fdad69b994f1dec46e39e541"
+    },
+    {
+      "source": "data/demo/testset_txt/p232_032.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p232_032.txt",
+      "sha256": "83cc817cd444a0b48631a82367b50b6d8b45aeec65ccbe714629f845b26d1c1d"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p257_096.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p257_096.wav",
+      "sha256": "c11d2e5704c6376d54a9cf67743a1943fd6d878463f1b6e719f781abbc04f0a8"
+    },
+    {
+      "source": "data/demo/testset_txt/p257_096.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p257_096.txt",
+      "sha256": "79a28ff42b74c01e6f50698eae4144f8310748ef4692ff3246a2c2142eb1ef04"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p232_001.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p232_001.wav",
+      "sha256": "b2d1cd68a37adf7989a2fa7cd14b35291cd7293ff7ef9eea888e615841f99db1"
+    },
+    {
+      "source": "data/demo/testset_txt/p232_001.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p232_001.txt",
+      "sha256": "375e0019e50f1978799d9b8b08288164d5b3d9facf5a92e3dce95b6fe98a39e5"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p232_043.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p232_043.wav",
+      "sha256": "0a853214da119cf95c0308ebf82edd8e161a61839e896bc3171cd50328596f4d"
+    },
+    {
+      "source": "data/demo/testset_txt/p232_043.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p232_043.txt",
+      "sha256": "95d8457865954444f8fbe16b4d24501700c708f337b698ca6d5957beb869a6b3"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p257_010.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p257_010.wav",
+      "sha256": "9a0bb7b9d6f029ebc28faabba153fecc98f9bcc12881bc7c077a8cd447e2bd07"
+    },
+    {
+      "source": "data/demo/testset_txt/p257_010.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p257_010.txt",
+      "sha256": "6a09f05433681f15a98021f25059d01fc53dd2c3a414c15bffd6ea47bf2f844d"
+    },
+    {
+      "source": "data/demo/noisy_testset_wav/p257_024.wav",
+      "destination": "data/processed/voicebank_demand_16k/noisy_testset_wav/p257_024.wav",
+      "sha256": "b7786d48f3bc8d694b15b8432edaaf36a96679bf2c877face318e2ddc79ba955"
+    },
+    {
+      "source": "data/demo/testset_txt/p257_024.txt",
+      "destination": "data/processed/voicebank_demand_16k/testset_txt/p257_024.txt",
+      "sha256": "b16b34c219e31343482d1a121d35bbb6a1a213306cd0f18e9c85cb14da238310"
+    }
+  ]
+}

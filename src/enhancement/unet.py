@@ -32,7 +32,7 @@ class UNetConfig:
     channels : tuple of int
         Channel counts for each encoder level.  The length determines
         the depth of the U-Net.  Default: (16, 32, 64, 128) -> depth 4,
-        lightweight (~1.7M params), well within RTX 3050 6 GB budget.
+        lightweight (~0.482M params), well within RTX 3050 6 GB budget.
     kernel_size : int
         Kernel size for 2D convolutions.
     norm_type : str

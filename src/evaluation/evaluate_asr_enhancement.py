@@ -175,23 +175,34 @@ def evaluate_asr(
         except Exception as exc:
             logger.warning("Failed to load existing cache (%s); starting fresh.", exc)
 
+    # Validate only the requested utterances, including small offline datasets.
+    test_config = DatasetConfig(root=str(data_dir))
+    dataset = VoiceBankDEMANDDataset(test_config, split="test")
+    if max_samples is not None and max_samples < 1:
+        raise ValueError("max_samples must be at least 1")
+    total_items = min(len(dataset), max_samples) if max_samples is not None else len(dataset)
+    selected_pairs = dataset.pairs[:total_items]
+    required_stems = {clean.stem for clean, _ in selected_pairs}
+
     # 1. Load reference transcripts
     if transcripts_dir is None:
         transcripts_dir = data_dir / "testset_txt"
     transcripts_dir = Path(transcripts_dir)
-    if not transcripts_dir.exists() or len(list(transcripts_dir.glob("*.txt"))) < 824:
+    existing_stems = {p.stem for p in transcripts_dir.glob("*.txt")}
+    if required_stems - existing_stems:
         download_testset_transcripts(transcripts_dir)
     transcripts = load_transcripts(transcripts_dir)
+    missing = required_stems - transcripts.keys()
+    if missing:
+        raise ValueError(f"Missing reference transcripts: {sorted(missing)[:5]}")
 
     # 2. Load dataset
-    test_config = DatasetConfig(root=str(data_dir))
-    dataset = VoiceBankDEMANDDataset(test_config, split="test")
     logger.info("Found %d test utterances across speakers %s", len(dataset), dataset.speakers)
 
     # 3. Leakage verification
     try:
         verify_zero_leakage(dataset, data_dir)
-    except Exception as exc:
+    except FileNotFoundError as exc:
         logger.warning("Could not run full dataset-leakage check (%s); proceeding with caution.", exc)
 
     # 4. Check enhanced audio availability or load enhancement model
@@ -201,10 +212,11 @@ def evaluate_asr(
     else:
         enh_dir = Path("results/enhancement_eval/audio")
 
-    enh_dir_has_wavs = enh_dir.is_dir() and len(list(enh_dir.glob("*.wav"))) >= len(dataset)
-    if enh_dir_has_wavs:
-        logger.info("Using existing pre-enhanced audio from %s (%d files).", enh_dir, len(list(enh_dir.glob("*.wav"))))
-    else:
+    needs_enhancer = any(
+        cache.get(clean.stem, {}).get("enh_text") is None and not (enh_dir / clean.name).is_file()
+        for clean, _ in selected_pairs
+    )
+    if needs_enhancer:
         logger.info("Pre-enhanced audio directory %s not fully populated. Loading U-Net enhancer for on-the-fly inference...", enh_dir)
         enh_model = load_enhancer_checkpoint(checkpoint_path, device=device if device != "auto" else ("cuda" if torch.cuda.is_available() else "cpu"))
         enh_model.eval()
@@ -212,13 +224,8 @@ def evaluate_asr(
     # 5. Load Whisper ASR
     asr_config = ASRConfig(model_name=model_name, device=device, language="en", temperature=0.0)
     asr = WhisperASR(asr_config)
-    asr.load()
 
     # 6. Evaluation loop
-    total_items = len(dataset)
-    if max_samples is not None:
-        total_items = min(total_items, max_samples)
-
     records: list[dict[str, Any]] = []
     start_time = time.perf_counter()
 

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-31",
+  "tests": {
+    "passed": 265,
+    "command": "python -m pytest"
+  },
+  "clean_copy_inference": {
+    "device": "cuda",
+    "raw": "The piece process will be buried.",
+    "corrected": "The peace process will be buried.",
+    "enhanced": "The piece process will be buried.",
+    "enhanced_corrected": "The peace process will be buried.",
+    "raw_wer": 0.16666666666666666,
+    "corrected_wer": 0.0
+  },
+  "dataset": {
+    "processed_recordings": 24792,
+    "official_zip_endpoints_verified": 5,
+    "actual_download_extraction_test": "824 official test reference transcripts"
+  },
+  "presentation": {
+    "slides": 12,
+    "speaker_notes": 0,
+    "repository_link": "https://github.com/venox-2007/speech-enhancement-asr-correction",
+    "sha256": "225f8361f442705acbfa145fd1a37985b900014c6e65d6d80877cf2ba5a721d6"
+  }
+}

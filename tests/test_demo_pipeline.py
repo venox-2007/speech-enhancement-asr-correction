@@ -60,6 +60,29 @@ def test_load_audio_from_source_missing_file() -> None:
         load_audio_from_source(Path("non_existent_audio_path_12345.wav"))
 
 
+@pytest.mark.parametrize("duration, message", [(0.01, "too short"), (60.1, "60 seconds")])
+def test_demo_rejects_unsupported_lengths_before_loading_models(duration, message):
+    runner = PipelineRunner(checkpoint_path=None, device="cpu")
+    with pytest.raises(ValueError, match=message):
+        runner.process(_create_synthetic_wav_bytes(duration_s=duration))
+    assert runner._asr is None
+
+
+def test_demo_rejects_silence_before_asr():
+    runner = PipelineRunner(checkpoint_path=None, device="cpu")
+    silent = tensor_to_wav_bytes(torch.zeros(16000))
+    with pytest.raises(ValueError, match="silent"):
+        runner.process(silent, run_enhancement=False)
+    assert runner._asr is None
+
+
+def test_requested_enhancement_fails_clearly_when_checkpoint_is_missing():
+    runner = PipelineRunner(checkpoint_path=None, device="cpu")
+    with pytest.raises(RuntimeError, match="checkpoint"):
+        runner.process(_create_synthetic_wav_bytes())
+    assert runner._asr is None
+
+
 def test_tensor_to_wav_bytes() -> None:
     tensor = torch.sin(torch.linspace(0, 2 * np.pi * 440, 16000))
     wav_bytes = tensor_to_wav_bytes(tensor, sample_rate=16_000)
@@ -71,6 +94,9 @@ def test_tensor_to_wav_bytes() -> None:
     data, sr = sf.read(io.BytesIO(wav_bytes))
     assert sr == 16_000
     assert len(data) == 16_000
+    # A very short upload still needs a valid WAV preview before duration validation.
+    single = tensor_to_wav_bytes(torch.tensor([0.2]))
+    assert len(sf.read(io.BytesIO(single))[0]) == 1
 
 
 def test_stage_timing_and_result_dataclass() -> None:
@@ -273,6 +299,9 @@ def test_plot_audio_comparison_matplotlib_colors() -> None:
     assert fig_single is not None
     assert len(fig_single.axes) == 2  # 2x1 grid (raw waveform/spectrogram)
     plt.close(fig_single)
+    short = plot_audio_comparison(torch.tensor([0.2]), None)
+    assert len(short.axes) == 2
+    plt.close(short)
 
 
 def test_streamlit_config_watcher_settings() -> None:

@@ -12,6 +12,7 @@ from __future__ import annotations
 import io
 import logging
 import time
+from threading import RLock
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -156,8 +157,7 @@ def load_audio_from_source(
             tensor = tensor.mean(dim=0)
         else:  # (T, C)
             tensor = tensor.mean(dim=1)
-    else:
-        tensor = tensor.squeeze()
+    tensor = tensor.reshape(-1)
 
     # Resample if needed
     if sr != target_sample_rate:
@@ -178,7 +178,7 @@ def load_audio_from_source(
 
 def tensor_to_wav_bytes(waveform: torch.Tensor, sample_rate: int = 16_000) -> bytes:
     """Encode audio tensor as WAV in-memory bytes for playback."""
-    audio_np = waveform.detach().cpu().squeeze().numpy()
+    audio_np = waveform.detach().cpu().reshape(-1).numpy()
     buffer = io.BytesIO()
     sf.write(buffer, audio_np, sample_rate, format="WAV", subtype="PCM_16")
     return buffer.getvalue()
@@ -197,6 +197,7 @@ class PipelineRunner:
         self.device = device or get_default_device()
         self.checkpoint_path = Path(checkpoint_path) if checkpoint_path else None
         self.whisper_model_name = whisper_model_name
+        self._lock = RLock()
 
         self._enhancer: WaveformUNetEnhancer | None = None
         self._asr: WhisperASR | None = None
@@ -244,6 +245,15 @@ class PipelineRunner:
             self._corrector = CorrectionPipeline(scorer=scorer)
         return self._corrector
 
+    def prepare(self, run_enhancement: bool = True, run_correction: bool = True) -> None:
+        """Load models before a presentation so first-use startup is explicit."""
+        with self._lock:
+            if run_enhancement and self.get_enhancer() is None:
+                raise RuntimeError("The trained U-Net checkpoint could not be loaded.")
+            self.get_asr().load()
+            if run_correction:
+                self.get_corrector()._scorer.lm.load()
+
     def process(
         self,
         audio_source: str | Path | bytes | io.BytesIO,
@@ -266,6 +276,12 @@ class PipelineRunner:
         PipelineResult
             Complete results and per-stage timing.
         """
+        # Streamlit shares this runner across sessions. Serialize inference so
+        # lazy model loading and GPU allocations cannot race.
+        with self._lock:
+            return self._process(audio_source, run_enhancement, run_correction)
+
+    def _process(self, audio_source, run_enhancement, run_correction) -> PipelineResult:
         timing = StageTiming()
         total_t0 = time.perf_counter()
 
@@ -273,12 +289,20 @@ class PipelineRunner:
         t0 = time.perf_counter()
         audio_tensor, sr = load_audio_from_source(audio_source, target_sample_rate=16_000)
         duration_s = float(audio_tensor.shape[-1] / sr)
+        if duration_s < 0.1:
+            raise ValueError("Audio is too short. Record at least 0.1 seconds of speech.")
+        if duration_s > 60:
+            raise ValueError("Please use a speech clip of 60 seconds or less for this demo.")
+        if audio_tensor.abs().max().item() < 1e-5:
+            raise ValueError("The audio is silent. Check your microphone or choose a speech recording.")
         timing.preprocessing_s = time.perf_counter() - t0
 
         # 2. Speech Enhancement
         enhanced_audio: torch.Tensor | None = None
         enhancer = self.get_enhancer() if run_enhancement else None
         enhancer_loaded = enhancer is not None
+        if run_enhancement and not enhancer_loaded:
+            raise RuntimeError("The trained U-Net checkpoint could not be loaded. Check the checkpoint path or disable speech enhancement.")
 
         if run_enhancement and enhancer_loaded:
             t0 = time.perf_counter()

@@ -2,6 +2,7 @@
 # Install PyTorch FIRST from the index matching your hardware (see docs/asr_baseline.md),
 # otherwise pip may install a CPU-only build as a dependency of openai-whisper.
 torch>=2.1
+torchaudio>=2.1
 numpy>=1.24
 scipy>=1.10
 soundfile>=0.12
@@ -17,7 +18,8 @@ transformers>=4.40
 
 # Speech enhancement data pipeline
 matplotlib>=3.7
+pystoi>=0.4
 
 # Demo and presentation layer
-streamlit>=1.30
+streamlit>=1.64
 pandas>=2.0

@@ -1,0 +1,253 @@
+{
+  "count": 824,
+  "overall": {
+    "count": 824,
+    "total_words": 6211,
+    "noisy": {
+      "corpus_wer": 0.0722910964417968,
+      "substitutions": 330,
+      "deletions": 69,
+      "insertions": 50,
+      "correct_words": 5812,
+      "utt_wer_mean": 0.07592303816529071,
+      "utt_wer_std": 0.16566714458087364,
+      "utt_wer_median": 0.0
+    },
+    "enhanced": {
+      "corpus_wer": 0.08227338592819192,
+      "substitutions": 369,
+      "deletions": 80,
+      "insertions": 62,
+      "correct_words": 5762,
+      "utt_wer_mean": 0.08777589337372844,
+      "utt_wer_std": 0.18832532657385284,
+      "utt_wer_median": 0.0
+    },
+    "delta": {
+      "delta_corpus_wer": 0.00998228948639511,
+      "delta_substitutions": 39,
+      "delta_deletions": 11,
+      "delta_insertions": 12,
+      "delta_correct_words": -50,
+      "delta_utt_wer_mean": 0.011852855208437735,
+      "delta_utt_wer_std": 0.11249871718326343,
+      "delta_utt_wer_median": 0.0
+    }
+  },
+  "by_speaker": {
+    "p232": {
+      "count": 393,
+      "total_words": 2991,
+      "noisy": {
+        "corpus_wer": 0.05182213306586426,
+        "substitutions": 125,
+        "deletions": 15,
+        "insertions": 15,
+        "correct_words": 2851,
+        "utt_wer_mean": 0.05308365807089604,
+        "utt_wer_std": 0.13231943360308887,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.06486125041792043,
+        "substitutions": 148,
+        "deletions": 20,
+        "insertions": 26,
+        "correct_words": 2823,
+        "utt_wer_mean": 0.06951927927750962,
+        "utt_wer_std": 0.17149787427066768,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": 0.013039117352056172,
+        "delta_substitutions": 23,
+        "delta_deletions": 5,
+        "delta_insertions": 11,
+        "delta_correct_words": -28,
+        "delta_utt_wer_mean": 0.016435621206613574,
+        "delta_utt_wer_std": 0.11250095806229173,
+        "delta_utt_wer_median": 0.0
+      }
+    },
+    "p257": {
+      "count": 431,
+      "total_words": 3220,
+      "noisy": {
+        "corpus_wer": 0.09130434782608696,
+        "substitutions": 205,
+        "deletions": 54,
+        "insertions": 35,
+        "correct_words": 2961,
+        "utt_wer_mean": 0.09674873741609606,
+        "utt_wer_std": 0.18867243106809634,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.0984472049689441,
+        "substitutions": 221,
+        "deletions": 60,
+        "insertions": 36,
+        "correct_words": 2939,
+        "utt_wer_mean": 0.10442287560067509,
+        "utt_wer_std": 0.2010135653546773,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": 0.007142857142857145,
+        "delta_substitutions": 16,
+        "delta_deletions": 6,
+        "delta_insertions": 1,
+        "delta_correct_words": -22,
+        "delta_utt_wer_mean": 0.00767413818457902,
+        "delta_utt_wer_std": 0.11233383224183341,
+        "delta_utt_wer_median": 0.0
+      }
+    }
+  },
+  "by_snr_bracket": {
+    "< 5 dB (Low SNR)": {
+      "count": 218,
+      "total_words": 1602,
+      "noisy": {
+        "corpus_wer": 0.12109862671660425,
+        "substitutions": 147,
+        "deletions": 28,
+        "insertions": 19,
+        "correct_words": 1427,
+        "utt_wer_mean": 0.1271853314344864,
+        "utt_wer_std": 0.2222215628858116,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.15106117353308365,
+        "substitutions": 179,
+        "deletions": 32,
+        "insertions": 31,
+        "correct_words": 1391,
+        "utt_wer_mean": 0.16357765979929184,
+        "utt_wer_std": 0.2741669719644517,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": 0.029962546816479405,
+        "delta_substitutions": 32,
+        "delta_deletions": 4,
+        "delta_insertions": 12,
+        "delta_correct_words": -36,
+        "delta_utt_wer_mean": 0.03639232836480543,
+        "delta_utt_wer_std": 0.17176825007974947,
+        "delta_utt_wer_median": 0.0
+      }
+    },
+    "5 - 10 dB (Medium-Low SNR)": {
+      "count": 208,
+      "total_words": 1592,
+      "noisy": {
+        "corpus_wer": 0.0678391959798995,
+        "substitutions": 77,
+        "deletions": 19,
+        "insertions": 12,
+        "correct_words": 1496,
+        "utt_wer_mean": 0.0652732683982684,
+        "utt_wer_std": 0.1487073872141041,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.07600502512562814,
+        "substitutions": 88,
+        "deletions": 23,
+        "insertions": 10,
+        "correct_words": 1481,
+        "utt_wer_mean": 0.07313884032634033,
+        "utt_wer_std": 0.15540780639222335,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": 0.008165829145728637,
+        "delta_substitutions": 11,
+        "delta_deletions": 4,
+        "delta_insertions": -2,
+        "delta_correct_words": -15,
+        "delta_utt_wer_mean": 0.007865571928071925,
+        "delta_utt_wer_std": 0.10161656660428016,
+        "delta_utt_wer_median": 0.0
+      }
+    },
+    "10 - 15 dB (Medium-High SNR)": {
+      "count": 207,
+      "total_words": 1538,
+      "noisy": {
+        "corpus_wer": 0.044863459037711315,
+        "substitutions": 53,
+        "deletions": 8,
+        "insertions": 8,
+        "correct_words": 1477,
+        "utt_wer_mean": 0.048004754659979686,
+        "utt_wer_std": 0.1252268615861198,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.046163849154746424,
+        "substitutions": 50,
+        "deletions": 10,
+        "insertions": 11,
+        "correct_words": 1478,
+        "utt_wer_mean": 0.04840907390487863,
+        "utt_wer_std": 0.11552595728754124,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": 0.0013003901170351093,
+        "delta_substitutions": -3,
+        "delta_deletions": 2,
+        "delta_insertions": 3,
+        "delta_correct_words": 1,
+        "delta_utt_wer_mean": 0.00040431924489895457,
+        "delta_utt_wer_std": 0.07948730979765138,
+        "delta_utt_wer_median": 0.0
+      }
+    },
+    ">= 15 dB (High SNR)": {
+      "count": 191,
+      "total_words": 1479,
+      "noisy": {
+        "corpus_wer": 0.05273833671399594,
+        "substitutions": 53,
+        "deletions": 14,
+        "insertions": 11,
+        "correct_words": 1412,
+        "utt_wer_mean": 0.059268885623172174,
+        "utt_wer_std": 0.12929976531772266,
+        "utt_wer_median": 0.0
+      },
+      "enhanced": {
+        "corpus_wer": 0.052062204192021636,
+        "substitutions": 52,
+        "deletions": 15,
+        "insertions": 10,
+        "correct_words": 1412,
+        "utt_wer_mean": 0.059863084908470934,
+        "utt_wer_std": 0.1311414259043706,
+        "utt_wer_median": 0.0
+      },
+      "delta": {
+        "delta_corpus_wer": -0.000676132521974307,
+        "delta_substitutions": -1,
+        "delta_deletions": 1,
+        "delta_insertions": -1,
+        "delta_correct_words": 0,
+        "delta_utt_wer_mean": 0.0005941992852987615,
+        "delta_utt_wer_std": 0.0431104577869922,
+        "delta_utt_wer_median": 0.0
+      }
+    }
+  },
+  "metadata": {
+    "asr_model": "base.en",
+    "enhancement_checkpoint": "results/enhancement_train/checkpoint_best.pt",
+    "total_utterances": 824,
+    "total_words": 6211,
+    "runtime_seconds": 0.31,
+    "device": "cuda"
+  }
+}

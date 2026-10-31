@@ -1,0 +1,5770 @@
+{
+  "p232_001": {
+    "noisy_snr": 15.48,
+    "noisy_text": "Please call Stella.",
+    "noisy_time_s": 0.836,
+    "enh_text": "Please call Stella.",
+    "enh_time_s": 0.113
+  },
+  "p232_002": {
+    "noisy_snr": 11.31,
+    "noisy_text": "Ask her to bring these things with her from the store.",
+    "noisy_time_s": 0.216,
+    "enh_text": "Ask her to bring these things with her from the store.",
+    "enh_time_s": 0.219
+  },
+  "p232_003": {
+    "noisy_snr": 6.72,
+    "noisy_text": "6 spoons of fresh snow peas, 5 thick slabs of blue cheese and maybe a snack will have rather bob.",
+    "noisy_time_s": 0.37,
+    "enh_text": "6 spoons of fresh snow peas, 5 thick slabs of blue cheese and maybe a snack will have rather bob.",
+    "enh_time_s": 0.353
+  },
+  "p232_005": {
+    "noisy_snr": 1.85,
+    "noisy_text": "She can scoop these things into three red bags and we will go meet her Wednesday at the train station.",
+    "noisy_time_s": 0.294,
+    "enh_text": "She can scoop these things into three red bags and we will go meet her Wednesday at the train station.",
+    "enh_time_s": 0.324
+  },
+  "p232_006": {
+    "noisy_snr": 16.86,
+    "noisy_text": "When the sunlight strikes raindrops in the air, he acts as a prism and former rainbow.",
+    "noisy_time_s": 0.291,
+    "enh_text": "When the sunlight strikes raindrops in the air, he acts as a prism and former rainbow.",
+    "enh_time_s": 0.284
+  },
+  "p232_007": {
+    "noisy_snr": 11.81,
+    "noisy_text": "The rainbow is a division of white light into many beautiful colors.",
+    "noisy_time_s": 0.245,
+    "enh_text": "The rainbow is a division of white light into many beautiful colors.",
+    "enh_time_s": 0.226
+  },
+  "p232_009": {
+    "noisy_snr": 6.79,
+    "noisy_text": "There is, according to legend, a boiling pot of gold at one end.",
+    "noisy_time_s": 0.258,
+    "enh_text": "There is, according to legend, a boiling pot of gold at one end.",
+    "enh_time_s": 0.255
+  },
+  "p232_010": {
+    "noisy_snr": 0.91,
+    "noisy_text": "People look, but no one ever finds it.",
+    "noisy_time_s": 0.185,
+    "enh_text": "Keep a look that no one ever finds it.",
+    "enh_time_s": 0.18
+  },
+  "p232_011": {
+    "noisy_snr": 16.81,
+    "noisy_text": "When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.",
+    "noisy_time_s": 0.401,
+    "enh_text": "When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.",
+    "enh_time_s": 0.414
+  },
+  "p232_012": {
+    "noisy_snr": 11.9,
+    "noisy_text": "Throughout the centuries, people have explained the rainbow in various ways.",
+    "noisy_time_s": 0.217,
+    "enh_text": "Throughout the centuries, people have explained the rainbow in various ways.",
+    "enh_time_s": 0.216
+  },
+  "p232_013": {
+    "noisy_snr": 6.8,
+    "noisy_text": "Some have accepted it as a miracle without physical explanation.",
+    "noisy_time_s": 0.21,
+    "enh_text": "Some have accepted it as a miracle without physical explanation.",
+    "enh_time_s": 0.195
+  },
+  "p232_014": {
+    "noisy_snr": 1.99,
+    "noisy_text": "To the Hebrews, it was a token that there would be no more universal floods.",
+    "noisy_time_s": 0.263,
+    "enh_text": "To the Hebrews, it was a token that there would be no more universal loves.",
+    "enh_time_s": 0.273
+  },
+  "p232_015": {
+    "noisy_snr": 16.95,
+    "noisy_text": "The Greeks used to imagine that it was a sign from the gods to hotel, war or heavy rain.",
+    "noisy_time_s": 0.305,
+    "enh_text": "The Greeks used to imagine that it was a sign from the gods to hotel, war or heavy rain.",
+    "enh_time_s": 0.298
+  },
+  "p232_016": {
+    "noisy_snr": 11.99,
+    "noisy_text": "The Norsemen considered the rainbow as a bridge, upper which the gods passed from Earth to their home in the sky.",
+    "noisy_time_s": 0.353,
+    "enh_text": "The Norsemen considered the rainbow as a bridge, of which the gods passed from Earth to their home in the sky.",
+    "enh_time_s": 0.307
+  },
+  "p232_017": {
+    "noisy_snr": 6.44,
+    "noisy_text": "Others have tried to explain the phenomenon physically.",
+    "noisy_time_s": 0.18,
+    "enh_text": "Others have tried to explain the phenomenon physically.",
+    "enh_time_s": 0.182
+  },
+  "p232_019": {
+    "noisy_snr": 2.05,
+    "noisy_text": "Since then physicists have found that it is not reflection, but refraction, by the raindrops which causes the rainbow.",
+    "noisy_time_s": 0.308,
+    "enh_text": "Since then, physicists have found that it is not reflection, but refraction, by the raindrops which causes the rainbow.",
+    "enh_time_s": 0.377
+  },
+  "p232_020": {
+    "noisy_snr": 16.24,
+    "noisy_text": "Many complicated ideas about the rainbow have been formed.",
+    "noisy_time_s": 0.214,
+    "enh_text": "Many complicated ideas about the rainbow have been formed.",
+    "enh_time_s": 0.182
+  },
+  "p232_021": {
+    "noisy_snr": 11.92,
+    "noisy_text": "The difference in the rainbow depends considerably upon the size of the drops, and the width of the coloured band increases as the size of the drops increases.",
+    "noisy_time_s": 0.404,
+    "enh_text": "The difference in the rainbow depends considerably upon the size of the drops, and the width of the coloured band increases as the size of the drops increases.",
+    "enh_time_s": 0.361
+  },
+  "p232_022": {
+    "noisy_snr": 7.01,
+    "noisy_text": "The actual primary rainbow observed is said to be the effect of superimposition of a number of bows.",
+    "noisy_time_s": 0.291,
+    "enh_text": "The actual primary rainbow observed is said to be the effect of superimposition of a number of clothes.",
+    "enh_time_s": 0.319
+  },
+  "p232_023": {
+    "noisy_snr": 1.98,
+    "noisy_text": "If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light when mixed form yellow.",
+    "noisy_time_s": 0.491,
+    "enh_text": "If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light when mixed from yellow.",
+    "enh_time_s": 0.488
+  },
+  "p232_024": {
+    "noisy_snr": 16.8,
+    "noisy_text": "This is a very common type of bow, one showing mainly red and yellow with little or no green or blue.",
+    "noisy_time_s": 0.329,
+    "enh_text": "This is a very common type of bow, one showing mainly red and yellow with little or no green or blue.",
+    "enh_time_s": 0.327
+  },
+  "p232_025": {
+    "noisy_snr": 10.64,
+    "noisy_text": "Johnson was pretty low.",
+    "noisy_time_s": 0.113,
+    "enh_text": "Johnson was pretty low.",
+    "enh_time_s": 0.13
+  },
+  "p232_027": {
+    "noisy_snr": 6.71,
+    "noisy_text": "Several other countries are also reported to be interested in the format.",
+    "noisy_time_s": 0.213,
+    "enh_text": "Several other countries are also reported to be interested in the format.",
+    "enh_time_s": 0.209
+  },
+  "p232_028": {
+    "noisy_snr": 0.21,
+    "noisy_text": "They should be so lucky.",
+    "noisy_time_s": 0.14,
+    "enh_text": "They should be so lucky.",
+    "enh_time_s": 0.118
+  },
+  "p232_029": {
+    "noisy_snr": 16.5,
+    "noisy_text": "Their courage and their honesty should be respected.",
+    "noisy_time_s": 0.164,
+    "enh_text": "Their courage and their honesty should be respected.",
+    "enh_time_s": 0.152
+  },
+  "p232_030": {
+    "noisy_snr": 11.72,
+    "noisy_text": "It was described as being in a serious but stable condition yesterday.",
+    "noisy_time_s": 0.225,
+    "enh_text": "They were described as being in a serious but stable condition yesterday.",
+    "enh_time_s": 0.199
+  },
+  "p232_031": {
+    "noisy_snr": 5.53,
+    "noisy_text": "It's a matter of balance.",
+    "noisy_time_s": 0.143,
+    "enh_text": "It's a matter of balance.",
+    "enh_time_s": 0.161
+  },
+  "p232_032": {
+    "noisy_snr": 1.74,
+    "noisy_text": "They did not replace it with the convictions of gullible homicide.",
+    "noisy_time_s": 0.189,
+    "enh_text": "They did not replace it with the convictions of palpable homicide.",
+    "enh_time_s": 0.21
+  },
+  "p232_033": {
+    "noisy_snr": 14.95,
+    "noisy_text": "I would love it.",
+    "noisy_time_s": 0.121,
+    "enh_text": "I would love it.",
+    "enh_time_s": 0.12
+  },
+  "p232_034": {
+    "noisy_snr": 10.14,
+    "noisy_text": "It is marvellous.",
+    "noisy_time_s": 0.127,
+    "enh_text": "It is marvellous.",
+    "enh_time_s": 0.138
+  },
+  "p232_035": {
+    "noisy_snr": 6.65,
+    "noisy_text": "Other members of the family were too upset to comment last night.",
+    "noisy_time_s": 0.188,
+    "enh_text": "Other members of the family were too upset to comment last night.",
+    "enh_time_s": 0.226
+  },
+  "p232_036": {
+    "noisy_snr": 1.48,
+    "noisy_text": "But it may take some time to confirm the findings.",
+    "noisy_time_s": 0.168,
+    "enh_text": "but it may take some time to confirm the findings.",
+    "enh_time_s": 0.181
+  },
+  "p232_037": {
+    "noisy_snr": 16.57,
+    "noisy_text": "Two other men, including the taxi driver, were wounded in the attack.",
+    "noisy_time_s": 0.246,
+    "enh_text": "Two other men, including the taxi driver, were wounded in the attack.",
+    "enh_time_s": 0.281
+  },
+  "p232_038": {
+    "noisy_snr": 10.95,
+    "noisy_text": "It was fit for royalty.",
+    "noisy_time_s": 0.12,
+    "enh_text": "It was fit for reality.",
+    "enh_time_s": 0.124
+  },
+  "p232_039": {
+    "noisy_snr": 4.42,
+    "noisy_text": "I was scared.",
+    "noisy_time_s": 0.12,
+    "enh_text": "I was scared.",
+    "enh_time_s": 0.115
+  },
+  "p232_040": {
+    "noisy_snr": 0.51,
+    "noisy_text": "Dancing was her life.",
+    "noisy_time_s": 0.124,
+    "enh_text": "Dancing with her life.",
+    "enh_time_s": 0.11
+  },
+  "p232_041": {
+    "noisy_snr": 15.83,
+    "noisy_text": "I suspect the latter.",
+    "noisy_time_s": 0.125,
+    "enh_text": "I suspect the latter.",
+    "enh_time_s": 0.121
+  },
+  "p232_042": {
+    "noisy_snr": 11.24,
+    "noisy_text": "You must always attempt to raise the bar.",
+    "noisy_time_s": 0.157,
+    "enh_text": "You must always attempt to raise the bar.",
+    "enh_time_s": 0.181
+  },
+  "p232_043": {
+    "noisy_snr": 5.84,
+    "noisy_text": "but it took a lot of bottle.",
+    "noisy_time_s": 0.167,
+    "enh_text": "But it took a lot of bottle.",
+    "enh_time_s": 0.159
+  },
+  "p232_044": {
+    "noisy_snr": -0.17,
+    "noisy_text": "We will push.",
+    "noisy_time_s": 0.106,
+    "enh_text": "We will push.",
+    "enh_time_s": 0.1
+  },
+  "p232_045": {
+    "noisy_snr": 14.38,
+    "noisy_text": "It is urgent.",
+    "noisy_time_s": 0.108,
+    "enh_text": "It is urgent.",
+    "enh_time_s": 0.108
+  },
+  "p232_046": {
+    "noisy_snr": 9.93,
+    "noisy_text": "The judge said.",
+    "noisy_time_s": 0.101,
+    "enh_text": "The judge said.",
+    "enh_time_s": 0.11
+  },
+  "p232_047": {
+    "noisy_snr": 5.7,
+    "noisy_text": "It is difficult for Ali.",
+    "noisy_time_s": 0.117,
+    "enh_text": "It is difficult for Ali.",
+    "enh_time_s": 0.136
+  },
+  "p232_048": {
+    "noisy_snr": -0.67,
+    "noisy_text": "but it might have done.",
+    "noisy_time_s": 0.136,
+    "enh_text": "But it might have done.",
+    "enh_time_s": 0.126
+  },
+  "p232_049": {
+    "noisy_snr": 16.45,
+    "noisy_text": "The whole of southern Africa is in the grip of AIDS.",
+    "noisy_time_s": 0.194,
+    "enh_text": "The whole of southern Africa is in the grip of AIDS.",
+    "enh_time_s": 0.198
+  },
+  "p232_050": {
+    "noisy_snr": 10.5,
+    "noisy_text": "They had to explain it.",
+    "noisy_time_s": 0.132,
+    "enh_text": "They had to explain it.",
+    "enh_time_s": 0.152
+  },
+  "p232_051": {
+    "noisy_snr": 5.14,
+    "noisy_text": "Here's a clue.",
+    "noisy_time_s": 0.135,
+    "enh_text": "Here's a clue.",
+    "enh_time_s": 0.11
+  },
+  "p232_052": {
+    "noisy_snr": 1.18,
+    "noisy_text": "I'm always surprised to see the photograph.",
+    "noisy_time_s": 0.144,
+    "enh_text": "Always surprised to see the photographs.",
+    "enh_time_s": 0.127
+  },
+  "p232_053": {
+    "noisy_snr": 15.47,
+    "noisy_text": "It's the bigger mission.",
+    "noisy_time_s": 0.13,
+    "enh_text": "It's the bigger mission.",
+    "enh_time_s": 0.145
+  },
+  "p232_054": {
+    "noisy_snr": 11.71,
+    "noisy_text": "Several other pupils in staff were seriously injured in the accident.",
+    "noisy_time_s": 0.201,
+    "enh_text": "Several other pupils and staff were seriously injured in the accident.",
+    "enh_time_s": 0.213
+  },
+  "p232_055": {
+    "noisy_snr": 5.27,
+    "noisy_text": "It's very odd.",
+    "noisy_time_s": 0.119,
+    "enh_text": "It's very odd.",
+    "enh_time_s": 0.12
+  },
+  "p232_056": {
+    "noisy_snr": 0.59,
+    "noisy_text": "Because we do not need it.",
+    "noisy_time_s": 0.13,
+    "enh_text": "Because we do not need it.",
+    "enh_time_s": 0.129
+  },
+  "p232_057": {
+    "noisy_snr": 16.08,
+    "noisy_text": "It's not pretty but it's effective.",
+    "noisy_time_s": 0.196,
+    "enh_text": "It's not pretty but it's effective.",
+    "enh_time_s": 0.181
+  },
+  "p232_058": {
+    "noisy_snr": 11.74,
+    "noisy_text": "This obsession wasn't just contained within the world of the losers.",
+    "noisy_time_s": 0.212,
+    "enh_text": "This obsession wasn't just contained within the world of the losers.",
+    "enh_time_s": 0.242
+  },
+  "p232_059": {
+    "noisy_snr": 4.69,
+    "noisy_text": "That's the truth.",
+    "noisy_time_s": 0.123,
+    "enh_text": "That's the truth.",
+    "enh_time_s": 0.119
+  },
+  "p232_060": {
+    "noisy_snr": 0.1,
+    "noisy_text": "That is very hard alone.",
+    "noisy_time_s": 0.131,
+    "enh_text": "That is very hard alone.",
+    "enh_time_s": 0.124
+  },
+  "p232_061": {
+    "noisy_snr": 16.57,
+    "noisy_text": "The story was first reported in the spectator magazine.",
+    "noisy_time_s": 0.2,
+    "enh_text": "The story was first reported in the spectator magazine.",
+    "enh_time_s": 0.195
+  },
+  "p232_062": {
+    "noisy_snr": 11.4,
+    "noisy_text": "The problems are a result of that shortfall.",
+    "noisy_time_s": 0.196,
+    "enh_text": "The problems are a result of that shortfall.",
+    "enh_time_s": 0.164
+  },
+  "p232_063": {
+    "noisy_snr": 5.45,
+    "noisy_text": "You do not change overnight.",
+    "noisy_time_s": 0.137,
+    "enh_text": "You do not change overnight.",
+    "enh_time_s": 0.126
+  },
+  "p232_064": {
+    "noisy_snr": 0.88,
+    "noisy_text": "People love to see this stuff.",
+    "noisy_time_s": 0.149,
+    "enh_text": "People love to see this stuff.",
+    "enh_time_s": 0.168
+  },
+  "p232_065": {
+    "noisy_snr": 15.2,
+    "noisy_text": "He was popular.",
+    "noisy_time_s": 0.11,
+    "enh_text": "He was popular.",
+    "enh_time_s": 0.12
+  },
+  "p232_066": {
+    "noisy_snr": 11.47,
+    "noisy_text": "I am pleased with the result as it was a possible upset.",
+    "noisy_time_s": 0.216,
+    "enh_text": "I am pleased with the result as it was a possible upset.",
+    "enh_time_s": 0.202
+  },
+  "p232_067": {
+    "noisy_snr": 6.28,
+    "noisy_text": "Charles Kennedy had an effective outing.",
+    "noisy_time_s": 0.131,
+    "enh_text": "Charles Kennedy had an effective outing.",
+    "enh_time_s": 0.167
+  },
+  "p232_068": {
+    "noisy_snr": 1.36,
+    "noisy_text": "It is like a river running by my home.",
+    "noisy_time_s": 0.174,
+    "enh_text": "It is like a ripper running by my home.",
+    "enh_time_s": 0.166
+  },
+  "p232_069": {
+    "noisy_snr": 16.36,
+    "noisy_text": "We welcome the decision of Mr. Byers.",
+    "noisy_time_s": 0.161,
+    "enh_text": "We welcome the decision of Mr. Byers.",
+    "enh_time_s": 0.187
+  },
+  "p232_070": {
+    "noisy_snr": 11.28,
+    "noisy_text": "There is an element of racism in Scotland.",
+    "noisy_time_s": 0.167,
+    "enh_text": "There is an element of racism in Scotland.",
+    "enh_time_s": 0.149
+  },
+  "p232_071": {
+    "noisy_snr": 6.19,
+    "noisy_text": "painful but only because it's true",
+    "noisy_time_s": 0.137,
+    "enh_text": "Painful, but only because it's true.",
+    "enh_time_s": 0.182
+  },
+  "p232_072": {
+    "noisy_snr": 0.88,
+    "noisy_text": "That was the easier election.",
+    "noisy_time_s": 0.117,
+    "enh_text": "That was the easier election.",
+    "enh_time_s": 0.139
+  },
+  "p232_073": {
+    "noisy_snr": 15.43,
+    "noisy_text": "There could be a way back.",
+    "noisy_time_s": 0.148,
+    "enh_text": "There could be a way back.",
+    "enh_time_s": 0.139
+  },
+  "p232_074": {
+    "noisy_snr": 11.22,
+    "noisy_text": "Then followed about to flu.",
+    "noisy_time_s": 0.118,
+    "enh_text": "Then followed about a flu.",
+    "enh_time_s": 0.124
+  },
+  "p232_075": {
+    "noisy_snr": 6.21,
+    "noisy_text": "The price cuts are really exciting.",
+    "noisy_time_s": 0.136,
+    "enh_text": "The press cuts are really exciting.",
+    "enh_time_s": 0.134
+  },
+  "p232_076": {
+    "noisy_snr": 0.82,
+    "noisy_text": "I had my suspicions.",
+    "noisy_time_s": 0.109,
+    "enh_text": "I had my suspicions.",
+    "enh_time_s": 0.126
+  },
+  "p232_077": {
+    "noisy_snr": 15.13,
+    "noisy_text": "It was chaotic.",
+    "noisy_time_s": 0.107,
+    "enh_text": "It was chaotic.",
+    "enh_time_s": 0.105
+  },
+  "p232_078": {
+    "noisy_snr": 11.05,
+    "noisy_text": "It is a job creation scheme.",
+    "noisy_time_s": 0.145,
+    "enh_text": "It is a job creation scheme.",
+    "enh_time_s": 0.13
+  },
+  "p232_079": {
+    "noisy_snr": 5.91,
+    "noisy_text": "He is now resident in England.",
+    "noisy_time_s": 0.139,
+    "enh_text": "He is now resident in England.",
+    "enh_time_s": 0.138
+  },
+  "p232_080": {
+    "noisy_snr": -0.71,
+    "noisy_text": "I've got the shirt.",
+    "noisy_time_s": 0.125,
+    "enh_text": "I've got the shirt.",
+    "enh_time_s": 0.139
+  },
+  "p232_081": {
+    "noisy_snr": 15.74,
+    "noisy_text": "Today she has been released.",
+    "noisy_time_s": 0.127,
+    "enh_text": "Today she has been released.",
+    "enh_time_s": 0.146
+  },
+  "p232_082": {
+    "noisy_snr": 10.29,
+    "noisy_text": "What has changed?",
+    "noisy_time_s": 0.119,
+    "enh_text": "What has changed?",
+    "enh_time_s": 0.112
+  },
+  "p232_083": {
+    "noisy_snr": 5.42,
+    "noisy_text": "That is bound to happen.",
+    "noisy_time_s": 0.129,
+    "enh_text": "That is bound to happen.",
+    "enh_time_s": 0.131
+  },
+  "p232_084": {
+    "noisy_snr": -0.31,
+    "noisy_text": "I will miss him.",
+    "noisy_time_s": 0.122,
+    "enh_text": "I will miss him.",
+    "enh_time_s": 0.107
+  },
+  "p232_085": {
+    "noisy_snr": 15.84,
+    "noisy_text": "It's all going to clear the debt.",
+    "noisy_time_s": 0.151,
+    "enh_text": "It's all going to clear the debt.",
+    "enh_time_s": 0.165
+  },
+  "p232_086": {
+    "noisy_snr": 10.72,
+    "noisy_text": "She had kept the news from him.",
+    "noisy_time_s": 0.147,
+    "enh_text": "She had kept the news from him.",
+    "enh_time_s": 0.169
+  },
+  "p232_087": {
+    "noisy_snr": 5.8,
+    "noisy_text": "No progress has been made.",
+    "noisy_time_s": 0.121,
+    "enh_text": "No progress has been made.",
+    "enh_time_s": 0.13
+  },
+  "p232_088": {
+    "noisy_snr": 1.46,
+    "noisy_text": "Others were in hiding in fear of their lives.",
+    "noisy_time_s": 0.178,
+    "enh_text": "Others were in hiding in fear of their lives.",
+    "enh_time_s": 0.194
+  },
+  "p232_089": {
+    "noisy_snr": 16.22,
+    "noisy_text": "Now the system is right behind us.",
+    "noisy_time_s": 0.136,
+    "enh_text": "Now the system is right behind us.",
+    "enh_time_s": 0.146
+  },
+  "p232_090": {
+    "noisy_snr": 11.4,
+    "noisy_text": "Downing Street will make the second appointment in the Scotland office today.",
+    "noisy_time_s": 0.207,
+    "enh_text": "Downing Street will make the second appointment in the Scotland office today.",
+    "enh_time_s": 0.227
+  },
+  "p232_091": {
+    "noisy_snr": 5.28,
+    "noisy_text": "It is a lifeline.",
+    "noisy_time_s": 0.155,
+    "enh_text": "It is a lifeline. // // // // // // // // // // // // // // // // // // // // // // // // // // // //",
+    "enh_time_s": 1.013
+  },
+  "p232_092": {
+    "noisy_snr": 0.56,
+    "noisy_text": "Today I couldn't run on it.",
+    "noisy_time_s": 0.184,
+    "enh_text": "Today I couldn't run on it.",
+    "enh_time_s": 0.149
+  },
+  "p232_093": {
+    "noisy_snr": 16.1,
+    "noisy_text": "However, it did not end that way.",
+    "noisy_time_s": 0.163,
+    "enh_text": "However, it did not end that way.",
+    "enh_time_s": 0.156
+  },
+  "p232_094": {
+    "noisy_snr": 11.49,
+    "noisy_text": "This time it will have opened up the field a little bit.",
+    "noisy_time_s": 0.191,
+    "enh_text": "This time it will have opened up the field a little bit.",
+    "enh_time_s": 0.219
+  },
+  "p232_095": {
+    "noisy_snr": 7.44,
+    "noisy_text": "I have every confidence in Raymond Robertson as chairman of the party.",
+    "noisy_time_s": 0.204,
+    "enh_text": "I have every confidence in Raymond Robertson as Chairman of the Party.",
+    "enh_time_s": 0.197
+  },
+  "p232_096": {
+    "noisy_snr": 0.84,
+    "noisy_text": "Then came the crunch.",
+    "noisy_time_s": 0.132,
+    "enh_text": "Then came the trunk.",
+    "enh_time_s": 0.13
+  },
+  "p232_097": {
+    "noisy_snr": 16.36,
+    "noisy_text": "The oil companies would be asked to contribute.",
+    "noisy_time_s": 0.185,
+    "enh_text": "The oil companies would be asked to contribute.",
+    "enh_time_s": 0.176
+  },
+  "p232_098": {
+    "noisy_snr": 11.11,
+    "noisy_text": "I wish I had put on a brighter tie.",
+    "noisy_time_s": 0.175,
+    "enh_text": "I wish I had put on a brighter tie.",
+    "enh_time_s": 0.187
+  },
+  "p232_099": {
+    "noisy_snr": 6.38,
+    "noisy_text": "They were under a lot of pressure from the other clubs.",
+    "noisy_time_s": 0.191,
+    "enh_text": "They were under a lot of pressure from the other clubs.",
+    "enh_time_s": 0.203
+  },
+  "p232_100": {
+    "noisy_snr": 0.26,
+    "noisy_text": "It was mayhem.",
+    "noisy_time_s": 0.105,
+    "enh_text": "It was mayhem.",
+    "enh_time_s": 0.114
+  },
+  "p232_101": {
+    "noisy_snr": 15.76,
+    "noisy_text": "They were outside the circle.",
+    "noisy_time_s": 0.128,
+    "enh_text": "They were outside the circle.",
+    "enh_time_s": 0.136
+  },
+  "p232_102": {
+    "noisy_snr": 10.75,
+    "noisy_text": "It was a good performance.",
+    "noisy_time_s": 0.132,
+    "enh_text": "It was a good performance.",
+    "enh_time_s": 0.125
+  },
+  "p232_103": {
+    "noisy_snr": 6.65,
+    "noisy_text": "We recognise the important role of golf in attracting visitors.",
+    "noisy_time_s": 0.185,
+    "enh_text": "We recognise the important role of golf in attracting visitors.",
+    "enh_time_s": 0.183
+  },
+  "p232_104": {
+    "noisy_snr": 1.27,
+    "noisy_text": "There will be no repeat of that performance that I can guarantee.",
+    "noisy_time_s": 0.188,
+    "enh_text": "There will be no repeat of that performance that I can guarantee.",
+    "enh_time_s": 0.207
+  },
+  "p232_105": {
+    "noisy_snr": 15.43,
+    "noisy_text": "That is no use.",
+    "noisy_time_s": 0.158,
+    "enh_text": "That is no use.",
+    "enh_time_s": 0.126
+  },
+  "p232_106": {
+    "noisy_snr": 11.15,
+    "noisy_text": "It was really enjoyable on Saturday.",
+    "noisy_time_s": 0.141,
+    "enh_text": "It was really enjoyable on Saturday.",
+    "enh_time_s": 0.138
+  },
+  "p232_107": {
+    "noisy_snr": 6.2,
+    "noisy_text": "While they went on holiday, we got the contract.",
+    "noisy_time_s": 0.197,
+    "enh_text": "While they went on holiday, we got the contract.",
+    "enh_time_s": 0.203
+  },
+  "p232_108": {
+    "noisy_snr": 0.46,
+    "noisy_text": "He pleaded for caution.",
+    "noisy_time_s": 0.108,
+    "enh_text": "He pleaded for caution.",
+    "enh_time_s": 0.114
+  },
+  "p232_109": {
+    "noisy_snr": 16.6,
+    "noisy_text": "He plans to call for an aid package from Mr. McDonald.",
+    "noisy_time_s": 0.191,
+    "enh_text": "He plans to call for an aid package from Mr. McDonald.",
+    "enh_time_s": 0.211
+  },
+  "p232_110": {
+    "noisy_snr": 10.95,
+    "noisy_text": "I don't have many friends.",
+    "noisy_time_s": 0.153,
+    "enh_text": "I don't have many friends.",
+    "enh_time_s": 0.142
+  },
+  "p232_112": {
+    "noisy_snr": 5.4,
+    "noisy_text": "You had better believe it.",
+    "noisy_time_s": 0.119,
+    "enh_text": "You had better believe it.",
+    "enh_time_s": 0.131
+  },
+  "p232_113": {
+    "noisy_snr": -0.22,
+    "noisy_text": "It's not fair.",
+    "noisy_time_s": 0.11,
+    "enh_text": "It's not fair.",
+    "enh_time_s": 0.116
+  },
+  "p232_114": {
+    "noisy_snr": 16.84,
+    "noisy_text": "We have to look at everything before we make any final decision.",
+    "noisy_time_s": 0.234,
+    "enh_text": "We have to look at everything before we make any panel decision.",
+    "enh_time_s": 0.235
+  },
+  "p232_115": {
+    "noisy_snr": 11.42,
+    "noisy_text": "Among them was Gary Robertson from Dundee.",
+    "noisy_time_s": 0.153,
+    "enh_text": "Among them was Gary Robertson from Dundee.",
+    "enh_time_s": 0.166
+  },
+  "p232_116": {
+    "noisy_snr": 6.01,
+    "noisy_text": "Maybe this battle has been.",
+    "noisy_time_s": 0.129,
+    "enh_text": "Maybe this battle has been...",
+    "enh_time_s": 0.13
+  },
+  "p232_117": {
+    "noisy_snr": 1.72,
+    "noisy_text": "Mr. Chisholm said the move was made on the advice of consultants.",
+    "noisy_time_s": 0.288,
+    "enh_text": "Mr. Chisholm said the move was made on the advice of consultants.",
+    "enh_time_s": 0.247
+  },
+  "p232_118": {
+    "noisy_snr": 16.34,
+    "noisy_text": "They're after he set his mind on becoming a doctor.",
+    "noisy_time_s": 0.196,
+    "enh_text": "Thereafter, he set his mind on becoming a doctor.",
+    "enh_time_s": 0.192
+  },
+  "p232_119": {
+    "noisy_snr": 11.22,
+    "noisy_text": "This is the end of a chapter and this is very sad.",
+    "noisy_time_s": 0.222,
+    "enh_text": "This is the end of a chapter, and this is very sad.",
+    "enh_time_s": 0.228
+  },
+  "p232_120": {
+    "noisy_snr": 4.95,
+    "noisy_text": "It is rubbish.",
+    "noisy_time_s": 0.105,
+    "enh_text": "It is rubbish.",
+    "enh_time_s": 0.108
+  },
+  "p232_121": {
+    "noisy_snr": 1.53,
+    "noisy_text": "That was the lesson to be learned from the European Championships.",
+    "noisy_time_s": 0.186,
+    "enh_text": "That was the lesson to be learned from the European Championships.",
+    "enh_time_s": 0.188
+  },
+  "p232_123": {
+    "noisy_snr": 16.69,
+    "noisy_text": "An announcement on his replacement is expected within three weeks.",
+    "noisy_time_s": 0.172,
+    "enh_text": "An announcement on his replacement is expected within three weeks.",
+    "enh_time_s": 0.183
+  },
+  "p232_124": {
+    "noisy_snr": 10.07,
+    "noisy_text": "That's all right then.",
+    "noisy_time_s": 0.127,
+    "enh_text": "That's all right then.",
+    "enh_time_s": 0.131
+  },
+  "p232_125": {
+    "noisy_snr": 5.33,
+    "noisy_text": "I'm so angry.",
+    "noisy_time_s": 0.113,
+    "enh_text": "I'm so angry.",
+    "enh_time_s": 0.109
+  },
+  "p232_126": {
+    "noisy_snr": 0.9,
+    "noisy_text": "Child abuse is a dreadful thing.",
+    "noisy_time_s": 0.147,
+    "enh_text": "Child abuse is a dreadful thing.",
+    "enh_time_s": 0.134
+  },
+  "p232_127": {
+    "noisy_snr": 15.73,
+    "noisy_text": "It has removed a bit of guilt.",
+    "noisy_time_s": 0.139,
+    "enh_text": "It has removed a bit of guilt.",
+    "enh_time_s": 0.155
+  },
+  "p232_128": {
+    "noisy_snr": 11.14,
+    "noisy_text": "Despite the result, it was still a great moment.",
+    "noisy_time_s": 0.172,
+    "enh_text": "Despite the result, it was still a great moment.",
+    "enh_time_s": 0.185
+  },
+  "p232_129": {
+    "noisy_snr": 6.65,
+    "noisy_text": "The task force continues to be in discussion with both companies.",
+    "noisy_time_s": 0.196,
+    "enh_text": "The task cross continues to be in discussion with both companies.",
+    "enh_time_s": 0.194
+  },
+  "p232_130": {
+    "noisy_snr": 1.24,
+    "noisy_text": "Offward the gold medal he declined.",
+    "noisy_time_s": 0.149,
+    "enh_text": "Upward the gold medal, he declined.",
+    "enh_time_s": 0.172
+  },
+  "p232_131": {
+    "noisy_snr": 16.49,
+    "noisy_text": "That first victory made a huge difference to my career.",
+    "noisy_time_s": 0.201,
+    "enh_text": "That first victory made a huge difference to my career.",
+    "enh_time_s": 0.201
+  },
+  "p232_132": {
+    "noisy_snr": 10.69,
+    "noisy_text": "I am now unemployed.",
+    "noisy_time_s": 0.114,
+    "enh_text": "I am now unemployed.",
+    "enh_time_s": 0.116
+  },
+  "p232_133": {
+    "noisy_snr": 6.23,
+    "noisy_text": "If not, a deal could take many months.",
+    "noisy_time_s": 0.18,
+    "enh_text": "If not, a deal could take many months.",
+    "enh_time_s": 0.173
+  },
+  "p232_134": {
+    "noisy_snr": 0.48,
+    "noisy_text": "It got to be vigilant.",
+    "noisy_time_s": 0.121,
+    "enh_text": "You've got to be vigilant.",
+    "enh_time_s": 0.145
+  },
+  "p232_135": {
+    "noisy_snr": 15.57,
+    "noisy_text": "Our intentions are real.",
+    "noisy_time_s": 0.122,
+    "enh_text": "Our intentions are real.",
+    "enh_time_s": 0.112
+  },
+  "p232_136": {
+    "noisy_snr": 10.09,
+    "noisy_text": "They took a risk.",
+    "noisy_time_s": 0.109,
+    "enh_text": "They took a risk.",
+    "enh_time_s": 0.129
+  },
+  "p232_137": {
+    "noisy_snr": 5.26,
+    "noisy_text": "The goals were good.",
+    "noisy_time_s": 0.126,
+    "enh_text": "The goals were good.",
+    "enh_time_s": 0.129
+  },
+  "p232_138": {
+    "noisy_snr": 0.36,
+    "noisy_text": "What will happen then?",
+    "noisy_time_s": 0.118,
+    "enh_text": "What will happen then?",
+    "enh_time_s": 0.129
+  },
+  "p232_139": {
+    "noisy_snr": 15.99,
+    "noisy_text": "I am totally devoted to this job.",
+    "noisy_time_s": 0.15,
+    "enh_text": "I am totally devoted to this job.",
+    "enh_time_s": 0.144
+  },
+  "p232_140": {
+    "noisy_snr": 10.19,
+    "noisy_text": "He is severe.",
+    "noisy_time_s": 0.105,
+    "enh_text": "He is severe.",
+    "enh_time_s": 0.109
+  },
+  "p232_141": {
+    "noisy_snr": 5.45,
+    "noisy_text": "She died at her home.",
+    "noisy_time_s": 0.122,
+    "enh_text": "She died at her home.",
+    "enh_time_s": 0.113
+  },
+  "p232_142": {
+    "noisy_snr": 1.87,
+    "noisy_text": "I don't know what to have a fight with Mr Hastings.",
+    "noisy_time_s": 0.19,
+    "enh_text": "I don't know what to have a fight with Mr Hastings.",
+    "enh_time_s": 0.19
+  },
+  "p232_143": {
+    "noisy_snr": 15.28,
+    "noisy_text": "They did very well.",
+    "noisy_time_s": 0.111,
+    "enh_text": "They did very well.",
+    "enh_time_s": 0.109
+  },
+  "p232_144": {
+    "noisy_snr": 11.1,
+    "noisy_text": "The homicide didn't stand a chance.",
+    "noisy_time_s": 0.143,
+    "enh_text": "The homicide didn't stand a chance.",
+    "enh_time_s": 0.159
+  },
+  "p232_145": {
+    "noisy_snr": 6.09,
+    "noisy_text": "We want to see the maximum change.",
+    "noisy_time_s": 0.151,
+    "enh_text": "We want to see the maximum change.",
+    "enh_time_s": 0.144
+  },
+  "p232_146": {
+    "noisy_snr": 0.85,
+    "noisy_text": "It was deployed in the Gulf War.",
+    "noisy_time_s": 0.159,
+    "enh_text": "It was deployed in the Gulf War.",
+    "enh_time_s": 0.145
+  },
+  "p232_147": {
+    "noisy_snr": 16.36,
+    "noisy_text": "Crucially though, United was still alive.",
+    "noisy_time_s": 0.164,
+    "enh_text": "Crucially though, United was still alive.",
+    "enh_time_s": 0.164
+  },
+  "p232_148": {
+    "noisy_snr": 11.61,
+    "noisy_text": "The departure of Mr Johnston was reported by the Herald yesterday.",
+    "noisy_time_s": 0.202,
+    "enh_text": "The departure of Mr Johnston was reported by the Herald yesterday.",
+    "enh_time_s": 0.195
+  },
+  "p232_150": {
+    "noisy_snr": 5.88,
+    "noisy_text": "She had gone to the Catholic school.",
+    "noisy_time_s": 0.158,
+    "enh_text": "She had gone to the Catholic school.",
+    "enh_time_s": 0.14
+  },
+  "p232_151": {
+    "noisy_snr": 1.34,
+    "noisy_text": "It's a problem but it cannot become an excuse.",
+    "noisy_time_s": 0.177,
+    "enh_text": "It's a problem but it cannot become an excuse.",
+    "enh_time_s": 0.185
+  },
+  "p232_152": {
+    "noisy_snr": 15.6,
+    "noisy_text": "It was by the numbers.",
+    "noisy_time_s": 0.121,
+    "enh_text": "It was by the numbers.",
+    "enh_time_s": 0.125
+  },
+  "p232_153": {
+    "noisy_snr": 10.78,
+    "noisy_text": "I was in daily contact.",
+    "noisy_time_s": 0.121,
+    "enh_text": "I was in daily contact.",
+    "enh_time_s": 0.132
+  },
+  "p232_154": {
+    "noisy_snr": 6.14,
+    "noisy_text": "They were later discharged from hospital.",
+    "noisy_time_s": 0.15,
+    "enh_text": "It will make it discharged from hospital.",
+    "enh_time_s": 0.17
+  },
+  "p232_155": {
+    "noisy_snr": 1.25,
+    "noisy_text": "This latter point is usually important.",
+    "noisy_time_s": 0.134,
+    "enh_text": "This latter point is usually important.",
+    "enh_time_s": 0.149
+  },
+  "p232_156": {
+    "noisy_snr": 15.94,
+    "noisy_text": "It is an attitude of mind.",
+    "noisy_time_s": 0.128,
+    "enh_text": "It is an attitude of mind.",
+    "enh_time_s": 0.134
+  },
+  "p232_158": {
+    "noisy_snr": 11.56,
+    "noisy_text": "They said that vital evidence was not heard in court.",
+    "noisy_time_s": 0.167,
+    "enh_text": "They say that vital evidence was not heard in court.",
+    "enh_time_s": 0.192
+  },
+  "p232_159": {
+    "noisy_snr": 5.68,
+    "noisy_text": "We have to move forward.",
+    "noisy_time_s": 0.119,
+    "enh_text": "We have to move forward.",
+    "enh_time_s": 0.155
+  },
+  "p232_160": {
+    "noisy_snr": 2.43,
+    "noisy_text": "Local managers are already involved in talks with potential investors.",
+    "noisy_time_s": 0.194,
+    "enh_text": "Local managers are already involved in products with potential investors.",
+    "enh_time_s": 0.188
+  },
+  "p232_161": {
+    "noisy_snr": 16.37,
+    "noisy_text": "We do not comment on the behavior of our authors.",
+    "noisy_time_s": 0.175,
+    "enh_text": "We do not comment on the behavior of our authors.",
+    "enh_time_s": 0.184
+  },
+  "p232_162": {
+    "noisy_snr": 10.2,
+    "noisy_text": "Tell it like it was.",
+    "noisy_time_s": 0.119,
+    "enh_text": "Tell it like it was.",
+    "enh_time_s": 0.133
+  },
+  "p232_163": {
+    "noisy_snr": 6.01,
+    "noisy_text": "It is not too late to get on board.",
+    "noisy_time_s": 0.17,
+    "enh_text": "It is not too late to get on board.",
+    "enh_time_s": 0.185
+  },
+  "p232_164": {
+    "noisy_snr": 1.17,
+    "noisy_text": "That must be left to the parole board.",
+    "noisy_time_s": 0.163,
+    "enh_text": "That must be left to the parole board.",
+    "enh_time_s": 0.152
+  },
+  "p232_165": {
+    "noisy_snr": 15.48,
+    "noisy_text": "Again, we were lucky.",
+    "noisy_time_s": 0.126,
+    "enh_text": "Again, we were lucky.",
+    "enh_time_s": 0.134
+  },
+  "p232_167": {
+    "noisy_snr": 11.33,
+    "noisy_text": "Waiting times for these services are too long.",
+    "noisy_time_s": 0.171,
+    "enh_text": "Waiting times for these services are too long.",
+    "enh_time_s": 0.168
+  },
+  "p232_169": {
+    "noisy_snr": 6.6,
+    "noisy_text": "It's too early to say whether a public inquiry would be appropriate.",
+    "noisy_time_s": 0.215,
+    "enh_text": "It's too early to say whether a public inquiry would be appropriate.",
+    "enh_time_s": 0.245
+  },
+  "p232_170": {
+    "noisy_snr": 0.72,
+    "noisy_text": "We've made a couple of albums.",
+    "noisy_time_s": 0.164,
+    "enh_text": "We've made a couple of albums.",
+    "enh_time_s": 0.155
+  },
+  "p232_171": {
+    "noisy_snr": 15.78,
+    "noisy_text": "My life has been destroyed.",
+    "noisy_time_s": 0.151,
+    "enh_text": "My life has been destroyed.",
+    "enh_time_s": 0.132
+  },
+  "p232_172": {
+    "noisy_snr": 10.87,
+    "noisy_text": "They thought they had found a home.",
+    "noisy_time_s": 0.155,
+    "enh_text": "They thought they had found a home.",
+    "enh_time_s": 0.166
+  },
+  "p232_173": {
+    "noisy_snr": 5.93,
+    "noisy_text": "It became a book by itself.",
+    "noisy_time_s": 0.13,
+    "enh_text": "It became a book by itself.",
+    "enh_time_s": 0.127
+  },
+  "p232_174": {
+    "noisy_snr": 0.94,
+    "noisy_text": "I always felt they played for me.",
+    "noisy_time_s": 0.154,
+    "enh_text": "I always felt they played for me.",
+    "enh_time_s": 0.15
+  },
+  "p232_175": {
+    "noisy_snr": 16.55,
+    "noisy_text": "You've got to get people from all sorts of different directions.",
+    "noisy_time_s": 0.207,
+    "enh_text": "You've got to get people from all sorts of different directions.",
+    "enh_time_s": 0.216
+  },
+  "p232_176": {
+    "noisy_snr": 11.45,
+    "noisy_text": "First and foremost, the game is entirely different.",
+    "noisy_time_s": 0.184,
+    "enh_text": "First and foremost, the game is entirely different.",
+    "enh_time_s": 0.182
+  },
+  "p232_177": {
+    "noisy_snr": 5.31,
+    "noisy_text": "last response was weak.",
+    "noisy_time_s": 0.154,
+    "enh_text": "last response was weak.",
+    "enh_time_s": 0.13
+  },
+  "p232_178": {
+    "noisy_snr": 0.89,
+    "noisy_text": "It's the real thing for sure.",
+    "noisy_time_s": 0.142,
+    "enh_text": "It's the real thing to show up.",
+    "enh_time_s": 0.167
+  },
+  "p232_179": {
+    "noisy_snr": 16.64,
+    "noisy_text": "However, the figures were disputed by the Scottish Prison Service.",
+    "noisy_time_s": 0.214,
+    "enh_text": "However, the figures were disputed by the Scottish Prison Service.",
+    "enh_time_s": 0.192
+  },
+  "p232_180": {
+    "noisy_snr": 11.48,
+    "noisy_text": "The event was held in the council's headquarters in Hamilton.",
+    "noisy_time_s": 0.188,
+    "enh_text": "The event was held in the council's headquarters in Hamilton.",
+    "enh_time_s": 0.194
+  },
+  "p232_181": {
+    "noisy_snr": 5.77,
+    "noisy_text": "The clarity is vital.",
+    "noisy_time_s": 0.109,
+    "enh_text": "The clarity is vital. // // // // // // // // // // // // // // // // // // // // // // // // // // // //",
+    "enh_time_s": 1.028
+  },
+  "p232_182": {
+    "noisy_snr": 1.4,
+    "noisy_text": "I've been in two finals and I've got a medal.",
+    "noisy_time_s": 0.225,
+    "enh_text": "I've been in two finals and I've got a medal.",
+    "enh_time_s": 0.2
+  },
+  "p232_183": {
+    "noisy_snr": 14.92,
+    "noisy_text": "Everyone can be bought.",
+    "noisy_time_s": 0.114,
+    "enh_text": "Everyone can be bought.",
+    "enh_time_s": 0.126
+  },
+  "p232_184": {
+    "noisy_snr": 10.93,
+    "noisy_text": "A career as a doctor is on hold.",
+    "noisy_time_s": 0.151,
+    "enh_text": "A career as a doctor is on hold.",
+    "enh_time_s": 0.146
+  },
+  "p232_185": {
+    "noisy_snr": 6.32,
+    "noisy_text": "Mr. Dokkety said the whole family was shocked.",
+    "noisy_time_s": 0.203,
+    "enh_text": "Mr. Dokkety said the whole family was shocked.",
+    "enh_time_s": 0.222
+  },
+  "p232_186": {
+    "noisy_snr": 0.24,
+    "noisy_text": "It is the whole package.",
+    "noisy_time_s": 0.133,
+    "enh_text": "It is the whole package.",
+    "enh_time_s": 0.121
+  },
+  "p232_187": {
+    "noisy_snr": 14.93,
+    "noisy_text": "I've been there.",
+    "noisy_time_s": 0.109,
+    "enh_text": "I've been there.",
+    "enh_time_s": 0.121
+  },
+  "p232_188": {
+    "noisy_snr": 11.25,
+    "noisy_text": "Family liaison officers are now working to support the family.",
+    "noisy_time_s": 0.176,
+    "enh_text": "Family liaison officers are now working to support the family.",
+    "enh_time_s": 0.171
+  },
+  "p232_189": {
+    "noisy_snr": 6.16,
+    "noisy_text": "They receive a high profile in the media.",
+    "noisy_time_s": 0.149,
+    "enh_text": "They receive a high profile in the media.",
+    "enh_time_s": 0.169
+  },
+  "p232_190": {
+    "noisy_snr": 0.66,
+    "noisy_text": "We did everything by the book.",
+    "noisy_time_s": 0.147,
+    "enh_text": "We did everything by the plug.",
+    "enh_time_s": 0.163
+  },
+  "p232_191": {
+    "noisy_snr": 15.6,
+    "noisy_text": "I wish I could say something.",
+    "noisy_time_s": 0.158,
+    "enh_text": "I wish I could say something.",
+    "enh_time_s": 0.143
+  },
+  "p232_193": {
+    "noisy_snr": 10.98,
+    "noisy_text": "The procedure is the same in all cases.",
+    "noisy_time_s": 0.149,
+    "enh_text": "The procedure is the same in all cases.",
+    "enh_time_s": 0.184
+  },
+  "p232_194": {
+    "noisy_snr": 6.64,
+    "noisy_text": "But a final decision will not be taken until after the elections.",
+    "noisy_time_s": 0.189,
+    "enh_text": "But a final decision will not be taken until after the elections.",
+    "enh_time_s": 0.199
+  },
+  "p232_195": {
+    "noisy_snr": 1.02,
+    "noisy_text": "I wanted to put myself on the line.",
+    "noisy_time_s": 0.164,
+    "enh_text": "I wanted to put myself on the line.",
+    "enh_time_s": 0.201
+  },
+  "p232_196": {
+    "noisy_snr": 15.18,
+    "noisy_text": "I came home by ambulance.",
+    "noisy_time_s": 0.147,
+    "enh_text": "I came home by ambulance.",
+    "enh_time_s": 0.132
+  },
+  "p232_197": {
+    "noisy_snr": 11.38,
+    "noisy_text": "The modern approach will also be reflected in the terms of dress.",
+    "noisy_time_s": 0.206,
+    "enh_text": "The modern approach will also be reflected in the terms of dress.",
+    "enh_time_s": 0.218
+  },
+  "p232_198": {
+    "noisy_snr": 5.59,
+    "noisy_text": "The conference is the best test.",
+    "noisy_time_s": 0.135,
+    "enh_text": "The conference is the first test.",
+    "enh_time_s": 0.155
+  },
+  "p232_199": {
+    "noisy_snr": 1.19,
+    "noisy_text": "established from the other days with the Supa.",
+    "noisy_time_s": 0.185,
+    "enh_text": "established from the other planes with Super.",
+    "enh_time_s": 0.154
+  },
+  "p232_200": {
+    "noisy_snr": 16.37,
+    "noisy_text": "He's not written as a terrible exciting person in the book.",
+    "noisy_time_s": 0.201,
+    "enh_text": "He's not written as a terrible exciting person in the book.",
+    "enh_time_s": 0.205
+  },
+  "p232_201": {
+    "noisy_snr": 11.41,
+    "noisy_text": "On the outside of an airport it is very difficult.",
+    "noisy_time_s": 0.18,
+    "enh_text": "On the outside of an airport it is very difficult.",
+    "enh_time_s": 0.212
+  },
+  "p232_202": {
+    "noisy_snr": 7.01,
+    "noisy_text": "The sisters also became the top two players in the world.",
+    "noisy_time_s": 0.205,
+    "enh_text": "The sisters also became the top 2 players in the world.",
+    "enh_time_s": 0.222
+  },
+  "p232_203": {
+    "noisy_snr": 1.51,
+    "noisy_text": "A deadline is still essential.",
+    "noisy_time_s": 0.149,
+    "enh_text": "A deadline is still a thank you.",
+    "enh_time_s": 0.161
+  },
+  "p232_204": {
+    "noisy_snr": 16.54,
+    "noisy_text": "We see the rapid reaction force as the way ahead.",
+    "noisy_time_s": 0.202,
+    "enh_text": "We see the rapid reaction force as the way ahead.",
+    "enh_time_s": 0.185
+  },
+  "p232_205": {
+    "noisy_snr": 10.6,
+    "noisy_text": "It's a mixture of everything.",
+    "noisy_time_s": 0.133,
+    "enh_text": "It's a mixture of everything.",
+    "enh_time_s": 0.156
+  },
+  "p232_206": {
+    "noisy_snr": 6.33,
+    "noisy_text": "We're not seeing an image of the person, he said.",
+    "noisy_time_s": 0.212,
+    "enh_text": "We're not seeing an image of the person, he said.",
+    "enh_time_s": 0.225
+  },
+  "p232_207": {
+    "noisy_snr": 0.26,
+    "noisy_text": "I don't want to use it.",
+    "noisy_time_s": 0.165,
+    "enh_text": "I don't want to use it.",
+    "enh_time_s": 0.184
+  },
+  "p232_208": {
+    "noisy_snr": 14.64,
+    "noisy_text": "Now it's alright.",
+    "noisy_time_s": 0.125,
+    "enh_text": "Now it's alright.",
+    "enh_time_s": 0.108
+  },
+  "p232_209": {
+    "noisy_snr": 9.97,
+    "noisy_text": "There was an email.",
+    "noisy_time_s": 0.126,
+    "enh_text": "There was an email.",
+    "enh_time_s": 0.106
+  },
+  "p232_210": {
+    "noisy_snr": 5.2,
+    "noisy_text": "That's the day job.",
+    "noisy_time_s": 0.145,
+    "enh_text": "That's the day job.",
+    "enh_time_s": 0.118
+  },
+  "p232_211": {
+    "noisy_snr": -0.5,
+    "noisy_text": "You overheat?",
+    "noisy_time_s": 0.1,
+    "enh_text": "You have a heat?",
+    "enh_time_s": 0.119
+  },
+  "p232_213": {
+    "noisy_snr": 14.88,
+    "noisy_text": "He is slightly confused.",
+    "noisy_time_s": 0.11,
+    "enh_text": "He is slightly confused.",
+    "enh_time_s": 0.127
+  },
+  "p232_214": {
+    "noisy_snr": 10.69,
+    "noisy_text": "She should not be blamed.",
+    "noisy_time_s": 0.146,
+    "enh_text": "She should not be blamed.",
+    "enh_time_s": 0.153
+  },
+  "p232_215": {
+    "noisy_snr": 5.65,
+    "noisy_text": "He's third goal with superb.",
+    "noisy_time_s": 0.145,
+    "enh_text": "He's third goal with superb.",
+    "enh_time_s": 0.141
+  },
+  "p232_216": {
+    "noisy_snr": 1.36,
+    "noisy_text": "He would discuss the peace process in Northern Ireland.",
+    "noisy_time_s": 0.166,
+    "enh_text": "He would discuss the peace process in Northern Ireland.",
+    "enh_time_s": 0.164
+  },
+  "p232_217": {
+    "noisy_snr": 15.14,
+    "noisy_text": "It's not ideal.",
+    "noisy_time_s": 0.114,
+    "enh_text": "It's not ideal",
+    "enh_time_s": 0.127
+  },
+  "p232_218": {
+    "noisy_snr": 10.89,
+    "noisy_text": "He seemed to lose his focus.",
+    "noisy_time_s": 0.14,
+    "enh_text": "He seemed to lose his focus.",
+    "enh_time_s": 0.144
+  },
+  "p232_219": {
+    "noisy_snr": 6.62,
+    "noisy_text": "He said that healthy eating was high on the Council agenda.",
+    "noisy_time_s": 0.2,
+    "enh_text": "He said that healthy eating was high on the council agenda.",
+    "enh_time_s": 0.218
+  },
+  "p232_220": {
+    "noisy_snr": 1.67,
+    "noisy_text": "The Council has proposed a temporary barrier to protect the monument.",
+    "noisy_time_s": 0.195,
+    "enh_text": "The Council has proposed a temporary barrier to protective monument.",
+    "enh_time_s": 0.181
+  },
+  "p232_221": {
+    "noisy_snr": 17.01,
+    "noisy_text": "Friends of the Earth Scotland last night welcome the announcement.",
+    "noisy_time_s": 0.201,
+    "enh_text": "Friends of the Earth Scotland last night welcome the announcement.",
+    "enh_time_s": 0.18
+  },
+  "p232_223": {
+    "noisy_snr": 10.66,
+    "noisy_text": "It was a miserable afternoon in Pfeiff.",
+    "noisy_time_s": 0.178,
+    "enh_text": "It was a miserable afternoon and pipe.",
+    "enh_time_s": 0.176
+  },
+  "p232_224": {
+    "noisy_snr": 5.85,
+    "noisy_text": "That has been the easy part.",
+    "noisy_time_s": 0.15,
+    "enh_text": "That has been the easy part.",
+    "enh_time_s": 0.131
+  },
+  "p232_225": {
+    "noisy_snr": 0.52,
+    "noisy_text": "We've got the bronze.",
+    "noisy_time_s": 0.124,
+    "enh_text": "We've got the prongs.",
+    "enh_time_s": 0.14
+  },
+  "p232_226": {
+    "noisy_snr": 16.11,
+    "noisy_text": "Mental health is a massive issue.",
+    "noisy_time_s": 0.143,
+    "enh_text": "Mental health is a massive issue.",
+    "enh_time_s": 0.148
+  },
+  "p232_227": {
+    "noisy_snr": 11.56,
+    "noisy_text": "At the top of the structure will remain the post of head teacher.",
+    "noisy_time_s": 0.216,
+    "enh_text": "At the top of the structure will remain the post of head teacher.",
+    "enh_time_s": 0.222
+  },
+  "p232_228": {
+    "noisy_snr": 5.39,
+    "noisy_text": "It was good fun.",
+    "noisy_time_s": 0.132,
+    "enh_text": "It was good fun.",
+    "enh_time_s": 0.11
+  },
+  "p232_229": {
+    "noisy_snr": 0.22,
+    "noisy_text": "What was the main difference?",
+    "noisy_time_s": 0.133,
+    "enh_text": "What was the main difference?",
+    "enh_time_s": 0.122
+  },
+  "p232_230": {
+    "noisy_snr": 15.86,
+    "noisy_text": "I am immensely sad.",
+    "noisy_time_s": 0.113,
+    "enh_text": "I am immensely sad.",
+    "enh_time_s": 0.124
+  },
+  "p232_231": {
+    "noisy_snr": 10.8,
+    "noisy_text": "I'd never seen a play about me.",
+    "noisy_time_s": 0.146,
+    "enh_text": "I'd never seen a play about me.",
+    "enh_time_s": 0.198
+  },
+  "p232_232": {
+    "noisy_snr": 6.37,
+    "noisy_text": "It is perfectly evident that the time for an inquiry will come.",
+    "noisy_time_s": 0.211,
+    "enh_text": "It is perfectly evident that the time for an inquiry will come.",
+    "enh_time_s": 0.229
+  },
+  "p232_234": {
+    "noisy_snr": -0.0,
+    "noisy_text": "But she was.",
+    "noisy_time_s": 0.122,
+    "enh_text": "But she was.",
+    "enh_time_s": 0.108
+  },
+  "p232_235": {
+    "noisy_snr": 16.73,
+    "noisy_text": "Her condition was yesterday described as critical but stable.",
+    "noisy_time_s": 0.194,
+    "enh_text": "Her condition was yesterday described as critical but stable.",
+    "enh_time_s": 0.192
+  },
+  "p232_236": {
+    "noisy_snr": 10.01,
+    "noisy_text": "We were awful.",
+    "noisy_time_s": 0.106,
+    "enh_text": "We were awful.",
+    "enh_time_s": 0.104
+  },
+  "p232_237": {
+    "noisy_snr": 6.31,
+    "noisy_text": "However, no other action was taken by police.",
+    "noisy_time_s": 0.201,
+    "enh_text": "However, no other action was taken by police.",
+    "enh_time_s": 0.171
+  },
+  "p232_238": {
+    "noisy_snr": 0.47,
+    "noisy_text": "and thought we would get away with it.",
+    "noisy_time_s": 0.193,
+    "enh_text": "and thought we would get away with it.",
+    "enh_time_s": 0.19
+  },
+  "p232_239": {
+    "noisy_snr": 15.61,
+    "noisy_text": "It is set in Paris.",
+    "noisy_time_s": 0.133,
+    "enh_text": "It is set in Paris.",
+    "enh_time_s": 0.126
+  },
+  "p232_240": {
+    "noisy_snr": 11.5,
+    "noisy_text": "The singer is expected to be in hospital for several days.",
+    "noisy_time_s": 0.213,
+    "enh_text": "The singer is expected to be in hospital for several days.",
+    "enh_time_s": 0.217
+  },
+  "p232_241": {
+    "noisy_snr": 5.14,
+    "noisy_text": "It's quite nice.",
+    "noisy_time_s": 0.137,
+    "enh_text": "It's quite nice.",
+    "enh_time_s": 0.123
+  },
+  "p232_242": {
+    "noisy_snr": 0.55,
+    "noisy_text": "It's quite a line up.",
+    "noisy_time_s": 0.161,
+    "enh_text": "I was going to line up.",
+    "enh_time_s": 0.149
+  },
+  "p232_243": {
+    "noisy_snr": 15.78,
+    "noisy_text": "It's a lovely, lovely film.",
+    "noisy_time_s": 0.153,
+    "enh_text": "It's a lovely, lovely film.",
+    "enh_time_s": 0.155
+  },
+  "p232_244": {
+    "noisy_snr": 11.37,
+    "noisy_text": "The Home Office would not release any further details about the group.",
+    "noisy_time_s": 0.196,
+    "enh_text": "The home office would not release any further details about the group.",
+    "enh_time_s": 0.233
+  },
+  "p232_245": {
+    "noisy_snr": 5.35,
+    "noisy_text": "broke the birdie record.",
+    "noisy_time_s": 0.129,
+    "enh_text": "Broke the birdie record.",
+    "enh_time_s": 0.134
+  },
+  "p232_246": {
+    "noisy_snr": 1.05,
+    "noisy_text": "We claim the government lost the plot.",
+    "noisy_time_s": 0.16,
+    "enh_text": "He claimed the government lost the plot.",
+    "enh_time_s": 0.15
+  },
+  "p232_247": {
+    "noisy_snr": 15.23,
+    "noisy_text": "She is well balanced.",
+    "noisy_time_s": 0.127,
+    "enh_text": "She is well balanced.",
+    "enh_time_s": 0.123
+  },
+  "p232_248": {
+    "noisy_snr": 11.61,
+    "noisy_text": "A change in that position would require a decision by the council.",
+    "noisy_time_s": 0.218,
+    "enh_text": "A change in that position would require a decision by the council.",
+    "enh_time_s": 0.235
+  },
+  "p232_249": {
+    "noisy_snr": 6.17,
+    "noisy_text": "Jock Brown was appointed as General Manager.",
+    "noisy_time_s": 0.149,
+    "enh_text": "Jock Brown was appointed as General Manager.",
+    "enh_time_s": 0.15
+  },
+  "p232_250": {
+    "noisy_snr": 1.24,
+    "noisy_text": "He says that he is no different from any other man.",
+    "noisy_time_s": 0.191,
+    "enh_text": "He says that he is no different from any other man.",
+    "enh_time_s": 0.222
+  },
+  "p232_251": {
+    "noisy_snr": 16.29,
+    "noisy_text": "Manager Poppy Williamson has no injury worries.",
+    "noisy_time_s": 0.172,
+    "enh_text": "Manager Poppy Williamson has no injury worries.",
+    "enh_time_s": 0.161
+  },
+  "p232_252": {
+    "noisy_snr": 10.97,
+    "noisy_text": "We did not compete with any other local farmer.",
+    "noisy_time_s": 0.162,
+    "enh_text": "We did not compete with any other local farmer.",
+    "enh_time_s": 0.174
+  },
+  "p232_253": {
+    "noisy_snr": 6.35,
+    "noisy_text": "I was certainly wrong with my prediction of the result.",
+    "noisy_time_s": 0.166,
+    "enh_text": "I was certainly wrong with my prediction of the results.",
+    "enh_time_s": 0.183
+  },
+  "p232_254": {
+    "noisy_snr": 1.39,
+    "noisy_text": "Some families have even requested to leave the city.",
+    "noisy_time_s": 0.181,
+    "enh_text": "Some families have even requested to leave the city.",
+    "enh_time_s": 0.161
+  },
+  "p232_255": {
+    "noisy_snr": 15.74,
+    "noisy_text": "It's a record label, not a form of music.",
+    "noisy_time_s": 0.192,
+    "enh_text": "It's a record label, not a form of music.",
+    "enh_time_s": 0.192
+  },
+  "p232_256": {
+    "noisy_snr": 10.9,
+    "noisy_text": "a friendship that will endure.",
+    "noisy_time_s": 0.121,
+    "enh_text": "A friendship that will endure.",
+    "enh_time_s": 0.136
+  },
+  "p232_257": {
+    "noisy_snr": 5.31,
+    "noisy_text": "I can't get a job.",
+    "noisy_time_s": 0.131,
+    "enh_text": "I can't get a job.",
+    "enh_time_s": 0.158
+  },
+  "p232_258": {
+    "noisy_snr": 1.36,
+    "noisy_text": "He said he intended to push for a judicial review.",
+    "noisy_time_s": 0.175,
+    "enh_text": "He said he intended to push for a judicial review.",
+    "enh_time_s": 0.219
+  },
+  "p232_259": {
+    "noisy_snr": 16.57,
+    "noisy_text": "For the Scottish judges, the affair is very delicate and unique.",
+    "noisy_time_s": 0.234,
+    "enh_text": "For the Scottish judges, the affair is very delicate and unique.",
+    "enh_time_s": 0.241
+  },
+  "p232_260": {
+    "noisy_snr": 10.89,
+    "noisy_text": "The bottom line is that we had to get a win.",
+    "noisy_time_s": 0.222,
+    "enh_text": "The bottom line is that we had to get a win.",
+    "enh_time_s": 0.201
+  },
+  "p232_261": {
+    "noisy_snr": 6.61,
+    "noisy_text": "One in peace said he feared the job losses were only the beginning.",
+    "noisy_time_s": 0.231,
+    "enh_text": "One MP said he paid the job losses for only the beginning.",
+    "enh_time_s": 0.206
+  },
+  "p232_263": {
+    "noisy_snr": 1.5,
+    "noisy_text": "However, the force is not yet received upon what was linked.",
+    "noisy_time_s": 0.213,
+    "enh_text": "However, the course is not yet received at all, not in length.",
+    "enh_time_s": 0.244
+  },
+  "p232_264": {
+    "noisy_snr": 16.63,
+    "noisy_text": "The work between musicians and the fire is very important.",
+    "noisy_time_s": 0.193,
+    "enh_text": "The work between musicians and the fire is very important.",
+    "enh_time_s": 0.197
+  },
+  "p232_265": {
+    "noisy_snr": 10.84,
+    "noisy_text": "Blood samples were taken.",
+    "noisy_time_s": 0.111,
+    "enh_text": "Blood samples were taken.",
+    "enh_time_s": 0.131
+  },
+  "p232_266": {
+    "noisy_snr": 6.27,
+    "noisy_text": "They want to shut the Scottish Arpis.",
+    "noisy_time_s": 0.164,
+    "enh_text": "They want to shut the Scottish Arpis.",
+    "enh_time_s": 0.177
+  },
+  "p232_267": {
+    "noisy_snr": 1.69,
+    "noisy_text": "There will be a look at management across the sector as a whole.",
+    "noisy_time_s": 0.222,
+    "enh_text": "There, review will look at management across the sector as a whole.",
+    "enh_time_s": 0.228
+  },
+  "p232_268": {
+    "noisy_snr": 15.95,
+    "noisy_text": "Of course that is not the whole story.",
+    "noisy_time_s": 0.211,
+    "enh_text": "Of course that is not the whole story.",
+    "enh_time_s": 0.161
+  },
+  "p232_269": {
+    "noisy_snr": 11.5,
+    "noisy_text": "The government has until midnight tomorrow to make a decision.",
+    "noisy_time_s": 0.171,
+    "enh_text": "The government has until midnight tomorrow to make a decision.",
+    "enh_time_s": 0.187
+  },
+  "p232_270": {
+    "noisy_snr": 6.51,
+    "noisy_text": "Perhaps it's because I haven't finished the first two races.",
+    "noisy_time_s": 0.197,
+    "enh_text": "Perhaps it's because I haven't finished the first two races.",
+    "enh_time_s": 0.214
+  },
+  "p232_271": {
+    "noisy_snr": 1.44,
+    "noisy_text": "Brian is an interesting man, but he is not desperate.",
+    "noisy_time_s": 0.206,
+    "enh_text": "Ran is an interesting man, but he is not desperate.",
+    "enh_time_s": 0.202
+  },
+  "p232_272": {
+    "noisy_snr": 15.94,
+    "noisy_text": "He is a young man with a new deal.",
+    "noisy_time_s": 0.187,
+    "enh_text": "He is a young man with a new deal.",
+    "enh_time_s": 0.181
+  },
+  "p232_273": {
+    "noisy_snr": 10.74,
+    "noisy_text": "He was also married with two children.",
+    "noisy_time_s": 0.162,
+    "enh_text": "He was also married with two children.",
+    "enh_time_s": 0.149
+  },
+  "p232_274": {
+    "noisy_snr": 6.44,
+    "noisy_text": "Similar measures are expected in England and Wales.",
+    "noisy_time_s": 0.185,
+    "enh_text": "Similar measures are expected in England and Wales.",
+    "enh_time_s": 0.188
+  },
+  "p232_275": {
+    "noisy_snr": 1.5,
+    "noisy_text": "Lottery money was intended to be used for good causes.",
+    "noisy_time_s": 0.215,
+    "enh_text": "Lottery money was intended to be used for good courses.",
+    "enh_time_s": 0.219
+  },
+  "p232_276": {
+    "noisy_snr": 16.31,
+    "noisy_text": "Everything will fall into place, it should be fine.",
+    "noisy_time_s": 0.192,
+    "enh_text": "Everything will fall into place, it should be fine.",
+    "enh_time_s": 0.186
+  },
+  "p232_277": {
+    "noisy_snr": 11.48,
+    "noisy_text": "She has every confidence in his performance of his duties.",
+    "noisy_time_s": 0.188,
+    "enh_text": "She has every confidence in his performance of his duties.",
+    "enh_time_s": 0.191
+  },
+  "p232_278": {
+    "noisy_snr": 5.56,
+    "noisy_text": "They wanted the club to make money.",
+    "noisy_time_s": 0.161,
+    "enh_text": "They wanted the club to make money.",
+    "enh_time_s": 0.165
+  },
+  "p232_279": {
+    "noisy_snr": 0.85,
+    "noisy_text": "Finally, he paid for the movie.",
+    "noisy_time_s": 0.186,
+    "enh_text": "Finally, sweep page for the movement.",
+    "enh_time_s": 0.165
+  },
+  "p232_280": {
+    "noisy_snr": 16.33,
+    "noisy_text": "Sadly, the revival could not be sustained.",
+    "noisy_time_s": 0.167,
+    "enh_text": "Sadly, the revival could not be sustained.",
+    "enh_time_s": 0.168
+  },
+  "p232_281": {
+    "noisy_snr": 9.84,
+    "noisy_text": "It's a way of life.",
+    "noisy_time_s": 0.172,
+    "enh_text": "It's a way of life.",
+    "enh_time_s": 0.156
+  },
+  "p232_282": {
+    "noisy_snr": 6.68,
+    "noisy_text": "The decision was announced at its annual conference in Dunfermland.",
+    "noisy_time_s": 0.252,
+    "enh_text": "The decision was announced at its annual conference in Dunpermland.",
+    "enh_time_s": 0.236
+  },
+  "p232_283": {
+    "noisy_snr": 0.39,
+    "noisy_text": "I am in a state agent.",
+    "noisy_time_s": 0.125,
+    "enh_text": "I am going to stay tatement.",
+    "enh_time_s": 0.178
+  },
+  "p232_284": {
+    "noisy_snr": 16.4,
+    "noisy_text": "The record companies have gone through the floor.",
+    "noisy_time_s": 0.148,
+    "enh_text": "The record companies have gone through the floor.",
+    "enh_time_s": 0.17
+  },
+  "p232_285": {
+    "noisy_snr": 10.51,
+    "noisy_text": "They were on holiday in Egypt.",
+    "noisy_time_s": 0.137,
+    "enh_text": "They're on holiday in Egypt.",
+    "enh_time_s": 0.141
+  },
+  "p232_286": {
+    "noisy_snr": 6.01,
+    "noisy_text": "It was a privilege to work for him.",
+    "noisy_time_s": 0.16,
+    "enh_text": "It was a privilege to work for him.",
+    "enh_time_s": 0.156
+  },
+  "p232_287": {
+    "noisy_snr": 0.8,
+    "noisy_text": "It happens from time to time.",
+    "noisy_time_s": 0.133,
+    "enh_text": "It happens from time to time.",
+    "enh_time_s": 0.148
+  },
+  "p232_288": {
+    "noisy_snr": 15.45,
+    "noisy_text": "He looks very sharp.",
+    "noisy_time_s": 0.118,
+    "enh_text": "He looks very sharp.",
+    "enh_time_s": 0.121
+  },
+  "p232_289": {
+    "noisy_snr": 11.48,
+    "noisy_text": "Surely, the Scottish Parliament is entitled to take a view on that.",
+    "noisy_time_s": 0.21,
+    "enh_text": "Surely, the Scottish Parliament is entitled to take a view on that.",
+    "enh_time_s": 0.212
+  },
+  "p232_290": {
+    "noisy_snr": 4.76,
+    "noisy_text": "I saw it at a rock.",
+    "noisy_time_s": 0.159,
+    "enh_text": "I saw it at a rock.",
+    "enh_time_s": 0.155
+  },
+  "p232_291": {
+    "noisy_snr": 0.57,
+    "noisy_text": "They were also beside themselves.",
+    "noisy_time_s": 0.121,
+    "enh_text": "They were also beside themselves.",
+    "enh_time_s": 0.13
+  },
+  "p232_292": {
+    "noisy_snr": 15.13,
+    "noisy_text": "The attacker died in the crash.",
+    "noisy_time_s": 0.143,
+    "enh_text": "The attacker died in the crash.",
+    "enh_time_s": 0.145
+  },
+  "p232_293": {
+    "noisy_snr": 11.61,
+    "noisy_text": "The government is keen to promote the growth of friendly societies.",
+    "noisy_time_s": 0.183,
+    "enh_text": "The government is keen to promote the growth of friendly societies.",
+    "enh_time_s": 0.205
+  },
+  "p232_294": {
+    "noisy_snr": 6.52,
+    "noisy_text": "A tribunal would then consider the seriousness of the incident.",
+    "noisy_time_s": 0.196,
+    "enh_text": "A tribunal would then consider the seriousness of the incident.",
+    "enh_time_s": 0.196
+  },
+  "p232_295": {
+    "noisy_snr": 1.44,
+    "noisy_text": "We'll either run the scene within minutes, but the killer had flat.",
+    "noisy_time_s": 0.261,
+    "enh_text": "Leave her on the scene within minutes but the killer had fled.",
+    "enh_time_s": 0.215
+  },
+  "p232_296": {
+    "noisy_snr": 16.0,
+    "noisy_text": "It was obviously very genuine.",
+    "noisy_time_s": 0.134,
+    "enh_text": "He was obviously very genuine.",
+    "enh_time_s": 0.165
+  },
+  "p232_297": {
+    "noisy_snr": 11.0,
+    "noisy_text": "These figures are truly awful.",
+    "noisy_time_s": 0.131,
+    "enh_text": "These figures are truly awful.",
+    "enh_time_s": 0.129
+  },
+  "p232_298": {
+    "noisy_snr": 5.15,
+    "noisy_text": "You should have won.",
+    "noisy_time_s": 0.104,
+    "enh_text": "He should have won.",
+    "enh_time_s": 0.134
+  },
+  "p232_299": {
+    "noisy_snr": 0.33,
+    "noisy_text": "He has retired.",
+    "noisy_time_s": 0.115,
+    "enh_text": "He is retired.",
+    "enh_time_s": 0.112
+  },
+  "p232_300": {
+    "noisy_snr": 15.24,
+    "noisy_text": "What has altered?",
+    "noisy_time_s": 0.096,
+    "enh_text": "What has alters?",
+    "enh_time_s": 0.117
+  },
+  "p232_301": {
+    "noisy_snr": 10.29,
+    "noisy_text": "I thought it was my only chance.",
+    "noisy_time_s": 0.147,
+    "enh_text": "I thought it was my only chance.",
+    "enh_time_s": 0.15
+  },
+  "p232_302": {
+    "noisy_snr": 5.32,
+    "noisy_text": "Nothing is safe.",
+    "noisy_time_s": 0.106,
+    "enh_text": "Nothing is safe.",
+    "enh_time_s": 0.103
+  },
+  "p232_303": {
+    "noisy_snr": 1.62,
+    "noisy_text": "It was adamant that he was still ahead on everything that matches.",
+    "noisy_time_s": 0.235,
+    "enh_text": "We've added that he was still ahead on everything that matters.",
+    "enh_time_s": 0.268
+  },
+  "p232_305": {
+    "noisy_snr": 15.96,
+    "noisy_text": "They are wrong.",
+    "noisy_time_s": 0.18,
+    "enh_text": "They are wrong.",
+    "enh_time_s": 0.11
+  },
+  "p232_306": {
+    "noisy_snr": 10.78,
+    "noisy_text": "It is a road of death.",
+    "noisy_time_s": 0.147,
+    "enh_text": "It is a road of death.",
+    "enh_time_s": 0.128
+  },
+  "p232_307": {
+    "noisy_snr": 7.11,
+    "noisy_text": "The confidence is low, but it is a difficult thing to understand.",
+    "noisy_time_s": 0.271,
+    "enh_text": "The confidence is low, so the visible thing to understand.",
+    "enh_time_s": 0.33
+  },
+  "p232_308": {
+    "noisy_snr": 0.49,
+    "noisy_text": "We are in the end game.",
+    "noisy_time_s": 0.236,
+    "enh_text": "We are in the end game.",
+    "enh_time_s": 0.24
+  },
+  "p232_309": {
+    "noisy_snr": 16.24,
+    "noisy_text": "We are now looking at the degrees of injury.",
+    "noisy_time_s": 0.303,
+    "enh_text": "We are now looking at the degrees of injury.",
+    "enh_time_s": 0.287
+  },
+  "p232_310": {
+    "noisy_snr": 10.02,
+    "noisy_text": "He was solid.",
+    "noisy_time_s": 0.194,
+    "enh_text": "He was solid.",
+    "enh_time_s": 0.146
+  },
+  "p232_311": {
+    "noisy_snr": 5.67,
+    "noisy_text": "Special measures were needed.",
+    "noisy_time_s": 0.161,
+    "enh_text": "Special measures were needed.",
+    "enh_time_s": 0.19
+  },
+  "p232_312": {
+    "noisy_snr": 1.38,
+    "noisy_text": "There is no other solution to congestion in Edinburgh.",
+    "noisy_time_s": 0.245,
+    "enh_text": "There is no other solution to congestion in Edinburgh.",
+    "enh_time_s": 0.265
+  },
+  "p232_313": {
+    "noisy_snr": 15.95,
+    "noisy_text": "I never thought it would take this long.",
+    "noisy_time_s": 0.244,
+    "enh_text": "I never thought it would take this long.",
+    "enh_time_s": 0.254
+  },
+  "p232_314": {
+    "noisy_snr": 10.61,
+    "noisy_text": "We are a peaceful people.",
+    "noisy_time_s": 0.191,
+    "enh_text": "We are a peaceful people.",
+    "enh_time_s": 0.181
+  },
+  "p232_315": {
+    "noisy_snr": 5.11,
+    "noisy_text": "Kids are terrible.",
+    "noisy_time_s": 0.151,
+    "enh_text": "Kids are terrible.",
+    "enh_time_s": 0.145
+  },
+  "p232_316": {
+    "noisy_snr": 0.32,
+    "noisy_text": "It should be equal.",
+    "noisy_time_s": 0.157,
+    "enh_text": "It should be equal to",
+    "enh_time_s": 0.167
+  },
+  "p232_317": {
+    "noisy_snr": 15.98,
+    "noisy_text": "Craig is a major concern for us.",
+    "noisy_time_s": 0.214,
+    "enh_text": "Craig is a major concern for us.",
+    "enh_time_s": 0.239
+  },
+  "p232_318": {
+    "noisy_snr": 11.18,
+    "noisy_text": "The home team had an amazing start.",
+    "noisy_time_s": 0.218,
+    "enh_text": "The home team had an amazing start.",
+    "enh_time_s": 0.205
+  },
+  "p232_319": {
+    "noisy_snr": 6.22,
+    "noisy_text": "For the moment, opposition remains the same.",
+    "noisy_time_s": 0.234,
+    "enh_text": "For the moment, opposition remains the same.",
+    "enh_time_s": 0.268
+  },
+  "p232_320": {
+    "noisy_snr": 0.79,
+    "noisy_text": "Refereza Reza Tugget.",
+    "noisy_time_s": 0.275,
+    "enh_text": "Repareza Reza Target",
+    "enh_time_s": 0.19
+  },
+  "p232_321": {
+    "noisy_snr": 16.29,
+    "noisy_text": "Davis is very supportive as a director.",
+    "noisy_time_s": 0.198,
+    "enh_text": "Davis is very supportive as a director.",
+    "enh_time_s": 0.22
+  },
+  "p232_322": {
+    "noisy_snr": 11.38,
+    "noisy_text": "However, the group's denied the claims.",
+    "noisy_time_s": 0.237,
+    "enh_text": "However, the groups denied the claims.",
+    "enh_time_s": 0.229
+  },
+  "p232_323": {
+    "noisy_snr": 6.05,
+    "noisy_text": "I came into this world with nothing.",
+    "noisy_time_s": 0.255,
+    "enh_text": "I came into this world with nothing.",
+    "enh_time_s": 0.263
+  },
+  "p232_324": {
+    "noisy_snr": 1.3,
+    "noisy_text": "We think a lot of measures are not exhausted.",
+    "noisy_time_s": 0.244,
+    "enh_text": "We think a lot of measures are not exhausted.",
+    "enh_time_s": 0.3
+  },
+  "p232_325": {
+    "noisy_snr": 15.39,
+    "noisy_text": "Up with the heads.",
+    "noisy_time_s": 0.206,
+    "enh_text": "Up with the heads.",
+    "enh_time_s": 0.175
+  },
+  "p232_326": {
+    "noisy_snr": 10.45,
+    "noisy_text": "It's not long enough.",
+    "noisy_time_s": 0.184,
+    "enh_text": "It's not long enough.",
+    "enh_time_s": 0.181
+  },
+  "p232_327": {
+    "noisy_snr": 6.21,
+    "noisy_text": "My view has now completely changed.",
+    "noisy_time_s": 0.186,
+    "enh_text": "My view has now completely changed.",
+    "enh_time_s": 0.189
+  },
+  "p232_328": {
+    "noisy_snr": 1.39,
+    "noisy_text": "They also recovered a picture of a summer abroad.",
+    "noisy_time_s": 0.242,
+    "enh_text": "The odds were to come in a picture of a sum of the blood.",
+    "enh_time_s": 0.362
+  },
+  "p232_329": {
+    "noisy_snr": 15.8,
+    "noisy_text": "We agreed to disagree.",
+    "noisy_time_s": 0.208,
+    "enh_text": "We agreed to disagree.",
+    "enh_time_s": 0.195
+  },
+  "p232_330": {
+    "noisy_snr": 10.35,
+    "noisy_text": "It could have gone either way.",
+    "noisy_time_s": 0.218,
+    "enh_text": "It could have gone either way.",
+    "enh_time_s": 0.233
+  },
+  "p232_331": {
+    "noisy_snr": 5.88,
+    "noisy_text": "He was then replaced by Ross.",
+    "noisy_time_s": 0.214,
+    "enh_text": "He was then replaced by Ross.",
+    "enh_time_s": 0.226
+  },
+  "p232_332": {
+    "noisy_snr": 0.63,
+    "noisy_text": "Horses are drawn by Ballot.",
+    "noisy_time_s": 0.21,
+    "enh_text": "Horses are drawn by Ballot.",
+    "enh_time_s": 0.204
+  },
+  "p232_333": {
+    "noisy_snr": 15.56,
+    "noisy_text": "I'd like to take the plunge.",
+    "noisy_time_s": 0.219,
+    "enh_text": "I'd like to take the plunge.",
+    "enh_time_s": 0.241
+  },
+  "p232_334": {
+    "noisy_snr": 11.49,
+    "noisy_text": "Later in the day he was forced to explain his position.",
+    "noisy_time_s": 0.323,
+    "enh_text": "Later in the day he was forced to explain his position.",
+    "enh_time_s": 0.308
+  },
+  "p232_335": {
+    "noisy_snr": 5.85,
+    "noisy_text": "She did not attend the courtroom.",
+    "noisy_time_s": 0.147,
+    "enh_text": "She did not attend the courtroom.",
+    "enh_time_s": 0.183
+  },
+  "p232_336": {
+    "noisy_snr": 0.97,
+    "noisy_text": "It is difficult to get into the team at the moment.",
+    "noisy_time_s": 0.247,
+    "enh_text": "It is difficult to get into the team at the moment.",
+    "enh_time_s": 0.253
+  },
+  "p232_337": {
+    "noisy_snr": 16.42,
+    "noisy_text": "His legal advisor was also not in court yesterday.",
+    "noisy_time_s": 0.215,
+    "enh_text": "His legal advisor was also not in court yesterday.",
+    "enh_time_s": 0.203
+  },
+  "p232_338": {
+    "noisy_snr": 11.12,
+    "noisy_text": "The team for the first game could be this one.",
+    "noisy_time_s": 0.204,
+    "enh_text": "The team for the first game could be this one.",
+    "enh_time_s": 0.21
+  },
+  "p232_339": {
+    "noisy_snr": 4.68,
+    "noisy_text": "They haven't got a hope.",
+    "noisy_time_s": 0.125,
+    "enh_text": "They haven't got a hope.",
+    "enh_time_s": 0.124
+  },
+  "p232_340": {
+    "noisy_snr": -0.17,
+    "noisy_text": "who will do it.",
+    "noisy_time_s": 0.115,
+    "enh_text": "Who will do it?",
+    "enh_time_s": 0.109
+  },
+  "p232_341": {
+    "noisy_snr": 16.32,
+    "noisy_text": "Gaelic provision can continue to be good.",
+    "noisy_time_s": 0.163,
+    "enh_text": "Gaelic provision can continue to be good.",
+    "enh_time_s": 0.151
+  },
+  "p232_342": {
+    "noisy_snr": 11.4,
+    "noisy_text": "That's not a fiction because he is not a tenant.",
+    "noisy_time_s": 0.169,
+    "enh_text": "That's not a fiction because he is not a tenant.",
+    "enh_time_s": 0.186
+  },
+  "p232_343": {
+    "noisy_snr": 6.2,
+    "noisy_text": "He also insisted that no concessions had to be made to the French.",
+    "noisy_time_s": 0.19,
+    "enh_text": "He also insisted that no concessions had to be made to the French.",
+    "enh_time_s": 0.213
+  },
+  "p232_344": {
+    "noisy_snr": 0.28,
+    "noisy_text": "He has to love.",
+    "noisy_time_s": 0.113,
+    "enh_text": "He has to learn.",
+    "enh_time_s": 0.143
+  },
+  "p232_346": {
+    "noisy_snr": 15.87,
+    "noisy_text": "Tiger is the exception.",
+    "noisy_time_s": 0.116,
+    "enh_text": "Tiger is the exception.",
+    "enh_time_s": 0.135
+  },
+  "p232_347": {
+    "noisy_snr": 11.68,
+    "noisy_text": "Sex offender programs to be retained by public sector.",
+    "noisy_time_s": 0.188,
+    "enh_text": "Sex append the programs to be retained by public sector.",
+    "enh_time_s": 0.182
+  },
+  "p232_348": {
+    "noisy_snr": 6.39,
+    "noisy_text": "That is the very reason why it was so vital.",
+    "noisy_time_s": 0.187,
+    "enh_text": "That is the very reason why it was so vital.",
+    "enh_time_s": 0.167
+  },
+  "p232_349": {
+    "noisy_snr": 1.37,
+    "noisy_text": "I could hardly move for the next couple of days.",
+    "noisy_time_s": 0.167,
+    "enh_text": "I could hardly move for the next couple of days.",
+    "enh_time_s": 0.187
+  },
+  "p232_350": {
+    "noisy_snr": 15.37,
+    "noisy_text": "Chambers said he would accept the place.",
+    "noisy_time_s": 0.155,
+    "enh_text": "Chambers said he would accept the place.",
+    "enh_time_s": 0.133
+  },
+  "p232_351": {
+    "noisy_snr": 10.52,
+    "noisy_text": "Everything was an appit.",
+    "noisy_time_s": 0.12,
+    "enh_text": "Everything was an appit.",
+    "enh_time_s": 0.11
+  },
+  "p232_352": {
+    "noisy_snr": 5.67,
+    "noisy_text": "The boat was fantastic.",
+    "noisy_time_s": 0.099,
+    "enh_text": "The boat was fantastic.",
+    "enh_time_s": 0.126
+  },
+  "p232_353": {
+    "noisy_snr": 1.04,
+    "noisy_text": "Like, is acting, it was an accident.",
+    "noisy_time_s": 0.165,
+    "enh_text": "Like, is acting, it was an accident.",
+    "enh_time_s": 0.158
+  },
+  "p232_354": {
+    "noisy_snr": 15.44,
+    "noisy_text": "It is long gone.",
+    "noisy_time_s": 0.109,
+    "enh_text": "It is long gone.",
+    "enh_time_s": 0.113
+  },
+  "p232_355": {
+    "noisy_snr": 11.52,
+    "noisy_text": "On the front line beyond the bridge the scene was at a chaos.",
+    "noisy_time_s": 0.233,
+    "enh_text": "On the front line beyond the bridge the scene was at a chaos.",
+    "enh_time_s": 0.238
+  },
+  "p232_356": {
+    "noisy_snr": 6.49,
+    "noisy_text": "That's the principal difference between an artist and a dog.",
+    "noisy_time_s": 0.189,
+    "enh_text": "That's the principal difference between an artist and a dog.",
+    "enh_time_s": 0.172
+  },
+  "p232_357": {
+    "noisy_snr": 1.07,
+    "noisy_text": "He had played well in that central role.",
+    "noisy_time_s": 0.15,
+    "enh_text": "He had played well in that central role.",
+    "enh_time_s": 0.147
+  },
+  "p232_358": {
+    "noisy_snr": 15.53,
+    "noisy_text": "It's not that clear cut.",
+    "noisy_time_s": 0.141,
+    "enh_text": "It's not that clear cut.",
+    "enh_time_s": 0.113
+  },
+  "p232_359": {
+    "noisy_snr": 9.95,
+    "noisy_text": "She is free.",
+    "noisy_time_s": 0.106,
+    "enh_text": "She is free.",
+    "enh_time_s": 0.1
+  },
+  "p232_360": {
+    "noisy_snr": 6.36,
+    "noisy_text": "It could take years for the tunnel to be reopened.",
+    "noisy_time_s": 0.156,
+    "enh_text": "It could take years for the tunnel to be reopened.",
+    "enh_time_s": 0.185
+  },
+  "p232_361": {
+    "noisy_snr": 0.47,
+    "noisy_text": "I kept going for her.",
+    "noisy_time_s": 0.125,
+    "enh_text": "I kept going for her.",
+    "enh_time_s": 0.115
+  },
+  "p232_362": {
+    "noisy_snr": 16.39,
+    "noisy_text": "You must have a government and a good civil service.",
+    "noisy_time_s": 0.162,
+    "enh_text": "You must have a government and a good civil service.",
+    "enh_time_s": 0.167
+  },
+  "p232_363": {
+    "noisy_snr": 11.61,
+    "noisy_text": "But the real problem is the closure of the export market.",
+    "noisy_time_s": 0.166,
+    "enh_text": "But the real problem is the closure of the export market.",
+    "enh_time_s": 0.192
+  },
+  "p232_364": {
+    "noisy_snr": 6.1,
+    "noisy_text": "It is the holiday program with a mortgage.",
+    "noisy_time_s": 0.154,
+    "enh_text": "It is the holiday program with a mortgage.",
+    "enh_time_s": 0.179
+  },
+  "p232_365": {
+    "noisy_snr": 0.9,
+    "noisy_text": "However, it was well worth the wait.",
+    "noisy_time_s": 0.153,
+    "enh_text": "However, it was well worth the wait.",
+    "enh_time_s": 0.142
+  },
+  "p232_366": {
+    "noisy_snr": 15.85,
+    "noisy_text": "It benefits the whole family.",
+    "noisy_time_s": 0.129,
+    "enh_text": "It benefits the whole family.",
+    "enh_time_s": 0.122
+  },
+  "p232_367": {
+    "noisy_snr": 10.64,
+    "noisy_text": "He has seen the past.",
+    "noisy_time_s": 0.117,
+    "enh_text": "He has seen the past.",
+    "enh_time_s": 0.139
+  },
+  "p232_368": {
+    "noisy_snr": 5.91,
+    "noisy_text": "It was one in the afternoon.",
+    "noisy_time_s": 0.117,
+    "enh_text": "It was one in the afternoon.",
+    "enh_time_s": 0.128
+  },
+  "p232_369": {
+    "noisy_snr": 1.68,
+    "noisy_text": "Dido so he reckons that a good opening result is essential.",
+    "noisy_time_s": 0.203,
+    "enh_text": "To do so, he reckons that a good opening result is essential.",
+    "enh_time_s": 0.233
+  },
+  "p232_370": {
+    "noisy_snr": 15.33,
+    "noisy_text": "We will be homeless.",
+    "noisy_time_s": 0.121,
+    "enh_text": "We will be homeless.",
+    "enh_time_s": 0.12
+  },
+  "p232_371": {
+    "noisy_snr": 10.54,
+    "noisy_text": "The scene is about this.",
+    "noisy_time_s": 0.127,
+    "enh_text": "The scene is about this.",
+    "enh_time_s": 0.122
+  },
+  "p232_372": {
+    "noisy_snr": 6.59,
+    "noisy_text": "Six of the asylum seekers left the officers if reported.",
+    "noisy_time_s": 0.172,
+    "enh_text": "Six of the asylum seekers left the officers if reported.",
+    "enh_time_s": 0.166
+  },
+  "p232_373": {
+    "noisy_snr": 1.56,
+    "noisy_text": "Mr Anderson was not acting in the course of his employment.",
+    "noisy_time_s": 0.17,
+    "enh_text": "Mr Anderson was not acting in the course of his employment.",
+    "enh_time_s": 0.16
+  },
+  "p232_374": {
+    "noisy_snr": 16.44,
+    "noisy_text": "The group is due to publish its report in the autumn.",
+    "noisy_time_s": 0.174,
+    "enh_text": "The group is due to publish its report in the autumn.",
+    "enh_time_s": 0.194
+  },
+  "p232_375": {
+    "noisy_snr": 11.18,
+    "noisy_text": "It was a double tragedy for the family.",
+    "noisy_time_s": 0.159,
+    "enh_text": "It was a double tragedy for the family.",
+    "enh_time_s": 0.141
+  },
+  "p232_377": {
+    "noisy_snr": 6.41,
+    "noisy_text": "For one veteran, the memories remain vivid.",
+    "noisy_time_s": 0.187,
+    "enh_text": "For one veteran, the memories remain vivid.",
+    "enh_time_s": 0.167
+  },
+  "p232_378": {
+    "noisy_snr": 1.55,
+    "noisy_text": "The final decision was between Scotland and the Republic of Ireland.",
+    "noisy_time_s": 0.221,
+    "enh_text": "The final decision was between Scotland and the Republic of Ireland.",
+    "enh_time_s": 0.184
+  },
+  "p232_379": {
+    "noisy_snr": 16.27,
+    "noisy_text": "They have not done so this season so far.",
+    "noisy_time_s": 0.188,
+    "enh_text": "They have not done so this season so far.",
+    "enh_time_s": 0.164
+  },
+  "p232_380": {
+    "noisy_snr": 11.47,
+    "noisy_text": "I decided to tell a bit of the story about myself.",
+    "noisy_time_s": 0.185,
+    "enh_text": "I decided to tell a bit of the story about myself.",
+    "enh_time_s": 0.186
+  },
+  "p232_381": {
+    "noisy_snr": 5.85,
+    "noisy_text": "Well, the big day has arrived.",
+    "noisy_time_s": 0.152,
+    "enh_text": "Well, the big day has arrived.",
+    "enh_time_s": 0.155
+  },
+  "p232_382": {
+    "noisy_snr": 0.73,
+    "noisy_text": "5 members were disciplined.",
+    "noisy_time_s": 0.107,
+    "enh_text": "5 members were disciplined.",
+    "enh_time_s": 0.109
+  },
+  "p232_383": {
+    "noisy_snr": 15.45,
+    "noisy_text": "Talks are progressing.",
+    "noisy_time_s": 0.133,
+    "enh_text": "Talks are progressing.",
+    "enh_time_s": 0.091
+  },
+  "p232_384": {
+    "noisy_snr": 10.59,
+    "noisy_text": "There is no signature.",
+    "noisy_time_s": 0.103,
+    "enh_text": "There is no signature.",
+    "enh_time_s": 0.135
+  },
+  "p232_385": {
+    "noisy_snr": 6.43,
+    "noisy_text": "I tried to be cautious, but it's hard in that role.",
+    "noisy_time_s": 0.228,
+    "enh_text": "I've tried to be cautious, but it's hard in that role.",
+    "enh_time_s": 0.23
+  },
+  "p232_386": {
+    "noisy_snr": 1.11,
+    "noisy_text": "I left a bad taste in my mouth.",
+    "noisy_time_s": 0.154,
+    "enh_text": "Not left a bad taste in my mouth.",
+    "enh_time_s": 0.154
+  },
+  "p232_387": {
+    "noisy_snr": 16.52,
+    "noisy_text": "It was as if it was all happening at the Garden Party.",
+    "noisy_time_s": 0.194,
+    "enh_text": "It was as if it was all happening at the Garden Party.",
+    "enh_time_s": 0.188
+  },
+  "p232_388": {
+    "noisy_snr": 11.77,
+    "noisy_text": "Miss McNeil was killed on impact.",
+    "noisy_time_s": 0.159,
+    "enh_text": "Miss McNeil was killed on impact.",
+    "enh_time_s": 0.16
+  },
+  "p232_389": {
+    "noisy_snr": 6.59,
+    "noisy_text": "It has moved on in the last week.",
+    "noisy_time_s": 0.13,
+    "enh_text": "It has moved on in the last week.",
+    "enh_time_s": 0.149
+  },
+  "p232_390": {
+    "noisy_snr": 0.75,
+    "noisy_text": "That's the name of the game though.",
+    "noisy_time_s": 0.15,
+    "enh_text": "That's the name of the game though.",
+    "enh_time_s": 0.136
+  },
+  "p232_391": {
+    "noisy_snr": 15.54,
+    "noisy_text": "You thought it was a headache.",
+    "noisy_time_s": 0.112,
+    "enh_text": "You thought it was a headache.",
+    "enh_time_s": 0.155
+  },
+  "p232_392": {
+    "noisy_snr": 11.58,
+    "noisy_text": "Building an underground, for example, has proved a nightmare.",
+    "noisy_time_s": 0.209,
+    "enh_text": "Building an underground, for example, has proved a nightmare.",
+    "enh_time_s": 0.158
+  },
+  "p232_393": {
+    "noisy_snr": 6.57,
+    "noisy_text": "A council spokesman said it has been a constructive meeting.",
+    "noisy_time_s": 0.155,
+    "enh_text": "A council spokesman said it has been a constructive meeting.",
+    "enh_time_s": 0.154
+  },
+  "p232_394": {
+    "noisy_snr": 1.54,
+    "noisy_text": "The charity also has a project in Moscow in Russia.",
+    "noisy_time_s": 0.209,
+    "enh_text": "The charity also has a project in Moscow in Russia.",
+    "enh_time_s": 0.16
+  },
+  "p232_396": {
+    "noisy_snr": 15.66,
+    "noisy_text": "I can lead by example.",
+    "noisy_time_s": 0.132,
+    "enh_text": "I can lead by example.",
+    "enh_time_s": 0.111
+  },
+  "p232_397": {
+    "noisy_snr": 11.49,
+    "noisy_text": "I love the thought of having a crack at defending the title.",
+    "noisy_time_s": 0.181,
+    "enh_text": "I love the thought of having a crack at defending the title.",
+    "enh_time_s": 0.189
+  },
+  "p232_398": {
+    "noisy_snr": 6.48,
+    "noisy_text": "But they are still unlikely to be involved in combat.",
+    "noisy_time_s": 0.174,
+    "enh_text": "But they are still unlikely to be involved in combat.",
+    "enh_time_s": 0.169
+  },
+  "p232_399": {
+    "noisy_snr": 1.08,
+    "noisy_text": "People's are allowed home at lunchtime.",
+    "noisy_time_s": 0.137,
+    "enh_text": "People's were allowed home at lunchtime.",
+    "enh_time_s": 0.166
+  },
+  "p232_400": {
+    "noisy_snr": 16.33,
+    "noisy_text": "It will probably take me just days to spend it.",
+    "noisy_time_s": 0.184,
+    "enh_text": "It will probably take me just days to spend it.",
+    "enh_time_s": 0.188
+  },
+  "p232_402": {
+    "noisy_snr": 5.66,
+    "noisy_text": "When you nothing about it.",
+    "noisy_time_s": 0.123,
+    "enh_text": "When you nothing about it.",
+    "enh_time_s": 0.146
+  },
+  "p232_403": {
+    "noisy_snr": 11.69,
+    "noisy_text": "My house was shaking at the time.",
+    "noisy_time_s": 0.137,
+    "enh_text": "My house was shaking at the time.",
+    "enh_time_s": 0.151
+  },
+  "p232_404": {
+    "noisy_snr": 15.6,
+    "noisy_text": "This is a huge confidence boost.",
+    "noisy_time_s": 0.124,
+    "enh_text": "This is a huge competence boost.",
+    "enh_time_s": 0.141
+  },
+  "p232_405": {
+    "noisy_snr": 6.27,
+    "noisy_text": "We have not yet received a letter from the Irish.",
+    "noisy_time_s": 0.171,
+    "enh_text": "We have not yet received a letter from the Irish.",
+    "enh_time_s": 0.183
+  },
+  "p232_407": {
+    "noisy_snr": 0.28,
+    "noisy_text": "We should have known.",
+    "noisy_time_s": 0.118,
+    "enh_text": "We should have known.",
+    "enh_time_s": 0.119
+  },
+  "p232_409": {
+    "noisy_snr": 1.32,
+    "noisy_text": "Quality meat Scotland was vigorous in its defence at the labour length.",
+    "noisy_time_s": 0.207,
+    "enh_text": "Quality meat Scotland was vigorous in its defense of the labelling.",
+    "enh_time_s": 0.192
+  },
+  "p232_410": {
+    "noisy_snr": 6.56,
+    "noisy_text": "I was in a position to challenge for this event and didn't.",
+    "noisy_time_s": 0.214,
+    "enh_text": "I was in a position to challenge for this event and didn't.",
+    "enh_time_s": 0.193
+  },
+  "p232_411": {
+    "noisy_snr": 14.66,
+    "noisy_text": "You wanted the evidence.",
+    "noisy_time_s": 0.142,
+    "enh_text": "You wanted the evidence.",
+    "enh_time_s": 0.109
+  },
+  "p232_412": {
+    "noisy_snr": 11.65,
+    "noisy_text": "Senior management to Scotland through its weight behind the orchestra.",
+    "noisy_time_s": 0.183,
+    "enh_text": "Senior Management in Scotland threw its weight behind the orchestra.",
+    "enh_time_s": 0.19
+  },
+  "p232_413": {
+    "noisy_snr": 10.98,
+    "noisy_text": "It was that bad, that low.",
+    "noisy_time_s": 0.143,
+    "enh_text": "It was that bad, that low.",
+    "enh_time_s": 0.166
+  },
+  "p232_414": {
+    "noisy_snr": 0.49,
+    "noisy_text": "I was very young.",
+    "noisy_time_s": 0.141,
+    "enh_text": "I was very young.",
+    "enh_time_s": 0.12
+  },
+  "p232_415": {
+    "noisy_snr": 1.05,
+    "noisy_text": "We've just got to keep his feet on the ground.",
+    "noisy_time_s": 0.187,
+    "enh_text": "We've just got to keep his feet on the ground.",
+    "enh_time_s": 0.203
+  },
+  "p257_001": {
+    "noisy_snr": 16.2,
+    "noisy_text": "Please call Stella.",
+    "noisy_time_s": 0.082,
+    "enh_text": "Please call Stella.",
+    "enh_time_s": 0.115
+  },
+  "p257_002": {
+    "noisy_snr": 11.33,
+    "noisy_text": "Ask her to bring these things with her from the store.",
+    "noisy_time_s": 0.176,
+    "enh_text": "Ask her to bring these things with her from the store.",
+    "enh_time_s": 0.21
+  },
+  "p257_003": {
+    "noisy_snr": 7.01,
+    "noisy_text": "6 spoons of fresh snow peas, 5 thick slabs of blue cheese and maybe a snack of her brother Bob.",
+    "noisy_time_s": 0.272,
+    "enh_text": "6 spoons of fresh snow peas, 5 thick slabs of blue cheese and maybe a snack of her brother Bob.",
+    "enh_time_s": 0.315
+  },
+  "p257_004": {
+    "noisy_snr": 1.42,
+    "noisy_text": "We also need a small plastic snake and a big toy frog for the kids.",
+    "noisy_time_s": 0.223,
+    "enh_text": "We also need a small plastic snake and a big toy frog for the kids.",
+    "enh_time_s": 0.224
+  },
+  "p257_006": {
+    "noisy_snr": 16.9,
+    "noisy_text": "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow.",
+    "noisy_time_s": 0.269,
+    "enh_text": "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow.",
+    "enh_time_s": 0.267
+  },
+  "p257_007": {
+    "noisy_snr": 11.67,
+    "noisy_text": "The rainbow is a division of white light into many beautiful colors.",
+    "noisy_time_s": 0.202,
+    "enh_text": "The rainbow is a division of white light into many beautiful colors.",
+    "enh_time_s": 0.234
+  },
+  "p257_008": {
+    "noisy_snr": 7.11,
+    "noisy_text": "These take the shape of a long round arch with its path high above and its two ends apparently beyond the horizon.",
+    "noisy_time_s": 0.281,
+    "enh_text": "Please take the shape of a long round arch with its path high above and its two ends apparently beyond the horizon.",
+    "enh_time_s": 0.284
+  },
+  "p257_009": {
+    "noisy_snr": 1.71,
+    "noisy_text": "There is, according to legend, a boiling pot of gold on earth.",
+    "noisy_time_s": 0.215,
+    "enh_text": "There is, according to legend, a boiling pot of gold at one answer.",
+    "enh_time_s": 0.231
+  },
+  "p257_010": {
+    "noisy_snr": 16.24,
+    "noisy_text": "People look but no one ever finds it.",
+    "noisy_time_s": 0.156,
+    "enh_text": "People look but no one ever finds it.",
+    "enh_time_s": 0.179
+  },
+  "p257_011": {
+    "noisy_snr": 11.96,
+    "noisy_text": "When a man looks for something beyond his reach, his friends say he's looking for the pot of gold at the end of the rainbow.",
+    "noisy_time_s": 0.342,
+    "enh_text": "When a man looks for something beyond his reach, his friends say he's looking for the pot of gold at the end of the rainbow.",
+    "enh_time_s": 0.329
+  },
+  "p257_012": {
+    "noisy_snr": 6.77,
+    "noisy_text": "Throughout the centuries people explained the rainbow in various ways.",
+    "noisy_time_s": 0.168,
+    "enh_text": "Throughout the centuries people explained the rainbow in various ways.",
+    "enh_time_s": 0.212
+  },
+  "p257_013": {
+    "noisy_snr": 1.79,
+    "noisy_text": "Some have accepted it as a miracle without physical explanation.",
+    "noisy_time_s": 0.189,
+    "enh_text": "Some have accepted it as a miracle without physical explanation.",
+    "enh_time_s": 0.192
+  },
+  "p257_014": {
+    "noisy_snr": 16.52,
+    "noisy_text": "To the Hebrews it was a token that there will be no more universal floods.",
+    "noisy_time_s": 0.269,
+    "enh_text": "To the Hebrews it was a token that there will be no more universal floods.",
+    "enh_time_s": 0.264
+  },
+  "p257_015": {
+    "noisy_snr": 11.89,
+    "noisy_text": "The Greeks used to imagine that it was a sign from the gods to the Tell War or heavy rain.",
+    "noisy_time_s": 0.254,
+    "enh_text": "The Greeks used to imagine that it was a sign from the gods to the Tell War or heavy rain.",
+    "enh_time_s": 0.285
+  },
+  "p257_016": {
+    "noisy_snr": 7.0,
+    "noisy_text": "The Norsemen consider the rainbows a bridge over which the gods pass from Earth to their home and sky.",
+    "noisy_time_s": 0.252,
+    "enh_text": "The Norsemen consider the rainbows a bridge over which the gods passed from Earth to their home and sky.",
+    "enh_time_s": 0.258
+  },
+  "p257_017": {
+    "noisy_snr": 1.63,
+    "noisy_text": "Others have tried to explain the phenomenon physically.",
+    "noisy_time_s": 0.161,
+    "enh_text": "Others have tried to explain the phenomenon physically.",
+    "enh_time_s": 0.171
+  },
+  "p257_018": {
+    "noisy_snr": 16.84,
+    "noisy_text": "Aristotle thought that the rainbow is caused by a reflection of the sun's rays by the rain.",
+    "noisy_time_s": 0.245,
+    "enh_text": "Aristotle thought that the rainbow is caused by a reflection of the sun's rays by the rain.",
+    "enh_time_s": 0.258
+  },
+  "p257_019": {
+    "noisy_snr": 12.05,
+    "noisy_text": "Since then physicists have found that it is not reflection but refraction by the raindrops which causes the rainbows.",
+    "noisy_time_s": 0.276,
+    "enh_text": "Since then physicists have found that it is not reflection but refraction by the raindrops which causes the rainbows.",
+    "enh_time_s": 0.283
+  },
+  "p257_020": {
+    "noisy_snr": 6.39,
+    "noisy_text": "Many complicated ideas about the rainbow have been formed.",
+    "noisy_time_s": 0.15,
+    "enh_text": "Many complicated ideas about the rainbow have been formed.",
+    "enh_time_s": 0.164
+  },
+  "p257_022": {
+    "noisy_snr": 1.9,
+    "noisy_text": "The actual primary rainbow observed is said to be the effect of the superimposition of a number of bows.",
+    "noisy_time_s": 0.274,
+    "enh_text": "The actual primary rainbow observed is said to be the effect of the superimposition of a number of bows.",
+    "enh_time_s": 0.284
+  },
+  "p257_023": {
+    "noisy_snr": 17.09,
+    "noisy_text": "If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light win mixed form yellow.",
+    "noisy_time_s": 0.464,
+    "enh_text": "If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light win mixed form yellow.",
+    "enh_time_s": 0.427
+  },
+  "p257_024": {
+    "noisy_snr": 11.89,
+    "noisy_text": "This is a very common type of bow, one showing mainly red and yellow with little or no green or blue.",
+    "noisy_time_s": 0.268,
+    "enh_text": "This is a very common type of bow, one showing mainly red and yellow with little or no green or blue.",
+    "enh_time_s": 0.278
+  },
+  "p257_025": {
+    "noisy_snr": 6.1,
+    "noisy_text": "we have to pull together or we will hang apart.",
+    "noisy_time_s": 0.19,
+    "enh_text": "We have to pull together or we will hang apart.",
+    "enh_time_s": 0.171
+  },
+  "p257_026": {
+    "noisy_snr": 0.56,
+    "noisy_text": "Is this accurate?",
+    "noisy_time_s": 0.101,
+    "enh_text": "Is this accurate?",
+    "enh_time_s": 0.112
+  },
+  "p257_027": {
+    "noisy_snr": 16.7,
+    "noisy_text": "They should have a major rethink about the event for next year.",
+    "noisy_time_s": 0.172,
+    "enh_text": "They should have a major rethink about the event for next year.",
+    "enh_time_s": 0.173
+  },
+  "p257_028": {
+    "noisy_snr": 11.33,
+    "noisy_text": "because we do not need it.",
+    "noisy_time_s": 0.117,
+    "enh_text": "because we do not need it.",
+    "enh_time_s": 0.129
+  },
+  "p257_029": {
+    "noisy_snr": 5.78,
+    "noisy_text": "Life was like a timetable.",
+    "noisy_time_s": 0.124,
+    "enh_text": "Life was like a timetable.",
+    "enh_time_s": 0.105
+  },
+  "p257_030": {
+    "noisy_snr": 1.46,
+    "noisy_text": "Other members of the family were chirps set to comment last night.",
+    "noisy_time_s": 0.237,
+    "enh_text": "Other members of the family were chirps set to comment last night.",
+    "enh_time_s": 0.22
+  },
+  "p257_031": {
+    "noisy_snr": 15.15,
+    "noisy_text": "It was clear.",
+    "noisy_time_s": 0.104,
+    "enh_text": "It was clear.",
+    "enh_time_s": 0.092
+  },
+  "p257_032": {
+    "noisy_snr": 11.07,
+    "noisy_text": "Clark was desperate to return to the House of Commons.",
+    "noisy_time_s": 0.184,
+    "enh_text": "Clark was desperate to return to the House of Commons.",
+    "enh_time_s": 0.172
+  },
+  "p257_033": {
+    "noisy_snr": 5.76,
+    "noisy_text": "I came to complete.",
+    "noisy_time_s": 0.115,
+    "enh_text": "I came to complete.",
+    "enh_time_s": 0.106
+  },
+  "p257_034": {
+    "noisy_snr": 0.79,
+    "noisy_text": "President Bush is at war.",
+    "noisy_time_s": 0.154,
+    "enh_text": "President Bush that war.",
+    "enh_time_s": 0.103
+  },
+  "p257_035": {
+    "noisy_snr": 16.41,
+    "noisy_text": "Of course on Tuesday United were beaten despite this.",
+    "noisy_time_s": 0.161,
+    "enh_text": "Of course on Tuesday United were beaten despite this.",
+    "enh_time_s": 0.195
+  },
+  "p257_036": {
+    "noisy_snr": 10.09,
+    "noisy_text": "I was scared.",
+    "noisy_time_s": 0.115,
+    "enh_text": "I was scared.",
+    "enh_time_s": 0.102
+  },
+  "p257_037": {
+    "noisy_snr": 5.5,
+    "noisy_text": "It was ugly.",
+    "noisy_time_s": 0.097,
+    "enh_text": "It was ugly.",
+    "enh_time_s": 0.12
+  },
+  "p257_038": {
+    "noisy_snr": 2.04,
+    "noisy_text": "It is great to have this beautiful new site in a wonderful countryside.",
+    "noisy_time_s": 0.217,
+    "enh_text": "It is great to have this beautiful new site in a wonderful countryside.",
+    "enh_time_s": 0.204
+  },
+  "p257_039": {
+    "noisy_snr": 16.32,
+    "noisy_text": "It's easy to talk about these things in the abstract.",
+    "noisy_time_s": 0.185,
+    "enh_text": "It's easy to talk about these things in the abstract.",
+    "enh_time_s": 0.202
+  },
+  "p257_040": {
+    "noisy_snr": 11.25,
+    "noisy_text": "The Dutch run was in time to see the breakthrough.",
+    "noisy_time_s": 0.182,
+    "enh_text": "The Dutch run was in time to see the breakthrough.",
+    "enh_time_s": 0.18
+  },
+  "p257_041": {
+    "noisy_snr": 7.21,
+    "noisy_text": "an 8%",
+    "noisy_time_s": 0.087,
+    "enh_text": "An 8%",
+    "enh_time_s": 0.097
+  },
+  "p257_042": {
+    "noisy_snr": -0.69,
+    "noisy_text": "We need to chat.",
+    "noisy_time_s": 0.111,
+    "enh_text": "We need to chat.",
+    "enh_time_s": 0.121
+  },
+  "p257_043": {
+    "noisy_snr": 15.68,
+    "noisy_text": "The boy is no longer with us.",
+    "noisy_time_s": 0.146,
+    "enh_text": "The boy is no longer with us.",
+    "enh_time_s": 0.144
+  },
+  "p257_044": {
+    "noisy_snr": 10.36,
+    "noisy_text": "I hate the word.",
+    "noisy_time_s": 0.13,
+    "enh_text": "I hate the word.",
+    "enh_time_s": 0.124
+  },
+  "p257_045": {
+    "noisy_snr": 4.73,
+    "noisy_text": "That should do it.",
+    "noisy_time_s": 0.115,
+    "enh_text": "That should do it.",
+    "enh_time_s": 0.147
+  },
+  "p257_046": {
+    "noisy_snr": 2.29,
+    "noisy_text": "It's a blessing.",
+    "noisy_time_s": 0.098,
+    "enh_text": "It's a blessing.",
+    "enh_time_s": 0.109
+  },
+  "p257_047": {
+    "noisy_snr": 16.11,
+    "noisy_text": "The whole of southern Africa is in the grip of AIDS.",
+    "noisy_time_s": 0.213,
+    "enh_text": "The whole of Southern Africa is in the grip of AIDS.",
+    "enh_time_s": 0.205
+  },
+  "p257_048": {
+    "noisy_snr": 10.98,
+    "noisy_text": "As she explains.",
+    "noisy_time_s": 0.09,
+    "enh_text": "As she explains.",
+    "enh_time_s": 0.099
+  },
+  "p257_049": {
+    "noisy_snr": 6.83,
+    "noisy_text": "Yesterday he had a chilling warning for the cave in Scotland.",
+    "noisy_time_s": 0.174,
+    "enh_text": "Yesterday he had a chilling warning for the cave in Scotland.",
+    "enh_time_s": 0.16
+  },
+  "p257_050": {
+    "noisy_snr": 0.3,
+    "noisy_text": "We had no end.",
+    "noisy_time_s": 0.113,
+    "enh_text": "The admin.",
+    "enh_time_s": 0.089
+  },
+  "p257_051": {
+    "noisy_snr": 16.9,
+    "noisy_text": "I got a great response from the players as I had expected.",
+    "noisy_time_s": 0.212,
+    "enh_text": "I got a great response from the players as I had expected.",
+    "enh_time_s": 0.201
+  },
+  "p257_052": {
+    "noisy_snr": 10.73,
+    "noisy_text": "But the law is very clear on this.",
+    "noisy_time_s": 0.168,
+    "enh_text": "But the law is very clear on this.",
+    "enh_time_s": 0.153
+  },
+  "p257_053": {
+    "noisy_snr": 5.93,
+    "noisy_text": "For the meantime though, the signs are good.",
+    "noisy_time_s": 0.159,
+    "enh_text": "For the meantime though, the signs are good.",
+    "enh_time_s": 0.168
+  },
+  "p257_054": {
+    "noisy_snr": 1.09,
+    "noisy_text": "It was surprising to see the photograph.",
+    "noisy_time_s": 0.146,
+    "enh_text": "It was surprising to see the photograph.",
+    "enh_time_s": 0.135
+  },
+  "p257_055": {
+    "noisy_snr": 16.07,
+    "noisy_text": "Next league matches scale stick.",
+    "noisy_time_s": 0.144,
+    "enh_text": "Next league matches scale stick.",
+    "enh_time_s": 0.125
+  },
+  "p257_056": {
+    "noisy_snr": 10.13,
+    "noisy_text": "It's very odd.",
+    "noisy_time_s": 0.108,
+    "enh_text": "It's very odd.",
+    "enh_time_s": 0.106
+  },
+  "p257_057": {
+    "noisy_snr": 6.45,
+    "noisy_text": "The story was first reported in the Spectator magazine.",
+    "noisy_time_s": 0.205,
+    "enh_text": "The story was first reported in the Spectator magazine.",
+    "enh_time_s": 0.182
+  },
+  "p257_058": {
+    "noisy_snr": 0.43,
+    "noisy_text": "It is not great art.",
+    "noisy_time_s": 0.115,
+    "enh_text": "It is not great art.",
+    "enh_time_s": 0.118
+  },
+  "p257_059": {
+    "noisy_snr": 16.7,
+    "noisy_text": "George Robertson described the plan as an outrageous and disgraceful decision.",
+    "noisy_time_s": 0.219,
+    "enh_text": "George Robertson described the plan as an outrageous and disgraceful decision.",
+    "enh_time_s": 0.195
+  },
+  "p257_060": {
+    "noisy_snr": 10.39,
+    "noisy_text": "There was a battle there.",
+    "noisy_time_s": 0.111,
+    "enh_text": "There was a battle there.",
+    "enh_time_s": 0.142
+  },
+  "p257_061": {
+    "noisy_snr": 5.33,
+    "noisy_text": "Scotland had great assets.",
+    "noisy_time_s": 0.124,
+    "enh_text": "Scotland had great assets.",
+    "enh_time_s": 0.117
+  },
+  "p257_062": {
+    "noisy_snr": 1.16,
+    "noisy_text": "There will be tough opponents to this report.",
+    "noisy_time_s": 0.156,
+    "enh_text": "There will be tough opponents to this report.",
+    "enh_time_s": 0.146
+  },
+  "p257_063": {
+    "noisy_snr": 15.63,
+    "noisy_text": "Have a look at our accounts.",
+    "noisy_time_s": 0.154,
+    "enh_text": "Have a look at our accounts.",
+    "enh_time_s": 0.14
+  },
+  "p257_064": {
+    "noisy_snr": 10.2,
+    "noisy_text": "It's out at the sixth sense.",
+    "noisy_time_s": 0.143,
+    "enh_text": "It's now about the sixth sense.",
+    "enh_time_s": 0.146
+  },
+  "p257_065": {
+    "noisy_snr": 6.13,
+    "noisy_text": "There is an element of racism in Scotland.",
+    "noisy_time_s": 0.155,
+    "enh_text": "There is an element of racism in Scotland.",
+    "enh_time_s": 0.182
+  },
+  "p257_066": {
+    "noisy_snr": 0.66,
+    "noisy_text": "I was just trying to win the golf tournament.",
+    "noisy_time_s": 0.165,
+    "enh_text": "I was just trying to win the golf tournament.",
+    "enh_time_s": 0.17
+  },
+  "p257_067": {
+    "noisy_snr": 15.48,
+    "noisy_text": "It's all I can do.",
+    "noisy_time_s": 0.15,
+    "enh_text": "It's all I can do.",
+    "enh_time_s": 0.122
+  },
+  "p257_068": {
+    "noisy_snr": 9.97,
+    "noisy_text": "There could be a way back.",
+    "noisy_time_s": 0.146,
+    "enh_text": "There could be a way back.",
+    "enh_time_s": 0.162
+  },
+  "p257_069": {
+    "noisy_snr": 6.88,
+    "noisy_text": "They do not work because they have got to be found.",
+    "noisy_time_s": 0.18,
+    "enh_text": "They do not work because it has got to sit down.",
+    "enh_time_s": 0.189
+  },
+  "p257_070": {
+    "noisy_snr": 1.56,
+    "noisy_text": "The price cuts are really exciting.",
+    "noisy_time_s": 0.147,
+    "enh_text": "The rice cuts are only exciting.",
+    "enh_time_s": 0.13
+  },
+  "p257_071": {
+    "noisy_snr": 16.71,
+    "noisy_text": "Chris Smith, the cult de-sectuary, said he was satisfied with the decision.",
+    "noisy_time_s": 0.251,
+    "enh_text": "Chris Smith, the CODDUS secretary, said he was satisfied with the decision.",
+    "enh_time_s": 0.239
+  },
+  "p257_072": {
+    "noisy_snr": 10.72,
+    "noisy_text": "I have my suspicions.",
+    "noisy_time_s": 0.12,
+    "enh_text": "I have my suspicions.",
+    "enh_time_s": 0.111
+  },
+  "p257_073": {
+    "noisy_snr": 6.22,
+    "noisy_text": "She died in hospital two hours later.",
+    "noisy_time_s": 0.133,
+    "enh_text": "She died in hospital two hours later.",
+    "enh_time_s": 0.146
+  },
+  "p257_074": {
+    "noisy_snr": 0.59,
+    "noisy_text": "It was chaotic.",
+    "noisy_time_s": 0.095,
+    "enh_text": "It was chaotic.",
+    "enh_time_s": 0.105
+  },
+  "p257_075": {
+    "noisy_snr": 15.35,
+    "noisy_text": "Is there any way forward?",
+    "noisy_time_s": 0.131,
+    "enh_text": "Is there any way forward?",
+    "enh_time_s": 0.124
+  },
+  "p257_076": {
+    "noisy_snr": 10.66,
+    "noisy_text": "I've not thought about it.",
+    "noisy_time_s": 0.131,
+    "enh_text": "I've not thought about it.",
+    "enh_time_s": 0.137
+  },
+  "p257_077": {
+    "noisy_snr": 5.55,
+    "noisy_text": "People must remain vigilant.",
+    "noisy_time_s": 0.104,
+    "enh_text": "People must remain vigilant.",
+    "enh_time_s": 0.106
+  },
+  "p257_078": {
+    "noisy_snr": 1.43,
+    "noisy_text": "Mr. Irvins said Mr Raffity was now in good spirits.",
+    "noisy_time_s": 0.233,
+    "enh_text": "Mr. Irvins said Mr Raffity was now in good spirits.",
+    "enh_time_s": 0.235
+  },
+  "p257_079": {
+    "noisy_snr": 16.38,
+    "noisy_text": "It's not long term but I need time to recover.",
+    "noisy_time_s": 0.18,
+    "enh_text": "It's not long term but I need time to recover.",
+    "enh_time_s": 0.188
+  },
+  "p257_080": {
+    "noisy_snr": 11.55,
+    "noisy_text": "It is linked to the rower proposed changes at Scottish Balau.",
+    "noisy_time_s": 0.205,
+    "enh_text": "It is linked to the rower of proposed changes at Scottish Balau.",
+    "enh_time_s": 0.2
+  },
+  "p257_081": {
+    "noisy_snr": 5.05,
+    "noisy_text": "It may well have been.",
+    "noisy_time_s": 0.119,
+    "enh_text": "It may well have been.",
+    "enh_time_s": 0.123
+  },
+  "p257_082": {
+    "noisy_snr": 0.94,
+    "noisy_text": "He liked to give the impression of being a hard man.",
+    "noisy_time_s": 0.223,
+    "enh_text": "He liked to give the impression of being a hard man.",
+    "enh_time_s": 0.184
+  },
+  "p257_083": {
+    "noisy_snr": 16.05,
+    "noisy_text": "He seems to be pleased with the picture.",
+    "noisy_time_s": 0.161,
+    "enh_text": "He seems to be pleased with the picture.",
+    "enh_time_s": 0.153
+  },
+  "p257_084": {
+    "noisy_snr": 11.3,
+    "noisy_text": "Obviously, we were pretty close in a couple of games.",
+    "noisy_time_s": 0.176,
+    "enh_text": "Obviously, we were pretty close in a couple of games.",
+    "enh_time_s": 0.19
+  },
+  "p257_085": {
+    "noisy_snr": 6.77,
+    "noisy_text": "I in the meantime had been far from chilling.",
+    "noisy_time_s": 0.158,
+    "enh_text": "I in the meantime have been far from chilling.",
+    "enh_time_s": 0.166
+  },
+  "p257_086": {
+    "noisy_snr": 1.42,
+    "noisy_text": "It's never too late.",
+    "noisy_time_s": 0.115,
+    "enh_text": "It's never too late.",
+    "enh_time_s": 0.1
+  },
+  "p257_087": {
+    "noisy_snr": 16.06,
+    "noisy_text": "Florida is the pivotal state in the nation.",
+    "noisy_time_s": 0.167,
+    "enh_text": "Florida is the pivotal state in the nation.",
+    "enh_time_s": 0.164
+  },
+  "p257_088": {
+    "noisy_snr": 11.64,
+    "noisy_text": "Downing Street will make the second appointment at the Scotland office today.",
+    "noisy_time_s": 0.187,
+    "enh_text": "Downing Street will make the second appointment at the Scotland office today.",
+    "enh_time_s": 0.221
+  },
+  "p257_089": {
+    "noisy_snr": 6.45,
+    "noisy_text": "Yesterday you continued to keep a low profile.",
+    "noisy_time_s": 0.13,
+    "enh_text": "Yesterday he continued to keep a low profile.",
+    "enh_time_s": 0.167
+  },
+  "p257_090": {
+    "noisy_snr": 0.25,
+    "noisy_text": "Stay active, buddy.",
+    "noisy_time_s": 0.117,
+    "enh_text": "Stay at the point.",
+    "enh_time_s": 0.128
+  },
+  "p257_091": {
+    "noisy_snr": 15.8,
+    "noisy_text": "We must look forward.",
+    "noisy_time_s": 0.103,
+    "enh_text": "We must look forward.",
+    "enh_time_s": 0.115
+  },
+  "p257_092": {
+    "noisy_snr": 9.69,
+    "noisy_text": "It is an old family habit.",
+    "noisy_time_s": 0.128,
+    "enh_text": "It's an old family habit.",
+    "enh_time_s": 0.12
+  },
+  "p257_093": {
+    "noisy_snr": 4.63,
+    "noisy_text": "He was possessed.",
+    "noisy_time_s": 0.088,
+    "enh_text": "He was possessed.",
+    "enh_time_s": 0.099
+  },
+  "p257_094": {
+    "noisy_snr": -0.61,
+    "noisy_text": "She told the Herald.",
+    "noisy_time_s": 0.106,
+    "enh_text": "She told the Herald.",
+    "enh_time_s": 0.105
+  },
+  "p257_095": {
+    "noisy_snr": 16.55,
+    "noisy_text": "Two other men, including the taxi driver, will wounded in the attack.",
+    "noisy_time_s": 0.216,
+    "enh_text": "Two other men, including the taxi driver, will wounded in the attack.",
+    "enh_time_s": 0.223
+  },
+  "p257_096": {
+    "noisy_snr": 10.23,
+    "noisy_text": "The piece process will be buried.",
+    "noisy_time_s": 0.125,
+    "enh_text": "The piece process will be buried.",
+    "enh_time_s": 0.149
+  },
+  "p257_097": {
+    "noisy_snr": 6.0,
+    "noisy_text": "The oil companies would be asked to contribute.",
+    "noisy_time_s": 0.137,
+    "enh_text": "The oil companies would be asked to contribute.",
+    "enh_time_s": 0.15
+  },
+  "p257_098": {
+    "noisy_snr": -0.74,
+    "noisy_text": "They're now divorced.",
+    "noisy_time_s": 0.126,
+    "enh_text": "They're now divorced.",
+    "enh_time_s": 0.101
+  },
+  "p257_099": {
+    "noisy_snr": 15.81,
+    "noisy_text": "They were under a lot of pressure from the other clubs.",
+    "noisy_time_s": 0.183,
+    "enh_text": "They were under a lot of pressure from the other clubs.",
+    "enh_time_s": 0.161
+  },
+  "p257_100": {
+    "noisy_snr": 10.12,
+    "noisy_text": "It was mayhem.",
+    "noisy_time_s": 0.1,
+    "enh_text": "It was mayhem.",
+    "enh_time_s": 0.096
+  },
+  "p257_101": {
+    "noisy_snr": 6.42,
+    "noisy_text": "However, at the intensive care unit the southern general hospital was full.",
+    "noisy_time_s": 0.194,
+    "enh_text": "However, at the intensive care unit, the Southern General Hospital was full.",
+    "enh_time_s": 0.219
+  },
+  "p257_102": {
+    "noisy_snr": 1.26,
+    "noisy_text": "tomorrow you'll make a keynote speech on Europe.",
+    "noisy_time_s": 0.143,
+    "enh_text": "tomorrow you'll make a Q-head speech on Europe.",
+    "enh_time_s": 0.199
+  },
+  "p257_103": {
+    "noisy_snr": 15.87,
+    "noisy_text": "We have every respect for Michelle.",
+    "noisy_time_s": 0.114,
+    "enh_text": "We have every respect for Michelle.",
+    "enh_time_s": 0.123
+  },
+  "p257_104": {
+    "noisy_snr": 10.97,
+    "noisy_text": "That time is not now, however.",
+    "noisy_time_s": 0.148,
+    "enh_text": "That time is not now, however.",
+    "enh_time_s": 0.129
+  },
+  "p257_105": {
+    "noisy_snr": 5.9,
+    "noisy_text": "I didn't play well last year.",
+    "noisy_time_s": 0.168,
+    "enh_text": "I didn't play well last year.",
+    "enh_time_s": 0.147
+  },
+  "p257_106": {
+    "noisy_snr": 1.45,
+    "noisy_text": "But these people, the ruling is very welcome.",
+    "noisy_time_s": 0.15,
+    "enh_text": "For these people the ruling is very welcome.",
+    "enh_time_s": 0.172
+  },
+  "p257_107": {
+    "noisy_snr": 15.81,
+    "noisy_text": "They will want to perform well.",
+    "noisy_time_s": 0.139,
+    "enh_text": "They will want to perform well.",
+    "enh_time_s": 0.142
+  },
+  "p257_108": {
+    "noisy_snr": 10.71,
+    "noisy_text": "They had to be cut from the wreckage.",
+    "noisy_time_s": 0.143,
+    "enh_text": "They had to be cut from the wreckage.",
+    "enh_time_s": 0.162
+  },
+  "p257_109": {
+    "noisy_snr": 6.41,
+    "noisy_text": "I did not think about the rotor cup.",
+    "noisy_time_s": 0.144,
+    "enh_text": "I did not think about the motor cup.",
+    "enh_time_s": 0.15
+  },
+  "p257_110": {
+    "noisy_snr": 2.04,
+    "noisy_text": "It is normal.",
+    "noisy_time_s": 0.105,
+    "enh_text": "It is normal.",
+    "enh_time_s": 0.091
+  },
+  "p257_111": {
+    "noisy_snr": 16.68,
+    "noisy_text": "I was fighting for my life I thought.",
+    "noisy_time_s": 0.144,
+    "enh_text": "I was fighting for my life I thought.",
+    "enh_time_s": 0.136
+  },
+  "p257_112": {
+    "noisy_snr": 11.01,
+    "noisy_text": "I don't know how many friends.",
+    "noisy_time_s": 0.151,
+    "enh_text": "I don't know how many friends.",
+    "enh_time_s": 0.136
+  },
+  "p257_113": {
+    "noisy_snr": 5.74,
+    "noisy_text": "It's a shame.",
+    "noisy_time_s": 0.122,
+    "enh_text": "It's a shame.",
+    "enh_time_s": 0.133
+  },
+  "p257_114": {
+    "noisy_snr": 0.92,
+    "noisy_text": "It was the age of...",
+    "noisy_time_s": 0.115,
+    "enh_text": "It was the AC.",
+    "enh_time_s": 0.106
+  },
+  "p257_115": {
+    "noisy_snr": 16.14,
+    "noisy_text": "We do not expect any surplus.",
+    "noisy_time_s": 0.131,
+    "enh_text": "We do not expect any surplus.",
+    "enh_time_s": 0.131
+  },
+  "p257_116": {
+    "noisy_snr": 11.74,
+    "noisy_text": "Naturally it was not difficult to find support for these proposals.",
+    "noisy_time_s": 0.189,
+    "enh_text": "Naturally it was not difficult to find support for these proposals.",
+    "enh_time_s": 0.168
+  },
+  "p257_117": {
+    "noisy_snr": 6.45,
+    "noisy_text": "It's not a new concept in jazz.",
+    "noisy_time_s": 0.128,
+    "enh_text": "It's not a new concept in jazz.",
+    "enh_time_s": 0.184
+  },
+  "p257_118": {
+    "noisy_snr": 1.67,
+    "noisy_text": "We would we are determined to continue on this mission and we will prevail.",
+    "noisy_time_s": 0.249,
+    "enh_text": "We would we are determined to continue on this mission and we will prevail.",
+    "enh_time_s": 0.207
+  },
+  "p257_119": {
+    "noisy_snr": 16.26,
+    "noisy_text": "I'm delighted about that.",
+    "noisy_time_s": 0.13,
+    "enh_text": "I'm delighted about that.",
+    "enh_time_s": 0.124
+  },
+  "p257_120": {
+    "noisy_snr": 10.06,
+    "noisy_text": "Does this mean?",
+    "noisy_time_s": 0.091,
+    "enh_text": "Does this mean?",
+    "enh_time_s": 0.116
+  },
+  "p257_121": {
+    "noisy_snr": 6.6,
+    "noisy_text": "This is the first big idea of a Scottish Parliament election.",
+    "noisy_time_s": 0.18,
+    "enh_text": "This is the first big idea of a Scottish Parliament election.",
+    "enh_time_s": 0.223
+  },
+  "p257_122": {
+    "noisy_snr": 0.19,
+    "noisy_text": "He did his job.",
+    "noisy_time_s": 0.132,
+    "enh_text": "He did his job.",
+    "enh_time_s": 0.088
+  },
+  "p257_123": {
+    "noisy_snr": 15.7,
+    "noisy_text": "You can spend money on housing.",
+    "noisy_time_s": 0.132,
+    "enh_text": "You can spend money on housing.",
+    "enh_time_s": 0.116
+  },
+  "p257_124": {
+    "noisy_snr": 10.26,
+    "noisy_text": "That's alright then.",
+    "noisy_time_s": 0.114,
+    "enh_text": "That's alright then.",
+    "enh_time_s": 0.109
+  },
+  "p257_125": {
+    "noisy_snr": 5.01,
+    "noisy_text": "I was furious.",
+    "noisy_time_s": 0.121,
+    "enh_text": "I was furious.",
+    "enh_time_s": 0.124
+  },
+  "p257_126": {
+    "noisy_snr": 0.22,
+    "noisy_text": "It has removed a bit of guilt.",
+    "noisy_time_s": 0.134,
+    "enh_text": "It has removed a bit of guilt.",
+    "enh_time_s": 0.143
+  },
+  "p257_127": {
+    "noisy_snr": 16.34,
+    "noisy_text": "His son has been travelling with the Tartanami for years.",
+    "noisy_time_s": 0.222,
+    "enh_text": "His son has been travelling with the Tarte Narmy for years.",
+    "enh_time_s": 0.229
+  },
+  "p257_128": {
+    "noisy_snr": 11.35,
+    "noisy_text": "It's terrible that he was died the same way.",
+    "noisy_time_s": 0.214,
+    "enh_text": "It's terrible that he was died the same way.",
+    "enh_time_s": 0.165
+  },
+  "p257_129": {
+    "noisy_snr": 6.36,
+    "noisy_text": "The European elections are extremely important.",
+    "noisy_time_s": 0.125,
+    "enh_text": "The European elections extremely important.",
+    "enh_time_s": 0.112
+  },
+  "p257_130": {
+    "noisy_snr": 1.21,
+    "noisy_text": "Lucky and Palace have deployed on the map of the Prince.",
+    "noisy_time_s": 0.205,
+    "enh_text": "Talking about the steps you put in the market for the friends.",
+    "enh_time_s": 0.195
+  },
+  "p257_131": {
+    "noisy_snr": 15.2,
+    "noisy_text": "Who will attend?",
+    "noisy_time_s": 0.104,
+    "enh_text": "Who will attend?",
+    "enh_time_s": 0.1
+  },
+  "p257_132": {
+    "noisy_snr": 11.68,
+    "noisy_text": "The trial is funded solely by Edinburgh City Council.",
+    "noisy_time_s": 0.183,
+    "enh_text": "The trial is funded solely by Edinburgh City Council.",
+    "enh_time_s": 0.185
+  },
+  "p257_133": {
+    "noisy_snr": 5.81,
+    "noisy_text": "The whole thing of doing the movie was a risk.",
+    "noisy_time_s": 0.172,
+    "enh_text": "The whole thing of doing the movie was a risk.",
+    "enh_time_s": 0.184
+  },
+  "p257_135": {
+    "noisy_snr": 1.58,
+    "noisy_text": "Customers for the panels include the National Trust to Scotland.",
+    "noisy_time_s": 0.182,
+    "enh_text": "Customers for the panels include the National Trust to Scotland.",
+    "enh_time_s": 0.177
+  },
+  "p257_136": {
+    "noisy_snr": 16.04,
+    "noisy_text": "They made such decisions in London.",
+    "noisy_time_s": 0.14,
+    "enh_text": "They made such decisions in London.",
+    "enh_time_s": 0.149
+  },
+  "p257_137": {
+    "noisy_snr": 10.88,
+    "noisy_text": "Our intentions are real.",
+    "noisy_time_s": 0.106,
+    "enh_text": "Our intentions are real.",
+    "enh_time_s": 0.097
+  },
+  "p257_138": {
+    "noisy_snr": 5.74,
+    "noisy_text": "It is also well received.",
+    "noisy_time_s": 0.119,
+    "enh_text": "It is also well received.",
+    "enh_time_s": 0.141
+  },
+  "p257_139": {
+    "noisy_snr": 0.1,
+    "noisy_text": "What will happen then?",
+    "noisy_time_s": 0.138,
+    "enh_text": "What will happen then?",
+    "enh_time_s": 0.116
+  },
+  "p257_140": {
+    "noisy_snr": 15.51,
+    "noisy_text": "It's not true.",
+    "noisy_time_s": 0.11,
+    "enh_text": "It's not true.",
+    "enh_time_s": 0.125
+  },
+  "p257_141": {
+    "noisy_snr": 10.97,
+    "noisy_text": "I feel very grateful with everything.",
+    "noisy_time_s": 0.15,
+    "enh_text": "I feel very grateful with everything.",
+    "enh_time_s": 0.139
+  },
+  "p257_142": {
+    "noisy_snr": 6.47,
+    "noisy_text": "We are currently consulting with a wide range of interested parties.",
+    "noisy_time_s": 0.194,
+    "enh_text": "We are currently consulting with a wide range of interested parties.",
+    "enh_time_s": 0.209
+  },
+  "p257_143": {
+    "noisy_snr": 1.29,
+    "noisy_text": "Nobody in the world can get away from them.",
+    "noisy_time_s": 0.173,
+    "enh_text": "Nobody in the world can get away from them.",
+    "enh_time_s": 0.158
+  },
+  "p257_144": {
+    "noisy_snr": 17.06,
+    "noisy_text": "He sees a difference in the style of the two teams.",
+    "noisy_time_s": 0.199,
+    "enh_text": "He sees a difference in the style of the two teams.",
+    "enh_time_s": 0.21
+  },
+  "p257_145": {
+    "noisy_snr": 11.98,
+    "noisy_text": "We will continue to talk to find a solution for Scottish football.",
+    "noisy_time_s": 0.204,
+    "enh_text": "We will continue to talk to find a solution for Scottish football.",
+    "enh_time_s": 0.186
+  },
+  "p257_146": {
+    "noisy_snr": 6.12,
+    "noisy_text": "There's a lack of chemistry.",
+    "noisy_time_s": 0.125,
+    "enh_text": "There's a lack of chemistry.",
+    "enh_time_s": 0.117
+  },
+  "p257_147": {
+    "noisy_snr": 1.75,
+    "noisy_text": "That could be the difference between life and death in action.",
+    "noisy_time_s": 0.189,
+    "enh_text": "That could be the difference between life and death in action.",
+    "enh_time_s": 0.175
+  },
+  "p257_148": {
+    "noisy_snr": 16.44,
+    "noisy_text": "It's like a football team.",
+    "noisy_time_s": 0.113,
+    "enh_text": "It's like a football team.",
+    "enh_time_s": 0.154
+  },
+  "p257_149": {
+    "noisy_snr": 11.2,
+    "noisy_text": "That group reported just before Christmas.",
+    "noisy_time_s": 0.117,
+    "enh_text": "That group reported just before Christmas.",
+    "enh_time_s": 0.133
+  },
+  "p257_150": {
+    "noisy_snr": 6.01,
+    "noisy_text": "You will have married the world leader.",
+    "noisy_time_s": 0.139,
+    "enh_text": "You will emerge as a world leader.",
+    "enh_time_s": 0.12
+  },
+  "p257_151": {
+    "noisy_snr": 1.26,
+    "noisy_text": "I open to daughter something real.",
+    "noisy_time_s": 0.159,
+    "enh_text": "I open to those for jumping through.",
+    "enh_time_s": 0.146
+  },
+  "p257_152": {
+    "noisy_snr": 15.58,
+    "noisy_text": "They did very well.",
+    "noisy_time_s": 0.12,
+    "enh_text": "They did very well.",
+    "enh_time_s": 0.111
+  },
+  "p257_153": {
+    "noisy_snr": 10.96,
+    "noisy_text": "It became a book by itself.",
+    "noisy_time_s": 0.175,
+    "enh_text": "It became a book by itself.",
+    "enh_time_s": 0.148
+  },
+  "p257_154": {
+    "noisy_snr": 7.17,
+    "noisy_text": "But he's dressed at the partnership as not a construction company.",
+    "noisy_time_s": 0.221,
+    "enh_text": "But he's dressed at the partnership as not a construction company.",
+    "enh_time_s": 0.217
+  },
+  "p257_155": {
+    "noisy_snr": 0.77,
+    "noisy_text": "The weather forecast isn't good.",
+    "noisy_time_s": 0.127,
+    "enh_text": "So, while the forecast isn't good.",
+    "enh_time_s": 0.17
+  },
+  "p257_156": {
+    "noisy_snr": 15.89,
+    "noisy_text": "with a sense of excess in the novel.",
+    "noisy_time_s": 0.189,
+    "enh_text": "There's a sense of excess in the novel.",
+    "enh_time_s": 0.171
+  },
+  "p257_157": {
+    "noisy_snr": 11.55,
+    "noisy_text": "For the refugees, the return will not come a moment too soon.",
+    "noisy_time_s": 0.226,
+    "enh_text": "For the refugees, the return will not come a moment too soon.",
+    "enh_time_s": 0.217
+  },
+  "p257_158": {
+    "noisy_snr": 4.96,
+    "noisy_text": "There's a pause.",
+    "noisy_time_s": 0.119,
+    "enh_text": "There's a pause.",
+    "enh_time_s": 0.103
+  },
+  "p257_159": {
+    "noisy_snr": 0.48,
+    "noisy_text": "You can do no wrong.",
+    "noisy_time_s": 0.134,
+    "enh_text": "You can do no wrong.",
+    "enh_time_s": 0.165
+  },
+  "p257_160": {
+    "noisy_snr": 16.56,
+    "noisy_text": "It was so new, so exciting.",
+    "noisy_time_s": 0.165,
+    "enh_text": "It was so new, so exciting.",
+    "enh_time_s": 0.146
+  },
+  "p257_161": {
+    "noisy_snr": 10.65,
+    "noisy_text": "I've learned from my mistakes.",
+    "noisy_time_s": 0.125,
+    "enh_text": "I've learned from my mistakes.",
+    "enh_time_s": 0.111
+  },
+  "p257_162": {
+    "noisy_snr": 6.49,
+    "noisy_text": "The labour insider said it was far too close to call.",
+    "noisy_time_s": 0.159,
+    "enh_text": "Labor inside I said it was far too close to cool.",
+    "enh_time_s": 0.177
+  },
+  "p257_163": {
+    "noisy_snr": 1.0,
+    "noisy_text": "I put my own money into this project.",
+    "noisy_time_s": 0.139,
+    "enh_text": "I've put my own money into this project.",
+    "enh_time_s": 0.188
+  },
+  "p257_164": {
+    "noisy_snr": 16.55,
+    "noisy_text": "However, the French government has a major dilemma on its hands.",
+    "noisy_time_s": 0.169,
+    "enh_text": "However, the French government has a major dilemma on its hands.",
+    "enh_time_s": 0.219
+  },
+  "p257_165": {
+    "noisy_snr": 10.09,
+    "noisy_text": "I lost my head.",
+    "noisy_time_s": 0.096,
+    "enh_text": "I lost my head.",
+    "enh_time_s": 0.133
+  },
+  "p257_166": {
+    "noisy_snr": 5.23,
+    "noisy_text": "You're not going in blind.",
+    "noisy_time_s": 0.132,
+    "enh_text": "You're not going in blind.",
+    "enh_time_s": 0.152
+  },
+  "p257_167": {
+    "noisy_snr": 1.43,
+    "noisy_text": "yet it's unlikely to be either full or final.",
+    "noisy_time_s": 0.167,
+    "enh_text": "Yet it's unlikely to be either full or final.",
+    "enh_time_s": 0.193
+  },
+  "p257_168": {
+    "noisy_snr": 16.39,
+    "noisy_text": "As far as we were concerned, the deal with can I do is dead.",
+    "noisy_time_s": 0.227,
+    "enh_text": "As far as we were concerned, the deal with can I do is dead.",
+    "enh_time_s": 0.219
+  },
+  "p257_169": {
+    "noisy_snr": 11.27,
+    "noisy_text": "And I was happy for the happiness of my brothers.",
+    "noisy_time_s": 0.197,
+    "enh_text": "And I was happy for the happiness of my brothers.",
+    "enh_time_s": 0.195
+  },
+  "p257_170": {
+    "noisy_snr": 5.76,
+    "noisy_text": "My life has been destroyed.",
+    "noisy_time_s": 0.11,
+    "enh_text": "My life has been destroyed.",
+    "enh_time_s": 0.139
+  },
+  "p257_171": {
+    "noisy_snr": 0.89,
+    "noisy_text": "There was no hint of scandum.",
+    "noisy_time_s": 0.15,
+    "enh_text": "There was no hint of scoundrel.",
+    "enh_time_s": 0.175
+  },
+  "p257_172": {
+    "noisy_snr": 16.85,
+    "noisy_text": "Treatment is not an issue with these people.",
+    "noisy_time_s": 0.147,
+    "enh_text": "Treatment is not an issue with these people.",
+    "enh_time_s": 0.16
+  },
+  "p257_173": {
+    "noisy_snr": 11.35,
+    "noisy_text": "I feel like my game has come a long way.",
+    "noisy_time_s": 0.196,
+    "enh_text": "I feel like my game has come a long way.",
+    "enh_time_s": 0.179
+  },
+  "p257_174": {
+    "noisy_snr": 5.35,
+    "noisy_text": "We wanted it left really well.",
+    "noisy_time_s": 0.144,
+    "enh_text": "We wanted it left really well.",
+    "enh_time_s": 0.148
+  },
+  "p257_175": {
+    "noisy_snr": 1.45,
+    "noisy_text": "However, the figures are disputed by the Scottish Business Service.",
+    "noisy_time_s": 0.186,
+    "enh_text": "However, the fingers of this is featured by the Scottish busy service.",
+    "enh_time_s": 0.188
+  },
+  "p257_176": {
+    "noisy_snr": 15.33,
+    "noisy_text": "It's quite the routine.",
+    "noisy_time_s": 0.126,
+    "enh_text": "It's quite the routine.",
+    "enh_time_s": 0.108
+  },
+  "p257_177": {
+    "noisy_snr": 11.6,
+    "noisy_text": "There is no evidence of a little Scotland emerging.",
+    "noisy_time_s": 0.142,
+    "enh_text": "There is no evidence of a little Scotland emerging.",
+    "enh_time_s": 0.178
+  },
+  "p257_178": {
+    "noisy_snr": 6.59,
+    "noisy_text": "In spite of recent advances, the language is still under threat.",
+    "noisy_time_s": 0.211,
+    "enh_text": "In spite of recent advances, the language is still under threat.",
+    "enh_time_s": 0.185
+  },
+  "p257_179": {
+    "noisy_snr": 0.01,
+    "noisy_text": "Everyone can be bored.",
+    "noisy_time_s": 0.12,
+    "enh_text": "Everyone can be bored.",
+    "enh_time_s": 0.106
+  },
+  "p257_180": {
+    "noisy_snr": 15.44,
+    "noisy_text": "It is my mute.",
+    "noisy_time_s": 0.12,
+    "enh_text": "It is my mute.",
+    "enh_time_s": 0.093
+  },
+  "p257_181": {
+    "noisy_snr": 10.75,
+    "noisy_text": "They need to look after themselves.",
+    "noisy_time_s": 0.157,
+    "enh_text": "They need to look after themselves.",
+    "enh_time_s": 0.134
+  },
+  "p257_182": {
+    "noisy_snr": 6.0,
+    "noisy_text": "What has caused the demise of singing?",
+    "noisy_time_s": 0.155,
+    "enh_text": "What has caused the demise of singing?",
+    "enh_time_s": 0.161
+  },
+  "p257_183": {
+    "noisy_snr": 0.19,
+    "noisy_text": "One was a lawyer.",
+    "noisy_time_s": 0.125,
+    "enh_text": "What was the lawyer?",
+    "enh_time_s": 0.115
+  },
+  "p257_184": {
+    "noisy_snr": 16.39,
+    "noisy_text": "My main concern is that public health is not at risk.",
+    "noisy_time_s": 0.21,
+    "enh_text": "My main concern is that public health is not at risk.",
+    "enh_time_s": 0.195
+  },
+  "p257_185": {
+    "noisy_snr": 10.88,
+    "noisy_text": "It was not a fair in many respects.",
+    "noisy_time_s": 0.176,
+    "enh_text": "It was not a fair in many respects.",
+    "enh_time_s": 0.167
+  },
+  "p257_186": {
+    "noisy_snr": 6.72,
+    "noisy_text": "Treasury Spikes when Mark and Bruce is also considered a potential contender.",
+    "noisy_time_s": 0.213,
+    "enh_text": "Treasury Spikes when Mark and Bruce is also considered a potential contender.",
+    "enh_time_s": 0.201
+  },
+  "p257_187": {
+    "noisy_snr": 0.37,
+    "noisy_text": "Saste is gone.",
+    "noisy_time_s": 0.1,
+    "enh_text": "Saste's gone.",
+    "enh_time_s": 0.127
+  },
+  "p257_188": {
+    "noisy_snr": 16.24,
+    "noisy_text": "I think the Commission has been very very slow to react.",
+    "noisy_time_s": 0.196,
+    "enh_text": "I think the Commission has been very, very slow to react.",
+    "enh_time_s": 0.202
+  },
+  "p257_189": {
+    "noisy_snr": 10.73,
+    "noisy_text": "Last night was a key episode.",
+    "noisy_time_s": 0.126,
+    "enh_text": "Last night was a key episode.",
+    "enh_time_s": 0.139
+  },
+  "p257_190": {
+    "noisy_snr": 6.44,
+    "noisy_text": "You must keep off the feet on the ground.",
+    "noisy_time_s": 0.183,
+    "enh_text": "It must keep our feet on the ground.",
+    "enh_time_s": 0.147
+  },
+  "p257_191": {
+    "noisy_snr": 1.63,
+    "noisy_text": "The spokes on them said the flatten on them is very small.",
+    "noisy_time_s": 0.21,
+    "enh_text": "The spokesmen said the flatten on them was very small.",
+    "enh_time_s": 0.175
+  },
+  "p257_192": {
+    "noisy_snr": 14.32,
+    "noisy_text": "Off I went.",
+    "noisy_time_s": 0.124,
+    "enh_text": "off I went",
+    "enh_time_s": 0.097
+  },
+  "p257_193": {
+    "noisy_snr": 11.59,
+    "noisy_text": "There will appear to be no motive for the attack.",
+    "noisy_time_s": 0.165,
+    "enh_text": "There will appear to be no more except for your time.",
+    "enh_time_s": 0.184
+  },
+  "p257_194": {
+    "noisy_snr": 7.05,
+    "noisy_text": "He has a lot of experiences captain in his career.",
+    "noisy_time_s": 0.18,
+    "enh_text": "He has a lot of experiences captain in his career.",
+    "enh_time_s": 0.193
+  },
+  "p257_195": {
+    "noisy_snr": 0.51,
+    "noisy_text": "Ferguson should take note.",
+    "noisy_time_s": 0.094,
+    "enh_text": "Ferguson should take note.",
+    "enh_time_s": 0.132
+  },
+  "p257_196": {
+    "noisy_snr": 16.52,
+    "noisy_text": "The album was widely expected to be a commercial disaster.",
+    "noisy_time_s": 0.165,
+    "enh_text": "The album was widely expected to be a commercial disaster.",
+    "enh_time_s": 0.174
+  },
+  "p257_197": {
+    "noisy_snr": 10.44,
+    "noisy_text": "It's just awful.",
+    "noisy_time_s": 0.118,
+    "enh_text": "It's just awful.",
+    "enh_time_s": 0.102
+  },
+  "p257_198": {
+    "noisy_snr": 6.46,
+    "noisy_text": "We'll see the rapid reaction force as the way ahead.",
+    "noisy_time_s": 0.181,
+    "enh_text": "We'll see the rapid reaction force as the way ahead.",
+    "enh_time_s": 0.207
+  },
+  "p257_199": {
+    "noisy_snr": -3.08,
+    "noisy_text": "It's all in the hair.",
+    "noisy_time_s": 0.119,
+    "enh_text": "It's all in the hair.",
+    "enh_time_s": 0.123
+  },
+  "p257_200": {
+    "noisy_snr": 15.66,
+    "noisy_text": "We have an election in eight days.",
+    "noisy_time_s": 0.128,
+    "enh_text": "We have an election in eight days.",
+    "enh_time_s": 0.162
+  },
+  "p257_201": {
+    "noisy_snr": 9.89,
+    "noisy_text": "Bye, I'm a worried man.",
+    "noisy_time_s": 0.134,
+    "enh_text": "I am a worried man.",
+    "enh_time_s": 0.15
+  },
+  "p257_202": {
+    "noisy_snr": 5.65,
+    "noisy_text": "This gives the financial incentive to switch.",
+    "noisy_time_s": 0.132,
+    "enh_text": "This gives the financial incentive to switch.",
+    "enh_time_s": 0.186
+  },
+  "p257_203": {
+    "noisy_snr": 0.83,
+    "noisy_text": "Saddam Hussein is a devil.",
+    "noisy_time_s": 0.117,
+    "enh_text": "Saddam Hussein is a veteran.",
+    "enh_time_s": 0.115
+  },
+  "p257_204": {
+    "noisy_snr": 15.09,
+    "noisy_text": "He knows a lot.",
+    "noisy_time_s": 0.115,
+    "enh_text": "He knows a lot.",
+    "enh_time_s": 0.107
+  },
+  "p257_205": {
+    "noisy_snr": 10.34,
+    "noisy_text": "He is slightly confused.",
+    "noisy_time_s": 0.131,
+    "enh_text": "He is slightly confused.",
+    "enh_time_s": 0.118
+  },
+  "p257_206": {
+    "noisy_snr": 6.48,
+    "noisy_text": "Her home is perhaps a couple of miles from the town centre.",
+    "noisy_time_s": 0.192,
+    "enh_text": "Her home is perhaps a couple of miles from the town centre.",
+    "enh_time_s": 0.196
+  },
+  "p257_207": {
+    "noisy_snr": 1.59,
+    "noisy_text": "We have experienced the courses and abundance of confidence.",
+    "noisy_time_s": 0.163,
+    "enh_text": "We have experienced the courses and the abundance of confidence.",
+    "enh_time_s": 0.155
+  },
+  "p257_208": {
+    "noisy_snr": 15.61,
+    "noisy_text": "I'm delighted for Simon.",
+    "noisy_time_s": 0.119,
+    "enh_text": "I'm delighted for Simon.",
+    "enh_time_s": 0.122
+  },
+  "p257_209": {
+    "noisy_snr": 10.5,
+    "noisy_text": "It'll be an event.",
+    "noisy_time_s": 0.129,
+    "enh_text": "It all been arranged.",
+    "enh_time_s": 0.11
+  },
+  "p257_210": {
+    "noisy_snr": 5.79,
+    "noisy_text": "A grandpion police spokesman said.",
+    "noisy_time_s": 0.136,
+    "enh_text": "A grandparently spokesman said.",
+    "enh_time_s": 0.128
+  },
+  "p257_211": {
+    "noisy_snr": 0.99,
+    "noisy_text": "We have got the belt right.",
+    "noisy_time_s": 0.15,
+    "enh_text": "We have lots of good lines.",
+    "enh_time_s": 0.143
+  },
+  "p257_212": {
+    "noisy_snr": 16.83,
+    "noisy_text": "However, D&D deserved to win this game.",
+    "noisy_time_s": 0.227,
+    "enh_text": "However, D-deserved win this game.",
+    "enh_time_s": 0.163
+  },
+  "p257_213": {
+    "noisy_snr": 9.58,
+    "noisy_text": "I might come back.",
+    "noisy_time_s": 0.095,
+    "enh_text": "I might come back.",
+    "enh_time_s": 0.13
+  },
+  "p257_214": {
+    "noisy_snr": 6.09,
+    "noisy_text": "with death of the tragic accident.",
+    "noisy_time_s": 0.146,
+    "enh_text": "If death is a tragic accident.",
+    "enh_time_s": 0.148
+  },
+  "p257_215": {
+    "noisy_snr": 1.46,
+    "noisy_text": "It's just a place to open it.",
+    "noisy_time_s": 0.18,
+    "enh_text": "It's just a place to open it.",
+    "enh_time_s": 0.155
+  },
+  "p257_216": {
+    "noisy_snr": 16.39,
+    "noisy_text": "He said that health eating was high on the council agenda.",
+    "noisy_time_s": 0.178,
+    "enh_text": "He said that health eating was high on the council agenda.",
+    "enh_time_s": 0.182
+  },
+  "p257_217": {
+    "noisy_snr": 11.45,
+    "noisy_text": "Naturally enough, the letter in question was an E.",
+    "noisy_time_s": 0.172,
+    "enh_text": "Naturally enough, the letter in question was an E.",
+    "enh_time_s": 0.193
+  },
+  "p257_218": {
+    "noisy_snr": 6.03,
+    "noisy_text": "William Haid, lightest party.",
+    "noisy_time_s": 0.155,
+    "enh_text": "William Have to light his party.",
+    "enh_time_s": 0.189
+  },
+  "p257_219": {
+    "noisy_snr": 2.16,
+    "noisy_text": "At the top of the structure will remain the post of head deep to.",
+    "noisy_time_s": 0.193,
+    "enh_text": "At the top of the structure will remain the post of head deep to.",
+    "enh_time_s": 0.223
+  },
+  "p257_220": {
+    "noisy_snr": 14.97,
+    "noisy_text": "We played them off the pitch.",
+    "noisy_time_s": 0.116,
+    "enh_text": "We played them off the pitch.",
+    "enh_time_s": 0.126
+  },
+  "p257_221": {
+    "noisy_snr": 11.53,
+    "noisy_text": "She really suffered for her heart.",
+    "noisy_time_s": 0.139,
+    "enh_text": "She really suffered for her heart.",
+    "enh_time_s": 0.132
+  },
+  "p257_222": {
+    "noisy_snr": 5.82,
+    "noisy_text": "He demanded to speak to the boss.",
+    "noisy_time_s": 0.166,
+    "enh_text": "He demanded to speak to the boss.",
+    "enh_time_s": 0.144
+  },
+  "p257_223": {
+    "noisy_snr": 1.67,
+    "noisy_text": "Jim Wallace, the Justice Minister, acknowledge that prison numbers were a concern.",
+    "noisy_time_s": 0.225,
+    "enh_text": "Jim Wallace, the Justice Minister, acknowledge that prison numbers were a concern.",
+    "enh_time_s": 0.229
+  },
+  "p257_224": {
+    "noisy_snr": 16.78,
+    "noisy_text": "Her condition was yesterday described as critical but stable.",
+    "noisy_time_s": 0.156,
+    "enh_text": "Her condition was yesterday described as critical but stable.",
+    "enh_time_s": 0.17
+  },
+  "p257_225": {
+    "noisy_snr": 11.49,
+    "noisy_text": "I think he's the favourite, no question.",
+    "noisy_time_s": 0.176,
+    "enh_text": "I think he's the favourite, no question.",
+    "enh_time_s": 0.154
+  },
+  "p257_226": {
+    "noisy_snr": 5.76,
+    "noisy_text": "broke the birdie record",
+    "noisy_time_s": 0.129,
+    "enh_text": "broke the birdie record.",
+    "enh_time_s": 0.122
+  },
+  "p257_227": {
+    "noisy_snr": 0.69,
+    "noisy_text": "They had no children.",
+    "noisy_time_s": 0.129,
+    "enh_text": "They had no children.",
+    "enh_time_s": 0.1
+  },
+  "p257_228": {
+    "noisy_snr": 15.85,
+    "noisy_text": "It is set in Paris.",
+    "noisy_time_s": 0.106,
+    "enh_text": "It is set in Paris.",
+    "enh_time_s": 0.15
+  },
+  "p257_229": {
+    "noisy_snr": 10.73,
+    "noisy_text": "Wow, they are the unlucky ones.",
+    "noisy_time_s": 0.141,
+    "enh_text": "Well, they were the unlucky ones.",
+    "enh_time_s": 0.168
+  },
+  "p257_230": {
+    "noisy_snr": 6.29,
+    "noisy_text": "The thing I'd expect is to be in hospital for several days.",
+    "noisy_time_s": 0.182,
+    "enh_text": "The singer is expected to be in hospital for several days.",
+    "enh_time_s": 0.203
+  },
+  "p257_231": {
+    "noisy_snr": 1.56,
+    "noisy_text": "On the ground, West Bank was again the place we find.",
+    "noisy_time_s": 0.219,
+    "enh_text": "On the ground Westbound was again the fence of fire.",
+    "enh_time_s": 0.172
+  },
+  "p257_232": {
+    "noisy_snr": 16.82,
+    "noisy_text": "John Prescott, the Deputy Prime Minister, will fly to the summit tomorrow.",
+    "noisy_time_s": 0.199,
+    "enh_text": "John Prescott, the Deputy Prime Minister, will fly to the summit tomorrow.",
+    "enh_time_s": 0.232
+  },
+  "p257_233": {
+    "noisy_snr": 10.73,
+    "noisy_text": "But it's a subtle process.",
+    "noisy_time_s": 0.138,
+    "enh_text": "But it's a subtle process.",
+    "enh_time_s": 0.127
+  },
+  "p257_234": {
+    "noisy_snr": 6.98,
+    "noisy_text": "The home office would not release any further details about the group.",
+    "noisy_time_s": 0.216,
+    "enh_text": "The home office would not release any further details about the group.",
+    "enh_time_s": 0.22
+  },
+  "p257_235": {
+    "noisy_snr": 0.95,
+    "noisy_text": "My future is in the marathon.",
+    "noisy_time_s": 0.146,
+    "enh_text": "My picture is in the marathon.",
+    "enh_time_s": 0.158
+  },
+  "p257_236": {
+    "noisy_snr": 16.41,
+    "noisy_text": "Attendance at the project is a condition of a probation order.",
+    "noisy_time_s": 0.212,
+    "enh_text": "Attendance at the project is a condition of a probation order.",
+    "enh_time_s": 0.208
+  },
+  "p257_237": {
+    "noisy_snr": 11.58,
+    "noisy_text": "A change in that position would require a decision by the council.",
+    "noisy_time_s": 0.228,
+    "enh_text": "A change in that position would require a decision by the council.",
+    "enh_time_s": 0.214
+  },
+  "p257_238": {
+    "noisy_snr": 5.59,
+    "noisy_text": "They may yet have the last laugh.",
+    "noisy_time_s": 0.124,
+    "enh_text": "They may yet have the last laugh.",
+    "enh_time_s": 0.145
+  },
+  "p257_239": {
+    "noisy_snr": 0.87,
+    "noisy_text": "You can feel at home in China.",
+    "noisy_time_s": 0.154,
+    "enh_text": "You can feel at home in China.",
+    "enh_time_s": 0.143
+  },
+  "p257_240": {
+    "noisy_snr": 16.7,
+    "noisy_text": "It is a policy which has the full support of the minister.",
+    "noisy_time_s": 0.206,
+    "enh_text": "It is a policy which has the full support of the minister.",
+    "enh_time_s": 0.231
+  },
+  "p257_241": {
+    "noisy_snr": 10.42,
+    "noisy_text": "I should think so too.",
+    "noisy_time_s": 0.144,
+    "enh_text": "I should think so too.",
+    "enh_time_s": 0.121
+  },
+  "p257_242": {
+    "noisy_snr": 6.5,
+    "noisy_text": "We decided we would go for a specialist inside centre.",
+    "noisy_time_s": 0.162,
+    "enh_text": "We decided we would go for a specialist inside centre.",
+    "enh_time_s": 0.196
+  },
+  "p257_243": {
+    "noisy_snr": 1.25,
+    "noisy_text": "I didn't need to watch it on the video.",
+    "noisy_time_s": 0.168,
+    "enh_text": "I didn't need to watch it on the video.",
+    "enh_time_s": 0.176
+  },
+  "p257_244": {
+    "noisy_snr": 16.28,
+    "noisy_text": "Your city is impressed by the setup at Celtic.",
+    "noisy_time_s": 0.154,
+    "enh_text": "Your city is impressed by the setup at Celtic.",
+    "enh_time_s": 0.195
+  },
+  "p257_245": {
+    "noisy_snr": 11.43,
+    "noisy_text": "I will not allow the destruction of the Scottish fishing industry.",
+    "noisy_time_s": 0.182,
+    "enh_text": "I will not allow the destruction of the Scottish fishing industry.",
+    "enh_time_s": 0.19
+  },
+  "p257_246": {
+    "noisy_snr": 6.32,
+    "noisy_text": "We need to move away from the culture of long hours.",
+    "noisy_time_s": 0.187,
+    "enh_text": "We need to move away from the culture of long hours.",
+    "enh_time_s": 0.18
+  },
+  "p257_247": {
+    "noisy_snr": 1.42,
+    "noisy_text": "You said he intended to push for a judicial review.",
+    "noisy_time_s": 0.178,
+    "enh_text": "You said he intended to push for a judicial review.",
+    "enh_time_s": 0.202
+  },
+  "p257_248": {
+    "noisy_snr": 16.43,
+    "noisy_text": "He was my big brother, my father, my grandfather.",
+    "noisy_time_s": 0.208,
+    "enh_text": "He was my big brother, my father, my grandfather.",
+    "enh_time_s": 0.186
+  },
+  "p257_249": {
+    "noisy_snr": 10.38,
+    "noisy_text": "I watched a game.",
+    "noisy_time_s": 0.109,
+    "enh_text": "I watched a game.",
+    "enh_time_s": 0.136
+  },
+  "p257_250": {
+    "noisy_snr": 6.08,
+    "noisy_text": "They are interior designers and architects.",
+    "noisy_time_s": 0.136,
+    "enh_text": "They are interior designers and architects.",
+    "enh_time_s": 0.151
+  },
+  "p257_251": {
+    "noisy_snr": 1.8,
+    "noisy_text": "There was no mention of an amnesty in the Belfast agreement.",
+    "noisy_time_s": 0.197,
+    "enh_text": "There was no mention of an amnesty in the Belfast agreement.",
+    "enh_time_s": 0.192
+  },
+  "p257_252": {
+    "noisy_snr": 15.73,
+    "noisy_text": "They fail to engage.",
+    "noisy_time_s": 0.113,
+    "enh_text": "They fail to engage.",
+    "enh_time_s": 0.099
+  },
+  "p257_253": {
+    "noisy_snr": 11.27,
+    "noisy_text": "It is a marked respect from the inmates.",
+    "noisy_time_s": 0.15,
+    "enh_text": "It is a marked respect from the inmates.",
+    "enh_time_s": 0.141
+  },
+  "p257_254": {
+    "noisy_snr": 6.76,
+    "noisy_text": "I would have the hammer in the crowd.",
+    "noisy_time_s": 0.16,
+    "enh_text": "I would have the hammer in the crowd.",
+    "enh_time_s": 0.172
+  },
+  "p257_255": {
+    "noisy_snr": 1.13,
+    "noisy_text": "He thought he had a month across the street.",
+    "noisy_time_s": 0.146,
+    "enh_text": "He thought he had a monster across the street.",
+    "enh_time_s": 0.153
+  },
+  "p257_256": {
+    "noisy_snr": 16.42,
+    "noisy_text": "He raised the profile of the European tour to the sky.",
+    "noisy_time_s": 0.186,
+    "enh_text": "He raised the profile of the European tour to the sky.",
+    "enh_time_s": 0.233
+  },
+  "p257_257": {
+    "noisy_snr": 10.69,
+    "noisy_text": "Blood samples were taken.",
+    "noisy_time_s": 0.104,
+    "enh_text": "Blood samples were taken.",
+    "enh_time_s": 0.099
+  },
+  "p257_258": {
+    "noisy_snr": 6.58,
+    "noisy_text": "He claimed his insurance company contested the damages, not the restaurant.",
+    "noisy_time_s": 0.211,
+    "enh_text": "He claimed his insurance company contested the damages, not the restaurant.",
+    "enh_time_s": 0.241
+  },
+  "p257_259": {
+    "noisy_snr": -0.0,
+    "noisy_text": "It's very nice.",
+    "noisy_time_s": 0.095,
+    "enh_text": "It's very nice.",
+    "enh_time_s": 0.139
+  },
+  "p257_260": {
+    "noisy_snr": 15.66,
+    "noisy_text": "Frankly, we should all have such problems.",
+    "noisy_time_s": 0.16,
+    "enh_text": "Frankly, we should all have such problems.",
+    "enh_time_s": 0.183
+  },
+  "p257_261": {
+    "noisy_snr": 11.39,
+    "noisy_text": "Similar measures are expected in England and Wales.",
+    "noisy_time_s": 0.136,
+    "enh_text": "Similar measures are expected in England and Wales.",
+    "enh_time_s": 0.181
+  },
+  "p257_262": {
+    "noisy_snr": 6.92,
+    "noisy_text": "We do not want any terrorist attacks on any Israeli civilians.",
+    "noisy_time_s": 0.191,
+    "enh_text": "We do not want any terrorist attacks on any Israeli civilians.",
+    "enh_time_s": 0.191
+  },
+  "p257_263": {
+    "noisy_snr": 0.45,
+    "noisy_text": "I might feel just great.",
+    "noisy_time_s": 0.111,
+    "enh_text": "And my team is just great.",
+    "enh_time_s": 0.127
+  },
+  "p257_264": {
+    "noisy_snr": 14.57,
+    "noisy_text": "We're in shock.",
+    "noisy_time_s": 0.093,
+    "enh_text": "We're in shock.",
+    "enh_time_s": 0.12
+  },
+  "p257_265": {
+    "noisy_snr": 11.34,
+    "noisy_text": "Everything will fall into place, it should be fine.",
+    "noisy_time_s": 0.168,
+    "enh_text": "Everything will fall into place, it should be fine.",
+    "enh_time_s": 0.206
+  },
+  "p257_266": {
+    "noisy_snr": 6.04,
+    "noisy_text": "our objective is to tackle poverty.",
+    "noisy_time_s": 0.113,
+    "enh_text": "Our objective is to tackle poverty.",
+    "enh_time_s": 0.119
+  },
+  "p257_267": {
+    "noisy_snr": 0.43,
+    "noisy_text": "One more is the feeling.",
+    "noisy_time_s": 0.109,
+    "enh_text": "One nice feeling.",
+    "enh_time_s": 0.117
+  },
+  "p257_268": {
+    "noisy_snr": 15.98,
+    "noisy_text": "She's fallen in love with Scotland Tower.",
+    "noisy_time_s": 0.146,
+    "enh_text": "She's fallen in love with Scotland, however.",
+    "enh_time_s": 0.135
+  },
+  "p257_269": {
+    "noisy_snr": 10.78,
+    "noisy_text": "She looks so young.",
+    "noisy_time_s": 0.121,
+    "enh_text": "She looks so young.",
+    "enh_time_s": 0.12
+  },
+  "p257_270": {
+    "noisy_snr": 6.13,
+    "noisy_text": "It was a privilege to work for him.",
+    "noisy_time_s": 0.153,
+    "enh_text": "It was a privilege to work for him.",
+    "enh_time_s": 0.198
+  },
+  "p257_271": {
+    "noisy_snr": 1.68,
+    "noisy_text": "For the moment, that is the result of the accident.",
+    "noisy_time_s": 0.168,
+    "enh_text": "With a moment, that is the result of the actual.",
+    "enh_time_s": 0.2
+  },
+  "p257_272": {
+    "noisy_snr": 14.64,
+    "noisy_text": "He looked very sharp.",
+    "noisy_time_s": 0.099,
+    "enh_text": "He looked very sharp.",
+    "enh_time_s": 0.117
+  },
+  "p257_273": {
+    "noisy_snr": 10.82,
+    "noisy_text": "You've got to have both sides.",
+    "noisy_time_s": 0.129,
+    "enh_text": "You've got to have both sides.",
+    "enh_time_s": 0.129
+  },
+  "p257_274": {
+    "noisy_snr": 5.11,
+    "noisy_text": "Who did the recruiting?",
+    "noisy_time_s": 0.126,
+    "enh_text": "Who did the recruiting?",
+    "enh_time_s": 0.122
+  },
+  "p257_275": {
+    "noisy_snr": 1.61,
+    "noisy_text": "Police were called to the ground and interviewed a number of people.",
+    "noisy_time_s": 0.226,
+    "enh_text": "Police were called to the ground and interviewed a number of people.",
+    "enh_time_s": 0.22
+  },
+  "p257_276": {
+    "noisy_snr": 13.52,
+    "noisy_text": "Well he can do it.",
+    "noisy_time_s": 0.107,
+    "enh_text": "Well he can do it.",
+    "enh_time_s": 0.115
+  },
+  "p257_277": {
+    "noisy_snr": 11.36,
+    "noisy_text": "It shows a contempt by him for the industry.",
+    "noisy_time_s": 0.158,
+    "enh_text": "It shows a contempt by him for the industry.",
+    "enh_time_s": 0.181
+  },
+  "p257_278": {
+    "noisy_snr": 6.14,
+    "noisy_text": "It is a vote of confidence in the skills in Scotland.",
+    "noisy_time_s": 0.225,
+    "enh_text": "It is a vote of confidence in the skills in Scotland.",
+    "enh_time_s": 0.185
+  },
+  "p257_279": {
+    "noisy_snr": 1.49,
+    "noisy_text": "He added that public transport improvements must also be maintained.",
+    "noisy_time_s": 0.186,
+    "enh_text": "He added that public transport improvements must also be maintained.",
+    "enh_time_s": 0.181
+  },
+  "p257_280": {
+    "noisy_snr": 15.88,
+    "noisy_text": "Results are sometimes contentious.",
+    "noisy_time_s": 0.112,
+    "enh_text": "Results are sometimes contentious.",
+    "enh_time_s": 0.109
+  },
+  "p257_281": {
+    "noisy_snr": 9.99,
+    "noisy_text": "He should have won.",
+    "noisy_time_s": 0.106,
+    "enh_text": "He should have won.",
+    "enh_time_s": 0.106
+  },
+  "p257_282": {
+    "noisy_snr": 5.33,
+    "noisy_text": "A new school will be built.",
+    "noisy_time_s": 0.132,
+    "enh_text": "A new school will be built.",
+    "enh_time_s": 0.137
+  },
+  "p257_283": {
+    "noisy_snr": 1.4,
+    "noisy_text": "Right up until a week ago we thought they were very keen.",
+    "noisy_time_s": 0.199,
+    "enh_text": "Right up until a week ago we thought they were very keen.",
+    "enh_time_s": 0.209
+  },
+  "p257_284": {
+    "noisy_snr": 16.39,
+    "noisy_text": "That might be a punishment, but it would also punish the patients.",
+    "noisy_time_s": 0.207,
+    "enh_text": "That might be a punishment, but it would also punish the patients.",
+    "enh_time_s": 0.215
+  },
+  "p257_285": {
+    "noisy_snr": 10.02,
+    "noisy_text": "What has altered?",
+    "noisy_time_s": 0.106,
+    "enh_text": "What has altered?",
+    "enh_time_s": 0.096
+  },
+  "p257_286": {
+    "noisy_snr": 6.05,
+    "noisy_text": "The home was now under knee management.",
+    "noisy_time_s": 0.15,
+    "enh_text": "The home was now under knee management.",
+    "enh_time_s": 0.135
+  },
+  "p257_287": {
+    "noisy_snr": 0.09,
+    "noisy_text": "Graham was prepared.",
+    "noisy_time_s": 0.095,
+    "enh_text": "Graham was prepared.",
+    "enh_time_s": 0.111
+  },
+  "p257_288": {
+    "noisy_snr": 14.82,
+    "noisy_text": "I thought it was my only chance.",
+    "noisy_time_s": 0.163,
+    "enh_text": "I thought it was my only chance.",
+    "enh_time_s": 0.194
+  },
+  "p257_289": {
+    "noisy_snr": 10.8,
+    "noisy_text": "However, the snow was welcomed by some.",
+    "noisy_time_s": 0.163,
+    "enh_text": "However, the snow was welcomed by some.",
+    "enh_time_s": 0.145
+  },
+  "p257_290": {
+    "noisy_snr": 6.17,
+    "noisy_text": "It just came into my head that day.",
+    "noisy_time_s": 0.162,
+    "enh_text": "It just came into my head that day.",
+    "enh_time_s": 0.159
+  },
+  "p257_291": {
+    "noisy_snr": -1.33,
+    "noisy_text": "They're wrong.",
+    "noisy_time_s": 0.105,
+    "enh_text": "They're wrong.",
+    "enh_time_s": 0.108
+  },
+  "p257_292": {
+    "noisy_snr": 16.61,
+    "noisy_text": "Details of the new vessel were given in London yesterday.",
+    "noisy_time_s": 0.174,
+    "enh_text": "Details of the new vessel were given in London yesterday.",
+    "enh_time_s": 0.167
+  },
+  "p257_293": {
+    "noisy_snr": 10.0,
+    "noisy_text": "It's just not funny.",
+    "noisy_time_s": 0.131,
+    "enh_text": "It's just not funny.",
+    "enh_time_s": 0.115
+  },
+  "p257_294": {
+    "noisy_snr": 5.83,
+    "noisy_text": "I'm very happy to be here.",
+    "noisy_time_s": 0.121,
+    "enh_text": "I'm very happy to be here.",
+    "enh_time_s": 0.153
+  },
+  "p257_295": {
+    "noisy_snr": 0.58,
+    "noisy_text": "The plot is minimal.",
+    "noisy_time_s": 0.113,
+    "enh_text": "The plot is minimal.",
+    "enh_time_s": 0.123
+  },
+  "p257_296": {
+    "noisy_snr": 15.86,
+    "noisy_text": "It wasn't just the character and energy of the playing.",
+    "noisy_time_s": 0.22,
+    "enh_text": "It wasn't just the character and energy of the playing.",
+    "enh_time_s": 0.191
+  },
+  "p257_297": {
+    "noisy_snr": 11.3,
+    "noisy_text": "A thousand years ago the Church was a powerful force in Europe.",
+    "noisy_time_s": 0.229,
+    "enh_text": "A thousand years ago the Church was a powerful force in Europe.",
+    "enh_time_s": 0.214
+  },
+  "p257_298": {
+    "noisy_snr": 5.87,
+    "noisy_text": "This is the Culture Change in Medicine.",
+    "noisy_time_s": 0.146,
+    "enh_text": "This is the Culture Change in Medicine.",
+    "enh_time_s": 0.135
+  },
+  "p257_299": {
+    "noisy_snr": 1.51,
+    "noisy_text": "and that another interested body should have an option to buy.",
+    "noisy_time_s": 0.193,
+    "enh_text": "And that another intensive body should have an option to buy.",
+    "enh_time_s": 0.219
+  },
+  "p257_300": {
+    "noisy_snr": 15.6,
+    "noisy_text": "They were fantastic.",
+    "noisy_time_s": 0.105,
+    "enh_text": "They were fantastic.",
+    "enh_time_s": 0.092
+  },
+  "p257_301": {
+    "noisy_snr": 10.05,
+    "noisy_text": "I never thought it would take this long.",
+    "noisy_time_s": 0.132,
+    "enh_text": "I never thought it would take this long.",
+    "enh_time_s": 0.156
+  },
+  "p257_302": {
+    "noisy_snr": 5.63,
+    "noisy_text": "In fact, they have the opposite effect.",
+    "noisy_time_s": 0.157,
+    "enh_text": "In fact, they have the opposite effect.",
+    "enh_time_s": 0.181
+  },
+  "p257_303": {
+    "noisy_snr": 0.88,
+    "noisy_text": "They wanted the club to make money.",
+    "noisy_time_s": 0.132,
+    "enh_text": "They wanted the club to make money.",
+    "enh_time_s": 0.143
+  },
+  "p257_304": {
+    "noisy_snr": 15.88,
+    "noisy_text": "The kids are terrible.",
+    "noisy_time_s": 0.114,
+    "enh_text": "The kids are terrible.",
+    "enh_time_s": 0.111
+  },
+  "p257_305": {
+    "noisy_snr": 10.44,
+    "noisy_text": "Hanuman has been warned.",
+    "noisy_time_s": 0.122,
+    "enh_text": "Hanuman has been warned.",
+    "enh_time_s": 0.119
+  },
+  "p257_306": {
+    "noisy_snr": 6.83,
+    "noisy_text": "It should be equal.",
+    "noisy_time_s": 0.113,
+    "enh_text": "It should be equal.",
+    "enh_time_s": 0.128
+  },
+  "p257_307": {
+    "noisy_snr": 1.53,
+    "noisy_text": "Mazandas and Yesto put a brave face on the departure.",
+    "noisy_time_s": 0.222,
+    "enh_text": "Nizandas and Yesto put a brave face on the departure.",
+    "enh_time_s": 0.214
+  },
+  "p257_308": {
+    "noisy_snr": 16.14,
+    "noisy_text": "The home team had an amazing start.",
+    "noisy_time_s": 0.167,
+    "enh_text": "The home team had an amazing start.",
+    "enh_time_s": 0.177
+  },
+  "p257_309": {
+    "noisy_snr": 9.31,
+    "noisy_text": "It is out there.",
+    "noisy_time_s": 0.102,
+    "enh_text": "It is out there.",
+    "enh_time_s": 0.117
+  },
+  "p257_310": {
+    "noisy_snr": 5.19,
+    "noisy_text": "They had a confession.",
+    "noisy_time_s": 0.116,
+    "enh_text": "Go ahead, confession.",
+    "enh_time_s": 0.113
+  },
+  "p257_311": {
+    "noisy_snr": 1.35,
+    "noisy_text": "David is very supportive of the director.",
+    "noisy_time_s": 0.138,
+    "enh_text": "Stay with us and stay supportive and direct.",
+    "enh_time_s": 0.169
+  },
+  "p257_312": {
+    "noisy_snr": 16.17,
+    "noisy_text": "We were in the end game.",
+    "noisy_time_s": 0.16,
+    "enh_text": "We were in the end game.",
+    "enh_time_s": 0.13
+  },
+  "p257_313": {
+    "noisy_snr": 10.58,
+    "noisy_text": "I came to this world with nothing.",
+    "noisy_time_s": 0.164,
+    "enh_text": "I came with this wheel with nothing.",
+    "enh_time_s": 0.133
+  },
+  "p257_314": {
+    "noisy_snr": 6.64,
+    "noisy_text": "But no such amendment has been brought before the Scottish Parliament.",
+    "noisy_time_s": 0.199,
+    "enh_text": "But no such amendment has been brought before the Scottish Parliament.",
+    "enh_time_s": 0.181
+  },
+  "p257_315": {
+    "noisy_snr": 0.52,
+    "noisy_text": "and subsets.",
+    "noisy_time_s": 0.096,
+    "enh_text": "And that's that.",
+    "enh_time_s": 0.105
+  },
+  "p257_316": {
+    "noisy_snr": 15.79,
+    "noisy_text": "The boat was fantastic.",
+    "noisy_time_s": 0.126,
+    "enh_text": "The boat was fantastic.",
+    "enh_time_s": 0.102
+  },
+  "p257_317": {
+    "noisy_snr": 10.81,
+    "noisy_text": "I saw some good things.",
+    "noisy_time_s": 0.143,
+    "enh_text": "I saw some good things.",
+    "enh_time_s": 0.114
+  },
+  "p257_318": {
+    "noisy_snr": 5.47,
+    "noisy_text": "Finally, he paid for the movie.",
+    "noisy_time_s": 0.146,
+    "enh_text": "Finally, he paid for the movie.",
+    "enh_time_s": 0.139
+  },
+  "p257_319": {
+    "noisy_snr": 1.44,
+    "noisy_text": "You can see it on the training ground and around the hotel.",
+    "noisy_time_s": 0.22,
+    "enh_text": "You can see it on the training ground and around the hotel.",
+    "enh_time_s": 0.185
+  },
+  "p257_320": {
+    "noisy_snr": 16.42,
+    "noisy_text": "In addition certain areas are closed at certain times.",
+    "noisy_time_s": 0.177,
+    "enh_text": "In addition certain areas are closed at certain times.",
+    "enh_time_s": 0.17
+  },
+  "p257_321": {
+    "noisy_snr": 10.67,
+    "noisy_text": "Three years ago he would have been.",
+    "noisy_time_s": 0.135,
+    "enh_text": "Three years ago he would have been.",
+    "enh_time_s": 0.136
+  },
+  "p257_322": {
+    "noisy_snr": 5.12,
+    "noisy_text": "You feel the pride.",
+    "noisy_time_s": 0.106,
+    "enh_text": "You feel the pride.",
+    "enh_time_s": 0.125
+  },
+  "p257_323": {
+    "noisy_snr": 1.29,
+    "noisy_text": "It is so unfair.",
+    "noisy_time_s": 0.109,
+    "enh_text": "It is so unfair.",
+    "enh_time_s": 0.095
+  },
+  "p257_324": {
+    "noisy_snr": 16.65,
+    "noisy_text": "The announcement was made after inquiries from a national newspaper.",
+    "noisy_time_s": 0.172,
+    "enh_text": "The announcement was made after inquiries from a national newspaper.",
+    "enh_time_s": 0.177
+  },
+  "p257_325": {
+    "noisy_snr": 10.41,
+    "noisy_text": "Indeed, it was magical.",
+    "noisy_time_s": 0.111,
+    "enh_text": "Indeed, it was magical.",
+    "enh_time_s": 0.109
+  },
+  "p257_326": {
+    "noisy_snr": 5.94,
+    "noisy_text": "I've got no secret.",
+    "noisy_time_s": 0.103,
+    "enh_text": "I've got no secret.",
+    "enh_time_s": 0.128
+  },
+  "p257_327": {
+    "noisy_snr": 0.32,
+    "noisy_text": "Look at the witnesses.",
+    "noisy_time_s": 0.145,
+    "enh_text": "Look at the witnesses.",
+    "enh_time_s": 0.107
+  },
+  "p257_328": {
+    "noisy_snr": 15.23,
+    "noisy_text": "I'm very lucky.",
+    "noisy_time_s": 0.106,
+    "enh_text": "I'm very lucky.",
+    "enh_time_s": 0.135
+  },
+  "p257_329": {
+    "noisy_snr": 10.33,
+    "noisy_text": "We must do something.",
+    "noisy_time_s": 0.111,
+    "enh_text": "We must do something.",
+    "enh_time_s": 0.099
+  },
+  "p257_330": {
+    "noisy_snr": 6.47,
+    "noisy_text": "He says that he is no different from any other man.",
+    "noisy_time_s": 0.17,
+    "enh_text": "He says that he is no different from any other man.",
+    "enh_time_s": 0.216
+  },
+  "p257_331": {
+    "noisy_snr": 0.98,
+    "noisy_text": "I'll expect some of the same.",
+    "noisy_time_s": 0.128,
+    "enh_text": "Alex Vixen, for showing.",
+    "enh_time_s": 0.179
+  },
+  "p257_332": {
+    "noisy_snr": 16.52,
+    "noisy_text": "I was pleased to be back on the podium in Brazil.",
+    "noisy_time_s": 0.185,
+    "enh_text": "I was pleased to be back on the podium in Brazil.",
+    "enh_time_s": 0.191
+  },
+  "p257_333": {
+    "noisy_snr": 11.11,
+    "noisy_text": "Like is acting, it was an accident.",
+    "noisy_time_s": 0.151,
+    "enh_text": "Like is acting, it was an accident.",
+    "enh_time_s": 0.166
+  },
+  "p257_334": {
+    "noisy_snr": 5.43,
+    "noisy_text": "It's not like working for a living.",
+    "noisy_time_s": 0.175,
+    "enh_text": "It's not like working for a living.",
+    "enh_time_s": 0.188
+  },
+  "p257_335": {
+    "noisy_snr": 0.52,
+    "noisy_text": "It is long gone.",
+    "noisy_time_s": 0.119,
+    "enh_text": "It is long gone.",
+    "enh_time_s": 0.099
+  },
+  "p257_336": {
+    "noisy_snr": 16.33,
+    "noisy_text": "The man was obviously desperate to get away from the police.",
+    "noisy_time_s": 0.174,
+    "enh_text": "The man was obviously desperate to get away from the police.",
+    "enh_time_s": 0.23
+  },
+  "p257_337": {
+    "noisy_snr": 9.79,
+    "noisy_text": "Tell us about it.",
+    "noisy_time_s": 0.097,
+    "enh_text": "Tell us about it.",
+    "enh_time_s": 0.12
+  },
+  "p257_338": {
+    "noisy_snr": 5.98,
+    "noisy_text": "The salary changes are long overdue.",
+    "noisy_time_s": 0.135,
+    "enh_text": "The salary changes are long overdue.",
+    "enh_time_s": 0.133
+  },
+  "p257_339": {
+    "noisy_snr": 1.57,
+    "noisy_text": "You met Mr Davies to establish the scale of the scandal.",
+    "noisy_time_s": 0.166,
+    "enh_text": "You met Mr Davies to establish the scale of the scandal.",
+    "enh_time_s": 0.211
+  },
+  "p257_340": {
+    "noisy_snr": 15.59,
+    "noisy_text": "It was very formal.",
+    "noisy_time_s": 0.101,
+    "enh_text": "It was very formal.",
+    "enh_time_s": 0.12
+  },
+  "p257_341": {
+    "noisy_snr": 11.16,
+    "noisy_text": "The pressure is on Celtic in the main.",
+    "noisy_time_s": 0.155,
+    "enh_text": "The pressure is on Celtic in the main.",
+    "enh_time_s": 0.176
+  },
+  "p257_342": {
+    "noisy_snr": 5.38,
+    "noisy_text": "Tyson is overwhelmed.",
+    "noisy_time_s": 0.092,
+    "enh_text": "Tyson is overwhelmed.",
+    "enh_time_s": 0.093
+  },
+  "p257_343": {
+    "noisy_snr": 1.33,
+    "noisy_text": "We're delighted that we sponsor from potential employers.",
+    "noisy_time_s": 0.165,
+    "enh_text": "We're delighted to respond from potential employers.",
+    "enh_time_s": 0.154
+  },
+  "p257_344": {
+    "noisy_snr": 15.75,
+    "noisy_text": "I wanted to go out on a high.",
+    "noisy_time_s": 0.155,
+    "enh_text": "I wanted to go out on a high.",
+    "enh_time_s": 0.148
+  },
+  "p257_345": {
+    "noisy_snr": 11.45,
+    "noisy_text": "Instead, he was informed to join the line of creditors.",
+    "noisy_time_s": 0.174,
+    "enh_text": "Instead, he was informed to join the line of creditors.",
+    "enh_time_s": 0.191
+  },
+  "p257_346": {
+    "noisy_snr": 6.09,
+    "noisy_text": "I felt really good until Friday.",
+    "noisy_time_s": 0.116,
+    "enh_text": "I felt really good until Friday.",
+    "enh_time_s": 0.146
+  },
+  "p257_347": {
+    "noisy_snr": 1.52,
+    "noisy_text": "His legal advisor was also not in court yesterday.",
+    "noisy_time_s": 0.198,
+    "enh_text": "His legal advisor was also not in court yesterday.",
+    "enh_time_s": 0.179
+  },
+  "p257_348": {
+    "noisy_snr": 15.96,
+    "noisy_text": "You could face a jail sentence.",
+    "noisy_time_s": 0.165,
+    "enh_text": "You could face a jail sentence.",
+    "enh_time_s": 0.141
+  },
+  "p257_349": {
+    "noisy_snr": 11.02,
+    "noisy_text": "For one better and the memories remain vivid.",
+    "noisy_time_s": 0.175,
+    "enh_text": "For one better and the memories remain vivid.",
+    "enh_time_s": 0.176
+  },
+  "p257_350": {
+    "noisy_snr": 6.94,
+    "noisy_text": "I decided to tell a bit of the story about myself.",
+    "noisy_time_s": 0.189,
+    "enh_text": "I decided to tell a bit of the story about myself.",
+    "enh_time_s": 0.19
+  },
+  "p257_351": {
+    "noisy_snr": 1.42,
+    "noisy_text": "I'm not willing to say anything about any couple.",
+    "noisy_time_s": 0.167,
+    "enh_text": "They're not willing to say anything about any cousins.",
+    "enh_time_s": 0.183
+  },
+  "p257_352": {
+    "noisy_snr": 16.07,
+    "noisy_text": "Then followed about a flu.",
+    "noisy_time_s": 0.142,
+    "enh_text": "Then followed about a flu.",
+    "enh_time_s": 0.13
+  },
+  "p257_353": {
+    "noisy_snr": 10.5,
+    "noisy_text": "There is no signature.",
+    "noisy_time_s": 0.105,
+    "enh_text": "There is no signature.",
+    "enh_time_s": 0.131
+  },
+  "p257_354": {
+    "noisy_snr": 4.93,
+    "noisy_text": "It's a long process.",
+    "noisy_time_s": 0.137,
+    "enh_text": "It's a long process.",
+    "enh_time_s": 0.131
+  },
+  "p257_355": {
+    "noisy_snr": 1.29,
+    "noisy_text": "It is a large number.",
+    "noisy_time_s": 0.12,
+    "enh_text": "It is a large number.",
+    "enh_time_s": 0.114
+  },
+  "p257_356": {
+    "noisy_snr": 15.66,
+    "noisy_text": "Hey, me and his job inside out.",
+    "noisy_time_s": 0.158,
+    "enh_text": "Hey me and his job inside out.",
+    "enh_time_s": 0.147
+  },
+  "p257_357": {
+    "noisy_snr": 10.92,
+    "noisy_text": "I wouldn't want to miss that chance.",
+    "noisy_time_s": 0.165,
+    "enh_text": "I wouldn't want to miss that chance.",
+    "enh_time_s": 0.162
+  },
+  "p257_358": {
+    "noisy_snr": 6.64,
+    "noisy_text": "Whether his stance is shared by the incoming manager is another matter.",
+    "noisy_time_s": 0.217,
+    "enh_text": "Whether his stance is shared by the incoming manager is another matter.",
+    "enh_time_s": 0.193
+  },
+  "p257_359": {
+    "noisy_snr": 1.02,
+    "noisy_text": "It does not even have a staff shortage.",
+    "noisy_time_s": 0.167,
+    "enh_text": "It does not even have a staff shortage.",
+    "enh_time_s": 0.151
+  },
+  "p257_360": {
+    "noisy_snr": 16.41,
+    "noisy_text": "I haven't had a kick at a Celtic player for a while.",
+    "noisy_time_s": 0.211,
+    "enh_text": "I haven't had a kick at a Celtic player for a while.",
+    "enh_time_s": 0.191
+  },
+  "p257_361": {
+    "noisy_snr": 9.9,
+    "noisy_text": "He has the edge.",
+    "noisy_time_s": 0.115,
+    "enh_text": "He has the edge.",
+    "enh_time_s": 0.114
+  },
+  "p257_362": {
+    "noisy_snr": 5.11,
+    "noisy_text": "You denied the charge.",
+    "noisy_time_s": 0.121,
+    "enh_text": "You denied the charge.",
+    "enh_time_s": 0.099
+  },
+  "p257_363": {
+    "noisy_snr": -0.01,
+    "noisy_text": "There were no casualties.",
+    "noisy_time_s": 0.106,
+    "enh_text": "There were no casualties.",
+    "enh_time_s": 0.092
+  },
+  "p257_364": {
+    "noisy_snr": 17.08,
+    "noisy_text": "Since then he has played no active part in the company.",
+    "noisy_time_s": 0.215,
+    "enh_text": "Since then he has played no active part in the company.",
+    "enh_time_s": 0.213
+  },
+  "p257_365": {
+    "noisy_snr": 10.56,
+    "noisy_text": "You thought it was a headache.",
+    "noisy_time_s": 0.14,
+    "enh_text": "You thought it was a headache.",
+    "enh_time_s": 0.141
+  },
+  "p257_366": {
+    "noisy_snr": 6.63,
+    "noisy_text": "Family layers on offices are now working to support the family.",
+    "noisy_time_s": 0.176,
+    "enh_text": "Family layers on offices are now working to support the family.",
+    "enh_time_s": 0.214
+  },
+  "p257_367": {
+    "noisy_snr": 1.66,
+    "noisy_text": "A council spokesman said it had been a constructive meeting.",
+    "noisy_time_s": 0.198,
+    "enh_text": "A council spokesman said it had been a constructive meeting.",
+    "enh_time_s": 0.169
+  },
+  "p257_368": {
+    "noisy_snr": 15.79,
+    "noisy_text": "They really did a great job.",
+    "noisy_time_s": 0.139,
+    "enh_text": "They really did a great job.",
+    "enh_time_s": 0.14
+  },
+  "p257_369": {
+    "noisy_snr": 10.38,
+    "noisy_text": "There is a solution she believes.",
+    "noisy_time_s": 0.143,
+    "enh_text": "There is a solution she believes.",
+    "enh_time_s": 0.13
+  },
+  "p257_370": {
+    "noisy_snr": 6.14,
+    "noisy_text": "However, it's good to turn the page.",
+    "noisy_time_s": 0.192,
+    "enh_text": "However, it's good to turn the cage.",
+    "enh_time_s": 0.17
+  },
+  "p257_371": {
+    "noisy_snr": 0.43,
+    "noisy_text": "This year I understood.",
+    "noisy_time_s": 0.143,
+    "enh_text": "This year I understood.",
+    "enh_time_s": 0.117
+  },
+  "p257_372": {
+    "noisy_snr": 15.98,
+    "noisy_text": "I'm pleased about one thing.",
+    "noisy_time_s": 0.156,
+    "enh_text": "I'm pleased about one thing.",
+    "enh_time_s": 0.144
+  },
+  "p257_373": {
+    "noisy_snr": 10.54,
+    "noisy_text": "It is unusual.",
+    "noisy_time_s": 0.092,
+    "enh_text": "It is unusual.",
+    "enh_time_s": 0.117
+  },
+  "p257_374": {
+    "noisy_snr": 5.81,
+    "noisy_text": "It is also claimed that he was murdered.",
+    "noisy_time_s": 0.169,
+    "enh_text": "It is also claimed that he was murdered.",
+    "enh_time_s": 0.158
+  },
+  "p257_375": {
+    "noisy_snr": 2.06,
+    "noisy_text": "It is likely the rest of the market will follow suit.",
+    "noisy_time_s": 0.205,
+    "enh_text": "It is likely the rest of the market will follow suit.",
+    "enh_time_s": 0.212
+  },
+  "p257_376": {
+    "noisy_snr": 16.74,
+    "noisy_text": "I can lead by example.",
+    "noisy_time_s": 0.123,
+    "enh_text": "I can lead by example.",
+    "enh_time_s": 0.137
+  },
+  "p257_377": {
+    "noisy_snr": 11.02,
+    "noisy_text": "Well, it did last time he was reminded.",
+    "noisy_time_s": 0.181,
+    "enh_text": "Well, it did last time who's reminded.",
+    "enh_time_s": 0.192
+  },
+  "p257_378": {
+    "noisy_snr": 4.71,
+    "noisy_text": "They're good.",
+    "noisy_time_s": 0.107,
+    "enh_text": "They are good.",
+    "enh_time_s": 0.113
+  },
+  "p257_379": {
+    "noisy_snr": 1.3,
+    "noisy_text": "He repeated his call for an inquiry into the police response.",
+    "noisy_time_s": 0.212,
+    "enh_text": "He repeated his call for an inquiry into the police response.",
+    "enh_time_s": 0.222
+  },
+  "p257_380": {
+    "noisy_snr": 16.26,
+    "noisy_text": "My husband was born in Zimbabwe.",
+    "noisy_time_s": 0.171,
+    "enh_text": "My husband was born in Zimbabwe.",
+    "enh_time_s": 0.105
+  },
+  "p257_381": {
+    "noisy_snr": 10.99,
+    "noisy_text": "So in a sense it was a government subsidy.",
+    "noisy_time_s": 0.176,
+    "enh_text": "So, in a sense, it was a government subsidy.",
+    "enh_time_s": 0.207
+  },
+  "p257_382": {
+    "noisy_snr": 5.07,
+    "noisy_text": "It was on fire.",
+    "noisy_time_s": 0.127,
+    "enh_text": "It was on fire.",
+    "enh_time_s": 0.13
+  },
+  "p257_383": {
+    "noisy_snr": 1.62,
+    "noisy_text": "The orchestra was already increasing the scope of its ambitions.",
+    "noisy_time_s": 0.157,
+    "enh_text": "The orchestra was already increasing the scope of its ambitions.",
+    "enh_time_s": 0.179
+  },
+  "p257_384": {
+    "noisy_snr": 15.79,
+    "noisy_text": "I never won a penny throughout my career.",
+    "noisy_time_s": 0.151,
+    "enh_text": "I never won a penny throughout my career.",
+    "enh_time_s": 0.159
+  },
+  "p257_385": {
+    "noisy_snr": 11.54,
+    "noisy_text": "Emotions were complex.",
+    "noisy_time_s": 0.108,
+    "enh_text": "Emotions were complex.",
+    "enh_time_s": 0.12
+  },
+  "p257_386": {
+    "noisy_snr": 5.45,
+    "noisy_text": "He's already made history.",
+    "noisy_time_s": 0.118,
+    "enh_text": "He's already made history.",
+    "enh_time_s": 0.138
+  },
+  "p257_387": {
+    "noisy_snr": -0.68,
+    "noisy_text": "So I did.",
+    "noisy_time_s": 0.098,
+    "enh_text": "So I did.",
+    "enh_time_s": 0.112
+  },
+  "p257_388": {
+    "noisy_snr": 16.04,
+    "noisy_text": "You asked the question.",
+    "noisy_time_s": 0.112,
+    "enh_text": "You asked the question.",
+    "enh_time_s": 0.098
+  },
+  "p257_389": {
+    "noisy_snr": 11.86,
+    "noisy_text": "Whether the high court will interfere with the sentence is another matter.",
+    "noisy_time_s": 0.215,
+    "enh_text": "Whether the high court will interfere with the sentence to another matter.",
+    "enh_time_s": 0.208
+  },
+  "p257_390": {
+    "noisy_snr": 6.0,
+    "noisy_text": "There was no trouble.",
+    "noisy_time_s": 0.096,
+    "enh_text": "There was no trouble.",
+    "enh_time_s": 0.118
+  },
+  "p257_391": {
+    "noisy_snr": 1.45,
+    "noisy_text": "This is a huge confidence boost.",
+    "noisy_time_s": 0.12,
+    "enh_text": "This is a huge confidence boost.",
+    "enh_time_s": 0.133
+  },
+  "p257_392": {
+    "noisy_snr": 16.85,
+    "noisy_text": "Not because they want to sing about something.",
+    "noisy_time_s": 0.175,
+    "enh_text": "Not because they want to sing about something.",
+    "enh_time_s": 0.148
+  },
+  "p257_393": {
+    "noisy_snr": 11.08,
+    "noisy_text": "It is not a standing army.",
+    "noisy_time_s": 0.141,
+    "enh_text": "It is not a standing army.",
+    "enh_time_s": 0.125
+  },
+  "p257_394": {
+    "noisy_snr": 6.42,
+    "noisy_text": "We haven't had any adverse reaction to the project.",
+    "noisy_time_s": 0.2,
+    "enh_text": "We haven't had any adverse reaction to the project.",
+    "enh_time_s": 0.181
+  },
+  "p257_395": {
+    "noisy_snr": 1.09,
+    "noisy_text": "I believe the gap is nearly there.",
+    "noisy_time_s": 0.184,
+    "enh_text": "I believe the gap is nearly there.",
+    "enh_time_s": 0.162
+  },
+  "p257_396": {
+    "noisy_snr": 15.76,
+    "noisy_text": "You wanted the evidence.",
+    "noisy_time_s": 0.116,
+    "enh_text": "You wanted the evidence.",
+    "enh_time_s": 0.108
+  },
+  "p257_397": {
+    "noisy_snr": 10.38,
+    "noisy_text": "Our numbers are small.",
+    "noisy_time_s": 0.099,
+    "enh_text": "Our numbers are small.",
+    "enh_time_s": 0.14
+  },
+  "p257_398": {
+    "noisy_snr": 5.39,
+    "noisy_text": "I was very young.",
+    "noisy_time_s": 0.123,
+    "enh_text": "I was very young.",
+    "enh_time_s": 0.11
+  },
+  "p257_399": {
+    "noisy_snr": 1.75,
+    "noisy_text": "We have just got to keep his feet on the ground.",
+    "noisy_time_s": 0.225,
+    "enh_text": "We have just got to keep his feet on the ground.",
+    "enh_time_s": 0.211
+  },
+  "p257_400": {
+    "noisy_snr": 15.66,
+    "noisy_text": "I am the son of Sam.",
+    "noisy_time_s": 0.115,
+    "enh_text": "I am the son of Sam.",
+    "enh_time_s": 0.127
+  },
+  "p257_401": {
+    "noisy_snr": 10.27,
+    "noisy_text": "She a superb.",
+    "noisy_time_s": 0.123,
+    "enh_text": "She a superb",
+    "enh_time_s": 0.083
+  },
+  "p257_402": {
+    "noisy_snr": 6.38,
+    "noisy_text": "Today he was in the same position as four years ago.",
+    "noisy_time_s": 0.195,
+    "enh_text": "Today he was in the same position as four years ago.",
+    "enh_time_s": 0.177
+  },
+  "p257_403": {
+    "noisy_snr": 1.04,
+    "noisy_text": "It doesn't always work that way.",
+    "noisy_time_s": 0.169,
+    "enh_text": "It doesn't always work that way.",
+    "enh_time_s": 0.196
+  },
+  "p257_404": {
+    "noisy_snr": 15.22,
+    "noisy_text": "It's a simple but profound.",
+    "noisy_time_s": 0.147,
+    "enh_text": "It's a simple but profound.",
+    "enh_time_s": 0.164
+  },
+  "p257_405": {
+    "noisy_snr": 10.63,
+    "noisy_text": "No preference emerged.",
+    "noisy_time_s": 0.101,
+    "enh_text": "No preference emerged.",
+    "enh_time_s": 0.086
+  },
+  "p257_406": {
+    "noisy_snr": 6.55,
+    "noisy_text": "But they are still unlikely to be involved in combat.",
+    "noisy_time_s": 0.192,
+    "enh_text": "But they are still unlikely to be involved in combat.",
+    "enh_time_s": 0.197
+  },
+  "p257_407": {
+    "noisy_snr": 1.37,
+    "noisy_text": "I've invented a village in East Lydian.",
+    "noisy_time_s": 0.163,
+    "enh_text": "I've invented a village in East Lothian.",
+    "enh_time_s": 0.165
+  },
+  "p257_408": {
+    "noisy_snr": 16.16,
+    "noisy_text": "She has reached the top of her profession.",
+    "noisy_time_s": 0.147,
+    "enh_text": "She has reached the top of her profession.",
+    "enh_time_s": 0.165
+  },
+  "p257_409": {
+    "noisy_snr": 10.1,
+    "noisy_text": "It goes with the job.",
+    "noisy_time_s": 0.134,
+    "enh_text": "It goes with the job.",
+    "enh_time_s": 0.136
+  },
+  "p257_410": {
+    "noisy_snr": 6.58,
+    "noisy_text": "The Edinburgh audience was able to understand the dialogue.",
+    "noisy_time_s": 0.159,
+    "enh_text": "The Edinburgh audience was able to understand the dialogue.",
+    "enh_time_s": 0.148
+  },
+  "p257_411": {
+    "noisy_snr": 1.81,
+    "noisy_text": "Now, however, it has undergone a dramatic decline.",
+    "noisy_time_s": 0.163,
+    "enh_text": "Now, however, it has undergone a dramatic decline.",
+    "enh_time_s": 0.176
+  },
+  "p257_412": {
+    "noisy_snr": 15.29,
+    "noisy_text": "I recommend a tour.",
+    "noisy_time_s": 0.14,
+    "enh_text": "I recommend a tour.",
+    "enh_time_s": 0.108
+  },
+  "p257_413": {
+    "noisy_snr": 10.98,
+    "noisy_text": "We are delighted with this outcome.",
+    "noisy_time_s": 0.144,
+    "enh_text": "We are delighted with this outcome.",
+    "enh_time_s": 0.139
+  },
+  "p257_414": {
+    "noisy_snr": 6.45,
+    "noisy_text": "I have so much respect for him.",
+    "noisy_time_s": 0.154,
+    "enh_text": "I have so much respect for him.",
+    "enh_time_s": 0.155
+  },
+  "p257_415": {
+    "noisy_snr": 0.67,
+    "noisy_text": "We shall be victorious.",
+    "noisy_time_s": 0.121,
+    "enh_text": "We shall be victorious.",
+    "enh_time_s": 0.094
+  },
+  "p257_416": {
+    "noisy_snr": 16.02,
+    "noisy_text": "Rather than answer, she resigned.",
+    "noisy_time_s": 0.169,
+    "enh_text": "Rather than answer, she resigned.",
+    "enh_time_s": 0.145
+  },
+  "p257_417": {
+    "noisy_snr": 10.39,
+    "noisy_text": "War is not the action.",
+    "noisy_time_s": 0.125,
+    "enh_text": "War is not the action.",
+    "enh_time_s": 0.135
+  },
+  "p257_418": {
+    "noisy_snr": 6.3,
+    "noisy_text": "They said so that I would look good in uniform.",
+    "noisy_time_s": 0.192,
+    "enh_text": "They said so that I would look good in uniform.",
+    "enh_time_s": 0.196
+  },
+  "p257_419": {
+    "noisy_snr": 1.06,
+    "noisy_text": "It's not about defining styles.",
+    "noisy_time_s": 0.132,
+    "enh_text": "It's not about defining styles.",
+    "enh_time_s": 0.148
+  },
+  "p257_420": {
+    "noisy_snr": 15.15,
+    "noisy_text": "One must hope not.",
+    "noisy_time_s": 0.113,
+    "enh_text": "One must hope not.",
+    "enh_time_s": 0.13
+  },
+  "p257_421": {
+    "noisy_snr": 10.29,
+    "noisy_text": "It is marvellous.",
+    "noisy_time_s": 0.113,
+    "enh_text": "It is marvellous.",
+    "enh_time_s": 0.111
+  },
+  "p257_422": {
+    "noisy_snr": 6.45,
+    "noisy_text": "but it may take some time to confirm the findings.",
+    "noisy_time_s": 0.179,
+    "enh_text": "But it may take some time to confirm the findings.",
+    "enh_time_s": 0.182
+  },
+  "p257_423": {
+    "noisy_snr": 0.35,
+    "noisy_text": "They should not be blamed for it.",
+    "noisy_time_s": 0.128,
+    "enh_text": "They should not be blamed for it.",
+    "enh_time_s": 0.154
+  },
+  "p257_424": {
+    "noisy_snr": 16.59,
+    "noisy_text": "Charlie Gordon, Leader of the Council, dismissed the suggestion.",
+    "noisy_time_s": 0.21,
+    "enh_text": "Charlie Gordon, leader of the council, dismissed the suggestion.",
+    "enh_time_s": 0.208
+  },
+  "p257_425": {
+    "noisy_snr": 4.8,
+    "noisy_text": "It is so.",
+    "noisy_time_s": 0.094,
+    "enh_text": "It is bizarre.",
+    "enh_time_s": 0.098
+  },
+  "p257_426": {
+    "noisy_snr": 1.19,
+    "noisy_text": "Mary Archaud is almost two clums.",
+    "noisy_time_s": 0.167,
+    "enh_text": "Mary Art shows almost two clever.",
+    "enh_time_s": 0.122
+  },
+  "p257_427": {
+    "noisy_snr": 1.02,
+    "noisy_text": "I was just overwhelmed.",
+    "noisy_time_s": 0.096,
+    "enh_text": "I was just overwhelmed.",
+    "enh_time_s": 0.106
+  },
+  "p257_428": {
+    "noisy_snr": 11.17,
+    "noisy_text": "It had been in place since last July.",
+    "noisy_time_s": 0.155,
+    "enh_text": "It had been in place since last July.",
+    "enh_time_s": 0.185
+  },
+  "p257_429": {
+    "noisy_snr": 10.0,
+    "noisy_text": "It's a miracle.",
+    "noisy_time_s": 0.118,
+    "enh_text": "It's a miracle.",
+    "enh_time_s": 0.098
+  },
+  "p257_430": {
+    "noisy_snr": 6.65,
+    "noisy_text": "The first Minister is obviously concerned to hear about this incident.",
+    "noisy_time_s": 0.166,
+    "enh_text": "The first mystery is obviously concerned to hear about this incident.",
+    "enh_time_s": 0.197
+  },
+  "p257_431": {
+    "noisy_snr": 6.28,
+    "noisy_text": "That was the first time I worked with Richard.",
+    "noisy_time_s": 0.186,
+    "enh_text": "That was the first time I worked with Richard.",
+    "enh_time_s": 0.154
+  },
+  "p257_432": {
+    "noisy_snr": 9.94,
+    "noisy_text": "They will form a tribute.",
+    "noisy_time_s": 0.11,
+    "enh_text": "They will form a tribute.",
+    "enh_time_s": 0.124
+  },
+  "p257_433": {
+    "noisy_snr": 10.3,
+    "noisy_text": "The whole road is in shock.",
+    "noisy_time_s": 0.161,
+    "enh_text": "The whole root is in shock.",
+    "enh_time_s": 0.12
+  },
+  "p257_434": {
+    "noisy_snr": 0.3,
+    "noisy_text": "The bill would be massive.",
+    "noisy_time_s": 0.125,
+    "enh_text": "The bill would be massive.",
+    "enh_time_s": 0.12
+  }
+}

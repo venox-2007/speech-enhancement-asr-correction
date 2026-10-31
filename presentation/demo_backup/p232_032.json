@@ -1,0 +1,136 @@
+{
+  "sample": "p232_032",
+  "reference": "They did not replace it with a conviction for culpable homicide.",
+  "source_sha256": "173119a0b391605243dabc4e857ef6f84d3f7383fdad69b994f1dec46e39e541",
+  "duration_s": 3.4900625,
+  "sample_rate": 16000,
+  "raw_transcript": "They did not replace it with the convictions of gullible homicide.",
+  "enhanced_transcript": "They did not replace it with the convictions of palpable homicide.",
+  "corrected_raw_transcript": "They did not replace it with the convictions of culpable homicide.",
+  "corrected_enhanced_transcript": "They did not replace it with the convictions of culpable homicide.",
+  "raw_corrections": [
+    {
+      "position": 9,
+      "original_token": "gullible",
+      "corrected_token": "culpable",
+      "was_changed": true,
+      "decision": {
+        "sentence": "They did not replace it with the convictions of gullible homicide.",
+        "word_index": 9,
+        "original_token": "gullible",
+        "original_word": "gullible",
+        "best_word": "culpable",
+        "confidence": 0.9999969666321928,
+        "original_confidence": 6.697402055036386e-07,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "They did not replace it with the convictions of culpable homicide.",
+        "alternatives": [
+          {
+            "word": "culpable",
+            "is_original": false,
+            "lm_log_prob": -58.3164,
+            "phonetic_similarity": 0.825,
+            "score": -59.5088,
+            "probability": 0.9999969666321928
+          },
+          {
+            "word": "billable",
+            "is_original": false,
+            "lm_log_prob": -71.7433,
+            "phonetic_similarity": 0.8429,
+            "score": -72.9142,
+            "probability": 1.5068538254569648e-06
+          },
+          {
+            "word": "gullible",
+            "is_original": true,
+            "lm_log_prob": -73.7251,
+            "phonetic_similarity": 1.0,
+            "score": -73.7251,
+            "probability": 6.697402055036386e-07
+          },
+          {
+            "word": "callable",
+            "is_original": false,
+            "lm_log_prob": -72.7188,
+            "phonetic_similarity": 0.8429,
+            "score": -73.8897,
+            "probability": 5.681058177909869e-07
+          },
+          {
+            "word": "syllable",
+            "is_original": false,
+            "lm_log_prob": -73.3436,
+            "phonetic_similarity": 0.8,
+            "score": -74.5667,
+            "probability": 2.8866795837205124e-07
+          }
+        ]
+      }
+    }
+  ],
+  "enhanced_corrections": [
+    {
+      "position": 9,
+      "original_token": "palpable",
+      "corrected_token": "culpable",
+      "was_changed": true,
+      "decision": {
+        "sentence": "They did not replace it with the convictions of palpable homicide.",
+        "word_index": 9,
+        "original_token": "palpable",
+        "original_word": "palpable",
+        "best_word": "culpable",
+        "confidence": 0.9999711213760646,
+        "original_confidence": 2.828182624757166e-05,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "They did not replace it with the convictions of culpable homicide.",
+        "alternatives": [
+          {
+            "word": "culpable",
+            "is_original": false,
+            "lm_log_prob": -58.3164,
+            "phonetic_similarity": 0.825,
+            "score": -59.5087,
+            "probability": 0.9999711213760646
+          },
+          {
+            "word": "palpable",
+            "is_original": true,
+            "lm_log_prob": -69.982,
+            "phonetic_similarity": 1.0,
+            "score": -69.982,
+            "probability": 2.828182624757166e-05
+          },
+          {
+            "word": "palatable",
+            "is_original": false,
+            "lm_log_prob": -72.631,
+            "phonetic_similarity": 0.8111,
+            "score": -73.8404,
+            "probability": 5.967976878286076e-07
+          }
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "preprocessing_s": 0.004860399989411235,
+    "enhancement_s": 0.18030770000768825,
+    "asr_raw_s": 0.4212287000264041,
+    "asr_enhanced_s": 0.5621977000264451,
+    "correction_raw_s": 0.7006825999706052,
+    "correction_enhanced_s": 0.7891053999774158,
+    "total_s": 2.658604900003411
+  },
+  "device": "cuda",
+  "enhancer_loaded": true,
+  "wer": {
+    "raw_transcript": 0.36363636363636365,
+    "corrected_raw_transcript": 0.2727272727272727,
+    "enhanced_transcript": 0.36363636363636365,
+    "corrected_enhanced_transcript": 0.2727272727272727
+  }
+}

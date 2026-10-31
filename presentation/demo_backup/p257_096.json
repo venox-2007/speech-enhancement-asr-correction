@@ -1,0 +1,184 @@
+{
+  "sample": "p257_096",
+  "reference": "The peace process will be buried!",
+  "source_sha256": "c11d2e5704c6376d54a9cf67743a1943fd6d878463f1b6e719f781abbc04f0a8",
+  "duration_s": 2.57,
+  "sample_rate": 16000,
+  "raw_transcript": "The piece process will be buried.",
+  "enhanced_transcript": "The piece process will be buried.",
+  "corrected_raw_transcript": "The peace process will be buried.",
+  "corrected_enhanced_transcript": "The peace process will be buried.",
+  "raw_corrections": [
+    {
+      "position": 1,
+      "original_token": "piece",
+      "corrected_token": "peace",
+      "was_changed": true,
+      "decision": {
+        "sentence": "The piece process will be buried.",
+        "word_index": 1,
+        "original_token": "piece",
+        "original_word": "piece",
+        "best_word": "peace",
+        "confidence": 0.9999933028446607,
+        "original_confidence": 5.268676488849186e-06,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "The peace process will be buried.",
+        "alternatives": [
+          {
+            "word": "peace",
+            "is_original": false,
+            "lm_log_prob": -32.8643,
+            "phonetic_similarity": 1.0,
+            "score": -33.8643,
+            "probability": 0.9999933028446607
+          },
+          {
+            "word": "piece",
+            "is_original": true,
+            "lm_log_prob": -46.018,
+            "phonetic_similarity": 1.0,
+            "score": -46.018,
+            "probability": 5.268676488849186e-06
+          },
+          {
+            "word": "piss",
+            "is_original": false,
+            "lm_log_prob": -46.5366,
+            "phonetic_similarity": 0.8667,
+            "score": -47.6797,
+            "probability": 1.0001049050776804e-06
+          },
+          {
+            "word": "peas",
+            "is_original": false,
+            "lm_log_prob": -48.0609,
+            "phonetic_similarity": 0.8667,
+            "score": -49.204,
+            "probability": 2.1779637289284337e-07
+          },
+          {
+            "word": "pease",
+            "is_original": false,
+            "lm_log_prob": -48.2948,
+            "phonetic_similarity": 1.0,
+            "score": -49.2948,
+            "probability": 1.9888005191359e-07
+          },
+          {
+            "word": "pees",
+            "is_original": false,
+            "lm_log_prob": -51.5369,
+            "phonetic_similarity": 0.8667,
+            "score": -52.6799,
+            "probability": 6.736854669457741e-09
+          },
+          {
+            "word": "p's",
+            "is_original": false,
+            "lm_log_prob": -51.8429,
+            "phonetic_similarity": 0.8667,
+            "score": -52.986,
+            "probability": 4.960665911757518e-09
+          }
+        ]
+      }
+    }
+  ],
+  "enhanced_corrections": [
+    {
+      "position": 1,
+      "original_token": "piece",
+      "corrected_token": "peace",
+      "was_changed": true,
+      "decision": {
+        "sentence": "The piece process will be buried.",
+        "word_index": 1,
+        "original_token": "piece",
+        "original_word": "piece",
+        "best_word": "peace",
+        "confidence": 0.9999933028446607,
+        "original_confidence": 5.268676488849186e-06,
+        "apply_correction": true,
+        "reason": "corrected",
+        "corrected_sentence": "The peace process will be buried.",
+        "alternatives": [
+          {
+            "word": "peace",
+            "is_original": false,
+            "lm_log_prob": -32.8643,
+            "phonetic_similarity": 1.0,
+            "score": -33.8643,
+            "probability": 0.9999933028446607
+          },
+          {
+            "word": "piece",
+            "is_original": true,
+            "lm_log_prob": -46.018,
+            "phonetic_similarity": 1.0,
+            "score": -46.018,
+            "probability": 5.268676488849186e-06
+          },
+          {
+            "word": "piss",
+            "is_original": false,
+            "lm_log_prob": -46.5366,
+            "phonetic_similarity": 0.8667,
+            "score": -47.6797,
+            "probability": 1.0001049050776804e-06
+          },
+          {
+            "word": "peas",
+            "is_original": false,
+            "lm_log_prob": -48.0609,
+            "phonetic_similarity": 0.8667,
+            "score": -49.204,
+            "probability": 2.1779637289284337e-07
+          },
+          {
+            "word": "pease",
+            "is_original": false,
+            "lm_log_prob": -48.2948,
+            "phonetic_similarity": 1.0,
+            "score": -49.2948,
+            "probability": 1.9888005191359e-07
+          },
+          {
+            "word": "pees",
+            "is_original": false,
+            "lm_log_prob": -51.5369,
+            "phonetic_similarity": 0.8667,
+            "score": -52.6799,
+            "probability": 6.736854669457741e-09
+          },
+          {
+            "word": "p's",
+            "is_original": false,
+            "lm_log_prob": -51.8429,
+            "phonetic_similarity": 0.8667,
+            "score": -52.986,
+            "probability": 4.960665911757518e-09
+          }
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "preprocessing_s": 0.016752899973653257,
+    "enhancement_s": 2.2334507000050507,
+    "asr_raw_s": 1.5130399000481702,
+    "asr_enhanced_s": 0.23989930003881454,
+    "correction_raw_s": 0.8918303000391461,
+    "correction_enhanced_s": 0.6215560000273399,
+    "total_s": 5.516786099993624
+  },
+  "device": "cuda",
+  "enhancer_loaded": true,
+  "wer": {
+    "raw_transcript": 0.16666666666666666,
+    "corrected_raw_transcript": 0.0,
+    "enhanced_transcript": 0.16666666666666666,
+    "corrected_enhanced_transcript": 0.0
+  }
+}

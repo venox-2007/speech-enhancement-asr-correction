@@ -21,3 +21,12 @@ results/
 logs/
 .streamlit/secrets.toml
 .pytest_cache/
+
+# Keep a single authoritative submission deck online; preserve local drafts.
+presentation/*.pptx
+!presentation/Speech-Enhancement-ASR-SUBMISSION.pptx
+presentation/*.pdf
+# Bundled, attributed demo excerpts and trained project checkpoint.
+!data/demo/**/*.wav
+!presentation/demo_backup/*.wav
+!artifacts/model/checkpoint_best.pt

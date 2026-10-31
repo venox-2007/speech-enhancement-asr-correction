@@ -44,7 +44,7 @@ Our diagnostic inspection of `results/correction_eval/results_per_utterance.csv`
 
 ## 2. Principled Safeguards Implemented
 
-To eliminate overcorrections without harming genuine error repairs, three configurable safeguards were implemented in [`ContextScorerConfig`](file:///c:/Users/yugag/OneDrive/Documents/Sem%205/DL%20Project/src/correction/context_scorer.py) and [`ContextAwareScorer`](file:///c:/Users/yugag/OneDrive/Documents/Sem%205/DL%20Project/src/correction/context_scorer.py):
+To eliminate overcorrections without harming genuine error repairs, three configurable safeguards were implemented in [`ContextScorerConfig`](../src/correction/context_scorer.py) and [`ContextAwareScorer`](../src/correction/context_scorer.py):
 
 1. **Absolute Score Margin Floor (`min_score_margin = 3.5`)**:
    Instead of relying solely on the relative softmax probability (which is susceptible to candidate-set sparsity), we require an absolute log-probability improvement:
@@ -60,7 +60,7 @@ To eliminate overcorrections without harming genuine error repairs, three config
 
 ## 3. Development-Set Protocol & Tuning Results
 
-To preserve scientific rigor, **the 824-utterance held-out test set remained strictly untouched** during safeguard design and hyperparameter tuning.
+Safeguards were selected using the 60-example synthetic development set below. Earlier baseline error analysis on the test set informed safeguard design, so correction development was not fully blind. The enhancer training/validation/test speaker partitions remain disjoint.
 
 ### Development Dataset (`data/dev_correction_set.json`)
 A curated development set of 60 balanced utterances ($563$ words) was constructed:
@@ -79,7 +79,7 @@ A curated development set of 60 balanced utterances ($563$ words) was constructe
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 | 11 | `margin=0.0, sim=0.00, bias=0.0, thr=0.7` (Baseline) | 5.15% | 0.71% | -4.44% | 27 | 2 | 0 | 93.1% | +25 |
 
-The balanced configuration (`min_score_margin=3.5`, `min_phonetic_similarity=0.80`, `retention_bias=1.0`) achieved the highest net error reduction (+26) and 96.4% precision on dev. These parameters were frozen before touching the test set.
+The balanced configuration (`min_score_margin=3.5`, `min_phonetic_similarity=0.80`, `retention_bias=1.0`) achieved the highest net error reduction (+26) and 96.4% precision on dev. These parameters were fixed for the final comparison. Earlier baseline test error analysis had already informed their design, so validation on a new untouched set is needed.
 
 ---
 
@@ -193,9 +193,9 @@ Only two overcorrections slipped past the safeguards across all 824 utterances:
 
 | System | Pipeline Configuration | Acoustic Metric | Downstream WER | Net $\Delta$ vs Raw Noisy |
 |:-------|:-----------------------|:---------------:|:--------------:|:-------------------------:|
-| **Baseline 1** | Noisy Speech $\to$ Raw Whisper `base.en` | $8.53\text{ dB}$ SNR / 1.76 PESQ | **7.23%** | Reference |
+| **Baseline 1** | Noisy Speech $\to$ Raw Whisper `base.en` | $8.45\text{ dB}$ SNR / PESQ unavailable | **7.23%** | Reference |
 | **Pipeline 2** | Noisy $\to$ Whisper $\to$ Baseline Corrector | — | **8.03%** | $+0.81\%$ (Degraded) |
-| **Pipeline 3** | Noisy $\to$ U-Net Enhancement $\to$ Raw Whisper | $18.13\text{ dB}$ SNR / 1.95 PESQ | **8.23%** | $+1.00\%$ (Degraded) |
+| **Pipeline 3** | Noisy $\to$ U-Net Enhancement $\to$ Raw Whisper | $18.05\text{ dB}$ SNR / PESQ unavailable | **8.23%** | $+1.00\%$ (Degraded) |
 | **Pipeline 4** | Noisy $\to$ U-Net $\to$ Whisper $\to$ Baseline Corrector | — | **8.89%** | $+1.66\%$ (Degraded) |
 | **Pipeline 5 (Ours)**| **Noisy $\to$ Whisper $\to$ Improved Corrector** | — | **7.12%** | **-0.11% (Net Gain)** |
-| **Pipeline 6 (Ours)**| **Noisy $\to$ U-Net $\to$ Whisper $\to$ Improved Corrector**| $18.13\text{ dB}$ SNR / 1.95 PESQ | **8.11%** | **-0.11% (Net Gain)** |
+| **Pipeline 6 (Ours)**| **Noisy $\to$ U-Net $\to$ Whisper $\to$ Improved Corrector**| $18.05\text{ dB}$ SNR / PESQ unavailable | **8.11%** | **+0.89 pp (Degraded vs raw noisy)** |

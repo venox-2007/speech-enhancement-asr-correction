@@ -143,5 +143,5 @@ Addressing the primary research questions investigated in this project:
 
 - **Clean Baseline Cache**: `results/final_analysis/clean_asr_cache.json`
 - **Statistical Summary JSON**: `results/final_analysis/final_evaluation_summary.json`
-- **Analysis Implementation**: [`src/evaluation/statistical_analysis.py`](file:///c:/Users/yugag/OneDrive/Documents/Sem%205/DL%20Project/src/evaluation/statistical_analysis.py)
-- **Unit Test Suite**: [`tests/test_statistical_analysis.py`](file:///c:/Users/yugag/OneDrive/Documents/Sem%205/DL%20Project/tests/test_statistical_analysis.py)
+- **Analysis Implementation**: [`src/evaluation/statistical_analysis.py`](../src/evaluation/statistical_analysis.py)
+- **Unit Test Suite**: [`tests/test_statistical_analysis.py`](../tests/test_statistical_analysis.py)

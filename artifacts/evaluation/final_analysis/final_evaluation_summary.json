@@ -1,0 +1,251 @@
+{
+  "utterance_count": 824,
+  "total_words": 6211,
+  "clean_baseline": {
+    "count": 824,
+    "total_words": 6211,
+    "corpus_wer": 0.04653034938013202,
+    "substitutions": 202,
+    "deletions": 55,
+    "insertions": 32,
+    "correct_words": 5954,
+    "utt_wer_mean": 0.05054690741901434,
+    "utt_wer_std": 0.12624440179571314,
+    "utt_wer_median": 0.0
+  },
+  "comparisons": {
+    "noisy_raw_vs_noisy_improved_corr": {
+      "description": "Noisy Raw vs Noisy Improved-Correction",
+      "bootstrap": {
+        "wer_a": 0.0722910964417968,
+        "wer_b": 0.07116406375784898,
+        "delta_sample": -0.001127032683947829,
+        "delta_boot_mean": -0.001129147493383814,
+        "delta_boot_std": 0.0005281204087378814,
+        "ci_lower": -0.0022304003789552934,
+        "ci_upper": -0.00016051364365971107,
+        "ci_level": 0.95,
+        "p_value": 0.0356,
+        "is_significant": true,
+        "num_bootstrap": 10000
+      },
+      "outcomes": {
+        "count": 824,
+        "improved": 9,
+        "improved_pct": 1.0922330097087378,
+        "worsened": 2,
+        "worsened_pct": 0.24271844660194172,
+        "unchanged": 813,
+        "unchanged_pct": 98.66504854368931,
+        "delta_mean": -0.0008409336079238992,
+        "delta_std": 0.01478134112929397,
+        "delta_median": 0.0,
+        "delta_min": -0.2,
+        "delta_max": 0.16666666666666666,
+        "delta_q25": 0.0,
+        "delta_q75": 0.0,
+        "delta_iqr": 0.0
+      },
+      "wilcoxon": {
+        "statistic": 17.0,
+        "p_value": 0.15424776353460426,
+        "n_non_zero": 11,
+        "is_significant": false
+      }
+    },
+    "enhanced_raw_vs_enhanced_improved_corr": {
+      "description": "Enhanced Raw vs Enhanced Improved-Correction",
+      "bootstrap": {
+        "wer_a": 0.08227338592819192,
+        "wer_b": 0.08114635324424409,
+        "delta_sample": -0.001127032683947829,
+        "delta_boot_mean": -0.0011248075663775905,
+        "delta_boot_std": 0.0005323375918432641,
+        "ci_lower": -0.0022183840874002037,
+        "ci_upper": -0.00016007619636939177,
+        "ci_level": 0.95,
+        "p_value": 0.0382,
+        "is_significant": true,
+        "num_bootstrap": 10000
+      },
+      "outcomes": {
+        "count": 824,
+        "improved": 9,
+        "improved_pct": 1.0922330097087378,
+        "worsened": 2,
+        "worsened_pct": 0.24271844660194172,
+        "unchanged": 813,
+        "unchanged_pct": 98.66504854368931,
+        "delta_mean": -0.0012204219728491573,
+        "delta_std": 0.018183203127308197,
+        "delta_median": 0.0,
+        "delta_min": -0.3333333333333333,
+        "delta_max": 0.14285714285714285,
+        "delta_q25": 0.0,
+        "delta_q75": 0.0,
+        "delta_iqr": 0.0
+      },
+      "wilcoxon": {
+        "statistic": 13.0,
+        "p_value": 0.07536823868947248,
+        "n_non_zero": 11,
+        "is_significant": false
+      }
+    },
+    "noisy_raw_vs_enhanced_raw": {
+      "description": "Noisy Raw vs Enhanced Raw",
+      "bootstrap": {
+        "wer_a": 0.0722910964417968,
+        "wer_b": 0.08227338592819192,
+        "delta_sample": 0.00998228948639511,
+        "delta_boot_mean": 0.00998117412636503,
+        "delta_boot_std": 0.003439931786041184,
+        "ci_lower": 0.0034504148495572216,
+        "ci_upper": 0.016869082275585593,
+        "ci_level": 0.95,
+        "p_value": 0.0022,
+        "is_significant": true,
+        "num_bootstrap": 10000
+      },
+      "outcomes": {
+        "count": 824,
+        "improved": 37,
+        "improved_pct": 4.490291262135923,
+        "worsened": 70,
+        "worsened_pct": 8.495145631067961,
+        "unchanged": 717,
+        "unchanged_pct": 87.01456310679612,
+        "delta_mean": 0.011852855208437735,
+        "delta_std": 0.11249871718326343,
+        "delta_median": 0.0,
+        "delta_min": -0.8,
+        "delta_max": 1.0,
+        "delta_q25": 0.0,
+        "delta_q75": 0.0,
+        "delta_iqr": 0.0
+      },
+      "wilcoxon": {
+        "statistic": 2016.0,
+        "p_value": 0.006639979099530187,
+        "n_non_zero": 107,
+        "is_significant": true
+      }
+    },
+    "noisy_raw_vs_enhanced_improved_corr": {
+      "description": "Noisy Raw vs Enhanced Improved-Correction",
+      "bootstrap": {
+        "wer_a": 0.0722910964417968,
+        "wer_b": 0.08114635324424409,
+        "delta_sample": 0.008855256802447281,
+        "delta_boot_mean": 0.00885636655998744,
+        "delta_boot_std": 0.0034916728504796957,
+        "ci_lower": 0.0021973657863706146,
+        "ci_upper": 0.01584423439421766,
+        "ci_level": 0.95,
+        "p_value": 0.0094,
+        "is_significant": true,
+        "num_bootstrap": 10000
+      },
+      "outcomes": {
+        "count": 824,
+        "improved": 45,
+        "improved_pct": 5.461165048543689,
+        "worsened": 70,
+        "worsened_pct": 8.495145631067961,
+        "unchanged": 709,
+        "unchanged_pct": 86.04368932038835,
+        "delta_mean": 0.010632433235588577,
+        "delta_std": 0.11316255799280522,
+        "delta_median": 0.0,
+        "delta_min": -0.8,
+        "delta_max": 1.0,
+        "delta_q25": 0.0,
+        "delta_q75": 0.0,
+        "delta_iqr": 0.0
+      },
+      "wilcoxon": {
+        "statistic": 2510.0,
+        "p_value": 0.021264413364655402,
+        "n_non_zero": 115,
+        "is_significant": true
+      }
+    }
+  },
+  "consolidated_table": [
+    {
+      "condition": "Clean Speech",
+      "pipeline": "Clean Audio -> Whisper base.en",
+      "corpus_wer": 0.04653034938013202,
+      "mean_utt_wer": 0.05054690741901434,
+      "substitutions": 202,
+      "deletions": 55,
+      "insertions": 32,
+      "total_errors": 289,
+      "correct_words": 5954,
+      "total_words": 6211,
+      "stoi": 1.0,
+      "sisdr_db": null,
+      "snr_db": null
+    },
+    {
+      "condition": "Noisy Speech",
+      "pipeline": "Noisy Audio -> Whisper base.en",
+      "corpus_wer": 0.0722910964417968,
+      "mean_utt_wer": 0.07592303816529071,
+      "substitutions": 330,
+      "deletions": 69,
+      "insertions": 50,
+      "total_errors": 449,
+      "correct_words": 5812,
+      "total_words": 6211,
+      "stoi": 0.9210957521084339,
+      "sisdr_db": 8.449428519812399,
+      "snr_db": 8.449960823776925
+    },
+    {
+      "condition": "U-Net Enhanced",
+      "pipeline": "Noisy -> U-Net -> Whisper base.en",
+      "corpus_wer": 0.08227338592819192,
+      "mean_utt_wer": 0.08777589337372844,
+      "substitutions": 369,
+      "deletions": 80,
+      "insertions": 62,
+      "total_errors": 511,
+      "correct_words": 5762,
+      "total_words": 6211,
+      "stoi": 0.9337859608600877,
+      "sisdr_db": 17.962863656262854,
+      "snr_db": 18.053204920566813
+    },
+    {
+      "condition": "Noisy + Improved Correction",
+      "pipeline": "Noisy -> Whisper -> Improved Corrector",
+      "corpus_wer": 0.07116406375784898,
+      "mean_utt_wer": 0.07508210455736682,
+      "substitutions": 323,
+      "deletions": 69,
+      "insertions": 50,
+      "total_errors": 442,
+      "correct_words": 5819,
+      "total_words": 6211,
+      "stoi": 0.9210957521084339,
+      "sisdr_db": 8.449428519812399,
+      "snr_db": 8.449960823776925
+    },
+    {
+      "condition": "Enhanced + Improved Correction",
+      "pipeline": "Noisy -> U-Net -> Whisper -> Improved Corrector",
+      "corpus_wer": 0.08114635324424409,
+      "mean_utt_wer": 0.08655547140087928,
+      "substitutions": 362,
+      "deletions": 80,
+      "insertions": 62,
+      "total_errors": 504,
+      "correct_words": 5769,
+      "total_words": 6211,
+      "stoi": 0.9337859608600877,
+      "sisdr_db": 17.962863656262854,
+      "snr_db": 18.053204920566813
+    }
+  ]
+}
